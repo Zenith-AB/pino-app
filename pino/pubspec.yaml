@@ -1,0 +1,49 @@
+name: pino
+description: Aplicación de alfabetización en español
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  firebase_core: ^2.24.2
+  firebase_auth: ^4.15.3
+  cloud_firestore: ^4.13.6
+  flutter_riverpod: ^2.4.9
+
+  # Base de datos local NoSQL
+  isar: ^3.1.0+1
+  isar_flutter_libs: ^3.1.0+1
+
+  # Audio y voz
+  audioplayers: ^5.2.1
+  flutter_tts: ^3.8.3
+
+  # Navegación y utilidades
+  go_router: ^12.1.1
+  shared_preferences: ^2.2.2
+  flutter_svg: ^2.0.9
+  google_fonts: ^6.1.0
+  path_provider: ^2.1.1
+  connectivity_plus: ^5.0.2
+  uuid: ^4.2.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+  # Generador de código para Isar
+  isar_generator: ^3.1.0+1
+  build_runner: ^2.4.7
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/audio/fonemas/
+    - assets/audio/feedback/
+    - assets/images/avatars/
