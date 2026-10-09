@@ -1,0 +1,12 @@
+rules_version = '2';
+
+// Cada usuario autenticado (tutor/dispositivo) solo puede leer y escribir
+// sus propios datos: usuarios/{uid}/perfiles/{perfilId}/resultados/{resultadoId}.
+// Todo lo demás queda bloqueado por defecto.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /usuarios/{uid}/{documento=**} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+  }
+}

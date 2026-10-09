@@ -11,8 +11,8 @@ class PinoApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final router = ref.watch(appRouterProvider);
-    final currentProfile = ref.watch(currentProfileProvider);
-    final isInfantil = currentProfile?.mode == ProfileMode.infantil;
+    final modo = ref.watch(modoActualProvider);
+    final isInfantil = modo == ProfileMode.infantil;
 
     return MaterialApp.router(
       title: 'Pino',

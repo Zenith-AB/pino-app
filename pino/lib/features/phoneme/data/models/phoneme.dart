@@ -29,7 +29,7 @@ class Phoneme {
   late String palabraEjemplo;
 
   /// Ruta a la imagen ejemplo (opcional).
-  late String? rutaImagenEjemplo;
+  String? rutaImagenEjemplo;
 
   /// Orden de presentación en el currículo.
   @Index()
@@ -56,7 +56,7 @@ class VarianteRegional {
   late String palabraEjemplo;
 
   /// Ruta de audio específica para esta variante (opcional).
-  late String? rutaAudioVariante;
+  String? rutaAudioVariante;
 
   VarianteRegional() {
     codigoPais = '';

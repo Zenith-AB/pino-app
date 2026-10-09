@@ -8,7 +8,7 @@ class AppTheme {
       useMaterial3: true,
       colorScheme: ColorScheme.fromSeed(
         seedColor: AppColors.primary,
-        background: AppColors.backgroundInfantil,
+        surface: AppColors.backgroundInfantil,
       ),
       textTheme: GoogleFonts.nunitoTextTheme().copyWith(
         bodyLarge: GoogleFonts.nunito(fontSize: 20, fontWeight: FontWeight.bold),
@@ -32,7 +32,7 @@ class AppTheme {
       useMaterial3: true,
       colorScheme: ColorScheme.fromSeed(
         seedColor: AppColors.primary,
-        background: AppColors.backgroundAdulto,
+        surface: AppColors.backgroundAdulto,
       ),
       textTheme: GoogleFonts.interTextTheme().copyWith(
         bodyLarge: GoogleFonts.inter(fontSize: 16),

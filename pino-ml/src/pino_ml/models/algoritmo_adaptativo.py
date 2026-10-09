@@ -16,11 +16,18 @@ from datetime import datetime, timedelta
 from enum import Enum
 from typing import Optional
 
-import mlflow
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, f1_score
 import joblib
+
+
+# Orden de las columnas que espera el modelo de predicción de errores.
+FEATURE_COLS = [
+    'tasa_acierto', 'aciertos', 'fallos', 'racha_actual',
+    'intervalo_dias', 'factor_facilidad', 'horas_desde_practica',
+    'total_errores', 'errores_confusion', 'errores_pronunciacion',
+]
 
 
 class TipoError(Enum):
@@ -76,17 +83,37 @@ class AlgoritmoAdaptativo:
 
     # ─── Repetición espaciada (SM-2 adaptado) ───
 
+    # Calidad de respuesta SM-2 (0-5) cuando no se indica una explícita.
+    CALIDAD_ACIERTO = 5
+    CALIDAD_FALLO = 2
+
+    @staticmethod
+    def _nuevo_factor_facilidad(factor: float, calidad: int) -> float:
+        """Fórmula SM-2: EF' = EF + 0.1 - (5-q)·(0.08 + (5-q)·0.02), mínimo 1.3."""
+        q = 5 - calidad
+        return max(1.3, factor + 0.1 - q * (0.08 + q * 0.02))
+
     def actualizar_item(
         self,
         item: ItemAprendizaje,
         correcto: bool,
         tipo_error: Optional[TipoError] = None,
+        calidad: Optional[int] = None,
+        cuando: Optional[datetime] = None,
     ) -> ItemAprendizaje:
         """
         Actualiza un ítem de aprendizaje tras una respuesta.
         Implementa el algoritmo SM-2 con modificaciones para alfabetización.
+
+        `calidad` (0-5) es la calidad de la respuesta de SM-2. Si no se indica,
+        se usa CALIDAD_ACIERTO o CALIDAD_FALLO según `correcto`.
+        `cuando` es el momento de la respuesta (por defecto, ahora); el
+        pipeline de entrenamiento lo usa para reproducir historiales.
         """
-        item.ultima_practica = datetime.now()
+        if calidad is None:
+            calidad = self.CALIDAD_ACIERTO if correcto else self.CALIDAD_FALLO
+        cuando = cuando or datetime.now()
+        item.ultima_practica = cuando
 
         if correcto:
             item.aciertos += 1
@@ -99,12 +126,6 @@ class AlgoritmoAdaptativo:
                 item.intervalo_dias = 3
             else:
                 item.intervalo_dias *= item.factor_facilidad
-
-            # Ajustar factor de facilidad (mín 1.3)
-            item.factor_facilidad = max(
-                1.3,
-                item.factor_facilidad + 0.1 - (5 - 4) * (0.08 + (5 - 4) * 0.02)
-            )
         else:
             item.fallos += 1
             item.racha_actual = 0
@@ -113,17 +134,15 @@ class AlgoritmoAdaptativo:
             if tipo_error:
                 item.errores_tipo.append(tipo_error.value)
 
-            # SM-2: Reiniciar intervalo pero ajustar factor
+            # SM-2: Reiniciar intervalo
             item.intervalo_dias = 1
-            item.factor_facilidad = max(
-                1.3,
-                item.factor_facilidad - 0.2
-            )
+
+        item.factor_facilidad = self._nuevo_factor_facilidad(
+            item.factor_facilidad, calidad
+        )
 
         # Calcular próxima revisión
-        item.proxima_revision = datetime.now() + timedelta(
-            days=item.intervalo_dias
-        )
+        item.proxima_revision = cuando + timedelta(days=item.intervalo_dias)
 
         return item
 
@@ -193,28 +212,38 @@ class AlgoritmoAdaptativo:
 
     # ─── Modelo ML para predicción de errores ───
 
-    def preparar_features(self, item: ItemAprendizaje) -> np.ndarray:
-        """Convierte un ItemAprendizaje en features para el modelo ML."""
-        ahora = datetime.now()
+    @staticmethod
+    def features_de_item(
+        item: ItemAprendizaje,
+        ahora: Optional[datetime] = None,
+    ) -> dict[str, float]:
+        """
+        Features del modelo ML para un ítem, en el momento `ahora`.
+        Se usa igual al servir (API) y al entrenar (pipeline), para que el
+        modelo vea los mismos valores en ambos casos.
+        """
+        ahora = ahora or datetime.now()
 
         horas_desde_practica = 0.0
         if item.ultima_practica:
             horas_desde_practica = (ahora - item.ultima_practica).total_seconds() / 3600
 
-        features = np.array([
-            item.tasa_acierto,
-            item.aciertos,
-            item.fallos,
-            item.racha_actual,
-            item.intervalo_dias,
-            item.factor_facilidad,
-            horas_desde_practica,
-            len(item.errores_tipo),
-            item.errores_tipo.count(TipoError.CONFUSION_LETRAS.value),
-            item.errores_tipo.count(TipoError.PRONUNCIACION.value),
-        ])
+        return {
+            'tasa_acierto': item.tasa_acierto,
+            'aciertos': item.aciertos,
+            'fallos': item.fallos,
+            'racha_actual': item.racha_actual,
+            'intervalo_dias': item.intervalo_dias,
+            'factor_facilidad': item.factor_facilidad,
+            'horas_desde_practica': horas_desde_practica,
+            'total_errores': len(item.errores_tipo),
+            'errores_confusion': item.errores_tipo.count(TipoError.CONFUSION_LETRAS.value),
+            'errores_pronunciacion': item.errores_tipo.count(TipoError.PRONUNCIACION.value),
+        }
 
-        return features.reshape(1, -1)
+    def preparar_features(self, item: ItemAprendizaje) -> pd.DataFrame:
+        """Convierte un ItemAprendizaje en la fila de features del modelo ML."""
+        return pd.DataFrame([self.features_de_item(item)], columns=FEATURE_COLS)
 
     def predecir_probabilidad_error(
         self,
@@ -227,7 +256,7 @@ class AlgoritmoAdaptativo:
         if self.modelo_prediccion:
             features = self.preparar_features(item)
             prob = self.modelo_prediccion.predict_proba(features)[0][1]
-            return round(prob, 3)
+            return round(float(prob), 3)
 
         # Heurística si no hay modelo ML
         base = 1.0 - item.tasa_acierto
@@ -256,11 +285,7 @@ class AlgoritmoAdaptativo:
                 - total_errores, errores_confusion, errores_pronunciacion,
                 - target (0=acierto, 1=fallo)
         """
-        feature_cols = [
-            'tasa_acierto', 'aciertos', 'fallos', 'racha_actual',
-            'intervalo_dias', 'factor_facilidad', 'horas_desde_practica',
-            'total_errores', 'errores_confusion', 'errores_pronunciacion',
-        ]
+        feature_cols = FEATURE_COLS
 
         X = datos_historicos[feature_cols]
         y = datos_historicos['target']
@@ -268,6 +293,9 @@ class AlgoritmoAdaptativo:
         X_train, X_test, y_train, y_test = train_test_split(
             X, y, test_size=0.2, random_state=42, stratify=y
         )
+
+        # Import local: MLflow solo se necesita al entrenar, no al servir la API.
+        import mlflow
 
         # Entrenar con tracking en MLflow
         mlflow.set_experiment(experiment_name)

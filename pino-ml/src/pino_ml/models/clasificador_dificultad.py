@@ -11,15 +11,11 @@ Analiza textos y los clasifica en niveles de dificultad lectora:
 Usado en: HU-04 (Lectura guiada), HU-17 (Micro-historias)
 """
 
-import re
 from dataclasses import dataclass
 
-import spacy
-import textstat
-import mlflow
 import numpy as np
-from sklearn.ensemble import RandomForestClassifier
-import joblib
+
+from pino_ml.utils.texto_es import contar_silabas
 
 
 @dataclass
@@ -54,6 +50,10 @@ class ClasificadorDificultad:
     """
 
     def __init__(self, modelo_spacy: str = "es_core_news_md"):
+        # Import local: spaCy es pesado y solo se necesita al usar el clasificador.
+        # El modelo se instala aparte: python -m spacy download es_core_news_md
+        import spacy
+
         self.nlp = spacy.load(modelo_spacy)
         self.modelo_ml = None
 
@@ -136,19 +136,8 @@ class ClasificadorDificultad:
         return 206.84 - (0.60 * S) - (1.02 * P)
 
     def _contar_silabas(self, palabra: str) -> int:
-        """Cuenta sílabas de una palabra en español (heurística)."""
-        palabra = palabra.lower()
-        vocales = 'aeiouáéíóúü'
-        count = 0
-        prev_vocal = False
-
-        for char in palabra:
-            es_vocal = char in vocales
-            if es_vocal and not prev_vocal:
-                count += 1
-            prev_vocal = es_vocal
-
-        return max(1, count)
+        """Cuenta sílabas de una palabra en español (respeta hiatos: dí-a, po-e-ta)."""
+        return contar_silabas(palabra)
 
     def _clasificar_nivel(
         self,

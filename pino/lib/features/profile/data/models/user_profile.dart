@@ -1,4 +1,5 @@
 import 'package:isar/isar.dart';
+import 'package:uuid/uuid.dart';
 
 part 'user_profile.g.dart';
 
@@ -13,7 +14,11 @@ enum UserLevel { preLector, silabico, palabras, textos }
 /// del usuario está autocontenida en un solo objeto, sin JOINs.
 @collection
 class UserProfile {
+  /// ID local de Isar. Se repite entre dispositivos: no usar fuera del teléfono.
   Id id = Isar.autoIncrement;
+
+  /// ID global del perfil, usado como ID del documento en Firestore.
+  String syncId = const Uuid().v4();
 
   late String nombre;
   late int avatarIndex;
@@ -72,7 +77,7 @@ class ProgresoFonema {
   late int fallos;
 
   /// Última vez que se practicó este fonema.
-  late DateTime? ultimaPractica;
+  DateTime? ultimaPractica;
 
   /// Nivel de dominio: 0.0 (nulo) a 1.0 (dominado).
   late double nivelDominio;
@@ -105,7 +110,7 @@ class ErrorFrecuente {
   late int frecuencia;
 
   /// Última ocurrencia.
-  late DateTime? ultimaOcurrencia;
+  DateTime? ultimaOcurrencia;
 
   ErrorFrecuente() {
     tipo = '';
@@ -121,10 +126,10 @@ class ConfiguracionPerfil {
   late String toleranciaTrazo;
 
   /// Límite de tiempo en minutos por sesión — solo para modo infantil (HU-16).
-  late int? tiempoMaximoMinutos;
+  int? tiempoMaximoMinutos;
 
   /// Variante dialectal seleccionada (HU-22) — solo para modo adulto.
-  late String? varianteDialectal;
+  String? varianteDialectal;
 
   /// Si la navegación por voz está activada (HU-07).
   late bool navegacionPorVoz;

@@ -2,6 +2,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:isar/isar.dart';
 
 import '../../../../core/database/database_service.dart';
+import '../../../diagnostic/data/models/diagnostic_result.dart';
+import '../../../phoneme/data/models/exercise_result.dart';
 import '../models/user_profile.dart';
 
 /// Repositorio de perfiles usando Isar (NoSQL local).
@@ -58,9 +60,12 @@ class ProfileRepository {
     });
   }
 
-  /// Eliminar un perfil por ID.
+  /// Eliminar un perfil por ID junto con todos sus datos asociados
+  /// (resultados de ejercicios y diagnósticos), en una sola transacción.
   Future<bool> eliminarPerfil(int id) async {
     return await _isar.writeTxn(() async {
+      await _isar.exerciseResults.where().perfilIdEqualTo(id).deleteAll();
+      await _isar.diagnosticResults.where().perfilIdEqualTo(id).deleteAll();
       return await _isar.userProfiles.delete(id);
     });
   }
@@ -84,7 +89,8 @@ class ProfileRepository {
     // Evitar duplicados del mismo día
     if (perfil.racha.diasCompletados.contains(hoy)) return;
 
-    perfil.racha.diasCompletados.add(hoy);
+    // Isar devuelve listas de tamaño fijo: se reemplazan en vez de usar add().
+    perfil.racha.diasCompletados = [...perfil.racha.diasCompletados, hoy];
 
     // Calcular racha consecutiva
     final ayer = DateTime.now()
@@ -120,7 +126,7 @@ class ProfileRepository {
       (f) => f.fonemaId == fonemaId,
       orElse: () {
         final nuevo = ProgresoFonema()..fonemaId = fonemaId;
-        perfil.progreso.fonemas.add(nuevo);
+        perfil.progreso.fonemas = [...perfil.progreso.fonemas, nuevo];
         return nuevo;
       },
     );
@@ -169,13 +175,14 @@ class ProfileRepository {
       existente.first.frecuencia++;
       existente.first.ultimaOcurrencia = DateTime.now();
     } else {
-      perfil.erroresFrecuentes.add(
+      perfil.erroresFrecuentes = [
+        ...perfil.erroresFrecuentes,
         ErrorFrecuente()
           ..tipo = tipo
           ..detalle = detalle
           ..frecuencia = 1
           ..ultimaOcurrencia = DateTime.now(),
-      );
+      ];
     }
 
     await actualizarPerfil(perfil);

@@ -3,21 +3,38 @@ API de ML para Pino — FastAPI.
 
 Expone los modelos ML como endpoints REST para consumo
 desde la app Flutter y desde procesos de análisis.
+
+Ejecutar (desde pino-ml/, con el paquete instalado):
+    uvicorn pino_ml.api.main:app --env-file .env
+
+Los endpoints que usan modelos pesados (Whisper, spaCy) son funciones
+normales (`def`, no `async def`): FastAPI los ejecuta en un pool de hilos y
+así no bloquean el servidor mientras procesan.
 """
 
+import logging
 import os
 import tempfile
+import threading
 from contextlib import asynccontextmanager
-from typing import Optional
+from datetime import datetime
+from pathlib import Path
+from typing import Callable, Literal, Optional, TypeVar
 
-import mlflow
-from fastapi import FastAPI, File, UploadFile, HTTPException
+from fastapi import FastAPI, File, HTTPException, UploadFile
 from pydantic import BaseModel, Field
 
-from src.models.stt_fonetico import STTFonetico, ResultadoPronunciacion
-from src.models.algoritmo_adaptativo import AlgoritmoAdaptativo, ItemAprendizaje, TipoError
-from src.models.clasificador_dificultad import ClasificadorDificultad
-from src.models.analizador_trazos import AnalizadorTrazos, PuntoTrazo, RutaIdeal
+from pino_ml.models.algoritmo_adaptativo import AlgoritmoAdaptativo, ItemAprendizaje
+from pino_ml.models.analizador_trazos import AnalizadorTrazos, PuntoTrazo, RutaIdeal
+from pino_ml.models.clasificador_dificultad import ClasificadorDificultad
+from pino_ml.models.stt_fonetico import STTFonetico
+
+logger = logging.getLogger("pino_ml.api")
+
+# Tamaño máximo del audio subido (MB). Una lectura de pocos segundos pesa
+# mucho menos; el límite evita que un archivo enorme tumbe el servidor.
+MAX_AUDIO_BYTES = int(os.getenv("MAX_AUDIO_MB", "10")) * 1024 * 1024
+EXTENSIONES_AUDIO = {".wav", ".m4a", ".mp3", ".aac", ".ogg", ".webm", ".flac"}
 
 
 # ─── Modelos globales (se cargan al iniciar) ───
@@ -27,24 +44,39 @@ adaptativo: Optional[AlgoritmoAdaptativo] = None
 clasificador: Optional[ClasificadorDificultad] = None
 analizador: Optional[AnalizadorTrazos] = None
 
+# Whisper usa mucha memoria: se procesa un audio a la vez.
+_lock_stt = threading.Lock()
+
+T = TypeVar("T")
+
+
+def _cargar(nombre: str, crear: Callable[[], T]) -> Optional[T]:
+    """Carga un modelo; si falla, la API arranca igual sin ese modelo (503)."""
+    try:
+        modelo = crear()
+        logger.info("✅ Modelo '%s' cargado", nombre)
+        return modelo
+    except Exception:
+        logger.exception("❌ No se pudo cargar el modelo '%s'", nombre)
+        return None
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Carga los modelos al iniciar la API."""
     global stt, adaptativo, clasificador, analizador
 
-    print("🔄 Cargando modelos ML...")
-
-    whisper_size = os.getenv("WHISPER_MODEL_SIZE", "medium")
-    stt = STTFonetico(modelo_size=whisper_size)
-
-    adaptativo = AlgoritmoAdaptativo()
-    clasificador = ClasificadorDificultad()
-    analizador = AnalizadorTrazos()
-
-    print("✅ Modelos cargados correctamente")
+    logger.info("🔄 Cargando modelos ML...")
+    stt = _cargar("stt", lambda: STTFonetico(
+        modelo_size=os.getenv("WHISPER_MODEL_SIZE", "medium")
+    ))
+    adaptativo = _cargar("adaptativo", AlgoritmoAdaptativo)
+    clasificador = _cargar("clasificador", lambda: ClasificadorDificultad(
+        modelo_spacy=os.getenv("SPACY_MODEL", "es_core_news_md")
+    ))
+    analizador = _cargar("analizador", AnalizadorTrazos)
     yield
-    print("🛑 API finalizada")
+    logger.info("🛑 API finalizada")
 
 
 app = FastAPI(
@@ -57,10 +89,6 @@ app = FastAPI(
 
 # ─── Schemas ───
 
-class PronunciacionRequest(BaseModel):
-    texto_esperado: str = Field(..., description="Texto que el usuario debía leer")
-
-
 class PronunciacionResponse(BaseModel):
     texto_esperado: str
     texto_detectado: str
@@ -72,24 +100,54 @@ class PronunciacionResponse(BaseModel):
     correcto: bool
 
 
-class FonemaAisladoRequest(BaseModel):
-    fonema_esperado: str = Field(..., description="Fonema que el usuario debía pronunciar")
-
-
 class FonemaAisladoResponse(BaseModel):
     correcto: bool
     confianza: float
     fonema_esperado: str
 
 
+class ItemAprendizajeRequest(BaseModel):
+    item_id: str
+    tipo: str = "fonema"
+    aciertos: int = 0
+    fallos: int = 0
+    racha_actual: int = 0
+    factor_facilidad: float = 2.5
+    intervalo_dias: float = 1.0
+    ultima_practica: Optional[datetime] = None
+    proxima_revision: Optional[datetime] = None
+    errores_tipo: list[str] = []
+
+    def a_item(self) -> ItemAprendizaje:
+        return ItemAprendizaje(
+            item_id=self.item_id,
+            tipo=self.tipo,
+            aciertos=self.aciertos,
+            fallos=self.fallos,
+            racha_actual=self.racha_actual,
+            factor_facilidad=self.factor_facilidad,
+            intervalo_dias=self.intervalo_dias,
+            ultima_practica=_a_hora_local(self.ultima_practica),
+            proxima_revision=_a_hora_local(self.proxima_revision),
+            errores_tipo=list(self.errores_tipo),
+        )
+
+
+def _a_hora_local(fecha: Optional[datetime]) -> Optional[datetime]:
+    """El algoritmo compara con datetime.now() (sin zona): normaliza a hora local."""
+    if fecha is None or fecha.tzinfo is None:
+        return fecha
+    return fecha.astimezone().replace(tzinfo=None)
+
+
 class ProximaLeccionRequest(BaseModel):
-    items: list[dict] = Field(..., description="Lista de ítems de aprendizaje del usuario")
-    cantidad: int = Field(5, description="Cantidad de ítems a recomendar")
+    items: list[ItemAprendizajeRequest] = Field(..., description="Lista de ítems de aprendizaje del usuario")
+    cantidad: int = Field(5, ge=1, le=50, description="Cantidad de ítems a recomendar")
 
 
 class DificultadRequest(BaseModel):
-    texto: str = Field(..., description="Texto a analizar")
-    nivel_objetivo: Optional[int] = Field(None, description="Nivel deseado (1-5)")
+    texto: str = Field(..., max_length=10_000, description="Texto a analizar")
+    nivel_objetivo: Optional[int] = Field(None, ge=1, le=5, description="Nivel deseado (1-5)")
 
 
 class DificultadResponse(BaseModel):
@@ -103,12 +161,19 @@ class DificultadResponse(BaseModel):
     sugerencias: list[str] = []
 
 
+class PuntoTrazoRequest(BaseModel):
+    x: float
+    y: float
+    timestamp: float = 0
+    presion: float = 1.0
+
+
 class TrazoRequest(BaseModel):
-    puntos: list[dict] = Field(..., description="Puntos del trazo [{x, y, timestamp, presion}]")
-    letra: str = Field(..., description="Letra que se intentaba trazar")
-    ancho_canvas: float = Field(..., description="Ancho del canvas en píxeles")
-    alto_canvas: float = Field(..., description="Alto del canvas en píxeles")
-    tolerancia: str = Field("media", description="Nivel de tolerancia: baja, media, alta")
+    puntos: list[PuntoTrazoRequest] = Field(..., max_length=5_000, description="Puntos del trazo")
+    letra: str = Field(..., min_length=1, max_length=2, description="Letra que se intentaba trazar")
+    ancho_canvas: float = Field(..., gt=0, description="Ancho del canvas en píxeles")
+    alto_canvas: float = Field(..., gt=0, description="Alto del canvas en píxeles")
+    tolerancia: Literal["baja", "media", "alta"] = Field("media", description="Nivel de tolerancia")
 
 
 class TrazoResponse(BaseModel):
@@ -121,10 +186,30 @@ class TrazoResponse(BaseModel):
     correcto: bool
 
 
+# ─── Utilidades ───
+
+def _guardar_audio_temporal(audio: UploadFile) -> str:
+    """Guarda el audio subido en un archivo temporal, respetando el tamaño máximo."""
+    contenido = audio.file.read(MAX_AUDIO_BYTES + 1)
+    if len(contenido) > MAX_AUDIO_BYTES:
+        raise HTTPException(413, f"El audio supera {MAX_AUDIO_BYTES // (1024 * 1024)} MB")
+    if not contenido:
+        raise HTTPException(400, "El audio está vacío")
+
+    # Whisper (ffmpeg) detecta el formato por el contenido; la extensión ayuda.
+    sufijo = Path(audio.filename or "").suffix.lower()
+    if sufijo not in EXTENSIONES_AUDIO:
+        sufijo = ".wav"
+
+    with tempfile.NamedTemporaryFile(suffix=sufijo, delete=False) as tmp:
+        tmp.write(contenido)
+        return tmp.name
+
+
 # ─── Endpoints ───
 
 @app.get("/health")
-async def health():
+def health():
     """Health check del servicio."""
     return {
         "status": "ok",
@@ -140,7 +225,7 @@ async def health():
 # ── 1. Pronunciación ──
 
 @app.post("/predict/pronunciacion", response_model=PronunciacionResponse)
-async def evaluar_pronunciacion(
+def evaluar_pronunciacion(
     audio: UploadFile = File(..., description="Archivo de audio del usuario"),
     texto_esperado: str = "",
 ):
@@ -151,14 +236,10 @@ async def evaluar_pronunciacion(
     if not stt:
         raise HTTPException(503, "Modelo STT no disponible")
 
-    # Guardar audio temporal
-    with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tmp:
-        contenido = await audio.read()
-        tmp.write(contenido)
-        tmp_path = tmp.name
-
+    tmp_path = _guardar_audio_temporal(audio)
     try:
-        resultado = stt.analizar_pronunciacion(tmp_path, texto_esperado)
+        with _lock_stt:
+            resultado = stt.analizar_pronunciacion(tmp_path, texto_esperado)
 
         return PronunciacionResponse(
             texto_esperado=resultado.texto_esperado,
@@ -175,24 +256,22 @@ async def evaluar_pronunciacion(
 
 
 @app.post("/predict/fonema", response_model=FonemaAisladoResponse)
-async def evaluar_fonema(
+def evaluar_fonema(
     audio: UploadFile = File(...),
     fonema_esperado: str = "",
 ):
     """
-    Evalúa la pronunciación de un fonema aislado.
+    Evalúa la pronunciación de un fonema aislado (experimental: ver
+    limitaciones en stt_fonetico.py).
     Usado por HU-03: Asociación fonema-grafema.
     """
     if not stt:
         raise HTTPException(503, "Modelo STT no disponible")
 
-    with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tmp:
-        contenido = await audio.read()
-        tmp.write(contenido)
-        tmp_path = tmp.name
-
+    tmp_path = _guardar_audio_temporal(audio)
     try:
-        correcto, confianza = stt.evaluar_fonema_aislado(tmp_path, fonema_esperado)
+        with _lock_stt:
+            correcto, confianza = stt.evaluar_fonema_aislado(tmp_path, fonema_esperado)
 
         return FonemaAisladoResponse(
             correcto=correcto,
@@ -206,7 +285,7 @@ async def evaluar_fonema(
 # ── 2. Algoritmo Adaptativo ──
 
 @app.post("/predict/siguiente-leccion")
-async def obtener_siguiente_leccion(request: ProximaLeccionRequest):
+def obtener_siguiente_leccion(request: ProximaLeccionRequest):
     """
     Recomienda los próximos ítems a practicar basándose en el historial.
     Usado por HU-05: Ajuste dinámico de dificultad.
@@ -214,19 +293,7 @@ async def obtener_siguiente_leccion(request: ProximaLeccionRequest):
     if not adaptativo:
         raise HTTPException(503, "Modelo adaptativo no disponible")
 
-    # Reconstruir ItemAprendizaje desde los dicts
-    items = []
-    for item_dict in request.items:
-        item = ItemAprendizaje(
-            item_id=item_dict.get("item_id", ""),
-            tipo=item_dict.get("tipo", "fonema"),
-            aciertos=item_dict.get("aciertos", 0),
-            fallos=item_dict.get("fallos", 0),
-            racha_actual=item_dict.get("racha_actual", 0),
-            factor_facilidad=item_dict.get("factor_facilidad", 2.5),
-            intervalo_dias=item_dict.get("intervalo_dias", 1.0),
-        )
-        items.append(item)
+    items = [item.a_item() for item in request.items]
 
     recomendados = adaptativo.seleccionar_proxima_leccion(items, request.cantidad)
     desbloquear = adaptativo.verificar_desbloqueo(items)
@@ -248,7 +315,7 @@ async def obtener_siguiente_leccion(request: ProximaLeccionRequest):
 # ── 3. Dificultad de texto ──
 
 @app.post("/predict/dificultad-texto", response_model=DificultadResponse)
-async def analizar_dificultad(request: DificultadRequest):
+def analizar_dificultad(request: DificultadRequest):
     """
     Analiza la dificultad de un texto en español.
     Usado por HU-04 y HU-17 para adaptar contenido al nivel del usuario.
@@ -256,7 +323,7 @@ async def analizar_dificultad(request: DificultadRequest):
     if not clasificador:
         raise HTTPException(503, "Clasificador no disponible")
 
-    if request.nivel_objetivo:
+    if request.nivel_objetivo is not None:
         resultado = clasificador.adaptar_texto_a_nivel(
             request.texto, request.nivel_objetivo
         )
@@ -286,7 +353,7 @@ async def analizar_dificultad(request: DificultadRequest):
 # ── 4. Análisis de trazos ──
 
 @app.post("/analyze/trazo", response_model=TrazoResponse)
-async def analizar_trazo(request: TrazoRequest):
+def analizar_trazo(request: TrazoRequest):
     """
     Analiza el trazo de una letra dibujada por el usuario.
     Usado por HU-02 y HU-13.
@@ -294,19 +361,13 @@ async def analizar_trazo(request: TrazoRequest):
     if not analizador:
         raise HTTPException(503, "Analizador no disponible")
 
-    # Convertir puntos
     puntos = [
-        PuntoTrazo(
-            x=p["x"],
-            y=p["y"],
-            timestamp=p.get("timestamp", 0),
-            presion=p.get("presion", 1.0),
-        )
+        PuntoTrazo(x=p.x, y=p.y, timestamp=p.timestamp, presion=p.presion)
         for p in request.puntos
     ]
 
     # Obtener ruta ideal
-    rutas = analizador._generar_rutas_vocales()
+    rutas = analizador.rutas_ideales
     letra_upper = request.letra.upper()
 
     if letra_upper not in rutas:
@@ -314,7 +375,7 @@ async def analizar_trazo(request: TrazoRequest):
 
     ruta = RutaIdeal(
         letra=letra_upper,
-        puntos=rutas[letra_upper],
+        trazos=rutas[letra_upper],
         ancho_canvas=request.ancho_canvas,
         alto_canvas=request.alto_canvas,
     )

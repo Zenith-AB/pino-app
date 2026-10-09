@@ -4,8 +4,8 @@ Pipeline de datos Kedro: ETL desde Firestore + Feature Engineering + Entrenamien
 Este pipeline se ejecuta periódicamente (via Airflow) para:
 1. Extraer datos de uso desde Firestore
 2. Transformar en features para entrenamiento
-3. Re-entrenar los modelos con datos frescos
-4. Registrar modelos en MLflow
+3. Re-entrenar el modelo adaptativo con datos frescos
+4. Registrar métricas y modelo en MLflow
 """
 
 from kedro.pipeline import Pipeline, pipeline, node
@@ -14,9 +14,8 @@ from .nodes import (
     extraer_datos_firestore,
     limpiar_y_transformar,
     generar_features_adaptativo,
-    generar_features_dificultad,
+    generar_resumen_desempeno,
     entrenar_modelo_adaptativo,
-    entrenar_modelo_dificultad,
     evaluar_y_registrar,
 )
 
@@ -52,10 +51,10 @@ def create_pipeline(**kwargs) -> Pipeline:
             tags=["features"],
         ),
         node(
-            func=generar_features_dificultad,
+            func=generar_resumen_desempeno,
             inputs=["datos_limpios"],
-            outputs="features_dificultad",
-            name="features_clasificador_dificultad",
+            outputs="resumen_desempeno",
+            name="resumen_desempeno",
             tags=["features"],
         ),
 
@@ -63,22 +62,15 @@ def create_pipeline(**kwargs) -> Pipeline:
         node(
             func=entrenar_modelo_adaptativo,
             inputs=["features_adaptativo", "params:modelo_adaptativo"],
-            outputs="modelo_adaptativo",
+            outputs="resultado_adaptativo",
             name="entrenar_adaptativo",
-            tags=["training"],
-        ),
-        node(
-            func=entrenar_modelo_dificultad,
-            inputs=["features_dificultad", "params:modelo_dificultad"],
-            outputs="modelo_dificultad",
-            name="entrenar_dificultad",
             tags=["training"],
         ),
 
         # ── Etapa 5: Evaluación y registro en MLflow ──
         node(
             func=evaluar_y_registrar,
-            inputs=["modelo_adaptativo", "modelo_dificultad", "features_adaptativo", "features_dificultad"],
+            inputs=["resultado_adaptativo", "features_adaptativo", "resumen_desempeno"],
             outputs=None,
             name="evaluar_registrar",
             tags=["evaluation", "mlflow"],

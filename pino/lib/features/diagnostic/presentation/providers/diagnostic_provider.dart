@@ -10,8 +10,11 @@ class DiagnosticState {
   final int preguntaActual;
   final List<RespuestaDiagnostico> respuestas;
   final bool completado;
-  final NivelDiagnostico? nivelDetectado;
+  final UserLevel? nivelDetectado;
   final DateTime? horaInicio;
+
+  /// Momento en que se mostró la pregunta actual (para medir cada respuesta).
+  final DateTime? horaPregunta;
 
   const DiagnosticState({
     this.preguntaActual = 0,
@@ -19,14 +22,16 @@ class DiagnosticState {
     this.completado = false,
     this.nivelDetectado,
     this.horaInicio,
+    this.horaPregunta,
   });
 
   DiagnosticState copyWith({
     int? preguntaActual,
     List<RespuestaDiagnostico>? respuestas,
     bool? completado,
-    NivelDiagnostico? nivelDetectado,
+    UserLevel? nivelDetectado,
     DateTime? horaInicio,
+    DateTime? horaPregunta,
   }) {
     return DiagnosticState(
       preguntaActual: preguntaActual ?? this.preguntaActual,
@@ -34,6 +39,7 @@ class DiagnosticState {
       completado: completado ?? this.completado,
       nivelDetectado: nivelDetectado ?? this.nivelDetectado,
       horaInicio: horaInicio ?? this.horaInicio,
+      horaPregunta: horaPregunta ?? this.horaPregunta,
     );
   }
 }
@@ -76,18 +82,23 @@ const preguntasDiagnostico = [
 /// Notifier del flujo diagnóstico.
 class DiagnosticNotifier extends StateNotifier<DiagnosticState> {
   final DatabaseService _db;
+  final Ref _ref;
 
-  DiagnosticNotifier(this._db) : super(const DiagnosticState());
+  DiagnosticNotifier(this._db, this._ref) : super(const DiagnosticState());
 
-  /// Iniciar el diagnóstico.
+  /// Iniciar el diagnóstico. La pantalla debe llamarlo al abrirse.
   void iniciar() {
-    state = DiagnosticState(horaInicio: DateTime.now());
+    final ahora = DateTime.now();
+    state = DiagnosticState(horaInicio: ahora, horaPregunta: ahora);
   }
 
   /// Responder la pregunta actual.
   void responder(String respuestaElegida) {
+    if (state.completado) return;
+
     final pregunta = preguntasDiagnostico[state.preguntaActual];
     final correcta = respuestaElegida == pregunta.respuestaCorrecta;
+    final ahora = DateTime.now();
 
     final respuesta = RespuestaDiagnostico()
       ..numeroPregunta = state.preguntaActual + 1
@@ -95,15 +106,15 @@ class DiagnosticNotifier extends StateNotifier<DiagnosticState> {
       ..respuestaElegida = respuestaElegida
       ..respuestaCorrecta = pregunta.respuestaCorrecta
       ..correcta = correcta
-      ..tiempoSegundos = state.horaInicio != null
-          ? DateTime.now().difference(state.horaInicio!).inSeconds
+      ..tiempoSegundos = state.horaPregunta != null
+          ? ahora.difference(state.horaPregunta!).inSeconds
           : 0;
 
     final nuevasRespuestas = [...state.respuestas, respuesta];
 
-    if (state.preguntaActual >= 2) {
+    if (state.preguntaActual >= preguntasDiagnostico.length - 1) {
       // Última pregunta — calcular nivel
-      final nivel = _calcularNivel(nuevasRespuestas);
+      final nivel = calcularNivel(nuevasRespuestas);
       state = state.copyWith(
         respuestas: nuevasRespuestas,
         completado: true,
@@ -113,28 +124,21 @@ class DiagnosticNotifier extends StateNotifier<DiagnosticState> {
       state = state.copyWith(
         respuestas: nuevasRespuestas,
         preguntaActual: state.preguntaActual + 1,
+        horaPregunta: ahora,
       );
     }
   }
 
-  /// Clasificar el nivel según las respuestas.
-  NivelDiagnostico _calcularNivel(List<RespuestaDiagnostico> respuestas) {
-    final correctas = respuestas.where((r) => r.correcta).length;
-
-    if (correctas == 0) return NivelDiagnostico.preLector;
-    if (correctas == 1) return NivelDiagnostico.silabico;
-    if (correctas == 2) return NivelDiagnostico.palabras;
-    return NivelDiagnostico.textos;
-  }
-
-  /// Guardar el resultado del diagnóstico en Isar.
-  Future<void> guardarResultado(int perfilId) async {
-    if (!state.completado || state.nivelDetectado == null) return;
+  /// Guarda el resultado en Isar y actualiza el nivel del perfil activo.
+  Future<void> guardarResultado() async {
+    final perfil = _ref.read(perfilActivoProvider);
+    final nivel = state.nivelDetectado;
+    if (perfil == null || !state.completado || nivel == null) return;
 
     final resultado = DiagnosticResult()
-      ..perfilId = perfilId
+      ..perfilId = perfil.id
       ..fecha = DateTime.now()
-      ..nivelDetectado = state.nivelDetectado!
+      ..nivelDetectado = nivel
       ..respuestas = state.respuestas
       ..tiempoTotalSegundos = state.horaInicio != null
           ? DateTime.now().difference(state.horaInicio!).inSeconds
@@ -143,6 +147,7 @@ class DiagnosticNotifier extends StateNotifier<DiagnosticState> {
     await _db.instance.writeTxn(() async {
       await _db.diagnosticos.put(resultado);
     });
+    await _ref.read(profileProvider.notifier).actualizarNivel(nivel);
   }
 
   /// Reiniciar el diagnóstico.
@@ -151,9 +156,20 @@ class DiagnosticNotifier extends StateNotifier<DiagnosticState> {
   }
 }
 
+/// Clasifica el nivel según las respuestas.
+///
+/// Las preguntas van de menor a mayor dificultad, así que el nivel es la
+/// cantidad de preguntas acertadas *en orden* hasta el primer error. Así un
+/// acierto al azar en la pregunta 3 (2 opciones) no sube el nivel de alguien
+/// que no reconoce letras.
+UserLevel calcularNivel(List<RespuestaDiagnostico> respuestas) {
+  final aciertosEnOrden = respuestas.takeWhile((r) => r.correcta).length;
+  return UserLevel.values[aciertosEnOrden.clamp(0, UserLevel.values.length - 1)];
+}
+
 /// Provider del diagnóstico.
 final diagnosticProvider =
     StateNotifierProvider<DiagnosticNotifier, DiagnosticState>((ref) {
   final db = ref.watch(databaseServiceProvider);
-  return DiagnosticNotifier(db);
+  return DiagnosticNotifier(db, ref);
 });

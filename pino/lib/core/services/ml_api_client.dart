@@ -7,6 +7,12 @@ import 'package:http/http.dart' as http;
 /// Cliente que conecta la app Flutter con la API de ML (FastAPI).
 /// Envía audio, trazos y datos del usuario para obtener predicciones.
 class MLApiClient {
+  /// Tiempo máximo para endpoints rápidos (trazo, lección, dificultad).
+  static const timeoutJson = Duration(seconds: 15);
+
+  /// Tiempo máximo para endpoints de audio (Whisper puede tardar).
+  static const timeoutAudio = Duration(seconds: 60);
+
   final String baseUrl;
   final http.Client _client;
 
@@ -15,6 +21,53 @@ class MLApiClient {
     http.Client? client,
   }) : _client = client ?? http.Client();
 
+  /// Construye la URL codificando los parámetros (tildes, espacios, "&"...).
+  Uri _uri(String ruta, [Map<String, String>? query]) {
+    return Uri.parse('$baseUrl$ruta').replace(queryParameters: query);
+  }
+
+  /// La API responde JSON en UTF-8 sin indicar charset; `response.body`
+  /// lo decodificaría como latin1 y rompería las tildes.
+  static dynamic _decodificar(List<int> bytes) => json.decode(utf8.decode(bytes));
+
+  Future<dynamic> _postJson(
+    String ruta,
+    Map<String, dynamic> cuerpo,
+    String error,
+  ) async {
+    final response = await _client
+        .post(
+          _uri(ruta),
+          headers: {'Content-Type': 'application/json'},
+          body: json.encode(cuerpo),
+        )
+        .timeout(timeoutJson);
+
+    if (response.statusCode != 200) {
+      throw MLApiException('$error (${response.statusCode}): ${utf8.decode(response.bodyBytes)}');
+    }
+    return _decodificar(response.bodyBytes);
+  }
+
+  Future<dynamic> _postAudio(
+    String ruta,
+    Map<String, String> query,
+    File archivoAudio,
+    String error,
+  ) async {
+    final request = http.MultipartRequest('POST', _uri(ruta, query))
+      ..files.add(await http.MultipartFile.fromPath('audio', archivoAudio.path));
+
+    final response = await http.Response.fromStream(
+      await _client.send(request).timeout(timeoutAudio),
+    );
+
+    if (response.statusCode != 200) {
+      throw MLApiException('$error (${response.statusCode}): ${utf8.decode(response.bodyBytes)}');
+    }
+    return _decodificar(response.bodyBytes);
+  }
+
   // ─── 1. Pronunciación (HU-06) ───
 
   /// Envía audio grabado para evaluar pronunciación vs texto esperado.
@@ -22,23 +75,13 @@ class MLApiClient {
     required File archivoAudio,
     required String textoEsperado,
   }) async {
-    final request = http.MultipartRequest(
-      'POST',
-      Uri.parse('$baseUrl/predict/pronunciacion?texto_esperado=$textoEsperado'),
+    final json = await _postAudio(
+      '/predict/pronunciacion',
+      {'texto_esperado': textoEsperado},
+      archivoAudio,
+      'Error evaluando pronunciación',
     );
-
-    request.files.add(
-      await http.MultipartFile.fromPath('audio', archivoAudio.path),
-    );
-
-    final response = await request.send();
-    final body = await response.stream.bytesToString();
-
-    if (response.statusCode != 200) {
-      throw MLApiException('Error evaluando pronunciación: $body');
-    }
-
-    return ResultadoPronunciacionML.fromJson(json.decode(body));
+    return ResultadoPronunciacionML.fromJson(json);
   }
 
   /// Evalúa un fonema aislado (HU-03).
@@ -46,46 +89,31 @@ class MLApiClient {
     required File archivoAudio,
     required String fonemaEsperado,
   }) async {
-    final request = http.MultipartRequest(
-      'POST',
-      Uri.parse('$baseUrl/predict/fonema?fonema_esperado=$fonemaEsperado'),
+    final json = await _postAudio(
+      '/predict/fonema',
+      {'fonema_esperado': fonemaEsperado},
+      archivoAudio,
+      'Error evaluando fonema',
     );
-
-    request.files.add(
-      await http.MultipartFile.fromPath('audio', archivoAudio.path),
-    );
-
-    final response = await request.send();
-    final body = await response.stream.bytesToString();
-
-    if (response.statusCode != 200) {
-      throw MLApiException('Error evaluando fonema: $body');
-    }
-
-    return ResultadoFonemaML.fromJson(json.decode(body));
+    return ResultadoFonemaML.fromJson(json);
   }
 
   // ─── 2. Siguiente lección (HU-05) ───
 
   /// Obtiene recomendación de la próxima lección óptima.
+  /// Cada ítem: item_id, tipo, aciertos, fallos, racha_actual,
+  /// factor_facilidad, intervalo_dias, ultima_practica (ISO 8601),
+  /// proxima_revision (ISO 8601), errores_tipo.
   Future<RecomendacionLeccionML> obtenerSiguienteLeccion({
     required List<Map<String, dynamic>> itemsAprendizaje,
     int cantidad = 5,
   }) async {
-    final response = await _client.post(
-      Uri.parse('$baseUrl/predict/siguiente-leccion'),
-      headers: {'Content-Type': 'application/json'},
-      body: json.encode({
-        'items': itemsAprendizaje,
-        'cantidad': cantidad,
-      }),
+    final json = await _postJson(
+      '/predict/siguiente-leccion',
+      {'items': itemsAprendizaje, 'cantidad': cantidad},
+      'Error obteniendo lección',
     );
-
-    if (response.statusCode != 200) {
-      throw MLApiException('Error obteniendo lección: ${response.body}');
-    }
-
-    return RecomendacionLeccionML.fromJson(json.decode(response.body));
+    return RecomendacionLeccionML.fromJson(json);
   }
 
   // ─── 3. Dificultad de texto (HU-04, HU-17) ───
@@ -95,25 +123,18 @@ class MLApiClient {
     required String texto,
     int? nivelObjetivo,
   }) async {
-    final response = await _client.post(
-      Uri.parse('$baseUrl/predict/dificultad-texto'),
-      headers: {'Content-Type': 'application/json'},
-      body: json.encode({
-        'texto': texto,
-        'nivel_objetivo': nivelObjetivo,
-      }),
+    final json = await _postJson(
+      '/predict/dificultad-texto',
+      {'texto': texto, 'nivel_objetivo': nivelObjetivo},
+      'Error analizando dificultad',
     );
-
-    if (response.statusCode != 200) {
-      throw MLApiException('Error analizando dificultad: ${response.body}');
-    }
-
-    return DificultadTextoML.fromJson(json.decode(response.body));
+    return DificultadTextoML.fromJson(json);
   }
 
   // ─── 4. Análisis de trazo (HU-02, HU-13) ───
 
   /// Envía puntos de trazo para análisis de calidad.
+  /// Coordenadas en píxeles del canvas, con y hacia abajo (como en Flutter).
   Future<ResultadoTrazoML> analizarTrazo({
     required List<Map<String, double>> puntos,
     required String letra,
@@ -121,23 +142,18 @@ class MLApiClient {
     required double altoCanvas,
     String tolerancia = 'media',
   }) async {
-    final response = await _client.post(
-      Uri.parse('$baseUrl/analyze/trazo'),
-      headers: {'Content-Type': 'application/json'},
-      body: json.encode({
+    final json = await _postJson(
+      '/analyze/trazo',
+      {
         'puntos': puntos,
         'letra': letra,
         'ancho_canvas': anchoCanvas,
         'alto_canvas': altoCanvas,
         'tolerancia': tolerancia,
-      }),
+      },
+      'Error analizando trazo',
     );
-
-    if (response.statusCode != 200) {
-      throw MLApiException('Error analizando trazo: ${response.body}');
-    }
-
-    return ResultadoTrazoML.fromJson(json.decode(response.body));
+    return ResultadoTrazoML.fromJson(json);
   }
 
   // ─── Health check ───
@@ -146,7 +162,7 @@ class MLApiClient {
   Future<bool> estaDisponible() async {
     try {
       final response = await _client
-          .get(Uri.parse('$baseUrl/health'))
+          .get(_uri('/health'))
           .timeout(const Duration(seconds: 5));
       return response.statusCode == 200;
     } catch (_) {

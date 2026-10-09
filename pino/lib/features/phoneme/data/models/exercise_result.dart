@@ -1,4 +1,5 @@
 import 'package:isar/isar.dart';
+import 'package:uuid/uuid.dart';
 
 part 'exercise_result.g.dart';
 
@@ -20,9 +21,18 @@ enum TipoEjercicio {
 /// y para sincronizar con Firestore cuando haya conexión.
 @collection
 class ExerciseResult {
+  /// ID local de Isar. Se repite entre dispositivos: no usar fuera del teléfono.
   Id id = Isar.autoIncrement;
 
+  /// ID global del resultado, usado como ID del documento en Firestore.
+  String syncId = const Uuid().v4();
+
+  /// Si ya se subió a Firestore (HU-10).
+  bool sincronizado = false;
+
   /// ID del perfil que realizó el ejercicio.
+  /// Indexado: todas las consultas del historial filtran por perfil.
+  @Index()
   late int perfilId;
 
   /// Tipo de ejercicio realizado.
@@ -54,34 +64,34 @@ class ExerciseResult {
 class DetalleEjercicio {
   // ── Fonema / Emparejamiento ──
   /// El fonema que se estaba practicando.
-  late String? fonemaObjetivo;
+  String? fonemaObjetivo;
 
   /// La opción que eligió el usuario.
-  late String? opcionElegida;
+  String? opcionElegida;
 
   /// Las opciones que se mostraron.
   late List<String> opcionesMostradas;
 
   // ── Trazado ──
   /// Desviación promedio en píxeles del trazo ideal.
-  late double? desviacionPixeles;
+  double? desviacionPixeles;
 
   /// Tolerancia que estaba configurada al momento del ejercicio.
-  late String? toleranciaUsada;
+  String? toleranciaUsada;
 
   // ── Lectura en voz alta ──
   /// Sílabas que se pronunciaron mal.
   late List<String> silabasMalPronunciadas;
 
   /// Puntaje de pronunciación (0.0 a 1.0).
-  late double? puntajePronunciacion;
+  double? puntajePronunciacion;
 
   // ── Lectura guiada / Micro-historia ──
   /// Tipo de pregunta: "causa-efecto", "idea-principal", "literal".
-  late String? tipoPregunta;
+  String? tipoPregunta;
 
   /// Si se necesitó pista para responder.
-  late bool? usoPista;
+  bool? usoPista;
 
   DetalleEjercicio() {
     opcionesMostradas = [];

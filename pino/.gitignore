@@ -48,3 +48,6 @@ build/
 
 # macOS
 .DS_Store
+
+# Código generado por build_runner (Isar): se genera localmente
+*.g.dart

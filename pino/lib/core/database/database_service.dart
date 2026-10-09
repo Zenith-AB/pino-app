@@ -12,6 +12,13 @@ import '../../features/diagnostic/data/models/diagnostic_result.dart';
 class DatabaseService {
   late Isar _isar;
 
+  DatabaseService();
+
+  /// Envuelve una instancia ya abierta (útil en tests).
+  DatabaseService.desde(Isar isar) {
+    _isar = isar;
+  }
+
   Isar get instance => _isar;
 
   /// Inicializa Isar con todas las colecciones del proyecto.

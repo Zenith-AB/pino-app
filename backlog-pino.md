@@ -2,6 +2,12 @@
 
 > **Equipo:** 4 integrantes · **Sprints:** 2 semanas c/u · **Total HU:** 22 (desglosadas en tareas)
 
+> [!IMPORTANT]
+> **El calendario vigente es [`plan-sprints-pino.md`](plan-sprints-pino.md).** Este backlog
+> conserva el detalle de cada HU (tareas, puntos, dependencias), pero su reparto por
+> sprint es la versión anterior: donde los dos documentos no coincidan, manda el plan.
+> El stack ya está decidido (ver la tabla "Stack tecnológico" al final).
+
 ---
 
 ## 👥 Distribución del Equipo
@@ -249,16 +255,17 @@ flowchart TD
 
 ---
 
-## 📐 Stack tecnológico sugerido
+## 📐 Stack tecnológico
 
-| Capa | Tecnología recomendada | Justificación |
-|------|----------------------|---------------|
-| **Mobile** | React Native o Flutter | Multiplataforma, buen soporte canvas/audio |
-| **DB Local** | SQLite (via Drift/WatermelonDB) | Offline-first, multiperfil, rápido |
+| Capa | Tecnología | Justificación |
+|------|-----------|---------------|
+| **Mobile** | Flutter | Multiplataforma, buen soporte canvas/audio |
+| **DB Local** | Isar 3 (en evaluación: `isar_community` o Drift, porque Isar 3 ya no se mantiene) | Offline-first, multiperfil, rápido |
 | **Audio** | Assets locales + TTS nativo del OS | Sin dependencia de red para fonemas |
-| **Estado** | Riverpod (Flutter) o Zustand (RN) | Aislamiento por perfil, liviano |
-| **Backend** | Firebase / Supabase | Sync cuando hay conexión, auth simple |
-| **Voz (Sprint 5)** | Vosk (offline) o Google STT | Vosk para offline, Google para precisión |
+| **Estado** | Riverpod | Aislamiento por perfil, liviano |
+| **Backend** | Firebase (Auth + Firestore) | Sync cuando hay conexión, auth simple |
+| **ML** | Python: FastAPI + Kedro + MLflow (`pino-ml/`) | Ver `pino-ml-architecture.md` |
+| **Voz (Sprint 5)** | Por decidir en el spike: Whisper (servidor), Vosk (offline) o reconocedor fonético | Whisper no detecta bien errores de pronunciación |
 
 ---
 

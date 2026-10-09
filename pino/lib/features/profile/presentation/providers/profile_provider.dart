@@ -15,14 +15,18 @@ class ProfileState {
     this.cargando = false,
   });
 
+  /// `perfilActivo: null` no borra el perfil (se interpreta como "sin cambio");
+  /// para quitarlo usa `limpiarPerfilActivo: true`.
   ProfileState copyWith({
     List<UserProfile>? perfiles,
     UserProfile? perfilActivo,
+    bool limpiarPerfilActivo = false,
     bool? cargando,
   }) {
     return ProfileState(
       perfiles: perfiles ?? this.perfiles,
-      perfilActivo: perfilActivo ?? this.perfilActivo,
+      perfilActivo:
+          limpiarPerfilActivo ? null : (perfilActivo ?? this.perfilActivo),
       cargando: cargando ?? this.cargando,
     );
   }
@@ -67,7 +71,7 @@ class ProfileNotifier extends StateNotifier<ProfileState> {
 
     // Si el perfil eliminado era el activo, limpiar selección
     if (state.perfilActivo?.id == id) {
-      state = state.copyWith(perfilActivo: null);
+      state = state.copyWith(limpiarPerfilActivo: true);
     }
     await cargarPerfiles();
   }

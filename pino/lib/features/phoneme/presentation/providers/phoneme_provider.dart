@@ -23,6 +23,8 @@ class PhonemeState {
     this.feedback,
   });
 
+  /// `feedback: null` no borra el mensaje (se interpreta como "sin cambio");
+  /// para quitarlo usa `limpiarFeedback: true`.
   PhonemeState copyWith({
     List<Phoneme>? fonemas,
     Phoneme? fonemaActual,
@@ -30,6 +32,7 @@ class PhonemeState {
     bool? cargando,
     int? aciertosConsecutivos,
     String? feedback,
+    bool limpiarFeedback = false,
   }) {
     return PhonemeState(
       fonemas: fonemas ?? this.fonemas,
@@ -37,7 +40,7 @@ class PhonemeState {
       opcionesEmparejamiento: opcionesEmparejamiento ?? this.opcionesEmparejamiento,
       cargando: cargando ?? this.cargando,
       aciertosConsecutivos: aciertosConsecutivos ?? this.aciertosConsecutivos,
-      feedback: feedback ?? this.feedback,
+      feedback: limpiarFeedback ? null : (feedback ?? this.feedback),
     );
   }
 }
@@ -45,8 +48,9 @@ class PhonemeState {
 /// Notifier de ejercicios de fonemas.
 class PhonemeNotifier extends StateNotifier<PhonemeState> {
   final PhonemeRepository _repository;
+  final Ref _ref;
 
-  PhonemeNotifier(this._repository) : super(const PhonemeState());
+  PhonemeNotifier(this._repository, this._ref) : super(const PhonemeState());
 
   /// Cargar catálogo de fonemas. Precarga si es la primera vez.
   Future<void> cargarFonemas() async {
@@ -81,33 +85,38 @@ class PhonemeNotifier extends StateNotifier<PhonemeState> {
     state = state.copyWith(
       fonemaActual: correcto,
       opcionesEmparejamiento: opciones,
-      feedback: null,
+      limpiarFeedback: true,
     );
   }
 
   /// Verificar respuesta en ejercicio de emparejamiento.
-  Future<void> verificarRespuesta(
-    Phoneme seleccionado,
-    int perfilId,
-  ) async {
-    final correcto = seleccionado.grafema == state.fonemaActual?.grafema;
+  /// Guarda el intento y actualiza el progreso del perfil activo (HU-05).
+  Future<void> verificarRespuesta(Phoneme seleccionado) async {
+    final perfil = _ref.read(perfilActivoProvider);
+    final objetivo = state.fonemaActual;
+    if (perfil == null || objetivo == null) return;
+
+    final correcto = seleccionado.grafema == objetivo.grafema;
 
     // Guardar resultado en Isar
     final resultado = ExerciseResult()
-      ..perfilId = perfilId
+      ..perfilId = perfil.id
       ..tipo = TipoEjercicio.fonemaEmparejamiento
-      ..contenidoId = 'fonema_${state.fonemaActual?.grafema}'
+      ..contenidoId = 'fonema_${objetivo.grafema}'
       ..correcto = correcto
       ..tiempoSegundos = 0  // TODO: Implementar cronómetro
       ..fecha = DateTime.now()
       ..detalle = (DetalleEjercicio()
-        ..fonemaObjetivo = state.fonemaActual?.grafema
+        ..fonemaObjetivo = objetivo.grafema
         ..opcionElegida = seleccionado.grafema
         ..opcionesMostradas = state.opcionesEmparejamiento
             .map((o) => o.grafema)
             .toList());
 
     await _repository.guardarResultado(resultado);
+    await _ref
+        .read(profileProvider.notifier)
+        .registrarProgresoFonema(objetivo.grafema, correcto);
 
     if (correcto) {
       final nuevosConsecutivos = state.aciertosConsecutivos + 1;
@@ -136,5 +145,5 @@ class PhonemeNotifier extends StateNotifier<PhonemeState> {
 final phonemeProvider =
     StateNotifierProvider<PhonemeNotifier, PhonemeState>((ref) {
   final repository = ref.watch(phonemeRepositoryProvider);
-  return PhonemeNotifier(repository);
+  return PhonemeNotifier(repository, ref);
 });

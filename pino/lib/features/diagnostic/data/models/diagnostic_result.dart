@@ -1,9 +1,8 @@
 import 'package:isar/isar.dart';
 
-part 'diagnostic_result.g.dart';
+import '../../../profile/data/models/user_profile.dart';
 
-/// Nivel detectado por el diagnóstico inicial.
-enum NivelDiagnostico { preLector, silabico, palabras, textos }
+part 'diagnostic_result.g.dart';
 
 /// Resultado del test diagnóstico inicial de 3 preguntas (HU-01).
 /// Se almacena por perfil para poder re-evaluar en el futuro.
@@ -18,9 +17,9 @@ class DiagnosticResult {
   /// Fecha en que se realizó el diagnóstico.
   late DateTime fecha;
 
-  /// Nivel detectado automáticamente.
+  /// Nivel detectado automáticamente (mismo enum que el perfil).
   @enumerated
-  late NivelDiagnostico nivelDetectado;
+  late UserLevel nivelDetectado;
 
   /// Respuestas individuales de las 3 preguntas.
   late List<RespuestaDiagnostico> respuestas;

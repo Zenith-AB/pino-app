@@ -48,7 +48,7 @@
 > **Demo:** Un usuario abre la app → crea perfil (nombre + avatar + modo) → hace diagnóstico de 3 preguntas → se clasifica su nivel → vuelve a home. Todo persiste en Isar. Ambos temas visuales funcionan.
 
 ### ⚠️ Riesgos a mitigar
-- Si `build_runner` falla con Isar, DEV-3 debe resolverlo en día 1-2 o evaluar alternativa (Hive)
+- `build_runner` con Isar 3 funciona hoy, pero Isar 3 ya no se mantiene y fija versiones viejas de `analyzer`/`source_gen` (bloquea otros generadores). DEV-3 evalúa en día 1-2 `isar_community` (mismo API) o Drift. Hive también está abandonado: no es buena alternativa.
 - Si los modelos ML no corren por dependencias de GPU, DEV-4 documenta qué necesita para Sprint 5
 
 ---
@@ -332,7 +332,7 @@ Cada sprint se considera terminado cuando:
 
 | Decisión | Quién decide | Cuándo |
 |----------|-------------|--------|
-| ¿Hive o Isar como DB local? (depende de si `build_runner` funciona sin problemas) | DEV-3 | Día 2 |
+| ¿Seguir con Isar 3, migrar a `isar_community` o a Drift? | DEV-3 | Día 2 |
 | ¿Audios grabados por el equipo o generados con TTS profesional? | DEV-4 + equipo | Día 3 |
 | ¿Diseño en Figma previo o directo en código? | DEV-1 + equipo | Día 1 |
 | ¿Usar emulador de Firebase local para desarrollo? | DEV-3 | Día 2 |

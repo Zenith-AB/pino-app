@@ -1,0 +1,6 @@
+# Catálogo de datos de Kedro.
+#
+# Vacío a propósito: los datos intermedios del pipeline de entrenamiento
+# viven en memoria y los resultados se guardan en MLflow. Si quieren
+# persistir alguna etapa (p. ej. datos_limpios en Parquet para depurar),
+# declárenla aquí.
