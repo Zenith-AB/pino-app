@@ -75,9 +75,14 @@ def comparar_silabas(
     Alinea las sílabas esperadas con las detectadas (como un diff) y devuelve
     (correctas, incorrectas). Una sílaba repetida u omitida no desplaza al
     resto: "la-ca-sa" leído como "la-la-ca-sa" sigue marcando ca y sa como
-    correctas.
+    correctas. Se comparan sin tildes (Whisper a veces las omite), pero se
+    devuelven las sílabas esperadas tal como se escriben ("má", no "ma").
     """
-    matcher = difflib.SequenceMatcher(a=esperadas, b=detectadas, autojunk=False)
+    matcher = difflib.SequenceMatcher(
+        a=[normalizar(s) for s in esperadas],
+        b=[normalizar(s) for s in detectadas],
+        autojunk=False,
+    )
     acertadas = set()
     for bloque in matcher.get_matching_blocks():
         acertadas.update(range(bloque.a, bloque.a + bloque.size))
@@ -89,8 +94,11 @@ def comparar_silabas(
 
 def evaluar_transcripcion(texto_esperado: str, resultado_whisper: dict) -> ResultadoPronunciacion:
     """Compara una transcripción de Whisper contra el texto esperado."""
-    esperado = normalizar(texto_esperado)
-    detectado = normalizar(_texto_detectado(resultado_whisper))
+    # Con tildes para mostrar en la app; sin tildes para medir el error.
+    esperado_visible = normalizar(texto_esperado, quitar_tildes=False)
+    detectado_visible = normalizar(_texto_detectado(resultado_whisper), quitar_tildes=False)
+    esperado = normalizar(esperado_visible)
+    detectado = normalizar(detectado_visible)
 
     if not esperado:
         word_error = char_error = 0.0 if not detectado else 1.0
@@ -104,12 +112,12 @@ def evaluar_transcripcion(texto_esperado: str, resultado_whisper: dict) -> Resul
     puntaje = max(0.0, 1.0 - word_error)
 
     correctas, incorrectas = comparar_silabas(
-        _silabas_de_texto(esperado), _silabas_de_texto(detectado)
+        _silabas_de_texto(esperado_visible), _silabas_de_texto(detectado_visible)
     )
 
     return ResultadoPronunciacion(
-        texto_esperado=esperado,
-        texto_detectado=detectado,
+        texto_esperado=esperado_visible,
+        texto_detectado=detectado_visible,
         puntaje_global=round(puntaje, 3),
         word_error_rate=round(word_error, 3),
         character_error_rate=round(char_error, 3),

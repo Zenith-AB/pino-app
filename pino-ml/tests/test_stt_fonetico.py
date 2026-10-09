@@ -28,6 +28,12 @@ def test_lectura_correcta_sin_tilde_en_la_transcripcion():
     r = evaluar_transcripcion("El niño come.", whisper(" el niño come"))
     assert r.puntaje_global == 1.0
 
+    # Whisper omite la tilde: cuenta como correcta, pero se muestra con tilde
+    r = evaluar_transcripcion("Mamá", whisper(" mama"))
+    assert r.puntaje_global == 1.0
+    assert r.texto_esperado == "mamá"
+    assert r.silabas_correctas == ["ma", "má"]
+
 
 def test_silencio_no_cuenta_como_lectura():
     # Whisper "alucina" texto sobre silencio, pero marca no_speech_prob alto
@@ -35,7 +41,7 @@ def test_silencio_no_cuenta_como_lectura():
 
     assert r.texto_detectado == ""
     assert r.puntaje_global == 0.0
-    assert r.silabas_incorrectas == ["ma", "ma"]
+    assert r.silabas_incorrectas == ["ma", "má"]
 
 
 def test_silaba_repetida_no_desplaza_el_resto():

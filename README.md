@@ -46,15 +46,18 @@ ofrece:
 
 ### App Flutter (`pino/`)
 
-Requisitos: Flutter 3.x estable, Android Studio o Xcode.
+Requisitos: Flutter 3.x estable. Para Android, Android Studio con el SDK; sin
+él se puede probar en el PC como app de escritorio Linux.
 
 ```bash
 cd pino
 
-# Solo la primera vez: genera las carpetas android/ e ios/ sin tocar lib/.
+# Solo la primera vez: genera las carpetas de cada plataforma sin tocar lib/.
 # --org define el applicationId (p. ej. cl.miuniversidad → cl.miuniversidad.pino):
 # elíjanlo antes de conectar Firebase, después cuesta cambiarlo.
-flutter create --platforms=android,ios --org <dominio-invertido> .
+flutter create --platforms=android,ios,linux --org <dominio-invertido> .
+# flutter create agrega un test de plantilla que no aplica a Pino (usa MyApp):
+rm test/widget_test.dart
 
 flutter pub get
 
@@ -63,12 +66,18 @@ dart run build_runner build --delete-conflicting-outputs
 
 flutter analyze
 flutter test
-flutter run
+flutter run -d linux     # o un emulador/teléfono Android: flutter run
 ```
 
 Notas:
 
+- Las pantallas todavía son esqueletos: al abrir la app se ve la selección de
+  perfil con texto de relleno. La lógica se prueba con `flutter test`.
 - Los archivos `*.g.dart` no se versionan: cada integrante los genera con `build_runner`.
+- `flutter create` genera `.metadata` y `flutter pub get` genera `pubspec.lock`:
+  conviene versionar ambos. El `pino/README.md` que crea `flutter create` se puede borrar.
+- Los tests descargan una vez la librería nativa de Isar a `.dart_tool/isar_test/`
+  (necesitan internet la primera vez).
 - Firebase todavía no está inicializado (`main.dart`). Al conectarlo, `SyncService`
   necesita el `uid` del usuario de Firebase Auth. Las reglas de seguridad están
   en `pino/firestore.rules` (`firebase deploy --only firestore:rules`).
@@ -84,17 +93,24 @@ Requisitos: Python 3.10+ y `ffmpeg` (lo usa Whisper para leer audio).
 ```bash
 cd pino-ml
 python -m venv .venv
-source .venv/bin/activate
+source .venv/bin/activate        # en fish: source .venv/bin/activate.fish
+
+# torch solo para CPU (~200 MB). Sin esto, pip baja la versión con CUDA (~3 GB).
+pip install torch --index-url https://download.pytorch.org/whl/cpu
 
 # API + herramientas de desarrollo
 pip install -e ".[api,dev]"
 python -m spacy download es_core_news_md
 
 cp .env.example .env
-uvicorn pino_ml.api.main:app --env-file .env --reload   # http://localhost:8000/docs
+# Para probar en el PC, un modelo de Whisper más chico y rápido (descarga ~140 MB):
+sed -i 's/^WHISPER_MODEL_SIZE=.*/WHISPER_MODEL_SIZE=base/' .env
 
 pytest
+uvicorn pino_ml.api.main:app --env-file .env --reload   # http://localhost:8000/docs
 ```
+
+La primera vez que arranca, la API descarga el modelo de Whisper elegido.
 
 Si un modelo no se puede cargar (por ejemplo, falta el de spaCy), la API arranca
 igual y ese endpoint responde 503. `GET /health` muestra qué modelos están cargados.

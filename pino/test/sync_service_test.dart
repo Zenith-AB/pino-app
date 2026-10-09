@@ -19,8 +19,6 @@ class _ConexionFalsa extends ConnectivityUtil {
 }
 
 void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
-
   late Isar isar;
   late FakeFirebaseFirestore firestore;
   late _ConexionFalsa conexion;
