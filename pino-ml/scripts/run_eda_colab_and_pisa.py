@@ -274,33 +274,52 @@ def generate_pisa_charts():
     plt.close()
     print("Guardado: 08_chile_pisa_socioeconomic_gradient.png")
 
+def generate_cognitive_model_chart():
     # 9. Modelo Neurocognitivo: De la Conciencia Fonológica Temprana al Éxito en PISA
-    fig, ax = plt.subplots(figsize=(12, 6))
-    ax.axis('off')
-    
-    # Diagrama conceptual de bloques cognitivos
-    boxes = [
-        {"x": 0.05, "y": 0.65, "w": 0.25, "h": 0.25, "title": "Paso 1: Fundamento Pino\n(Conciencia Fonológica)", "desc": "• Fonemas y Grafemas\n• Sílabas Directas/Trabadas\n• Trazado Motor (Refuerzo)", "color": "#d4efdf", "border": "#27ae60"},
-        {"x": 0.38, "y": 0.65, "w": 0.25, "h": 0.25, "title": "Paso 2: Automatización\n(Fluidez Lectora)", "desc": "• STT / Lectura en voz alta\n• Descompresión Memoria Trabajo\n• Algoritmo Adaptativo SM-2", "color": "#d6eaf8", "border": "#2980b9"},
-        {"x": 0.71, "y": 0.65, "w": 0.25, "h": 0.25, "title": "Paso 3: Comprensión PISA\n(Nivel 2 o Superior)", "desc": "• Inferencia Compleja\n• Evaluación Crítica Textos\n• Superación Analfabetismo Funcional", "color": "#fcf3cf", "border": "#f39c12"},
-        {"x": 0.20, "y": 0.15, "w": 0.60, "h": 0.35, "title": "Cuello de Botella Cognitivo (Modelo de Doble Ruta & Stanovich)", "desc": "Si la decodificación NO se automatiza a temprana edad, la memoria de trabajo se satura descifrando grafemas sueltos.\nResultado empírico: 33.7% de jóvenes chilenos y 51.5% en América Latina colapsan en PISA Nivel 1 (analfabetismo funcional).\nPino resuelve la causa raíz en la fase fonológico-motora.", "color": "#fadbd8", "border": "#e74c3c"}
-    ]
-
+    import textwrap
     from matplotlib.patches import FancyBboxPatch
 
-    for b in boxes:
-        rect = FancyBboxPatch((b["x"], b["y"]), b["w"], b["h"], boxstyle="round,pad=0.02,rounding_size=0.02",
-                              facecolor=b["color"], edgecolor=b["border"], linewidth=2, transform=ax.transAxes)
-        ax.add_patch(rect)
-        ax.text(b["x"] + b["w"]/2, b["y"] + b["h"] - 0.06, b["title"], ha='center', va='top', fontsize=11, fontweight='bold', transform=ax.transAxes, color="#2c3e50")
-        ax.text(b["x"] + 0.02, b["y"] + 0.03, b["desc"], ha='left', va='bottom', fontsize=9.5, transform=ax.transAxes, color="#34495e")
+    fig, ax = plt.subplots(figsize=(13, 7.5))
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0, 1)
+    ax.axis('off')
+
+    # Diagrama conceptual de bloques cognitivos (todo el texto queda dentro de su recuadro)
+    pasos = [
+        {"x": 0.02, "title": "Paso 1: Fundamento Pino\n(Conciencia Fonológica)", "items": ["Fonemas y Grafemas", "Sílabas Directas/Trabadas", "Trazado Motor (Refuerzo)"], "color": "#d4efdf", "border": "#27ae60"},
+        {"x": 0.36, "title": "Paso 2: Automatización\n(Fluidez Lectora)", "items": ["STT / Lectura en voz alta", "Descompresión Memoria\nde Trabajo", "Algoritmo Adaptativo SM-2"], "color": "#d6eaf8", "border": "#2980b9"},
+        {"x": 0.70, "title": "Paso 3: Comprensión PISA\n(Nivel 2 o Superior)", "items": ["Inferencia Compleja", "Evaluación Crítica de Textos", "Superación del Analfabetismo\nFuncional"], "color": "#fcf3cf", "border": "#f39c12"},
+    ]
+    paso_y, paso_w, paso_h = 0.54, 0.28, 0.36
+    for p in pasos:
+        ax.add_patch(FancyBboxPatch((p["x"], paso_y), paso_w, paso_h, boxstyle="round,pad=0.01,rounding_size=0.015",
+                                    facecolor=p["color"], edgecolor=p["border"], linewidth=2))
+        ax.text(p["x"] + paso_w/2, paso_y + paso_h - 0.03, p["title"], ha='center', va='top', fontsize=12.5, fontweight='bold', color="#2c3e50", linespacing=1.3)
+        items = "\n".join("• " + item.replace("\n", "\n   ") for item in p["items"])
+        ax.text(p["x"] + 0.02, paso_y + paso_h - 0.155, items, ha='left', va='top', fontsize=11.5, color="#34495e", linespacing=1.45)
+
+    cuello = {
+        "x": 0.08, "y": 0.02, "w": 0.84, "h": 0.31,
+        "title": "Cuello de Botella Cognitivo (Modelo de Doble Ruta & Stanovich)",
+        "parrafos": [
+            "Si la decodificación NO se automatiza a temprana edad, la memoria de trabajo se satura descifrando grafemas sueltos.",
+            "Resultado empírico: 33.7% de jóvenes chilenos y 51.5% en América Latina colapsan en PISA Nivel\u00a01 (analfabetismo funcional).",
+            "Pino resuelve la causa raíz en la fase fonológico-motora.",
+        ],
+    }
+    ax.add_patch(FancyBboxPatch((cuello["x"], cuello["y"]), cuello["w"], cuello["h"], boxstyle="round,pad=0.01,rounding_size=0.015",
+                                facecolor="#fadbd8", edgecolor="#e74c3c", linewidth=2))
+    ax.text(0.50, cuello["y"] + cuello["h"] - 0.03, cuello["title"], ha='center', va='top', fontsize=13, fontweight='bold', color="#2c3e50")
+    desc = "\n".join(textwrap.fill(par, width=105) for par in cuello["parrafos"])
+    ax.text(0.50, cuello["y"] + cuello["h"] - 0.10, desc, ha='center', va='top', multialignment='left', fontsize=11.5, color="#34495e", linespacing=1.45)
 
     # Flechas de conexión
-    ax.annotate("", xy=(0.37, 0.77), xytext=(0.31, 0.77), arrowprops=dict(facecolor="#2c3e50", shrink=0.05, width=2, headwidth=8), transform=ax.transAxes)
-    ax.annotate("", xy=(0.70, 0.77), xytext=(0.64, 0.77), arrowprops=dict(facecolor="#2c3e50", shrink=0.05, width=2, headwidth=8), transform=ax.transAxes)
-    ax.annotate("", xy=(0.50, 0.52), xytext=(0.50, 0.64), arrowprops=dict(facecolor="#e74c3c", shrink=0.05, width=2, headwidth=8), transform=ax.transAxes)
+    flecha_y = paso_y + paso_h/2
+    ax.annotate("", xy=(0.355, flecha_y), xytext=(0.305, flecha_y), arrowprops=dict(facecolor="#2c3e50", shrink=0.05, width=2, headwidth=8))
+    ax.annotate("", xy=(0.695, flecha_y), xytext=(0.645, flecha_y), arrowprops=dict(facecolor="#2c3e50", shrink=0.05, width=2, headwidth=8))
+    ax.annotate("", xy=(0.50, cuello["y"] + cuello["h"] + 0.015), xytext=(0.50, paso_y - 0.015), arrowprops=dict(facecolor="#e74c3c", shrink=0.05, width=2, headwidth=8))
 
-    plt.title("Justificación Neurocognitiva: Cómo Pino Previene el Fracaso en Evaluaciones PISA", fontsize=14, fontweight='bold', pad=15)
+    ax.set_title("Justificación Neurocognitiva: Cómo Pino Previene el Fracaso en Evaluaciones PISA", fontsize=15, fontweight='bold', pad=15)
     plt.tight_layout()
     fig.savefig(os.path.join(VIS_DIR, "09_phonology_to_pisa_cognitive_bottleneck.png"), dpi=300)
     plt.close()
@@ -309,4 +328,5 @@ def generate_pisa_charts():
 if __name__ == "__main__":
     generate_eda_colab_charts()
     generate_pisa_charts()
+    generate_cognitive_model_chart()
     print("\n¡Todas las visualizaciones analíticas generadas exitosamente en 'visualizations/'!")
