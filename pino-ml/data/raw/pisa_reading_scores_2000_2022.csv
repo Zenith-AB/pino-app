@@ -1,0 +1,56 @@
+Country,Code,Region,OECD_Member,Year,ReadingScore,MathScore,ScienceScore
+Chile,CHL,Latin America,True,2000,410,384,415
+Chile,CHL,Latin America,True,2006,442,411,438
+Chile,CHL,Latin America,True,2009,449,421,447
+Chile,CHL,Latin America,True,2012,441,423,445
+Chile,CHL,Latin America,True,2015,459,423,447
+Chile,CHL,Latin America,True,2018,452,417,444
+Chile,CHL,Latin America,True,2022,448,412,444
+OECD Average,OECD,OECD,True,2000,493,496,497
+OECD Average,OECD,OECD,True,2006,492,498,500
+OECD Average,OECD,OECD,True,2009,493,496,501
+OECD Average,OECD,OECD,True,2012,496,494,501
+OECD Average,OECD,OECD,True,2015,493,490,493
+OECD Average,OECD,OECD,True,2018,487,489,489
+OECD Average,OECD,OECD,True,2022,476,472,485
+Uruguay,URY,Latin America,False,2006,413,427,428
+Uruguay,URY,Latin America,False,2009,426,427,427
+Uruguay,URY,Latin America,False,2012,411,409,416
+Uruguay,URY,Latin America,False,2015,437,418,435
+Uruguay,URY,Latin America,False,2018,427,418,426
+Uruguay,URY,Latin America,False,2022,430,409,435
+Mexico,MEX,Latin America,True,2000,422,387,422
+Mexico,MEX,Latin America,True,2009,425,419,416
+Mexico,MEX,Latin America,True,2018,420,409,419
+Mexico,MEX,Latin America,True,2022,415,395,410
+Colombia,COL,Latin America,True,2006,385,370,388
+Colombia,COL,Latin America,True,2012,403,376,399
+Colombia,COL,Latin America,True,2018,412,391,413
+Colombia,COL,Latin America,True,2022,409,383,411
+Brazil,BRA,Latin America,False,2000,396,334,375
+Brazil,BRA,Latin America,False,2009,412,386,405
+Brazil,BRA,Latin America,False,2018,413,384,404
+Brazil,BRA,Latin America,False,2022,410,379,403
+Argentina,ARG,Latin America,False,2000,418,388,396
+Argentina,ARG,Latin America,False,2012,396,388,406
+Argentina,ARG,Latin America,False,2018,402,379,404
+Argentina,ARG,Latin America,False,2022,401,378,406
+Peru,PER,Latin America,False,2000,327,292,333
+Peru,PER,Latin America,False,2009,370,365,369
+Peru,PER,Latin America,False,2018,401,400,404
+Peru,PER,Latin America,False,2022,408,391,408
+Singapore,SGP,Asia,False,2018,549,569,551
+Singapore,SGP,Asia,False,2022,543,575,561
+Japan,JPN,Asia,True,2018,504,527,529
+Japan,JPN,Asia,True,2022,516,536,547
+Ireland,IRL,Europe,True,2018,518,500,496
+Ireland,IRL,Europe,True,2022,516,492,504
+Finland,FIN,Europe,True,2000,546,536,538
+Finland,FIN,Europe,True,2018,520,507,522
+Finland,FIN,Europe,True,2022,490,484,511
+Spain,ESP,Europe,True,2018,477,481,483
+Spain,ESP,Europe,True,2022,474,473,485
+United States,USA,North America,True,2018,505,478,502
+United States,USA,North America,True,2022,504,465,499
+Germany,DEU,Europe,True,2018,498,500,503
+Germany,DEU,Europe,True,2022,480,475,492

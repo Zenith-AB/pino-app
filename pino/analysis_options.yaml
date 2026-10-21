@@ -4,3 +4,7 @@ analyzer:
   exclude:
     # Código generado por build_runner (Isar)
     - "**/*.g.dart"
+    - build/**
+    - android/**
+    - ios/**
+    - linux/**

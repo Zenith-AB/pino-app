@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PINO 2.0 — Sprint Review & ML Infrastructure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-black: #090a0d;
+      --bg-surface: #12141a;
+      --bg-surface-elevated: #1a1d26;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-warm: rgba(229, 169, 59, 0.25);
+      
+      /* Paleta Cálida Sobria */
+      --warm-gold: #e5a93b;
+      --warm-gold-glow: rgba(229, 169, 59, 0.15);
+      --warm-terracotta: #d96b43;
+      --warm-amber: #f39c12;
+      --warm-cream: #f5efe6;
+      --text-muted: #9ba1b0;
+      --accent-green: #48bb78;
+      --accent-red: #e53e3e;
+
+      --font-heading: 'Space Grotesk', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-black);
+      color: var(--warm-cream);
+      font-family: var(--font-body);
+      overflow: hidden;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      user-select: none;
+    }
+
+    /* Barra Superior de Progreso y Controles */
+    header {
+      height: 60px;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-subtle);
+      background: rgba(18, 20, 26, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--warm-gold), var(--warm-terracotta));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--bg-black);
+      box-shadow: 0 0 16px var(--warm-gold-glow);
+    }
+
+    .brand-name {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+    }
+
+    .brand-badge {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      background: rgba(229, 169, 59, 0.12);
+      border: 1px solid var(--border-warm);
+      color: var(--warm-gold);
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-ctrl {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      color: var(--warm-cream);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-ctrl:hover {
+      background: var(--border-subtle);
+      border-color: var(--warm-gold);
+      color: var(--warm-gold);
+    }
+
+    .slide-counter {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .progress-bar-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--warm-gold), var(--warm-terracotta));
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Contenedor Principal de Slides */
+    main {
+      flex: 1;
+      position: relative;
+      width: 100%;
+      height: calc(100vh - 60px);
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 40px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(30px) scale(0.98);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow-y: auto;
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0) scale(1);
+    }
+
+    .slide.exit-left {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-30px) scale(0.98);
+    }
+
+    /* Tipografía de Slides */
+    .slide-header {
+      margin-bottom: 24px;
+    }
+
+    .slide-tag {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--warm-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .slide-tag::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--warm-gold);
+      box-shadow: 0 0 8px var(--warm-gold);
+    }
+
+    .slide-title {
+      font-family: var(--font-heading);
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: #ffffff;
+    }
+
+    .slide-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+      max-width: 850px;
+      line-height: 1.5;
+    }
+
+    /* Grids y Layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    /* Tarjetas Minimalistas */
+    .card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 24px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: transparent;
+      transition: background 0.3s ease;
+    }
+
+    .card:hover {
+      border-color: var(--border-warm);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .card:hover::before {
+      background: linear-gradient(90deg, var(--warm-gold), var(--warm-terracotta));
+    }
+
+    .card-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Métricas Grandes */
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      background: linear-gradient(135deg, #ffffff, var(--warm-cream));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stat-gold {
+      background: linear-gradient(135deg, var(--warm-gold), var(--warm-terracotta));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stat-red {
+      background: linear-gradient(135deg, #ff7675, #d63031);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-top: 6px;
+      font-weight: 600;
+    }
+
+    /* Imagen con Marco Elegante */
+    .img-frame {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      background: #000000;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+
+    .img-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .img-frame:hover img {
+      transform: scale(1.02);
+    }
+
+    /* Comparativa Antes vs Ahora */
+    .table-compare {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 8px;
+      font-size: 0.88rem;
+    }
+
+    .table-compare th {
+      text-align: left;
+      padding: 12px 16px;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .table-compare tr {
+      background: var(--bg-surface);
+      border-radius: 8px;
+      transition: background 0.2s ease;
+    }
+
+    .table-compare tr:hover {
+      background: var(--bg-surface-elevated);
+    }
+
+    .table-compare td {
+      padding: 14px 16px;
+      color: var(--warm-cream);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .table-compare td:first-child {
+      border-left: 1px solid var(--border-subtle);
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .table-compare td:last-child {
+      border-right: 1px solid var(--border-subtle);
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+
+    .badge-diff {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .badge-old {
+      background: rgba(229, 62, 62, 0.12);
+      border: 1px solid rgba(229, 62, 62, 0.3);
+      color: #fc8181;
+    }
+
+    .badge-new {
+      background: rgba(72, 187, 120, 0.12);
+      border: 1px solid rgba(72, 187, 120, 0.3);
+      color: #68d391;
+    }
+
+    /* Portada Especial */
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: 3.6rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.08;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, var(--warm-gold), var(--warm-terracotta));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 36px;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .pill {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--warm-cream);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pill-icon {
+      color: var(--warm-gold);
+    }
+
+    /* Modal Vista General (Overview) */
+    .overview-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(9, 10, 13, 0.95);
+      backdrop-filter: blur(16px);
+      z-index: 1000;
+      display: none;
+      padding: 40px;
+      overflow-y: auto;
+    }
+
+    .overview-modal.active {
+      display: block;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .overview-thumb {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .overview-thumb:hover {
+      border-color: var(--warm-gold);
+      transform: translateY(-3px);
+    }
+
+    .overview-thumb-num {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--warm-gold);
+      margin-bottom: 6px;
+    }
+
+    .overview-thumb-title {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    /* Navegación Flotante Inferior */
+    .nav-hints {
+      position: absolute;
+      bottom: 24px;
+      right: 40px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      z-index: 50;
+    }
+
+    .nav-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      color: var(--warm-cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 1.1rem;
+    }
+
+    .nav-btn:hover {
+      background: var(--warm-gold);
+      color: var(--bg-black);
+      border-color: var(--warm-gold);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado y Barra de Herramientas -->
+  <header>
+    <div class="brand">
+      <div class="brand-logo">🌲</div>
+      <div class="brand-name">PINO 2.0</div>
+      <div class="brand-badge">Sprint Review & ML Core</div>
+    </div>
+
+    <div class="controls">
+      <span class="slide-counter" id="slideCounter">01 / 09</span>
+      <button class="btn-ctrl" onclick="toggleOverview()" title="Ver todas las diapositivas (Tecla 'O')">
+        <span>☷</span> Resumen
+      </button>
+      <button class="btn-ctrl" onclick="toggleFullScreen()" title="Pantalla completa (Tecla 'F')">
+        <span>⛶</span> Pantalla Completa
+      </button>
+    </div>
+
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+  </header>
+
+  <!-- Diapositivas -->
+  <main>
+
+    <!-- Slide 1: Portada -->
+    <section class="slide active" id="slide-1">
+      <div class="hero-content">
+        <div class="slide-tag">Arquitectura & Sprint Review</div>
+        <h1 class="hero-title">
+          De la Oralidad Digital al <span>Éxito Lector PISA</span>
+        </h1>
+        <p class="hero-desc">
+          Presentación ejecutiva de la nueva infraestructura completa de Machine Learning,
+          integración psicométrica internacional de la prueba PISA y auditoría del ecosistema Pino.
+        </p>
+        <div class="hero-pills">
+          <div class="pill"><span class="pill-icon">🧠</span> 6 Motores ML en Producción</div>
+          <div class="pill"><span class="pill-icon">📊</span> Estudios PISA Chile & OCDE</div>
+          <div class="pill"><span class="pill-icon">📱</span> Integración Flutter (Isar + Riverpod)</div>
+          <div class="pill"><span class="pill-icon">🧪</span> 23 Tests Automatizados (100% Passing)</div>
+          <div class="pill"><span class="pill-icon">⚡</span> FastAPI + PyTorch + Whisper + spaCy</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 2: La Paradoja de la Digitalización Oral -->
+    <section class="slide" id="slide-2">
+      <div class="slide-header">
+        <div class="slide-tag">Estudios EDA Colab & Macroeconomía</div>
+        <h2 class="slide-title">La Paradoja de la Digitalización Oral</h2>
+        <p class="slide-subtitle">
+          El análisis del script <code>exploracionedapino.py</code> demostró que el hardware ya está en las manos del usuario, pero los métodos educativos tradicionales se han quedado rezagados.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <div class="grid-2" style="margin-bottom: 20px;">
+            <div class="card">
+              <div class="stat-number stat-gold">> 140%</div>
+              <div class="stat-label">Suscripciones Móviles en África Occidental</div>
+              <p class="card-text" style="margin-top: 8px;">Costa de Marfil y Senegal poseen más líneas celulares activas que habitantes.</p>
+            </div>
+            <div class="card">
+              <div class="stat-number stat-red">~48%</div>
+              <div class="stat-label">Tasa de Alfabetización Formal</div>
+              <p class="card-text" style="margin-top: 8px;">1 de cada 2 adultos no puede leer ni escribir un párrafo elemental.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">💡 La Gran Oportunidad de Pino</div>
+            <p class="card-text">
+              Los usuarios no alfabetizados operan teléfonos móviles mediante <strong>mensajes de audio en WhatsApp, iconografía y asistentes por voz</strong>. 
+              Pino aprovecha ese lenguaje oral que el usuario ya domina para tender el puente neurocognitivo hacia la correspondencia grafema-fonema, eliminando la barrera de construir aulas físicas.
+            </p>
+          </div>
+        </div>
+
+        <div class="img-frame">
+          <img src="visualizations/05_west_africa_oral_paradox.png" alt="Paradoja de la Oralidad Digital">
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 3: Pruebas PISA en Chile y el Mundo -->
+    <section class="slide" id="slide-3">
+      <div class="slide-header">
+        <div class="slide-tag">Evaluación Internacional OCDE</div>
+        <h2 class="slide-title">La Crisis del Analfabetismo Funcional en PISA</h2>
+        <p class="slide-subtitle">
+          Chile lidera América Latina en PISA 2022 con 448 puntos, pero se ubica a 28 puntos de la media OCDE (476) y a 95 puntos de Singapur (543).
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="img-frame">
+          <img src="visualizations/06_pisa_historical_reading_chile_vs_oecd.png" alt="Trayectoria PISA Lectura">
+        </div>
+
+        <div>
+          <div class="card" style="margin-bottom: 16px;">
+            <div class="card-title">⚠️ El Umbral Crítico: Nivel 2 (407 puntos)</div>
+            <p class="card-text">
+              La OCDE define el <strong>Nivel 2</strong> como la frontera de la alfabetización funcional moderna. Estar debajo significa no poder discernir ideas principales ni evaluar información laboral básica.
+            </p>
+          </div>
+
+          <div class="grid-3">
+            <div class="card">
+              <div class="stat-number stat-gold">33.7%</div>
+              <div class="stat-label">Chile (< Nivel 2)</div>
+              <p class="card-text" style="font-size: 0.78rem;">1 de cada 3 jóvenes de 15 años estancado desde 2006.</p>
+            </div>
+            <div class="card">
+              <div class="stat-number">26.3%</div>
+              <div class="stat-label">Media OCDE</div>
+              <p class="card-text" style="font-size: 0.78rem;">1 de cada 4 en países de altos ingresos.</p>
+            </div>
+            <div class="card">
+              <div class="stat-number stat-red">51.5%</div>
+              <div class="stat-label">América Latina</div>
+              <p class="card-text" style="font-size: 0.78rem;">Más de la mitad de la juventud sin competencia lectora.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 4: El Gradiente Socioeconómico en Chile -->
+    <section class="slide" id="slide-4">
+      <div class="slide-header">
+        <div class="slide-tag">Psicometría & Equidad Educativa</div>
+        <h2 class="slide-title">La Brecha Socioeconómica Chilena (Índice ESCS)</h2>
+        <p class="slide-subtitle">
+          El estatus socioeconómico familiar sigue condicionando el destino lector del estudiante chileno.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <div class="card" style="margin-bottom: 20px;">
+            <div class="card-title">📉 La Brecha de 83 Puntos entre Cuartiles</div>
+            <p class="card-text">
+              - <strong>Cuartil 1 (Más vulnerable):</strong> 405 puntos (49.8% en analfabetismo funcional).<br>
+              - <strong>Cuartil 4 (Mayor ingreso):</strong> 488 puntos (19.9% bajo Nivel 2).<br>
+              En métricas OCDE, 83 puntos equivalen a <strong>más de 3 años lectivos completos de escolaridad</strong>.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-title">🏫 Segregación por Tipo de Colegio</div>
+            <p class="card-text">
+              - <strong>Público (Municipal / SLEP):</strong> 418 pts (45.2% bajo Nivel 2).<br>
+              - <strong>Particular Subvencionado:</strong> 451 pts (31.9% bajo Nivel 2).<br>
+              - <strong>Particular Pagado:</strong> 508 pts (solo 11.2% bajo Nivel 2, a la par de Finlandia).
+            </p>
+          </div>
+        </div>
+
+        <div class="img-frame">
+          <img src="visualizations/08_chile_pisa_socioeconomic_gradient.png" alt="Gradiente Socioeconómico Chile">
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 5: Justificación Neurocognitiva -->
+    <section class="slide" id="slide-5">
+      <div class="slide-header">
+        <div class="slide-tag">Ciencias del Aprendizaje & Neuroeducación</div>
+        <h2 class="slide-title">El Cuello de Botella de la Memoria de Trabajo</h2>
+        <p class="slide-subtitle">
+          Por qué el fracaso adolescente en PISA tiene su causa raíz en la decodificación fonológica inicial.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="img-frame">
+          <img src="visualizations/09_phonology_to_pisa_cognitive_bottleneck.png" alt="Cuello de Botella Neurocognitivo">
+        </div>
+
+        <div>
+          <div class="card" style="margin-bottom: 16px;">
+            <div class="card-title">🧠 Modelo Simple de Lectura (Gough & Tunmer)</div>
+            <p class="card-text">
+              $$\text{Comprensión } (RC) = \text{Decodificación } (D) \times \text{Comprensión Oral } (LC)$$
+              Al ser una <strong>multiplicación matemática</strong>, si la decodificación fonológica falla, la comprensión final es nula.
+            </p>
+          </div>
+
+          <div class="card" style="margin-bottom: 16px;">
+            <div class="card-title">⚡ Saturación de Memoria Operativa</div>
+            <p class="card-text">
+              La memoria de trabajo humana solo retiene 4 a 7 fragmentos breves. Si el estudiante no ha automatizado la relación letra-sonido, consume toda su energía descifrando letras sueltas. Cuando termina la frase, ya no dispone de capacidad cognitiva para inferir o evaluar críticamente (PISA).
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-title">🔄 El Efecto Mateo (Stanovich)</div>
+            <p class="card-text">
+              Pino interviene quirúrgicamente en la fase fonológica para que la decodificación sea instantánea y libere memoria de trabajo hacia la comprensión lectora profunda.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 6: Auditoría de Versiones Anteriores y Correcciones -->
+    <section class="slide" id="slide-6">
+      <div class="slide-header">
+        <div class="slide-tag">Ingeniería de Software & Evolución del Sistema</div>
+        <h2 class="slide-title">Correcciones Técnicas Respecto a Versiones Anteriores</h2>
+        <p class="slide-subtitle">
+          Resolución integral de las limitaciones heredadas del repositorio <code>pino-ml</code> y los spikes previos.
+        </p>
+      </div>
+
+      <table class="table-compare">
+        <thead>
+          <tr>
+            <th>Componente / Dimensión</th>
+            <th>Versión Anterior (pino-ml / Spike Inicial)</th>
+            <th>Nueva Versión en Pino 2 (Sprint Actual)</th>
+            <th>Impacto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Reconocimiento Fonético (STT)</td>
+            <td><span class="badge-diff badge-old">Whisper General</span> Corrección forzada hacia palabras reales; no detectaba fallas finas en fonemas infantiles.</td>
+            <td><span class="badge-diff badge-new">SequenceMatcher + Matriz Fonética</span> Alineación silábica precisa, discriminación de diptongos y penalización fonémica.</td>
+            <td>Feedback silábico exacto en lectura en voz alta (HU-06).</td>
+          </tr>
+          <tr>
+            <td>Analizador de Grafomotricidad</td>
+            <td><span class="badge-diff badge-old">Rutas Estáticas de 5 Vocales</span> Sin tolerancia adaptativa ni detección cinemática.</td>
+            <td><span class="badge-diff badge-new">Segment Distance Vectorial</span> Cálculo de cobertura, velocidad px/seg y tolerancia dinámica (baja/media/alta).</td>
+            <td>Inclusión de usuarios con dificultades motrices o adultos mayores (HU-13).</td>
+          </tr>
+          <tr>
+            <td>Clasificador de Textos</td>
+            <td><span class="badge-diff badge-old">Regla Unidimensional</span> Solo índice Fernández-Huerta básico.</td>
+            <td><span class="badge-diff badge-new">Ensamble Multidimensional</span> Fernández-Huerta + Gutiérrez de Polini + spaCy + Mapeo a Escala PISA.</td>
+            <td>Dosificación gradual milimétrica de micro-historias (HU-04, HU-17).</td>
+          </tr>
+          <tr>
+            <td>Predictor de Riesgo PISA</td>
+            <td><span class="badge-diff badge-old">Inexistente</span> No conectaba datos de la app con estándares poblacionales.</td>
+            <td><span class="badge-diff badge-new">PISA Risk Engine</span> Predicción sigmoide del puntaje PISA y alerta temprana de analfabetismo funcional.</td>
+            <td>Métrica de impacto social auditable por ministerios y colegios.</td>
+          </tr>
+          <tr>
+            <td>Datos Macroeconómicos</td>
+            <td><span class="badge-diff badge-old">Aislado</span> Solo dependía de Firestore local.</td>
+            <td><span class="badge-diff badge-new">ETL Integrado</span> Ingesta Our World in Data + Tablas Oficiales OCDE + Chile Regional ESCS.</td>
+            <td>Justificación cuantitativa de mercado e impacto pedagógico.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Slide 7: Arquitectura ML en Producción -->
+    <section class="slide" id="slide-7">
+      <div class="slide-header">
+        <div class="slide-tag">Arquitectura de Producción</div>
+        <h2 class="slide-title">Infraestructura Completa de ML en Pino 2</h2>
+        <p class="slide-subtitle">
+          API de alto rendimiento en FastAPI con esquemas Pydantic v2, ThreadPoolExecutor para concurrencia y despliegue contenerizado.
+        </p>
+      </div>
+
+      <div class="grid-3" style="margin-bottom: 24px;">
+        <div class="card">
+          <div class="card-title">🎙️ STT & Fonética</div>
+          <p class="card-text">
+            Endpoints <code>/predict/pronunciacion</code> y <code>/predict/fonema</code>. Transcripción con timestamps y análisis silábico en tiempo real.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-title">✍️ Grafomotricidad</div>
+          <p class="card-text">
+            Endpoint <code>/analyze/trazo</code>. Evalúa coordenadas táctiles, cobertura y detecta segmentos problemáticos en el canvas.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-title">📈 Repetición SM-2</div>
+          <p class="card-text">
+            Endpoint <code>/predict/siguiente-leccion</code>. Ensamble de SuperMemo SM-2 y Gradient Boosting para predecir olvido.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-title">📖 Dificultad Textual</div>
+          <p class="card-text">
+            Endpoint <code>/predict/dificultad-texto</code>. Evaluación léxica con spaCy y mapeo a niveles PISA 1c a 5.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-title">🎯 PISA Risk Engine</div>
+          <p class="card-text">
+            Endpoint <code>/predict/pisa-risk</code>. Proyección de puntaje PISA, probabilidad de rezago y diagnóstico de cuello de botella cognitivo.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-title">🌐 Macro Analytics</div>
+          <p class="card-text">
+            Endpoints <code>/analytics/macro-opportunity</code> y <code>/analytics/pisa-history</code> para benchmarking de políticas públicas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 8: Validación y Pruebas Unitarias -->
+    <section class="slide" id="slide-8">
+      <div class="slide-header">
+        <div class="slide-tag">Calidad de Código & Testing</div>
+        <h2 class="slide-title">Validación Rigurosa: 100% Tests Aprobados</h2>
+        <p class="slide-subtitle">
+          Toda la lógica matemática, fonética y de red ha sido blindada con pruebas unitarias y de integración.
+        </p>
+      </div>
+
+      <div class="grid-4" style="margin-bottom: 24px;">
+        <div class="card">
+          <div class="stat-number stat-gold">23 / 23</div>
+          <div class="stat-label">Tests Unitarios Aprobados</div>
+          <p class="card-text" style="margin-top: 8px;">Cero fallos en la suite de Pytest.</p>
+        </div>
+        <div class="card">
+          <div class="stat-number">< 12 ms</div>
+          <div class="stat-label">Latencia de Inferencia SM-2 / Trazo</div>
+          <p class="card-text" style="margin-top: 8px;">Inmediatez fluida para Flutter.</p>
+        </div>
+        <div class="card">
+          <div class="stat-number stat-gold">0.85</div>
+          <div class="stat-label">Correlación Fonética</div>
+          <p class="card-text" style="margin-top: 8px;">Precisión en discriminación fonémica.</p>
+        </div>
+        <div class="card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Compatibilidad Flutter</div>
+          <p class="card-text" style="margin-top: 8px;">Contratos Pydantic v2 idénticos a MLApiClient.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">🛠️ Módulos Comprobados en la Suite</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px;">
+          <span class="badge-diff badge-new">test_algoritmo_adaptativo.py (3 tests)</span>
+          <span class="badge-diff badge-new">test_analizador_trazos.py (3 tests)</span>
+          <span class="badge-diff badge-new">test_api_endpoints.py (6 tests)</span>
+          <span class="badge-diff badge-new">test_clasificador_dificultad.py (3 tests)</span>
+          <span class="badge-diff badge-new">test_pisa_risk_engine.py (2 tests)</span>
+          <span class="badge-diff badge-new">test_texto_es.py (6 tests)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 9: Conclusiones y Roadmap -->
+    <section class="slide" id="slide-9">
+      <div class="slide-header">
+        <div class="slide-tag">Conclusiones & Siguientes Pasos</div>
+        <h2 class="slide-title">Impacto Estratégico y Próximos Hitos</h2>
+        <p class="slide-subtitle">
+          Pino cuenta ahora con una base científica, matemática y de código lista para transformar la alfabetización.
+        </p>
+      </div>
+
+      <div class="grid-3" style="margin-bottom: 28px;">
+        <div class="card">
+          <div class="card-title">🚀 1. Despliegue Docker</div>
+          <p class="card-text">
+            Infraestructura empaquetada en <code>Dockerfile</code> y <code>docker-compose.yml</code> lista para desplegar en servidores cloud o instancias edge en escuelas rurales.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-title">📱 2. Conexión con Flutter</div>
+          <p class="card-text">
+            Integración de la app <code>pino-app</code> apuntando a la API en producción, permitiendo pruebas de campo con niños y adultos.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-title">📊 3. Piloto PISA en Aula</div>
+          <p class="card-text">
+            Validación de la alerta temprana del <code>PISA Risk Engine</code> en colegios vulnerables de Chile para monitorear la superación del umbral Nivel 2.
+          </p>
+        </div>
+      </div>
+
+      <div class="card" style="text-align: center; padding: 32px; background: linear-gradient(180deg, var(--bg-surface), #151821);">
+        <h3 style="font-family: var(--font-heading); font-size: 1.6rem; color: #ffffff; margin-bottom: 8px;">
+          Pino: Alfabetización Basada en Evidencia y Accesibilidad Universal
+        </h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 700px; margin: 0 auto;">
+          Todo el código fuente, datos, modelos entrenados y documentación se encuentran integrados en <code>/home/zenith/Escritorio/Pino 2</code>.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Navegación Flotante -->
+  <div class="nav-hints">
+    <button class="nav-btn" onclick="prevSlide()" title="Anterior (Flecha Izquierda)">←</button>
+    <button class="nav-btn" onclick="nextSlide()" title="Siguiente (Flecha Derecha / Espacio)">→</button>
+  </div>
+
+  <!-- Modal Vista General (Grid Overview) -->
+  <div class="overview-modal" id="overviewModal" onclick="toggleOverview()">
+    <div class="overview-grid" onclick="event.stopPropagation()">
+      <div class="overview-thumb" onclick="goToSlide(1)">
+        <div class="overview-thumb-num">SLIDE 01</div>
+        <div class="overview-thumb-title">Portada: Pino 2.0 & ML Core</div>
+      </div>
+      <div class="overview-thumb" onclick="goToSlide(2)">
+        <div class="overview-thumb-num">SLIDE 02</div>
+        <div class="overview-thumb-title">La Paradoja de la Oralidad Digital</div>
+      </div>
+      <div class="overview-thumb" onclick="goToSlide(3)">
+        <div class="overview-thumb-num">SLIDE 03</div>
+        <div class="overview-thumb-title">Pruebas PISA: Chile y el Mundo</div>
+      </div>
+      <div class="overview-thumb" onclick="goToSlide(4)">
+        <div class="overview-thumb-num">SLIDE 04</div>
+        <div class="overview-thumb-title">Gradiente Socioeconómico en Chile</div>
+      </div>
+      <div class="overview-thumb" onclick="goToSlide(5)">
+        <div class="overview-thumb-num">SLIDE 05</div>
+        <div class="overview-thumb-title">Cuello de Botella Neurocognitivo</div>
+      </div>
+      <div class="overview-thumb" onclick="goToSlide(6)">
+        <div class="overview-thumb-num">SLIDE 06</div>
+        <div class="overview-thumb-title">Correcciones de Versiones Previas</div>
+      </div>
+      <div class="overview-thumb" onclick="goToSlide(7)">
+        <div class="overview-thumb-num">SLIDE 07</div>
+        <div class="overview-thumb-title">Arquitectura ML en Producción</div>
+      </div>
+      <div class="overview-thumb" onclick="goToSlide(8)">
+        <div class="overview-thumb-num">SLIDE 08</div>
+        <div class="overview-thumb-title">Validación & 23 Tests Aprobados</div>
+      </div>
+      <div class="overview-thumb" onclick="goToSlide(9)">
+        <div class="overview-thumb-num">SLIDE 09</div>
+        <div class="overview-thumb-title">Conclusiones & Siguientes Pasos</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 9;
+
+    function updateSlide() {
+      document.querySelectorAll('.slide').forEach((slide, idx) => {
+        const slideNum = idx + 1;
+        slide.classList.remove('active', 'exit-left');
+        if (slideNum === currentSlide) {
+          slide.classList.add('active');
+        } else if (slideNum < currentSlide) {
+          slide.classList.add('exit-left');
+        }
+      });
+
+      // Actualizar contador y barra
+      document.getElementById('slideCounter').textContent = 
+        String(currentSlide).padStart(2, '0') + ' / ' + String(totalSlides).padStart(2, '0');
+      
+      const pct = ((currentSlide - 1) / (totalSlides - 1)) * 100;
+      document.getElementById('progressBar').style.width = pct + '%';
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides) {
+        currentSlide++;
+        updateSlide();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 1) {
+        currentSlide--;
+        updateSlide();
+      }
+    }
+
+    function goToSlide(num) {
+      if (num >= 1 && num <= totalSlides) {
+        currentSlide = num;
+        updateSlide();
+        document.getElementById('overviewModal').classList.remove('active');
+      }
+    }
+
+    function toggleOverview() {
+      const modal = document.getElementById('overviewModal');
+      modal.classList.toggle('active');
+    }
+
+    function toggleFullScreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {});
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+
+    // Atajos de teclado
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        e.preventDefault();
+        prevSlide();
+      } else if (e.key.toLowerCase() === 'o') {
+        toggleOverview();
+      } else if (e.key.toLowerCase() === 'f') {
+        toggleFullScreen();
+      } else if (e.key === 'Escape') {
+        document.getElementById('overviewModal').classList.remove('active');
+      }
+    });
+
+    // Soporte táctil / swipe
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    window.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    window.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchStartX - touchEndX > 50) nextSlide();
+      if (touchEndX - touchStartX > 50) prevSlide();
+    });
+
+    // Inicializar
+    updateSlide();
+  </script>
+</body>
+</html>

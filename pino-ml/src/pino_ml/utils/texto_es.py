@@ -1,13 +1,15 @@
+# -*- coding: utf-8 -*-
 """
-Utilidades de texto en español: normalización, separación silábica y
-conversión de grafemas a fonemas.
+Utilidades de texto en español: normalización, separación silábica,
+conversión de grafemas a fonemas y métricas de distancia fonética.
 
-Se asume la pronunciación latinoamericana (seseo: "ce", "ci" y "z" suenan /s/)
-y yeísmo ("ll" y "y" consonante suenan igual).
+Se asume la pronunciación hispanoamericana/chilena (seseo: "ce", "ci" y "z" suenan /s/)
+y yeísmo ("ll" y "y" consonante suenan igual /ʝ/).
 """
 
 import re
 import unicodedata
+from difflib import SequenceMatcher
 
 _VOCALES_FUERTES = set('aeoáéóíú')  # í/ú con tilde rompen el diptongo (hiato)
 _VOCALES_DEBILES = set('iuü')
@@ -19,7 +21,6 @@ _GRUPOS_INSEPARABLES = {
     'tr', 'dr', 'kl', 'kr', 'tl',
 }
 _DIGRAFOS = ('ch', 'll', 'rr')
-
 _SIN_TILDE = str.maketrans('áéíóú', 'aeiou')
 
 
@@ -28,6 +29,8 @@ def normalizar(texto: str, quitar_tildes: bool = True) -> str:
     Minúsculas, sin puntuación ni espacios repetidos. Conserva la ñ.
     Con `quitar_tildes`, "Mamá." y "mama" quedan iguales.
     """
+    if not texto:
+        return ""
     texto = unicodedata.normalize('NFC', texto.lower())
     texto = re.sub(r"[^a-záéíóúüñ\s]", " ", texto)
     if quitar_tildes:
@@ -73,14 +76,13 @@ def _hay_hiato(a: str, b: str) -> bool:
 
 def separar_silabas(palabra: str) -> list[str]:
     """
-    Separa una palabra en sílabas: ca-sa, pe-rro, ár-bol, pla-to, a-gua,
-    po-e-ta, dí-a, ins-tan-te.
+    Separa una palabra en sílabas fonológicas:
+    ca-sa, pe-rro, ár-bol, pla-to, a-gua, po-e-ta, dí-a, ins-tan-te.
     """
     palabra = normalizar(palabra, quitar_tildes=False).replace(' ', '')
     if not palabra:
         return []
 
-    # Agrupar en núcleos vocálicos y consonantes intermedias
     bloques: list[tuple[str, bool]] = []
     for texto, es_vocal in _unidades(palabra):
         if es_vocal and bloques and bloques[-1][1] and not _hay_hiato(bloques[-1][0], texto):
@@ -124,9 +126,8 @@ _FONEMA_SIMPLE = {
 
 def palabra_a_fonemas(palabra: str) -> list[str]:
     """
-    Convierte una palabra escrita en su secuencia de fonemas, según el
-    contexto: casa /k/ vs cine /s/, gato /g/ vs gente /x/, guerra /g/,
-    queso /k/, rana /r/ vs pera /ɾ/, h muda.
+    Convierte una palabra escrita en su secuencia de fonemas IPA estándar latinoamericano:
+    casa /k/ vs cine /s/, gato /g/ vs gente /x/, guerra /g/, queso /k/, rana /r/ vs pera /ɾ/.
     """
     p = normalizar(palabra, quitar_tildes=True).replace(' ', '')
     fonemas = []
@@ -143,22 +144,56 @@ def palabra_a_fonemas(palabra: str) -> list[str]:
         elif p[i:i + 2] == 'rr':
             fonemas.append('/r/'); i += 2
         elif c == 'q' and sig == 'u':
-            fonemas.append('/k/'); i += 2               # que, qui
+            fonemas.append('/k/'); i += 2
         elif c == 'g' and sig == 'u' and sig2 in ('e', 'i'):
-            fonemas.append('/g/'); i += 2               # gue, gui
+            fonemas.append('/g/'); i += 2
         elif c == 'c':
             fonemas.append('/s/' if sig in ('e', 'i') else '/k/'); i += 1
         elif c == 'g':
             fonemas.append('/x/' if sig in ('e', 'i') else '/g/'); i += 1
         elif c == 'r':
-            fuerte = i == 0 or p[i - 1] in 'lns'
+            fuerte = i == 0 or (i > 0 and p[i - 1] in 'lns')
             fonemas.append('/r/' if fuerte else '/ɾ/'); i += 1
         elif c == 'y':
             fonemas.append('/i/' if _es_vocal(p, i) else '/ʝ/'); i += 1
         elif c == 'h':
-            i += 1                                      # muda
+            i += 1  # muda
         elif c in _FONEMA_SIMPLE:
             fonemas.append(_FONEMA_SIMPLE[c]); i += 1
         else:
             i += 1
     return fonemas
+
+
+def similitud_fonetica(fonemas_esperados: list[str], fonemas_obtenidos: list[str]) -> float:
+    """Calcula la razón de similitud entre dos secuencias de fonemas (0.0 a 1.0)."""
+    if not fonemas_esperados and not fonemas_obtenidos:
+        return 1.0
+    if not fonemas_esperados or not fonemas_obtenidos:
+        return 0.0
+    return SequenceMatcher(None, fonemas_esperados, fonemas_obtenidos).ratio()
+
+
+def calcular_complejidad_silabica(silaba: str) -> float:
+    """
+    Puntúa la dificultad silábica para niños y aprendices:
+    - CV (directa, ej: ma, pa): 1.0
+    - V (vocal sola, ej: a): 1.1
+    - CVC (inversa/cerrada, ej: sol, pan): 1.6
+    - CCV (trabada/compleja, ej: tra, pla): 2.4
+    - CCVC (mixta compleja, ej: tren, plas): 3.0
+    """
+    s = normalizar(silaba, quitar_tildes=True)
+    if not s:
+        return 1.0
+    es_trabada = any(s.startswith(g) for g in _GRUPOS_INSEPARABLES)
+    num_cons = sum(1 for c in s if c not in _VOCALES)
+    if es_trabada and num_cons >= 3:
+        return 3.0
+    elif es_trabada:
+        return 2.4
+    elif num_cons >= 2:
+        return 1.6
+    elif len(s) == 1 and s in _VOCALES:
+        return 1.1
+    return 1.0

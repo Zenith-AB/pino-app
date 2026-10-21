@@ -1,0 +1,12 @@
+Segmento_Tipo,Grupo,ReadingScore,Pct_Bajo_Nivel_2,Pct_Nivel_2_y_Superior,Brecha_Respecto_Q4
+Cuartil_ESCS,Cuartil 1 (Más vulnerable),405,49.8,50.2,-83
+Cuartil_ESCS,Cuartil 2 (Vulnerable-Medio),435,37.6,62.4,-53
+Cuartil_ESCS,Cuartil 3 (Medio-Alto),461,27.4,72.6,-27
+Cuartil_ESCS,Cuartil 4 (Mayor ingreso),488,19.9,80.1,0
+Dependencia,Municipal / SLEP (Público),418,45.2,54.8,-70
+Dependencia,Particular Subvencionado,451,31.9,68.1,-37
+Dependencia,Particular Pagado (Privado),508,11.2,88.8,20
+Zona,Urbana,450,33.1,66.9,0
+Zona,Rural,421,43.8,56.2,-29
+Genero,Mujeres,457,30.2,69.8,0
+Genero,Hombres,439,37.4,62.6,-18

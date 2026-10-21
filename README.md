@@ -7,6 +7,29 @@ documentos de la vida diaria, con audio en cada paso y funcionamiento **offline*
 Proyecto de un equipo de 4 integrantes organizado en sprints de 2 semanas
 (ver [`plan-sprints-pino.md`](plan-sprints-pino.md)).
 
+## 🚀 Evolución y Nuevo Sprint: PISA, Macroeconomía y Motores ML Avanzados (Octubre 2026)
+
+Este nuevo sprint incorpora la investigación psicométrica internacional de las pruebas **PISA (OCDE)**, formaliza los estudios del Colab sobre la **Paradoja de la Digitalización Oral**, expande los motores de inferencia de `pino-ml` a 6 modelos y agrega una **presentación ejecutiva interactiva en HTML**.
+
+### 1. Documentación y Estudios Técnicos
+- 📊 **[docs/ESTUDIO_PISA_CHILE_Y_MUNDO.md](docs/ESTUDIO_PISA_CHILE_Y_MUNDO.md):** Estudio empírico sobre los resultados de lectura en PISA 2022 (Chile 448 pts vs OCDE 476 pts), la crisis estructural del 33.7% bajo Nivel 2 (analfabetismo funcional), el gradiente socioeconómico del índice ESCS (brecha de 83 pts entre cuartil 1 y cuartil 4) y la justificación neurocognitiva del cuello de botella en la memoria de trabajo.
+- 🌍 **[docs/ANALISIS_EDA_COLAB_Y_PARADOJA_ORAL.md](docs/ANALISIS_EDA_COLAB_Y_PARADOJA_ORAL.md):** Análisis exhaustivo de `exploracionedapino.py`. Explica por qué en Senegal, Costa de Marfil e India la penetración móvil supera el 120-140% mientras la alfabetización ronda el 48-77%, y cómo Pino utiliza la cultura oral digital como puente pedagógico.
+- 📱 **[docs/ANALISIS_REPOSITORIO_PINO_APP.md](docs/ANALISIS_REPOSITORIO_PINO_APP.md):** Auditoría técnica del frontend Flutter (Riverpod, Isar NoSQL offline-first, módulos pedagógicos y contratos de `MLApiClient`).
+- 🏗️ **[docs/ARQUITECTURA_ML_INFRAESTRUCTURA.md](docs/ARQUITECTURA_ML_INFRAESTRUCTURA.md):** Manual técnico de la infraestructura con formulaciones matemáticas (SM-2 adaptado, distancia Hausdorff/DTW, Fernández-Huerta, Gutiérrez de Polini y modelo sigmoide de riesgo PISA).
+- 🎨 **[presentacion.html](presentacion.html) / [index.html](index.html):** Presentación ejecutiva interactiva de 9 diapositivas con diseño minimalista, paleta cálida sobria, animaciones fluidas, navegación por teclado y vista general (`O`).
+
+### 2. Nuevos Motores de Inferencia (`pino-ml/src/pino_ml/models/`)
+1. **`PisaRiskEngine` (`pisa_risk_engine.py`):** Transforma la microtelemetría de Pino (acierto fonémico, latencia, fluidez WPM y grafomotricidad) en una proyección continua en la escala PISA (200-600) y calcula la probabilidad de caer bajo el umbral de alfabetización funcional Nivel 2.
+2. **`MacroAnalyticsEngine` (`macro_analytics.py`):** Modela el *Índice de Brecha de Oralidad Digital* ($DOPI$) cruzando datos de Our World in Data y Banco Mundial.
+3. **`AnalizadorTrazos` (mejorado):** Incorpora velocidad cinemática, cobertura de polilíneas y sugerencia de tolerancia dinámica (baja, media, alta).
+4. **`ClasificadorDificultad` (mejorado):** Combina el índice de Fernández-Huerta con el índice de Gutiérrez de Polini y spaCy, mapeando la complejidad a los niveles PISA 1c a 5.
+
+### 3. Suite de Pruebas Automatizadas
+- **Backend ML:** 80 tests aprobados al 100% (`pytest pino-ml/tests`).
+- **Frontend Flutter:** 21 tests aprobados al 100% (`cd pino && flutter test`).
+
+---
+
 ## Qué hace (y qué hará)
 
 | Área | Historias de usuario | Estado |
