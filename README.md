@@ -1,11 +1,48 @@
 # Pino
 
-Aplicación móvil de alfabetización en español para **niños y adultos**. Enseña a
+Aplicación móvil de alfabetización en español (y próximamente inglés) para **niños y adultos**. Enseña a
 asociar sonidos con letras, trazar letras, leer textos graduados y entender
 documentos de la vida diaria, con audio en cada paso y funcionamiento **offline**.
 
 Proyecto de un equipo de 4 integrantes organizado en sprints de 2 semanas
 (ver [`plan-sprints-pino.md`](plan-sprints-pino.md)).
+
+## 🧠 Novedad (noviembre 2026): nivelación de vocabulario infantil en español e inglés
+
+Pino se amplía para enseñar **español e inglés a niños pequeños**. La carpeta
+[`ep3-machine-learning/`](ep3-machine-learning/) contiene un modelo que estima **a qué
+edad aprende un niño cada palabra** (edad de adquisición, AoA). Con esa estimación el
+vocabulario se ordena en los niveles de la app de forma automática y no palabra por
+palabra a mano.
+
+| Nivel | Edad | Uso en la app |
+|-------|------|---------------|
+| 1 · Primeras palabras | < 4 años | Vocabulario oral con imagen y audio |
+| 2 · Preescolar | 4–5 años | Sílabas directas (CV) y conciencia fonológica |
+| 3 · Lectura inicial | 6–7 años | Decodificación de palabras completas |
+| 4 · Lector en desarrollo | 8–9 años | Palabras largas y menos frecuentes |
+
+**Resultados**
+- **Datos reales y públicos:** normas de AoA de Kuperman (≈ 30.000 palabras en inglés) y de Alonso (1.239 en español), frecuencias SUBTLEX, concreción de Brysbaert, diccionario de pronunciación CMU e imágenes MultiPic.
+- **Modelo elegido: Gradient Boosting.** Error medio de **1,50 años** en palabras nunca vistas (R² = 0,58). Ubica la palabra en el nivel correcto ±1 en el **94 %** de los casos, y una palabra adulta cae en un nivel infantil solo en el **0,05 %**.
+- **Español:** combinado con lo aprendido del inglés, la correlación con las normas reales llega a **ρ = 0,71**.
+- **Producto para la app**, en [`ep3-machine-learning/data/processed/`](ep3-machine-learning/data/processed/):
+  - `vocabulario_infantil_es.csv`: **1.312** palabras con nivel, sílabas (*ca-sa*), fonemas y traducción.
+  - `vocabulario_infantil_en.csv`: **10.333** palabras con nivel y fonemas.
+  - `pares_imagen_es_en.csv`: **473** pares imagen–palabra en ambos idiomas.
+  - Un filtro editorial excluye groserías, violencia, alcohol y sexualidad, pero la validación de una educadora sigue siendo necesaria.
+
+**Documentos**
+- 📘 [Informe técnico](ep3-machine-learning/README.md): problema, KPIs, CRISP-DM, EDA, modelos, optimización, ensambles, evaluación, sesgos y recomendaciones.
+- 📓 [Notebook ejecutado](ep3-machine-learning/notebooks/pino_edad_adquisicion_palabras.ipynb), reproducible con semilla fija.
+- 📚 [Datasets y métodos de enseñanza](ep3-machine-learning/docs/DATASETS_Y_METODOS_ENSENANZA.md): Wordbank, CHILDES, EsPal, Dolch/Fry; método silábico, fonético, *synthetic phonics*, *word families*.
+- 🎞️ [Presentación del cambio de enfoque](ep3-machine-learning/presentacion/Pino_cambio_de_enfoque.pptx).
+
+**Próximos pasos:** exponer el modelo en `pino-ml` (`/predict/aoa-palabra`), usar la AoA como
+dificultad inicial del repaso espaciado SM-2, completar el nivel 1 con Wordbank (datos de
+niños reales) y sumar vocabulario chileno validado por educadoras.
+
+---
 
 ## 🚀 Evolución y Nuevo Sprint: PISA, Macroeconomía y Motores ML Avanzados (Octubre 2026)
 
@@ -47,6 +84,7 @@ Este nuevo sprint incorpora la investigación psicométrica internacional de las
 |---------|--------|
 | `pino/` | App móvil: Flutter + Riverpod (estado) + Isar (base de datos local) + Firebase (Auth y Firestore) |
 | `pino-ml/` | Backend de ML en Python: API FastAPI con 4 modelos y pipeline de entrenamiento Kedro + MLflow, orquestado con Airflow |
+| `ep3-machine-learning/` | Modelo de edad de adquisición de palabras (ES/EN) y vocabulario infantil nivelado para la app |
 | `plan-sprints-pino.md` | **Plan vigente** de sprints y tareas por integrante |
 | `backlog-pino.md` | Detalle de las historias de usuario (tareas, puntos, dependencias) |
 | `pino-ml-architecture.md` | Arquitectura de ML y estado de cada modelo |
