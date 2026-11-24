@@ -332,6 +332,13 @@ x = en[en.palabra.isin(["dog", "butterfly", "democracy"])]
 modelo.predict(x[["zipf","n_letras","n_fonemas","n_silabas","opacidad","grupo_cons_max","vecinos_ort","concrecion","categoria"]])
 ```
 
+**Probar el modelo con la interfaz (Streamlit):**
+```bash
+pip install -r app/requirements.txt
+streamlit run app/streamlit_app.py
+```
+Se escribe una palabra en español o inglés, la app calcula sus variables y entrega la **edad de adquisición en años**, el **nivel de Pino**, el rango probable y si es adecuada para la edad del niño. Cada variable se puede mover para ver cómo cambia la predicción. Detalle en [`app/README.md`](app/README.md).
+
 ### Distribución del producto por nivel
 
 | Nivel | Español | Inglés | Pares imagen (nivel ES) |
