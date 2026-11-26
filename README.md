@@ -38,6 +38,7 @@ palabra a mano.
 - 📚 [Datasets y métodos de enseñanza](eft-machine-learning/docs/DATASETS_Y_METODOS_ENSENANZA.md): Wordbank, CHILDES, EsPal, Dolch/Fry; método silábico, fonético, *synthetic phonics*, *word families*.
 - 🎞️ [Presentación de la Evaluación Final Transversal](eft-machine-learning/presentacion/Pino_EFT.pptx) y [guion](eft-machine-learning/presentacion/GUION_PRESENTACION.md).
 - 🔮 [App Streamlit para probar el modelo](eft-machine-learning/app/README.md).
+- 🌲 [**Pino Beta**](eft-machine-learning/app/README.md#pino-beta--escuchar-y-practicar-pronunciación): escucha cada palabra y practica la pronunciación con el micrófono.
 
 **Próximos pasos:** exponer el modelo en `pino-ml` (`/predict/aoa-palabra`), usar la AoA como
 dificultad inicial del repaso espaciado SM-2, completar el nivel 1 con Wordbank (datos de
