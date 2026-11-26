@@ -2,25 +2,25 @@ codigo,nombre_es,acuerdo_es,nombre_en_us,acuerdo_en_us,aoa_es_anios,aoa_en_anios
 507,bebé,95.0,baby,97.46835443,2.79,3.84,1 · Primeras palabras,1 · Primeras palabras,be-bé
 264,mano,96.0,hand,93.75,2.79,2.74,1 · Primeras palabras,1 · Primeras palabras,ma-no
 258,pan,100.0,baguette,61.53846154,2.85,9.71,1 · Primeras palabras,4 · Lector en desarrollo,pan
-408,dedo,83.67346939,finger,63.75,2.85,3.43,1 · Primeras palabras,1 · Primeras palabras,de-do
 732,pelota,57.57575758,ball,77.92207792,2.85,2.9,1 · Primeras palabras,1 · Primeras palabras,pe-lo-ta
+408,dedo,83.67346939,finger,63.75,2.85,3.43,1 · Primeras palabras,1 · Primeras palabras,de-do
 91,boca,93.93939394,mouth,100.0,2.86,3.58,1 · Primeras palabras,1 · Primeras palabras,bo-ca
 606,gato,100.0,cat,56.25,2.9,3.68,1 · Primeras palabras,1 · Primeras palabras,ga-to
-75,globo,100.0,balloon,100.0,2.93,4.37,1 · Primeras palabras,2 · Preescolar,glo-bo
-268,cama,100.0,bed,100.0,2.93,2.89,1 · Primeras palabras,1 · Primeras palabras,ca-ma
 455,pie,96.0,foot,93.75,2.93,3.44,1 · Primeras palabras,1 · Primeras palabras,pie
+268,cama,100.0,bed,100.0,2.93,2.89,1 · Primeras palabras,1 · Primeras palabras,ca-ma
+75,globo,100.0,balloon,100.0,2.93,4.37,1 · Primeras palabras,2 · Preescolar,glo-bo
 499,niño,100.0,boy,62.16216216,2.96,3.67,1 · Primeras palabras,1 · Primeras palabras,ni-ño
 100,nariz,100.0,nose,100.0,3.11,2.95,1 · Primeras palabras,1 · Primeras palabras,na-riz
 707,perro,100.0,dog,83.11688312,3.15,2.8,1 · Primeras palabras,1 · Primeras palabras,pe-rro
 102,pelo,62.0,hair,97.36842105,3.17,3.17,1 · Primeras palabras,1 · Primeras palabras,pe-lo
 693,árbol,100.0,tree,100.0,3.19,3.57,1 · Primeras palabras,1 · Primeras palabras,ár-bol
-546,puerta,100.0,door,100.0,3.22,3.05,1 · Primeras palabras,1 · Primeras palabras,puer-ta
 35,oreja,100.0,ear,100.0,3.22,3.63,1 · Primeras palabras,1 · Primeras palabras,o-re-ja
-96,leche,82.4742268,milk,100.0,3.22,3.37,1 · Primeras palabras,1 · Primeras palabras,le-che
 522,casa,88.7755102,house,96.15384615,3.22,3.16,1 · Primeras palabras,1 · Primeras palabras,ca-sa
+546,puerta,100.0,door,100.0,3.22,3.05,1 · Primeras palabras,1 · Primeras palabras,puer-ta
+96,leche,82.4742268,milk,100.0,3.22,3.37,1 · Primeras palabras,1 · Primeras palabras,le-che
 128,muñeca,90.0,doll,84.41558442,3.24,3.68,1 · Primeras palabras,1 · Primeras palabras,mu-ñe-ca
-312,flor,100.0,flower,100.0,3.26,3.11,1 · Primeras palabras,1 · Primeras palabras,flor
 654,lápiz,97.0,pencil,100.0,3.26,4.06,1 · Primeras palabras,2 · Preescolar,lá-piz
+312,flor,100.0,flower,100.0,3.26,3.11,1 · Primeras palabras,1 · Primeras palabras,flor
 552,manzana,100.0,apple,100.0,3.3,4.15,1 · Primeras palabras,2 · Preescolar,man-za-na
 241,ojo,100.0,eye,96.15384615,3.3,3.75,1 · Primeras palabras,1 · Primeras palabras,o-jo
 541,zapato,100.0,shoe,88.31168831,3.35,2.6,1 · Primeras palabras,1 · Primeras palabras,za-pa-to
@@ -31,28 +31,28 @@ codigo,nombre_es,acuerdo_es,nombre_en_us,acuerdo_en_us,aoa_es_anios,aoa_en_anios
 271,conejo,100.0,rabbit,75.64102564,3.48,3.94,1 · Primeras palabras,1 · Primeras palabras,co-ne-jo
 708,mono,63.0,chimpanzee,55.69620253,3.49,7.26,1 · Primeras palabras,3 · Lectura inicial,mo-no
 488,sol,100.0,sun,100.0,3.51,3.4,1 · Primeras palabras,1 · Primeras palabras,sol
-510,cara,81.63265306,face,97.5,3.54,3.75,1 · Primeras palabras,1 · Primeras palabras,ca-ra
 190,lluvia,91.91919192,rain,85.71428571,3.54,3.6,1 · Primeras palabras,1 · Primeras palabras,llu-via
+510,cara,81.63265306,face,97.5,3.54,3.75,1 · Primeras palabras,1 · Primeras palabras,ca-ra
+358,coche,100.0,car,100.0,3.55,3.37,1 · Primeras palabras,1 · Primeras palabras,co-che
 72,queso,100.0,cheese,78.48101266,3.55,4.33,1 · Primeras palabras,2 · Preescolar,que-so
 15,león,100.0,lion,100.0,3.55,4.42,1 · Primeras palabras,2 · Preescolar,le-ón
-358,coche,100.0,car,100.0,3.55,3.37,1 · Primeras palabras,1 · Primeras palabras,co-che
 473,brazo,100.0,arm,100.0,3.58,3.26,1 · Primeras palabras,1 · Primeras palabras,bra-zo
 599,nube,100.0,cloud,97.33333333,3.59,3.63,1 · Primeras palabras,1 · Primeras palabras,nu-be
-400,pato,100.0,duck,89.87341772,3.59,3.5,1 · Primeras palabras,1 · Primeras palabras,pa-to
 535,camión,97.97979798,truck,81.33333333,3.59,3.79,1 · Primeras palabras,1 · Primeras palabras,ca-mión
+400,pato,100.0,duck,89.87341772,3.59,3.5,1 · Primeras palabras,1 · Primeras palabras,pa-to
 319,vaca,100.0,cow,100.0,3.6,3.94,1 · Primeras palabras,1 · Primeras palabras,va-ca
 747,bañera,100.0,bathtub,82.5,3.61,3.22,1 · Primeras palabras,1 · Primeras palabras,ba-ñe-ra
 651,sopa,76.76767677,soup,70.66666667,3.63,5.37,1 · Primeras palabras,2 · Preescolar,so-pa
 509,teléfono,100.0,telephone,68.35443038,3.67,4.63,1 · Primeras palabras,2 · Preescolar,te-lé-fo-no
 619,jabón,94.31818182,soap,84.61538462,3.67,3.17,1 · Primeras palabras,1 · Primeras palabras,ja-bón
 569,diente,55.55555556,tooth,92.0,3.67,3.61,1 · Primeras palabras,1 · Primeras palabras,dien-te
-122,silla,100.0,chair,100.0,3.69,3.43,1 · Primeras palabras,1 · Primeras palabras,si-lla
 381,fresa,100.0,strawberry,100.0,3.69,4.21,1 · Primeras palabras,2 · Preescolar,fre-sa
+122,silla,100.0,chair,100.0,3.69,3.43,1 · Primeras palabras,1 · Primeras palabras,si-lla
 597,ventana,97.95918367,window,89.18918919,3.7,4.74,1 · Primeras palabras,2 · Preescolar,ven-ta-na
 503,lengua,100.0,tongue,97.5,3.72,4.47,1 · Primeras palabras,2 · Preescolar,len-gua
+426,peine,97.95918367,comb,100.0,3.72,5.5,1 · Primeras palabras,2 · Preescolar,pei-ne
 342,noche,82.10526316,night,79.41176471,3.72,3.61,1 · Primeras palabras,1 · Primeras palabras,no-che
 564,cuchara,88.0,spoon,100.0,3.72,2.5,1 · Primeras palabras,1 · Primeras palabras,cu-cha-ra
-426,peine,97.95918367,comb,100.0,3.72,5.5,1 · Primeras palabras,2 · Preescolar,pei-ne
 555,desayuno,94.0,breakfast,36.61971831,3.79,3.47,1 · Primeras palabras,1 · Primeras palabras,de-sa-yu-no
 593,chocolate,89.0,chocolate,93.67088608,3.8,3.33,1 · Primeras palabras,1 · Primeras palabras,cho-co-la-te
 69,plátano,98.0,banana,100.0,3.8,3.78,1 · Primeras palabras,1 · Primeras palabras,plá-ta-no
@@ -61,26 +61,26 @@ codigo,nombre_es,acuerdo_es,nombre_en_us,acuerdo_en_us,aoa_es_anios,aoa_en_anios
 98,tigre,94.0,tiger,100.0,3.81,4.0,1 · Primeras palabras,2 · Preescolar,ti-gre
 234,plato,90.8045977,plate,78.57142857,3.82,3.84,1 · Primeras palabras,1 · Primeras palabras,pla-to
 129,limón,100.0,lemon,100.0,3.82,4.74,1 · Primeras palabras,2 · Preescolar,li-món
-446,cerdo,100.0,pig,93.58974359,3.86,3.84,1 · Primeras palabras,1 · Primeras palabras,cer-do
 505,libro,94.94949495,book,92.40506329,3.86,3.68,1 · Primeras palabras,1 · Primeras palabras,li-bro
 38,araña,100.0,spider,97.5,3.86,3.43,1 · Primeras palabras,1 · Primeras palabras,a-ra-ña
-454,gallina,90.0,chicken,68.75,3.89,3.26,1 · Primeras palabras,1 · Primeras palabras,ga-lli-na
+446,cerdo,100.0,pig,93.58974359,3.86,3.84,1 · Primeras palabras,1 · Primeras palabras,cer-do
 416,calcetín,100.0,sock,100.0,3.89,2.94,1 · Primeras palabras,1 · Primeras palabras,cal-ce-tín
-579,elefante,100.0,elephant,100.0,3.9,4.8,1 · Primeras palabras,2 · Preescolar,e-le-fan-te
+454,gallina,90.0,chicken,68.75,3.89,3.26,1 · Primeras palabras,1 · Primeras palabras,ga-lli-na
 64,botón,100.0,button,100.0,3.9,4.78,1 · Primeras palabras,2 · Preescolar,bo-tón
-423,huevo,100.0,egg,91.02564103,3.9,3.89,1 · Primeras palabras,1 · Primeras palabras,hue-vo
 159,barba,100.0,beard,96.25,3.9,4.84,1 · Primeras palabras,2 · Preescolar,bar-ba
 637,oso,100.0,bear,92.5,3.9,3.58,1 · Primeras palabras,1 · Primeras palabras,o-so
 324,pez,98.0,fish,57.69230769,3.9,4.05,1 · Primeras palabras,2 · Preescolar,pez
-152,caracol,100.0,snail,97.5,3.91,5.79,1 · Primeras palabras,2 · Preescolar,ca-ra-col
+423,huevo,100.0,egg,91.02564103,3.9,3.89,1 · Primeras palabras,1 · Primeras palabras,hue-vo
+579,elefante,100.0,elephant,100.0,3.9,4.8,1 · Primeras palabras,2 · Preescolar,e-le-fan-te
 351,mariposa,100.0,butterfly,90.0,3.91,3.67,1 · Primeras palabras,1 · Primeras palabras,ma-ri-po-sa
+152,caracol,100.0,snail,97.5,3.91,5.79,1 · Primeras palabras,2 · Preescolar,ca-ra-col
 236,jirafa,100.0,giraffe,100.0,3.92,5.0,1 · Primeras palabras,2 · Preescolar,ji-ra-fa
-624,burro,89.8989899,donkey,94.87179487,3.94,6.0,1 · Primeras palabras,3 · Lectura inicial,bu-rro
-117,caballo,78.35051546,horse,88.46153846,3.94,4.15,1 · Primeras palabras,2 · Preescolar,ca-ba-llo
 500,escalera,100.0,stairs,61.03896104,3.94,4.22,1 · Primeras palabras,2 · Preescolar,es-ca-le-ra
 430,pájaro,84.7826087,bird,62.66666667,3.94,3.52,1 · Primeras palabras,1 · Primeras palabras,pá-ja-ro
-9,ducha,100.0,shower,100.0,3.95,4.72,1 · Primeras palabras,2 · Preescolar,du-cha
+624,burro,89.8989899,donkey,94.87179487,3.94,6.0,1 · Primeras palabras,3 · Lectura inicial,bu-rro
+117,caballo,78.35051546,horse,88.46153846,3.94,4.15,1 · Primeras palabras,2 · Preescolar,ca-ba-llo
 690,sombrero,94.0,hat,74.6835443,3.95,3.33,1 · Primeras palabras,1 · Primeras palabras,som-bre-ro
+9,ducha,100.0,shower,100.0,3.95,4.72,1 · Primeras palabras,2 · Preescolar,du-cha
 226,tren,96.96969697,train,96.0,3.98,4.0,1 · Primeras palabras,2 · Preescolar,tren
 636,oveja,100.0,sheep,91.25,4.0,4.25,2 · Preescolar,2 · Preescolar,o-ve-ja
 508,caja,100.0,box,91.13924051,4.0,4.3,2 · Preescolar,2 · Preescolar,ca-ja
@@ -91,36 +91,36 @@ codigo,nombre_es,acuerdo_es,nombre_en_us,acuerdo_en_us,aoa_es_anios,aoa_en_anios
 56,codo,100.0,elbow,100.0,4.05,4.78,2 · Preescolar,2 · Preescolar,co-do
 653,paraguas,100.0,umbrella,100.0,4.07,5.68,2 · Preescolar,2 · Preescolar,pa-ra-guas
 78,llave,100.0,key,100.0,4.09,3.58,2 · Preescolar,1 · Primeras palabras,lla-ve
-326,tomate,100.0,tomato,100.0,4.11,4.61,2 · Preescolar,2 · Preescolar,to-ma-te
 730,cocina,100.0,kitchen,100.0,4.11,3.68,2 · Preescolar,1 · Primeras palabras,co-ci-na
-544,médico,70.0,doctor,97.46835443,4.14,4.6,2 · Preescolar,2 · Preescolar,mé-di-co
-222,rodilla,100.0,knee,100.0,4.14,4.42,2 · Preescolar,2 · Preescolar,ro-di-lla
+326,tomate,100.0,tomato,100.0,4.11,4.61,2 · Preescolar,2 · Preescolar,to-ma-te
 297,avión,100.0,airplane,64.93506494,4.14,3.94,2 · Preescolar,1 · Primeras palabras,a-vión
 710,médico,62.0,doctor,100.0,4.14,4.6,2 · Preescolar,2 · Preescolar,mé-di-co
+222,rodilla,100.0,knee,100.0,4.14,4.42,2 · Preescolar,2 · Preescolar,ro-di-lla
+544,médico,70.0,doctor,97.46835443,4.14,4.6,2 · Preescolar,2 · Preescolar,mé-di-co
 691,hombre,73.19587629,man,94.28571429,4.17,3.11,2 · Preescolar,1 · Primeras palabras,hom-bre
-612,rana,100.0,frog,100.0,4.17,4.32,2 · Preescolar,2 · Preescolar,ra-na
 668,pollo,92.0,turkey,66.1971831,4.17,3.95,2 · Preescolar,1 · Primeras palabras,po-llo
-453,tijeras,100.0,scissors,100.0,4.22,4.5,2 · Preescolar,2 · Preescolar,ti-je-ras
-285,zanahoria,100.0,carrot,100.0,4.22,2.74,2 · Preescolar,1 · Primeras palabras,za-na-ho-ria
-343,botella,100.0,bottle,90.90909091,4.22,3.56,2 · Preescolar,1 · Primeras palabras,bo-te-lla
-480,rosa,96.0,rose,100.0,4.22,6.11,2 · Preescolar,3 · Lectura inicial,ro-sa
+612,rana,100.0,frog,100.0,4.17,4.32,2 · Preescolar,2 · Preescolar,ra-na
 43,cepillo,56.56565657,hairbrush,55.0,4.22,4.7,2 · Preescolar,2 · Preescolar,ce-pi-llo
+453,tijeras,100.0,scissors,100.0,4.22,4.5,2 · Preescolar,2 · Preescolar,ti-je-ras
+480,rosa,96.0,rose,100.0,4.22,6.11,2 · Preescolar,3 · Lectura inicial,ro-sa
+285,zanahoria,100.0,carrot,100.0,4.22,2.74,2 · Preescolar,1 · Primeras palabras,za-na-ho-ria
 447,estrella,100.0,star,100.0,4.22,3.89,2 · Preescolar,1 · Primeras palabras,es-tre-lla
-116,fuego,81.81818182,fire,100.0,4.24,3.25,2 · Preescolar,1 · Primeras palabras,fue-go
+343,botella,100.0,bottle,90.90909091,4.22,3.56,2 · Preescolar,1 · Primeras palabras,bo-te-lla
 532,payaso,100.0,clown,100.0,4.24,3.72,2 · Preescolar,1 · Primeras palabras,pa-ya-so
+116,fuego,81.81818182,fire,100.0,4.24,3.25,2 · Preescolar,1 · Primeras palabras,fue-go
 19,pavo,94.84536082,turkey,100.0,4.25,3.95,2 · Preescolar,1 · Primeras palabras,pa-vo
 557,lobo,94.94949495,wolf,85.8974359,4.26,4.5,2 · Preescolar,2 · Preescolar,lo-bo
 407,montaña,73.73737374,mountain,100.0,4.27,6.15,2 · Preescolar,3 · Lectura inicial,mon-ta-ña
 478,lavabo,84.69387755,sink,100.0,4.27,4.47,2 · Preescolar,2 · Preescolar,la-va-bo
-184,bruja,100.0,witch,100.0,4.28,4.78,2 · Preescolar,2 · Preescolar,bru-ja
 568,castillo,100.0,castle,96.15384615,4.28,5.8,2 · Preescolar,2 · Preescolar,cas-ti-llo
+184,bruja,100.0,witch,100.0,4.28,4.78,2 · Preescolar,2 · Preescolar,bru-ja
 23,bicicleta,100.0,bicycle,56.25,4.28,4.26,2 · Preescolar,2 · Preescolar,bi-ci-cle-ta
 414,lámpara,100.0,lamp,97.5,4.31,4.0,2 · Preescolar,2 · Preescolar,lám-pa-ra
-5,hombro,80.41237113,shoulder,75.0,4.31,4.5,2 · Preescolar,2 · Preescolar,hom-bro
 340,espejo,100.0,mirror,100.0,4.31,4.89,2 · Preescolar,2 · Preescolar,es-pe-jo
+5,hombro,80.41237113,shoulder,75.0,4.31,4.5,2 · Preescolar,2 · Preescolar,hom-bro
 353,camiseta,97.0,shirt,57.14285714,4.33,3.53,2 · Preescolar,1 · Primeras palabras,ca-mi-se-ta
-289,uña,78.0,finger,38.66666667,4.34,3.43,2 · Preescolar,1 · Primeras palabras,u-ña
 90,luna,100.0,moon,72.15189873,4.34,4.83,2 · Preescolar,2 · Preescolar,lu-na
+289,uña,78.0,finger,38.66666667,4.34,3.43,2 · Preescolar,1 · Primeras palabras,u-ña
 137,rata,56.56565657,rat,76.92307692,4.37,5.11,2 · Preescolar,2 · Preescolar,ra-ta
 659,radio,86.86868687,radio,83.78378378,4.37,5.17,2 · Preescolar,2 · Preescolar,ra-dio
 462,mosca,96.96969697,fly,88.75,4.39,3.05,2 · Preescolar,1 · Primeras palabras,mos-ca
@@ -128,101 +128,101 @@ codigo,nombre_es,acuerdo_es,nombre_en_us,acuerdo_en_us,aoa_es_anios,aoa_en_anios
 7,hada,100.0,fairy,96.20253165,4.4,5.17,2 · Preescolar,2 · Preescolar,ha-da
 53,bolsa,100.0,bag,70.88607595,4.41,4.28,2 · Preescolar,2 · Preescolar,bol-sa
 318,hoja,100.0,leaf,96.25,4.41,4.6,2 · Preescolar,2 · Preescolar,ho-ja
-172,loro,100.0,parrot,92.20779221,4.42,5.58,2 · Preescolar,2 · Preescolar,lo-ro
-489,pizza,100.0,pizza,100.0,4.42,4.67,2 · Preescolar,2 · Preescolar,piz-za
 169,espalda,100.0,back,100.0,4.42,5.31,2 · Preescolar,2 · Preescolar,es-pal-da
+489,pizza,100.0,pizza,100.0,4.42,4.67,2 · Preescolar,2 · Preescolar,piz-za
+172,loro,100.0,parrot,92.20779221,4.42,5.58,2 · Preescolar,2 · Preescolar,lo-ro
 278,tambor,100.0,drum,91.13924051,4.44,4.63,2 · Preescolar,2 · Preescolar,tam-bor
 484,ardilla,100.0,squirrel,100.0,4.44,4.44,2 · Preescolar,2 · Preescolar,ar-di-lla
 533,tiburón,100.0,shark,100.0,4.47,5.47,2 · Preescolar,2 · Preescolar,ti-bu-rón
 388,bolso,97.0,purse,60.75949367,4.47,5.53,2 · Preescolar,2 · Preescolar,bol-so
+733,gafas,100.0,glasses,96.25,4.5,4.35,2 · Preescolar,2 · Preescolar,ga-fas
+644,abrigo,72.44897959,coat,81.81818182,4.5,3.58,2 · Preescolar,1 · Primeras palabras,a-bri-go
 8,pierna,94.0,leg,96.15384615,4.5,3.0,2 · Preescolar,1 · Primeras palabras,pier-na
 118,herida,100.0,wound,43.83561644,4.5,7.52,2 · Preescolar,3 · Lectura inicial,he-ri-da
-644,abrigo,72.44897959,coat,81.81818182,4.5,3.58,2 · Preescolar,1 · Primeras palabras,a-bri-go
-733,gafas,100.0,glasses,96.25,4.5,4.35,2 · Preescolar,2 · Preescolar,ga-fas
 718,pantalón,100.0,pants,93.58974359,4.52,3.23,2 · Preescolar,1 · Primeras palabras,pan-ta-lón
 433,timbre,95.95959596,bell,93.24324324,4.53,3.89,2 · Preescolar,1 · Primeras palabras,tim-bre
 218,pañal,92.92929293,diaper,97.4025974,4.54,3.4,2 · Preescolar,1 · Primeras palabras,pa-ñal
 585,hormiga,97.95918367,ant,100.0,4.54,4.32,2 · Preescolar,2 · Preescolar,hor-mi-ga
 491,alfombra,93.93939394,rug,89.74358974,4.54,4.61,2 · Preescolar,2 · Preescolar,al-fom-bra
-92,foca,94.79166667,seal,91.02564103,4.61,5.42,2 · Preescolar,2 · Preescolar,fo-ca
-82,parque,80.80808081,park,65.2173913,4.61,4.47,2 · Preescolar,2 · Preescolar,par-que
 584,sapo,79.0,toad,81.25,4.61,6.11,2 · Preescolar,3 · Lectura inicial,sa-po
+82,parque,80.80808081,park,65.2173913,4.61,4.47,2 · Preescolar,2 · Preescolar,par-que
+92,foca,94.79166667,seal,91.02564103,4.61,5.42,2 · Preescolar,2 · Preescolar,fo-ca
 167,cordón,88.88888889,shoelace,83.5443038,4.62,4.16,2 · Preescolar,2 · Preescolar,cor-dón
-189,cocodrilo,86.0,alligator,58.2278481,4.62,4.78,2 · Preescolar,2 · Preescolar,co-co-dri-lo
 330,cocodrilo,90.72164948,alligator,68.0,4.62,4.78,2 · Preescolar,2 · Preescolar,co-co-dri-lo
 307,ala,95.95959596,wing,92.30769231,4.62,4.79,2 · Preescolar,2 · Preescolar,a-la
-720,cometa,100.0,kite,100.0,4.63,4.58,2 · Preescolar,2 · Preescolar,co-me-ta
+189,cocodrilo,86.0,alligator,58.2278481,4.62,4.78,2 · Preescolar,2 · Preescolar,co-co-dri-lo
 560,sandía,94.0,watermelon,100.0,4.63,4.22,2 · Preescolar,2 · Preescolar,san-dí-a
+720,cometa,100.0,kite,100.0,4.63,4.58,2 · Preescolar,2 · Preescolar,co-me-ta
 265,pirata,97.93814433,pirate,100.0,4.64,6.5,2 · Preescolar,3 · Lectura inicial,pi-ra-ta
 390,nieve,73.46938776,snow,75.67567568,4.64,4.11,2 · Preescolar,2 · Preescolar,nie-ve
+472,cuadrado,94.84536082,square,87.83783784,4.64,4.11,2 · Preescolar,2 · Preescolar,cua-dra-do
 68,vela,100.0,candle,100.0,4.64,5.37,2 · Preescolar,2 · Preescolar,ve-la
 81,carne,88.54166667,meat,81.33333333,4.64,4.42,2 · Preescolar,2 · Preescolar,car-ne
-472,cuadrado,94.84536082,square,87.83783784,4.64,4.11,2 · Preescolar,2 · Preescolar,cua-dra-do
 114,fruta,98.0,fruit,100.0,4.66,3.63,2 · Preescolar,1 · Primeras palabras,fru-ta
-590,escoba,100.0,broom,100.0,4.68,5.5,2 · Preescolar,2 · Preescolar,es-co-ba
-494,bigote,100.0,mustache,100.0,4.68,6.5,2 · Preescolar,3 · Lectura inicial,bi-go-te
 39,bolsillo,100.0,pocket,94.66666667,4.68,4.74,2 · Preescolar,2 · Preescolar,bol-si-llo
+494,bigote,100.0,mustache,100.0,4.68,6.5,2 · Preescolar,3 · Lectura inicial,bi-go-te
 199,falda,100.0,skirt,100.0,4.68,5.67,2 · Preescolar,2 · Preescolar,fal-da
 442,piña,100.0,pineapple,100.0,4.68,6.25,2 · Preescolar,3 · Lectura inicial,pi-ña
-73,ola,100.0,wave,96.05263158,4.73,4.26,2 · Preescolar,2 · Preescolar,o-la
-111,dragón,97.97979798,dragon,100.0,4.73,5.58,2 · Preescolar,2 · Preescolar,dra-gón
+590,escoba,100.0,broom,100.0,4.68,5.5,2 · Preescolar,2 · Preescolar,es-co-ba
 383,moneda,100.0,coin,68.35443038,4.73,4.17,2 · Preescolar,2 · Preescolar,mo-ne-da
+111,dragón,97.97979798,dragon,100.0,4.73,5.58,2 · Preescolar,2 · Preescolar,dra-gón
+73,ola,100.0,wave,96.05263158,4.73,4.26,2 · Preescolar,2 · Preescolar,o-la
 438,pulgar,78.0,thumb,96.25,4.73,4.42,2 · Preescolar,2 · Preescolar,pul-gar
-578,ceja,75.75757576,eyebrow,80.76923077,4.74,5.5,2 · Preescolar,2 · Preescolar,ce-ja
 379,cebra,100.0,zebra,100.0,4.74,4.79,2 · Preescolar,2 · Preescolar,ce-bra
-361,delfín,100.0,dolphin,100.0,4.75,6.05,2 · Preescolar,3 · Lectura inicial,del-fín
+578,ceja,75.75757576,eyebrow,80.76923077,4.74,5.5,2 · Preescolar,2 · Preescolar,ce-ja
 614,reina,100.0,queen,100.0,4.75,4.42,2 · Preescolar,2 · Preescolar,rei-na
 565,campana,100.0,bell,100.0,4.75,3.89,2 · Preescolar,1 · Primeras palabras,cam-pa-na
+361,delfín,100.0,dolphin,100.0,4.75,6.05,2 · Preescolar,3 · Lectura inicial,del-fín
 672,abeja,78.78787879,bee,85.71428571,4.76,5.0,2 · Preescolar,2 · Preescolar,a-be-ja
-77,camello,71.42857143,camel,100.0,4.78,5.11,2 · Preescolar,2 · Preescolar,ca-me-llo
 676,bastón,94.0,cane,90.0,4.78,5.74,2 · Preescolar,2 · Preescolar,bas-tón
+77,camello,71.42857143,camel,100.0,4.78,5.11,2 · Preescolar,2 · Preescolar,ca-me-llo
+431,guante,51.0,mitten,90.0,4.82,4.72,2 · Preescolar,2 · Preescolar,guan-te
 26,cebolla,100.0,onion,91.02564103,4.82,6.05,2 · Preescolar,3 · Lectura inicial,ce-bo-lla
 697,melocotón,96.875,peach,74.66666667,4.82,4.21,2 · Preescolar,2 · Preescolar,me-lo-co-tón
-431,guante,51.0,mitten,90.0,4.82,4.72,2 · Preescolar,2 · Preescolar,guan-te
 576,guante,100.0,gloves,93.67088608,4.82,9.44,2 · Preescolar,4 · Lector en desarrollo,guan-te
+517,cuerda,91.0,rope,100.0,4.85,5.44,2 · Preescolar,2 · Preescolar,cuer-da
 335,mantequilla,100.0,butter,85.52631579,4.85,5.78,2 · Preescolar,2 · Preescolar,man-te-qui-lla
 354,cabra,95.83333333,goat,100.0,4.85,5.21,2 · Preescolar,2 · Preescolar,ca-bra
-517,cuerda,91.0,rope,100.0,4.85,5.44,2 · Preescolar,2 · Preescolar,cuer-da
 452,reloj,100.0,watch,89.87341772,4.88,4.33,2 · Preescolar,2 · Preescolar,re-loj
 741,caramelo,100.0,candy,94.87179487,4.88,4.0,2 · Preescolar,2 · Preescolar,ca-ra-me-lo
-178,puente,97.97979798,bridge,79.22077922,4.89,5.58,2 · Preescolar,2 · Preescolar,puen-te
 288,bosque,93.93939394,forest,78.94736842,4.89,6.28,2 · Preescolar,3 · Lectura inicial,bos-que
-260,isla,100.0,island,97.5,4.9,7.41,2 · Preescolar,3 · Lectura inicial,is-la
+178,puente,97.97979798,bridge,79.22077922,4.89,5.58,2 · Preescolar,2 · Preescolar,puen-te
+610,miel,100.0,honey,97.46835443,4.9,5.44,2 · Preescolar,2 · Preescolar,miel
 146,aceituna,100.0,olive,84.81012658,4.9,6.68,2 · Preescolar,3 · Lectura inicial,a-cei-tu-na
 200,trompeta,100.0,trumpet,97.4025974,4.9,6.28,2 · Preescolar,3 · Lectura inicial,trom-pe-ta
-736,mago,66.30434783,wizard,80.0,4.9,6.26,2 · Preescolar,3 · Lectura inicial,ma-go
-682,pingüino,100.0,penguin,100.0,4.9,5.68,2 · Preescolar,2 · Preescolar,pin-güi-no
-610,miel,100.0,honey,97.46835443,4.9,5.44,2 · Preescolar,2 · Preescolar,miel
 255,pala,100.0,shovel,100.0,4.9,6.28,2 · Preescolar,3 · Lectura inicial,pa-la
+736,mago,66.30434783,wizard,80.0,4.9,6.26,2 · Preescolar,3 · Lectura inicial,ma-go
+260,isla,100.0,island,97.5,4.9,7.41,2 · Preescolar,3 · Lectura inicial,is-la
+682,pingüino,100.0,penguin,100.0,4.9,5.68,2 · Preescolar,2 · Preescolar,pin-güi-no
 99,cuadro,97.95918367,painting,89.47368421,4.97,5.26,2 · Preescolar,2 · Preescolar,cua-dro
 240,torre,78.57142857,castle,38.66666667,5.0,5.8,2 · Preescolar,2 · Preescolar,to-rre
 649,ambulancia,100.0,ambulance,100.0,5.0,6.16,2 · Preescolar,3 · Lectura inicial,am-bu-lan-cia
 110,mesa,94.94949495,desk,53.16455696,5.01,5.56,2 · Preescolar,2 · Preescolar,me-sa
-451,rey,100.0,king,97.46835443,5.02,5.42,2 · Preescolar,2 · Preescolar,rey
 357,guitarra,100.0,guitar,96.20253165,5.02,5.32,2 · Preescolar,2 · Preescolar,gui-ta-rra
+451,rey,100.0,king,97.46835443,5.02,5.42,2 · Preescolar,2 · Preescolar,rey
 227,muro,70.40816327,wall,81.01265823,5.04,3.79,2 · Preescolar,1 · Primeras palabras,mu-ro
 506,rayo,60.41666667,lightning,97.4025974,5.05,4.76,2 · Preescolar,2 · Preescolar,ra-yo
 239,mujer,60.60606061,woman,82.19178082,5.06,4.95,2 · Preescolar,2 · Preescolar,mu-jer
-83,corazón,100.0,heart,97.43589744,5.06,5.17,2 · Preescolar,2 · Preescolar,co-ra-zón
 32,corona,100.0,crown,100.0,5.06,7.8,2 · Preescolar,3 · Lectura inicial,co-ro-na
+83,corazón,100.0,heart,97.43589744,5.06,5.17,2 · Preescolar,2 · Preescolar,co-ra-zón
 105,ciervo,82.60869565,deer,79.22077922,5.09,5.17,2 · Preescolar,2 · Preescolar,cier-vo
+320,iglesia,95.87628866,church,72.0,5.11,5.15,2 · Preescolar,2 · Preescolar,i-gle-sia
+67,sofá,93.0,couch,75.64102564,5.11,3.74,2 · Preescolar,1 · Primeras palabras,so-fá
 464,goma,100.0,eraser,82.89473684,5.11,4.95,2 · Preescolar,2 · Preescolar,go-ma
 479,canguro,100.0,kangaroo,100.0,5.11,5.55,2 · Preescolar,2 · Preescolar,can-gu-ro
-67,sofá,93.0,couch,75.64102564,5.11,3.74,2 · Preescolar,1 · Primeras palabras,so-fá
-320,iglesia,95.87628866,church,72.0,5.11,5.15,2 · Preescolar,2 · Preescolar,i-gle-sia
-616,galleta,100.0,cracker,35.48387097,5.11,4.9,2 · Preescolar,2 · Preescolar,ga-lle-ta
-80,helicóptero,100.0,helicopter,100.0,5.11,5.26,2 · Preescolar,2 · Preescolar,he-li-cóp-te-ro
 30,granja,93.81443299,farm,100.0,5.11,3.85,2 · Preescolar,1 · Primeras palabras,gran-ja
+80,helicóptero,100.0,helicopter,100.0,5.11,5.26,2 · Preescolar,2 · Preescolar,he-li-cóp-te-ro
+616,galleta,100.0,cracker,35.48387097,5.11,4.9,2 · Preescolar,2 · Preescolar,ga-lle-ta
+549,serpiente,96.96969697,snake,100.0,5.15,5.1,2 · Preescolar,2 · Preescolar,ser-pien-te
 164,carretera,100.0,road,91.13924051,5.15,4.55,2 · Preescolar,2 · Preescolar,ca-rre-te-ra
 127,saco,100.0,sack,63.01369863,5.15,5.83,2 · Preescolar,2 · Preescolar,sa-co
-549,serpiente,96.96969697,snake,100.0,5.15,5.1,2 · Preescolar,2 · Preescolar,ser-pien-te
 192,termómetro,100.0,thermometer,85.52631579,5.16,6.63,2 · Preescolar,3 · Lectura inicial,ter-mó-me-tro
 611,planta,90.0,plant,84.41558442,5.17,3.95,2 · Preescolar,1 · Primeras palabras,plan-ta
-650,esponja,92.95774648,sponge,83.78378378,5.22,5.0,2 · Preescolar,2 · Preescolar,es-pon-ja
-521,zorro,95.95959596,fox,100.0,5.22,5.02,2 · Preescolar,2 · Preescolar,zo-rro
+235,aguja,93.87755102,needle,73.97260274,5.22,5.32,2 · Preescolar,2 · Preescolar,a-gu-ja
 150,charco,88.7755102,puddle,87.01298701,5.22,5.37,2 · Preescolar,2 · Preescolar,char-co
 418,cortina,100.0,curtain,90.0,5.22,4.95,2 · Preescolar,2 · Preescolar,cor-ti-na
-235,aguja,93.87755102,needle,73.97260274,5.22,5.32,2 · Preescolar,2 · Preescolar,a-gu-ja
+650,esponja,92.95774648,sponge,83.78378378,5.22,5.0,2 · Preescolar,2 · Preescolar,es-pon-ja
+521,zorro,95.95959596,fox,100.0,5.22,5.02,2 · Preescolar,2 · Preescolar,zo-rro
 273,autobús,100.0,bus,96.25,5.22,3.85,2 · Preescolar,1 · Primeras palabras,au-to-bús
 482,barca,78.78787879,boat,71.42857143,5.24,3.84,2 · Preescolar,1 · Primeras palabras,bar-ca
 592,lechuga,100.0,lettuce,87.17948718,5.24,4.28,2 · Preescolar,2 · Preescolar,le-chu-ga
@@ -230,81 +230,80 @@ codigo,nombre_es,acuerdo_es,nombre_en_us,acuerdo_en_us,aoa_es_anios,aoa_en_anios
 29,vaquero,84.53608247,cowboy,97.43589744,5.26,4.55,2 · Preescolar,2 · Preescolar,va-que-ro
 6,barbilla,76.53061224,chin,75.64102564,5.27,4.22,2 · Preescolar,2 · Preescolar,bar-bi-lla
 24,hueso,100.0,bone,91.13924051,5.28,5.53,2 · Preescolar,2 · Preescolar,hue-so
-588,pulsera,91.0,bracelet,97.43589744,5.31,5.68,2 · Preescolar,2 · Preescolar,pul-se-ra
 4,altar,59.57446809,church,63.38028169,5.31,5.15,2 · Preescolar,2 · Preescolar,al-tar
+588,pulsera,91.0,bracelet,97.43589744,5.31,5.68,2 · Preescolar,2 · Preescolar,pul-se-ra
+678,cuerno,96.93877551,horn,66.23376623,5.32,4.84,2 · Preescolar,2 · Preescolar,cuer-no
 487,cesta,100.0,basket,94.93670886,5.32,5.67,2 · Preescolar,2 · Preescolar,ces-ta
 628,bufanda,80.0,scarf,100.0,5.32,5.68,2 · Preescolar,2 · Preescolar,bu-fan-da
 290,jaula,100.0,birdcage,61.25,5.32,5.63,2 · Preescolar,2 · Preescolar,jau-la
-678,cuerno,96.93877551,horn,66.23376623,5.32,4.84,2 · Preescolar,2 · Preescolar,cuer-no
-362,piscina,100.0,pool,85.0,5.33,5.15,2 · Preescolar,2 · Preescolar,pis-ci-na
 411,puño,98.0,fist,100.0,5.33,4.58,2 · Preescolar,2 · Preescolar,pu-ño
+362,piscina,100.0,pool,85.0,5.33,5.15,2 · Preescolar,2 · Preescolar,pis-ci-na
 55,sombra,100.0,shadow,100.0,5.35,5.0,2 · Preescolar,2 · Preescolar,som-bra
 661,cajón,100.0,drawer,97.36842105,5.36,5.37,2 · Preescolar,2 · Preescolar,ca-jón
 724,ballena,89.47368421,whale,94.80519481,5.37,5.47,2 · Preescolar,2 · Preescolar,ba-lle-na
-337,monstruo,69.87951807,monster,58.90410959,5.38,4.58,2 · Preescolar,2 · Preescolar,mons-truo
 547,murciélago,100.0,bat,100.0,5.38,4.85,2 · Preescolar,2 · Preescolar,mur-cié-la-go
 86,río,92.63157895,river,91.89189189,5.38,4.9,2 · Preescolar,2 · Preescolar,rí-o
+337,monstruo,69.87951807,monster,58.90410959,5.38,4.58,2 · Preescolar,2 · Preescolar,mons-truo
 248,carro,64.28571429,wagon,41.33333333,5.39,5.22,2 · Preescolar,2 · Preescolar,ca-rro
 448,tarro,52.52525253,jar,100.0,5.41,5.44,2 · Preescolar,2 · Preescolar,ta-rro
 252,lagartija,76.04166667,lizard,96.20253165,5.41,5.42,2 · Preescolar,2 · Preescolar,la-gar-ti-ja
-11,hamburguesa,100.0,burger,53.75,5.42,5.17,2 · Preescolar,2 · Preescolar,ham-bur-gue-sa
-216,martillo,100.0,hammer,86.30136986,5.42,5.42,2 · Preescolar,2 · Preescolar,mar-ti-llo
-187,ciudad,90.72164948,city,69.23076923,5.42,6.56,2 · Preescolar,3 · Lectura inicial,ciu-dad
-141,girasol,100.0,sunflower,94.93670886,5.42,6.0,2 · Preescolar,3 · Lectura inicial,gi-ra-sol
-74,tractor,100.0,tractor,94.87179487,5.42,5.5,2 · Preescolar,2 · Preescolar,trac-tor
-66,tejado,100.0,roof,96.1038961,5.42,5.0,2 · Preescolar,2 · Preescolar,te-ja-do
 191,ensalada,96.93877551,salad,100.0,5.42,5.61,2 · Preescolar,2 · Preescolar,en-sa-la-da
+216,martillo,100.0,hammer,86.30136986,5.42,5.42,2 · Preescolar,2 · Preescolar,mar-ti-llo
 545,braga,100.0,underwear,69.73684211,5.42,3.94,2 · Preescolar,1 · Primeras palabras,bra-ga
-249,patata,100.0,potato,100.0,5.43,4.84,2 · Preescolar,2 · Preescolar,pa-ta-ta
-540,faro,98.0,lighthouse,100.0,5.43,6.11,2 · Preescolar,3 · Lectura inicial,fa-ro
+66,tejado,100.0,roof,96.1038961,5.42,5.0,2 · Preescolar,2 · Preescolar,te-ja-do
+74,tractor,100.0,tractor,94.87179487,5.42,5.5,2 · Preescolar,2 · Preescolar,trac-tor
+11,hamburguesa,100.0,burger,53.75,5.42,5.17,2 · Preescolar,2 · Preescolar,ham-bur-gue-sa
+141,girasol,100.0,sunflower,94.93670886,5.42,6.0,2 · Preescolar,3 · Lectura inicial,gi-ra-sol
+187,ciudad,90.72164948,city,69.23076923,5.42,6.56,2 · Preescolar,3 · Lectura inicial,ciu-dad
 467,pinza,100.0,clothespin,65.75342466,5.43,7.83,2 · Preescolar,3 · Lectura inicial,pin-za
-727,manguera,100.0,hose,92.10526316,5.45,5.33,2 · Preescolar,2 · Preescolar,man-gue-ra
+540,faro,98.0,lighthouse,100.0,5.43,6.11,2 · Preescolar,3 · Lectura inicial,fa-ro
+249,patata,100.0,potato,100.0,5.43,4.84,2 · Preescolar,2 · Preescolar,pa-ta-ta
 502,pastor,97.95918367,shepherd,59.42028986,5.45,6.67,2 · Preescolar,3 · Lectura inicial,pas-tor
+727,manguera,100.0,hose,92.10526316,5.45,5.33,2 · Preescolar,2 · Preescolar,man-gue-ra
 286,túnel,100.0,tunnel,100.0,5.45,5.89,2 · Preescolar,2 · Preescolar,tú-nel
-221,chupete,100.0,pacifier,89.04109589,5.46,4.56,2 · Preescolar,2 · Preescolar,chu-pe-te
 301,espada,100.0,sword,100.0,5.46,5.45,2 · Preescolar,2 · Preescolar,es-pa-da
+221,chupete,100.0,pacifier,89.04109589,5.46,4.56,2 · Preescolar,2 · Preescolar,chu-pe-te
 48,bombero,100.0,firefighter,61.33333333,5.46,5.16,2 · Preescolar,2 · Preescolar,bom-be-ro
 104,ascensor,100.0,elevator,100.0,5.46,5.47,2 · Preescolar,2 · Preescolar,as-cen-sor
 71,trofeo,53.0,trophy,100.0,5.47,5.55,2 · Preescolar,2 · Preescolar,tro-fe-o
-380,gorila,81.0,gorilla,100.0,5.48,5.74,2 · Preescolar,2 · Preescolar,go-ri-la
 267,nudo,91.0,knot,100.0,5.48,6.05,2 · Preescolar,3 · Lectura inicial,nu-do
-131,cantante,86.0,singer,73.68421053,5.48,5.06,2 · Preescolar,2 · Preescolar,can-tan-te
 242,cartero,97.95918367,mailman,89.74358974,5.48,4.72,2 · Preescolar,2 · Preescolar,car-te-ro
-293,dinosaurio,100.0,dinosaur,82.05128205,5.49,4.91,2 · Preescolar,2 · Preescolar,di-no-sau-rio
+380,gorila,81.0,gorilla,100.0,5.48,5.74,2 · Preescolar,2 · Preescolar,go-ri-la
+131,cantante,86.0,singer,73.68421053,5.48,5.06,2 · Preescolar,2 · Preescolar,can-tan-te
 14,bata,60.0,robe,67.94871795,5.49,6.38,2 · Preescolar,3 · Lectura inicial,ba-ta
-205,tobillo,94.89795918,ankle,97.43589744,5.5,4.89,2 · Preescolar,2 · Preescolar,to-bi-llo
+293,dinosaurio,100.0,dinosaur,82.05128205,5.49,4.91,2 · Preescolar,2 · Preescolar,di-no-sau-rio
 232,llama,80.43478261,llama,70.51282051,5.5,8.61,2 · Preescolar,4 · Lector en desarrollo,lla-ma
+205,tobillo,94.89795918,ankle,97.43589744,5.5,4.89,2 · Preescolar,2 · Preescolar,to-bi-llo
 529,morsa,68.42105263,walrus,97.36842105,5.51,5.06,2 · Preescolar,2 · Preescolar,mor-sa
-165,cinturón,100.0,belt,100.0,5.53,4.62,2 · Preescolar,2 · Preescolar,cin-tu-rón
 336,regla,100.0,ruler,100.0,5.53,5.94,2 · Preescolar,2 · Preescolar,re-gla
 124,esquina,90.90909091,corner,97.26027397,5.53,5.21,2 · Preescolar,2 · Preescolar,es-qui-na
-575,pico,98.0,beak,93.75,5.55,5.42,2 · Preescolar,2 · Preescolar,pi-co
+165,cinturón,100.0,belt,100.0,5.53,4.62,2 · Preescolar,2 · Preescolar,cin-tu-rón
 156,flauta,100.0,recorder,61.53846154,5.55,8.37,2 · Preescolar,4 · Lector en desarrollo,flau-ta
 681,cohete,97.97979798,rocket,93.58974359,5.56,5.63,2 · Preescolar,2 · Preescolar,co-he-te
 277,peluca,95.91836735,wig,93.58974359,5.56,5.63,2 · Preescolar,2 · Preescolar,pe-lu-ca
 656,pila,100.0,battery,97.43589744,5.58,5.58,2 · Preescolar,2 · Preescolar,pi-la
-666,café,100.0,coffee,97.43589744,5.6,4.94,2 · Preescolar,2 · Preescolar,ca-fé
 692,cereza,100.0,cherry,100.0,5.6,5.58,2 · Preescolar,2 · Preescolar,ce-re-za
+666,café,100.0,coffee,97.43589744,5.6,4.94,2 · Preescolar,2 · Preescolar,ca-fé
 125,kiwi,100.0,kiwi,100.0,5.61,7.56,2 · Preescolar,3 · Lectura inicial,ki-wi
 740,pescador,91.91919192,fishing,52.5,5.62,4.72,2 · Preescolar,2 · Preescolar,pes-ca-dor
 675,molino,100.0,windmill,100.0,5.63,5.32,2 · Preescolar,2 · Preescolar,mo-li-no
 528,cisne,100.0,swan,97.5,5.68,6.32,2 · Preescolar,3 · Lectura inicial,cis-ne
 84,máscara,77.55102041,mask,100.0,5.68,4.8,2 · Preescolar,2 · Preescolar,más-ca-ra
-441,chorizo,90.81632653,sausage,93.24324324,5.74,6.05,2 · Preescolar,3 · Lectura inicial,cho-ri-zo
 607,jersey,92.78350515,sweater,97.33333333,5.74,5.22,2 · Preescolar,2 · Preescolar,jer-sey
+441,chorizo,90.81632653,sausage,93.24324324,5.74,6.05,2 · Preescolar,3 · Lectura inicial,cho-ri-zo
 571,imán,85.55555556,magnet,84.21052632,5.75,6.1,2 · Preescolar,3 · Lectura inicial,i-mán
-138,frigorífico,67.0,fridge,55.69620253,5.77,4.67,2 · Preescolar,2 · Preescolar,fri-go-rí-fi-co
-428,cangrejo,92.85714286,crab,100.0,5.77,5.28,2 · Preescolar,2 · Preescolar,can-gre-jo
 223,cremallera,100.0,zipper,100.0,5.77,5.0,2 · Preescolar,2 · Preescolar,cre-ma-lle-ra
 181,triángulo,100.0,triangle,100.0,5.77,4.9,2 · Preescolar,2 · Preescolar,trián-gu-lo
+138,frigorífico,67.0,fridge,55.69620253,5.77,4.67,2 · Preescolar,2 · Preescolar,fri-go-rí-fi-co
 295,bandera,100.0,flag,91.25,5.77,5.33,2 · Preescolar,2 · Preescolar,ban-de-ra
-207,cicatriz,94.84536082,scar,83.11688312,5.79,5.68,2 · Preescolar,2 · Preescolar,ci-ca-triz
-327,casco,100.0,helmet,92.40506329,5.79,5.71,2 · Preescolar,2 · Preescolar,cas-co
+428,cangrejo,92.85714286,crab,100.0,5.77,5.28,2 · Preescolar,2 · Preescolar,can-gre-jo
 709,nadador,100.0,swimmer,73.07692308,5.79,5.11,2 · Preescolar,2 · Preescolar,na-da-dor
+327,casco,100.0,helmet,92.40506329,5.79,5.71,2 · Preescolar,2 · Preescolar,cas-co
+207,cicatriz,94.84536082,scar,83.11688312,5.79,5.68,2 · Preescolar,2 · Preescolar,ci-ca-triz
 587,maíz,71.71717172,corn,93.67088608,5.82,4.61,2 · Preescolar,2 · Preescolar,ma-íz
 399,bailarina,97.0,ballerina,82.27848101,5.83,5.26,2 · Preescolar,2 · Preescolar,bai-la-ri-na
-233,salero,78.0,salt,78.75,5.84,5.05,2 · Preescolar,2 · Preescolar,sa-le-ro
 570,toro,100.0,bull,94.73684211,5.84,4.53,2 · Preescolar,2 · Preescolar,to-ro
+233,salero,78.0,salt,78.75,5.84,5.05,2 · Preescolar,2 · Preescolar,sa-le-ro
 536,rama,95.0,branch,76.92307692,5.84,5.11,2 · Preescolar,2 · Preescolar,ra-ma
 62,avispa,68.68686869,wasp,68.83116883,5.87,5.58,2 · Preescolar,2 · Preescolar,a-vis-pa
 559,pepino,79.16666667,cucumber,93.67088608,5.87,5.72,2 · Preescolar,2 · Preescolar,pe-pi-no
@@ -313,69 +312,69 @@ codigo,nombre_es,acuerdo_es,nombre_en_us,acuerdo_en_us,aoa_es_anios,aoa_en_anios
 669,piloto,97.93814433,pilot,94.87179487,5.92,6.32,2 · Preescolar,3 · Lectura inicial,pi-lo-to
 97,pluma,98.0,feather,94.93670886,5.94,4.67,2 · Preescolar,2 · Preescolar,plu-ma
 392,tetera,96.96969697,teapot,88.60759494,5.99,6.22,2 · Preescolar,3 · Lectura inicial,te-te-ra
-456,aceite,91.83673469,oil,36.98630137,6.0,7.33,3 · Lectura inicial,3 · Lectura inicial,a-cei-te
 270,flecha,100.0,arrow,100.0,6.0,6.07,3 · Lectura inicial,3 · Lectura inicial,fle-cha
-626,piano,100.0,piano,96.25,6.02,5.5,3 · Lectura inicial,2 · Preescolar,pia-no
+456,aceite,91.83673469,oil,36.98630137,6.0,7.33,3 · Lectura inicial,3 · Lectura inicial,a-cei-te
 154,dominó,100.0,domino,100.0,6.02,6.17,3 · Lectura inicial,3 · Lectura inicial,do-mi-nó
 275,capa,94.62365591,cape,76.0,6.02,6.9,3 · Lectura inicial,3 · Lectura inicial,ca-pa
+626,piano,100.0,piano,96.25,6.02,5.5,3 · Lectura inicial,2 · Preescolar,pia-no
 558,mechero,100.0,lighter,96.0,6.05,7.12,3 · Lectura inicial,3 · Lectura inicial,me-che-ro
-163,coco,100.0,coconut,100.0,6.05,6.5,3 · Lectura inicial,3 · Lectura inicial,co-co
 310,sobre,82.82828283,envelope,76.25,6.05,6.25,3 · Lectura inicial,3 · Lectura inicial,so-bre
-208,micrófono,100.0,microphone,100.0,6.06,6.25,3 · Lectura inicial,3 · Lectura inicial,mi-cró-fo-no
-175,pintor,97.0,painter,64.47368421,6.06,5.6,3 · Lectura inicial,2 · Preescolar,pin-tor
-61,periódico,91.20879121,newspaper,78.87323944,6.06,5.78,3 · Lectura inicial,2 · Preescolar,pe-rió-di-co
+163,coco,100.0,coconut,100.0,6.05,6.5,3 · Lectura inicial,3 · Lectura inicial,co-co
 228,bellota,84.09090909,acorn,92.75362319,6.06,5.95,3 · Lectura inicial,2 · Preescolar,be-llo-ta
+208,micrófono,100.0,microphone,100.0,6.06,6.25,3 · Lectura inicial,3 · Lectura inicial,mi-cró-fo-no
+61,periódico,91.20879121,newspaper,78.87323944,6.06,5.78,3 · Lectura inicial,2 · Preescolar,pe-rió-di-co
+175,pintor,97.0,painter,64.47368421,6.06,5.6,3 · Lectura inicial,2 · Preescolar,pin-tor
 365,erizo,97.89473684,hedgehog,68.83116883,6.07,8.63,3 · Lectura inicial,4 · Lector en desarrollo,e-ri-zo
 513,labios,92.0,lips,100.0,6.07,8.43,3 · Lectura inicial,4 · Lector en desarrollo,la-bios
 657,medalla,100.0,medal,97.43589744,6.07,6.83,3 · Lectura inicial,3 · Lectura inicial,me-da-lla
 12,sirena,100.0,mermaid,100.0,6.08,5.68,3 · Lectura inicial,2 · Preescolar,si-re-na
-698,pendiente,100.0,earring,100.0,6.09,7.17,3 · Lectura inicial,3 · Lectura inicial,pen-dien-te
 231,pectoral,60.41666667,chest,37.5,6.09,5.05,3 · Lectura inicial,2 · Preescolar,pec-to-ral
 220,gaviota,82.65306122,seagull,85.71428571,6.09,5.42,3 · Lectura inicial,2 · Preescolar,ga-vio-ta
+698,pendiente,100.0,earring,100.0,6.09,7.17,3 · Lectura inicial,3 · Lectura inicial,pen-dien-te
 115,hipopótamo,91.0,hippopotamus,100.0,6.11,7.0,3 · Lectura inicial,3 · Lectura inicial,hi-po-pó-ta-mo
 561,oruga,76.53061224,caterpillar,100.0,6.13,5.17,3 · Lectura inicial,2 · Preescolar,o-ru-ga
 368,abanico,100.0,fan,94.80519481,6.15,5.63,3 · Lectura inicial,2 · Preescolar,a-ba-ni-co
-683,caravana,93.75,trailer,62.82051282,6.21,6.37,3 · Lectura inicial,3 · Lectura inicial,ca-ra-va-na
 161,corbata,100.0,tie,85.0,6.21,4.74,3 · Lectura inicial,2 · Preescolar,cor-ba-ta
-463,rectángulo,78.02197802,rectangle,84.41558442,6.22,5.0,3 · Lectura inicial,2 · Preescolar,rec-tán-gu-lo
-439,volcán,100.0,volcano,100.0,6.22,6.74,3 · Lectura inicial,3 · Lectura inicial,vol-cán
-193,medusa,100.0,jellyfish,100.0,6.22,6.61,3 · Lectura inicial,3 · Lectura inicial,me-du-sa
+683,caravana,93.75,trailer,62.82051282,6.21,6.37,3 · Lectura inicial,3 · Lectura inicial,ca-ra-va-na
 412,fábrica,96.96969697,factory,92.10526316,6.22,6.89,3 · Lectura inicial,3 · Lectura inicial,fá-bri-ca
-601,koala,100.0,koala,100.0,6.22,6.0,3 · Lectura inicial,3 · Lectura inicial,ko-a-la
 148,pipa,100.0,pipe,85.71428571,6.22,8.17,3 · Lectura inicial,4 · Lector en desarrollo,pi-pa
+193,medusa,100.0,jellyfish,100.0,6.22,6.61,3 · Lectura inicial,3 · Lectura inicial,me-du-sa
+439,volcán,100.0,volcano,100.0,6.22,6.74,3 · Lectura inicial,3 · Lectura inicial,vol-cán
+601,koala,100.0,koala,100.0,6.22,6.0,3 · Lectura inicial,3 · Lectura inicial,ko-a-la
+463,rectángulo,78.02197802,rectangle,84.41558442,6.22,5.0,3 · Lectura inicial,2 · Preescolar,rec-tán-gu-lo
 397,higo,68.53932584,fig,31.81818182,6.23,8.06,3 · Lectura inicial,4 · Lector en desarrollo,hi-go
 139,fantasma,100.0,ghost,100.0,6.23,5.06,3 · Lectura inicial,2 · Preescolar,fan-tas-ma
-671,tirantes,100.0,suspenders,93.58974359,6.27,8.97,3 · Lectura inicial,4 · Lector en desarrollo,ti-ran-tes
-246,dentista,100.0,dentist,97.4025974,6.27,5.22,3 · Lectura inicial,2 · Preescolar,den-tis-ta
 617,aeropuerto,100.0,airport,97.36842105,6.27,6.84,3 · Lectura inicial,3 · Lectura inicial,a-e-ro-puer-to
 745,pozo,100.0,well,97.5,6.27,6.16,3 · Lectura inicial,3 · Lectura inicial,po-zo
-699,telescopio,90.42553191,telescope,100.0,6.28,6.95,3 · Lectura inicial,3 · Lectura inicial,te-les-co-pio
-317,militar,56.12244898,soldier,85.52631579,6.28,6.94,3 · Lectura inicial,3 · Lectura inicial,mi-li-tar
+246,dentista,100.0,dentist,97.4025974,6.27,5.22,3 · Lectura inicial,2 · Preescolar,den-tis-ta
+671,tirantes,100.0,suspenders,93.58974359,6.27,8.97,3 · Lectura inicial,4 · Lector en desarrollo,ti-ran-tes
 551,calabaza,100.0,pumpkin,100.0,6.28,4.78,3 · Lectura inicial,2 · Preescolar,ca-la-ba-za
-253,coro,95.95959596,choir,90.90909091,6.29,6.53,3 · Lectura inicial,3 · Lectura inicial,co-ro
+317,militar,56.12244898,soldier,85.52631579,6.28,6.94,3 · Lectura inicial,3 · Lectura inicial,mi-li-tar
+699,telescopio,90.42553191,telescope,100.0,6.28,6.95,3 · Lectura inicial,3 · Lectura inicial,te-les-co-pio
 363,ventilador,100.0,fan,100.0,6.29,5.63,3 · Lectura inicial,2 · Preescolar,ven-ti-la-dor
+253,coro,95.95959596,choir,90.90909091,6.29,6.53,3 · Lectura inicial,3 · Lectura inicial,co-ro
 422,hacha,98.0,axe,88.75,6.31,6.11,3 · Lectura inicial,3 · Lectura inicial,ha-cha
-640,cactus,100.0,cactus,100.0,6.39,6.72,3 · Lectura inicial,3 · Lectura inicial,cac-tus
 743,espantapájaros,100.0,scarecrow,100.0,6.39,5.56,3 · Lectura inicial,2 · Preescolar,es-pan-ta-pá-ja-ros
+640,cactus,100.0,cactus,100.0,6.39,6.72,3 · Lectura inicial,3 · Lectura inicial,cac-tus
 282,rinoceronte,100.0,rhinoceros,100.0,6.4,6.0,3 · Lectura inicial,3 · Lectura inicial,ri-no-ce-ron-te
+238,puzle,100.0,puzzle,93.67088608,6.42,5.11,3 · Lectura inicial,2 · Preescolar,puz-le
 537,huella,100.0,fingerprint,96.20253165,6.42,7.56,3 · Lectura inicial,3 · Lectura inicial,hue-lla
 603,cementerio,100.0,cemetery,69.62025316,6.42,7.78,3 · Lectura inicial,3 · Lectura inicial,ce-men-te-rio
-238,puzle,100.0,puzzle,93.67088608,6.42,5.11,3 · Lectura inicial,2 · Preescolar,puz-le
 595,cubo,97.95918367,cube,83.11688312,6.43,7.32,3 · Lectura inicial,3 · Lectura inicial,cu-bo
 224,pincel,100.0,paintbrush,83.33333333,6.45,6.22,3 · Lectura inicial,3 · Lectura inicial,pin-cel
-677,mapa,77.55102041,map,84.41558442,6.47,5.6,3 · Lectura inicial,2 · Preescolar,ma-pa
 373,coliflor,81.91489362,cauliflower,86.84210526,6.47,6.18,3 · Lectura inicial,3 · Lectura inicial,co-li-flor
+677,mapa,77.55102041,map,84.41558442,6.47,5.6,3 · Lectura inicial,2 · Preescolar,ma-pa
 405,ancla,100.0,anchor,100.0,6.49,5.72,3 · Lectura inicial,2 · Preescolar,an-cla
 539,astronauta,100.0,astronaut,100.0,6.5,6.28,3 · Lectura inicial,3 · Lectura inicial,as-tro-nau-ta
-87,robot,100.0,robot,100.0,6.52,5.35,3 · Lectura inicial,2 · Preescolar,ro-bot
 113,lago,84.94623656,lake,97.33333333,6.52,4.61,3 · Lectura inicial,2 · Preescolar,la-go
-449,banco,100.0,bench,97.46835443,6.57,4.21,3 · Lectura inicial,2 · Preescolar,ban-co
+87,robot,100.0,robot,100.0,6.52,5.35,3 · Lectura inicial,2 · Preescolar,ro-bot
 663,columna,90.2173913,column,59.21052632,6.57,7.56,3 · Lectura inicial,3 · Lectura inicial,co-lum-na
 245,raíz,100.0,root,92.5,6.57,5.94,3 · Lectura inicial,2 · Preescolar,ra-íz
+449,banco,100.0,bench,97.46835443,6.57,4.21,3 · Lectura inicial,2 · Preescolar,ban-co
 378,langosta,68.42105263,lobster,100.0,6.59,7.44,3 · Lectura inicial,3 · Lectura inicial,lan-gos-ta
 582,laboratorio,100.0,lab,62.68656716,6.61,8.71,3 · Lectura inicial,4 · Lector en desarrollo,la-bo-ra-to-rio
-562,tostadora,89.0,toaster,92.20779221,6.63,6.72,3 · Lectura inicial,3 · Lectura inicial,tos-ta-do-ra
 314,colonia,76.0,perfume,77.02702703,6.63,7.06,3 · Lectura inicial,3 · Lectura inicial,co-lo-nia
+562,tostadora,89.0,toaster,92.20779221,6.63,6.72,3 · Lectura inicial,3 · Lectura inicial,tos-ta-do-ra
 391,cadena,100.0,chain,94.93670886,6.64,5.22,3 · Lectura inicial,2 · Preescolar,ca-de-na
 140,grifo,100.0,faucet,86.48648649,6.65,6.29,3 · Lectura inicial,3 · Lectura inicial,gri-fo
 313,peluquero,90.0,barber,68.91891892,6.65,6.68,3 · Lectura inicial,3 · Lectura inicial,pe-lu-que-ro
@@ -392,12 +391,11 @@ codigo,nombre_es,acuerdo_es,nombre_en_us,acuerdo_en_us,aoa_es_anios,aoa_en_anios
 634,dinamita,71.875,dynamite,79.48717949,6.78,7.11,3 · Lectura inicial,3 · Lectura inicial,di-na-mi-ta
 177,seta,89.79591837,mushroom,100.0,6.8,6.44,3 · Lectura inicial,3 · Lectura inicial,se-ta
 577,iceberg,89.69072165,iceberg,78.20512821,6.82,8.21,3 · Lectura inicial,4 · Lector en desarrollo,i-ce-berg
-367,lanza,78.49462366,spear,72.60273973,6.85,7.22,3 · Lectura inicial,3 · Lectura inicial,lan-za
 370,escorpión,92.70833333,scorpion,97.46835443,6.85,7.84,3 · Lectura inicial,3 · Lectura inicial,es-cor-pión
 501,escudo,98.0,shield,96.20253165,6.85,6.5,3 · Lectura inicial,3 · Lectura inicial,es-cu-do
-530,valla,76.04166667,fence,96.15384615,6.89,6.28,3 · Lectura inicial,3 · Lectura inicial,va-lla
+367,lanza,78.49462366,spear,72.60273973,6.85,7.22,3 · Lectura inicial,3 · Lectura inicial,lan-za
 266,tacón,100.0,heel,90.78947368,6.89,7.85,3 · Lectura inicial,3 · Lectura inicial,ta-cón
-645,escopeta,93.93939394,rifle,41.02564103,6.93,7.85,3 · Lectura inicial,3 · Lectura inicial,es-co-pe-ta
+530,valla,76.04166667,fence,96.15384615,6.89,6.28,3 · Lectura inicial,3 · Lectura inicial,va-lla
 621,tanque,100.0,tank,94.87179487,6.94,7.17,3 · Lectura inicial,3 · Lectura inicial,tan-que
 63,balcón,91.83673469,balcony,94.80519481,6.96,8.1,3 · Lectura inicial,4 · Lector en desarrollo,bal-cón
 566,violín,93.87755102,violin,86.25,6.97,7.45,3 · Lectura inicial,3 · Lectura inicial,vio-lín
@@ -406,9 +404,8 @@ codigo,nombre_es,acuerdo_es,nombre_en_us,acuerdo_en_us,aoa_es_anios,aoa_en_anios
 586,plancha,100.0,iron,93.58974359,7.0,7.32,3 · Lectura inicial,3 · Lectura inicial,plan-cha
 160,carretilla,94.73684211,wheelbarrow,90.78947368,7.0,6.78,3 · Lectura inicial,3 · Lectura inicial,ca-rre-ti-lla
 149,cerradura,97.6744186,keyhole,68.91891892,7.02,7.86,3 · Lectura inicial,3 · Lectura inicial,ce-rra-du-ra
-21,boxeador,100.0,boxer,96.20253165,7.07,7.95,3 · Lectura inicial,3 · Lectura inicial,bo-xe-a-dor
 726,camarero,100.0,waiter,88.75,7.07,8.28,3 · Lectura inicial,4 · Lector en desarrollo,ca-ma-re-ro
-210,pezón,81.63265306,nipple,67.08860759,7.11,9.05,3 · Lectura inicial,4 · Lector en desarrollo,pe-zón
+21,boxeador,100.0,boxer,96.20253165,7.07,7.95,3 · Lectura inicial,3 · Lectura inicial,bo-xe-a-dor
 662,pelícano,71.05263158,pelican,87.17948718,7.11,8.22,3 · Lectura inicial,4 · Lector en desarrollo,pe-lí-ca-no
 121,laberinto,100.0,maze,97.46835443,7.17,7.11,3 · Lectura inicial,3 · Lectura inicial,la-be-rin-to
 291,gatillo,91.83673469,trigger,88.88888889,7.2,8.33,3 · Lectura inicial,4 · Lector en desarrollo,ga-ti-llo
@@ -417,17 +414,14 @@ codigo,nombre_es,acuerdo_es,nombre_en_us,acuerdo_en_us,aoa_es_anios,aoa_en_anios
 404,libélula,92.47311828,dragonfly,92.40506329,7.29,6.8,3 · Lectura inicial,3 · Lectura inicial,li-bé-lu-la
 254,carnicero,82.82828283,butcher,97.36842105,7.29,7.9,3 · Lectura inicial,3 · Lectura inicial,car-ni-ce-ro
 717,acordeón,97.89473684,accordion,90.0,7.32,8.61,3 · Lectura inicial,4 · Lector en desarrollo,a-cor-de-ón
-155,bala,97.82608696,bullet,85.52631579,7.32,6.7,3 · Lectura inicial,3 · Lectura inicial,ba-la
-457,pirámide,92.63157895,pyramid,72.22222222,7.33,7.61,3 · Lectura inicial,3 · Lectura inicial,pi-rá-mi-de
 315,ovni,59.5959596,ufo,79.45205479,7.33,,3 · Lectura inicial,,ov-ni
+457,pirámide,92.63157895,pyramid,72.22222222,7.33,7.61,3 · Lectura inicial,3 · Lectura inicial,pi-rá-mi-de
 303,mimo,94.84536082,mime,100.0,7.34,9.03,3 · Lectura inicial,4 · Lector en desarrollo,mi-mo
-57,sello,95.95959596,stamp,87.34177215,7.35,6.33,3 · Lectura inicial,3 · Lectura inicial,se-llo
 701,arruga,84.375,wrinkles,72.60273973,7.35,11.79,3 · Lectura inicial,Fuera de foco,a-rru-ga
+57,sello,95.95959596,stamp,87.34177215,7.35,6.33,3 · Lectura inicial,3 · Lectura inicial,se-llo
 247,cerebro,100.0,brain,100.0,7.36,5.76,3 · Lectura inicial,2 · Preescolar,ce-re-bro
 46,destornillador,100.0,screwdriver,90.78947368,7.36,6.0,3 · Lectura inicial,3 · Lectura inicial,des-tor-ni-lla-dor
-608,condón,51.51515152,condom,94.87179487,7.38,6.94,3 · Lectura inicial,3 · Lectura inicial,con-dón
 410,pistacho,95.0617284,pistachio,94.59459459,7.38,8.74,3 · Lectura inicial,4 · Lector en desarrollo,pis-ta-cho
-331,sujetador,93.0,bra,100.0,7.38,8.21,3 · Lectura inicial,4 · Lector en desarrollo,su-je-ta-dor
 108,calendario,100.0,calendar,100.0,7.38,5.89,3 · Lectura inicial,2 · Preescolar,ca-len-da-rio
 107,saxofón,89.69072165,saxophone,85.8974359,7.39,9.1,3 · Lectura inicial,4 · Lector en desarrollo,sa-xo-fón
 283,limusina,100.0,limo,60.25641026,7.43,8.42,3 · Lectura inicial,4 · Lector en desarrollo,li-mu-si-na
@@ -458,16 +452,14 @@ codigo,nombre_es,acuerdo_es,nombre_en_us,acuerdo_en_us,aoa_es_anios,aoa_en_anios
 369,cazuela,64.0,pot,100.0,8.14,5.95,4 · Lector en desarrollo,2 · Preescolar,ca-zue-la
 269,camaleón,88.42105263,chameleon,76.92307692,8.24,10.68,4 · Lector en desarrollo,Fuera de foco,ca-ma-le-ón
 581,espárrago,100.0,asparagus,97.36842105,8.33,6.79,4 · Lector en desarrollo,3 · Lectura inicial,es-pá-rra-go
-281,granada,88.23529412,pomegranate,100.0,8.4,9.59,4 · Lector en desarrollo,4 · Lector en desarrollo,gra-na-da
 376,escultor,100.0,sculptor,85.91549296,8.41,9.84,4 · Lector en desarrollo,4 · Lector en desarrollo,es-cul-tor
 85,diamante,100.0,diamond,100.0,8.47,6.47,4 · Lector en desarrollo,3 · Lectura inicial,dia-man-te
 112,pulmón,100.0,lung,97.43589744,8.49,7.16,4 · Lector en desarrollo,3 · Lectura inicial,pul-món
 196,ordenador,100.0,computer,88.0,8.53,9.7,4 · Lector en desarrollo,4 · Lector en desarrollo,or-de-na-dor
 311,cuchilla,85.26315789,razor,97.4025974,8.59,7.11,4 · Lector en desarrollo,3 · Lectura inicial,cu-chi-lla
 209,búmeran,88.15789474,boomerang,100.0,8.64,9.79,4 · Lector en desarrollo,4 · Lector en desarrollo,bú-me-ran
-605,arpa,100.0,harp,100.0,8.74,7.55,4 · Lector en desarrollo,3 · Lectura inicial,ar-pa
 28,microscopio,97.93814433,microscope,100.0,8.74,9.16,4 · Lector en desarrollo,4 · Lector en desarrollo,mi-cros-co-pio
-497,ataúd,90.81632653,coffin,87.34177215,8.77,7.79,4 · Lector en desarrollo,3 · Lectura inicial,a-ta-úd
+605,arpa,100.0,harp,100.0,8.74,7.55,4 · Lector en desarrollo,3 · Lectura inicial,ar-pa
 594,jeringuilla,75.75757576,syringe,44.87179487,9.04,8.06,4 · Lector en desarrollo,4 · Lector en desarrollo,je-rin-gui-lla
 292,brújula,100.0,compass,100.0,9.1,8.44,4 · Lector en desarrollo,4 · Lector en desarrollo,brú-ju-la
 466,juez,100.0,judge,100.0,9.62,8.85,4 · Lector en desarrollo,4 · Lector en desarrollo,juez

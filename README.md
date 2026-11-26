@@ -27,10 +27,10 @@ palabra a mano.
 - **Modelo elegido: Gradient Boosting.** Error medio de **1,50 años** en palabras nunca vistas (R² = 0,58). Ubica la palabra en el nivel correcto ±1 en el **94 %** de los casos, y una palabra adulta cae en un nivel infantil solo en el **0,05 %**.
 - **Español:** combinado con lo aprendido del inglés, la correlación con las normas reales llega a **ρ = 0,71**.
 - **Producto para la app**, en [`eft-machine-learning/data/processed/`](eft-machine-learning/data/processed/):
-  - `vocabulario_infantil_es.csv`: **1.312** palabras con nivel, sílabas (*ca-sa*), fonemas y traducción.
-  - `vocabulario_infantil_en.csv`: **10.333** palabras con nivel y fonemas.
-  - `pares_imagen_es_en.csv`: **473** pares imagen–palabra en ambos idiomas.
-  - Un filtro editorial excluye groserías, violencia, alcohol y sexualidad, pero la validación de una educadora sigue siendo necesaria.
+  - `vocabulario_infantil_es.csv`: **1.301** palabras con nivel, sílabas (*ca-sa*), fonemas y traducción.
+  - `vocabulario_infantil_en.csv`: **10.286** palabras con nivel y fonemas.
+  - `pares_imagen_es_en.csv`: **465** pares imagen–palabra en ambos idiomas.
+  - Un filtro editorial excluye insultos, violencia, armas, alcohol, drogas y sexualidad. Una lista nunca es completa: la validación de una educadora sigue siendo necesaria.
 
 **Documentos**
 - 📘 [Informe técnico](eft-machine-learning/README.md): problema, KPIs, CRISP-DM, EDA, modelos, optimización, ensambles, evaluación, sesgos y recomendaciones.
@@ -40,7 +40,7 @@ palabra a mano.
 - 🔮 [App Streamlit para probar el modelo](eft-machine-learning/app/README.md).
 - 🌲 [**Pino Beta**](eft-machine-learning/app/README.md#pino-beta--escuchar-y-practicar-pronunciación): escucha cada palabra y practica la pronunciación con el micrófono.
 
-**Próximos pasos:** exponer el modelo en `pino-ml` (`/predict/aoa-palabra`), usar la AoA como
+**Próximos pasos:** el modelo ya está expuesto en `pino-ml` (`/predict/aoa-palabra`); falta usar la AoA como
 dificultad inicial del repaso espaciado SM-2, completar el nivel 1 con Wordbank (datos de
 niños reales) y sumar vocabulario chileno validado por educadoras.
 
@@ -64,8 +64,8 @@ Este nuevo sprint incorpora la investigación psicométrica internacional de las
 4. **`ClasificadorDificultad` (mejorado):** Combina el índice de Fernández-Huerta con el índice de Gutiérrez de Polini y spaCy, mapeando la complejidad a los niveles PISA 1c a 5.
 
 ### 3. Suite de Pruebas Automatizadas
-- **Backend ML:** 80 tests aprobados al 100% (`pytest pino-ml/tests`).
-- **Frontend Flutter:** 21 tests aprobados al 100% (`cd pino && flutter test`).
+- **Backend ML:** `pytest pino-ml/tests`.
+- **Frontend Flutter:** 34 tests (`cd pino && flutter test`).
 
 ---
 
@@ -73,19 +73,54 @@ Este nuevo sprint incorpora la investigación psicométrica internacional de las
 
 | Área | Historias de usuario | Estado |
 |------|---------------------|--------|
-| Perfiles locales (infantil/adulto) y diagnóstico inicial | HU-01, HU-15 | Lógica y datos listos; pantallas por hacer |
-| Fonemas con audio y ejercicio de emparejamiento | HU-03, HU-14 | Lógica y datos listos; pantallas y audios por hacer |
+| Perfiles locales (infantil/adulto) y diagnóstico inicial | HU-01, HU-15 | Funcionando |
+| Fonemas con audio y ejercicio de emparejamiento | HU-03, HU-14 | Funcionando con la voz del teléfono; faltan audios grabados |
 | Trazado de letras con tolerancia ajustable | HU-02, HU-13 | Análisis de trazo en la API (vocales); canvas por hacer |
-| Racha diaria y repaso espaciado | HU-05, HU-08 | Lógica lista |
+| Racha diaria y repaso espaciado | HU-05, HU-08 | Racha funcionando; repaso espaciado sin pantalla |
+| Practicar pronunciación y consultar la edad de aprendizaje de una palabra | HU-06 | Versión de prueba (requiere la API) |
 | Sincronización con la nube cuando hay conexión | HU-10 | `SyncService` listo; falta inicializar Firebase |
 | Lectura guiada, bloques fonéticos, modo adulto, voz, accesibilidad | HU-04, 06, 07, 09, 11, 12, 16–22 | Sprints 4 a 7 |
+
+## Recorrido en la app móvil
+
+**Perfil** (crear o elegir) → **Evaluación inicial** (3 preguntas) → **Inicio** (nivel y racha) → lecciones:
+
+| Lección | Qué hace | ¿Necesita la API? |
+|---|---|---|
+| Practicar palabras (*Pino Beta*) | Escucha la palabra (voz del teléfono), graba al usuario y marca el resultado. Empieza en el nivel del perfil y cuenta para la racha | Sí, para evaluar la voz: `POST /predict/pronunciacion?idioma=es\|en` |
+| ¿A qué edad se aprende? (dentro de Pino Beta) | Consulta el modelo de edad de adquisición por cualquier palabra y permite practicarla | Sí: `GET /predict/aoa-palabra` |
+| Explorar letras | Toca una letra y escucha una palabra de ejemplo | No |
+| Juego de relacionar | ¿Con qué letra empieza la palabra? | No |
+
+La app borra cada grabación al recibir la respuesta y la API borra su copia temporal. El vocabulario incluido
+(320 palabras, `python pino/tool/generar_vocabulario_beta.py`) debe revisarlo una educadora antes de usarlo con niños.
+
+```bash
+# 1. API, con Python 3.12 o superior (en pino-ml/)
+pip install -e ".[api,aoa]"
+python -m spacy download es_core_news_md
+uvicorn pino_ml.api.main:app --host 0.0.0.0 --port 8000
+# 2. App (en pino/)
+flutter pub get && dart run build_runner build --delete-conflicting-outputs
+flutter run                                                   # emulador Android
+flutter run --dart-define=ML_API_URL=http://IP-DEL-PC:8000    # teléfono en la misma red
+flutter run -d linux --dart-define=ML_API_URL=http://localhost:8000   # escritorio (sin voz)
+```
+
+**Pendiente:**
+* Compilación Android sin verificar. El paquete `isar_flutter_libs` 3.1.0 no declara `namespace` y compila con
+  SDK 30, por lo que las versiones actuales de Gradle probablemente la rechacen.
+* Trazado de letras (la ruta existe, sin pantalla utilizable), Firebase y sincronización.
+* La imagen Docker de `pino-ml` (Python 3.11, sin `eft-machine-learning/`) no incluye el modelo de edad:
+  ahí `/predict/aoa-palabra` responde 503.
+* La API no tiene HTTPS ni autenticación: solo para desarrollo (la versión *release* de Android bloquea `http`).
 
 ## Arquitectura
 
 | Carpeta | Qué es |
 |---------|--------|
 | `pino/` | App móvil: Flutter + Riverpod (estado) + Isar (base de datos local) + Firebase (Auth y Firestore) |
-| `pino-ml/` | Backend de ML en Python: API FastAPI con 4 modelos y pipeline de entrenamiento Kedro + MLflow, orquestado con Airflow |
+| `pino-ml/` | Backend de ML en Python: API FastAPI con 5 modelos y pipeline de entrenamiento Kedro + MLflow, orquestado con Airflow |
 | `eft-machine-learning/` | Modelo de edad de adquisición de palabras (ES/EN) y vocabulario infantil nivelado para la app |
 | `plan-sprints-pino.md` | **Plan vigente** de sprints y tareas por integrante |
 | `backlog-pino.md` | Detalle de las historias de usuario (tareas, puntos, dependencias) |
@@ -102,6 +137,7 @@ ofrece:
 | `POST /predict/siguiente-leccion` | SM-2 + modelo de probabilidad de error | Repaso espaciado (HU-05) |
 | `POST /predict/dificultad-texto` | Índice Fernández-Huerta + spaCy | Adaptar textos al nivel (HU-04, HU-17) |
 | `POST /analyze/trazo` | Distancia a la ruta ideal | Trazado de letras (HU-02, HU-13) |
+| `GET /predict/aoa-palabra` | Gradient Boosting / Stacking de `eft-machine-learning` | Edad a la que se aprende una palabra y su nivel |
 
 ---
 

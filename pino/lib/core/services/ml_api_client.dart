@@ -74,10 +74,11 @@ class MLApiClient {
   Future<ResultadoPronunciacionML> evaluarPronunciacion({
     required File archivoAudio,
     required String textoEsperado,
+    String idioma = 'es',
   }) async {
     final json = await _postAudio(
       '/predict/pronunciacion',
-      {'texto_esperado': textoEsperado},
+      {'texto_esperado': textoEsperado, 'idioma': idioma},
       archivoAudio,
       'Error evaluando pronunciación',
     );
@@ -96,6 +97,19 @@ class MLApiClient {
       'Error evaluando fonema',
     );
     return ResultadoFonemaML.fromJson(json);
+  }
+
+  // ─── Edad de adquisición de palabras ───
+
+  /// Edad a la que se suele aprender una palabra y su nivel en Pino.
+  Future<EdadPalabraML> analizarPalabra({required String palabra, String idioma = 'es'}) async {
+    final response = await _client
+        .get(_uri('/predict/aoa-palabra', {'palabra': palabra, 'idioma': idioma}))
+        .timeout(timeoutJson);
+    if (response.statusCode != 200) {
+      throw MLApiException('Error analizando la palabra (${response.statusCode})');
+    }
+    return EdadPalabraML.fromJson(_decodificar(response.bodyBytes));
   }
 
   // ─── 2. Siguiente lección (HU-05) ───
@@ -182,6 +196,7 @@ class ResultadoPronunciacionML {
   final List<String> silabasIncorrectas;
   final List<String> silabasCorrectas;
   final bool correcto;
+  final double similitudFonetica;
 
   ResultadoPronunciacionML({
     required this.textoEsperado,
@@ -190,6 +205,7 @@ class ResultadoPronunciacionML {
     required this.silabasIncorrectas,
     required this.silabasCorrectas,
     required this.correcto,
+    this.similitudFonetica = 0,
   });
 
   factory ResultadoPronunciacionML.fromJson(Map<String, dynamic> json) {
@@ -200,6 +216,37 @@ class ResultadoPronunciacionML {
       silabasIncorrectas: List<String>.from(json['silabas_incorrectas'] ?? []),
       silabasCorrectas: List<String>.from(json['silabas_correctas'] ?? []),
       correcto: json['correcto'] ?? false,
+      similitudFonetica: (json['similitud_fonetica_global'] ?? 0).toDouble(),
+    );
+  }
+}
+
+class EdadPalabraML {
+  final String palabra;
+  final double edadAnios;
+
+  /// 1 a 4: niveles de Pino. 5: fuera del rango infantil.
+  final int nivel;
+
+  /// `true` si la edad viene de un estudio publicado y `false` si la estimó el modelo.
+  final bool tieneNorma;
+  final List<String> silabas;
+
+  EdadPalabraML({
+    required this.palabra,
+    required this.edadAnios,
+    required this.nivel,
+    required this.tieneNorma,
+    required this.silabas,
+  });
+
+  factory EdadPalabraML.fromJson(Map<String, dynamic> json) {
+    return EdadPalabraML(
+      palabra: json['palabra'] as String,
+      edadAnios: (json['edad_anios'] as num).toDouble(),
+      nivel: json['nivel'] as int,
+      tieneNorma: json['origen'] == 'norma',
+      silabas: List<String>.from(json['silabas'] ?? []),
     );
   }
 }

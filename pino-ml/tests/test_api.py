@@ -11,14 +11,25 @@ from pino_ml.models.stt_fonetico import evaluar_transcripcion
 
 
 class STTFalso:
-    def analizar_pronunciacion(self, ruta_audio, texto_esperado):
+    idiomas: list[str] = []
+
+    def analizar_pronunciacion(self, ruta_audio, texto_esperado, idioma="es"):
+        self.idiomas.append(idioma)
         return evaluar_transcripcion(texto_esperado, {
             "segments": [{"text": " Mamá.", "no_speech_prob": 0.0, "words": []}]
         })
 
 
+class EdadFalsa:
+    def analizar(self, palabra, idioma="es", traduccion=None):
+        if " " in palabra:
+            raise ValueError("Se espera una sola palabra")
+        return {"palabra": palabra, "idioma": idioma, "nivel": 1}
+
+
 @pytest.fixture
 def cliente(monkeypatch):
+    monkeypatch.setattr(api, "EdadAdquisicion", EdadFalsa)
     # Evita cargar Whisper y spaCy al arrancar
     monkeypatch.setattr(api, "STTFonetico", lambda **_: STTFalso())
     monkeypatch.setattr(api, "ClasificadorDificultad", lambda **_: (_ for _ in ()).throw(OSError("sin spaCy")))
@@ -28,7 +39,8 @@ def cliente(monkeypatch):
 
 def test_health_reporta_modelos(cliente):
     modelos = cliente.get("/health").json()["modelos_cargados"]
-    assert modelos == {"stt": True, "adaptativo": True, "clasificador": False, "analizador": True}
+    assert modelos == {"stt": True, "adaptativo": True, "clasificador": False, "analizador": True,
+                       "edad_adquisicion": True}
 
 
 def test_modelo_no_disponible_responde_503(cliente):
@@ -44,6 +56,34 @@ def test_pronunciacion(cliente):
     )
     assert r.status_code == 200
     assert r.json()["correcto"] is True
+
+
+@pytest.mark.parametrize("idioma", ["es", "en"])
+def test_pronunciacion_pasa_el_idioma(cliente, idioma):
+    STTFalso.idiomas.clear()
+    r = cliente.post(
+        "/predict/pronunciacion",
+        params={"texto_esperado": "mamá", "idioma": idioma},
+        files={"audio": ("lectura.wav", b"\x00" * 100, "audio/wav")},
+    )
+    assert r.status_code == 200
+    assert STTFalso.idiomas == [idioma]
+
+
+def test_pronunciacion_rechaza_idioma_desconocido(cliente):
+    r = cliente.post(
+        "/predict/pronunciacion",
+        params={"texto_esperado": "mamá", "idioma": "fr"},
+        files={"audio": ("lectura.wav", b"\x00" * 100, "audio/wav")},
+    )
+    assert r.status_code == 422
+
+
+def test_edad_de_palabra(cliente):
+    r = cliente.get("/predict/aoa-palabra", params={"palabra": "dog", "idioma": "en"})
+    assert r.status_code == 200
+    assert r.json() == {"palabra": "dog", "idioma": "en", "nivel": 1}
+    assert cliente.get("/predict/aoa-palabra", params={"palabra": "dos palabras"}).status_code == 422
 
 
 def test_audio_demasiado_grande(cliente, monkeypatch):

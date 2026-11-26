@@ -22,6 +22,7 @@ from pydantic import BaseModel, Field
 from pino_ml.models.algoritmo_adaptativo import AlgoritmoAdaptativo, ItemAprendizaje
 from pino_ml.models.analizador_trazos import AnalizadorTrazos, PuntoTrazo, RutaIdeal
 from pino_ml.models.clasificador_dificultad import ClasificadorDificultad
+from pino_ml.models.edad_adquisicion import EdadAdquisicion
 from pino_ml.models.stt_fonetico import STTFonetico, evaluar_transcripcion, evaluar_fonema
 from pino_ml.models.pisa_risk_engine import PisaRiskEngine, TelemetriaUsuarioPino, pisa_risk_engine
 from pino_ml.models.macro_analytics import MacroAnalyticsEngine, macro_analytics_engine
@@ -37,6 +38,7 @@ stt: Optional[STTFonetico] = None
 adaptativo: Optional[AlgoritmoAdaptativo] = None
 clasificador: Optional[ClasificadorDificultad] = None
 analizador: Optional[AnalizadorTrazos] = None
+edad: Optional[EdadAdquisicion] = None
 
 _lock_stt = threading.Lock()
 T = TypeVar("T")
@@ -52,12 +54,13 @@ def _cargar(nombre: str, crear: Callable[[], T]) -> Optional[T]:
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    global stt, adaptativo, clasificador, analizador
+    global stt, adaptativo, clasificador, analizador, edad
     logger.info("🔄 Cargando modelos ML...")
     stt = _cargar("stt", lambda: STTFonetico(modelo_size=os.getenv("WHISPER_MODEL_SIZE", "base")))
     adaptativo = _cargar("adaptativo", AlgoritmoAdaptativo)
     clasificador = _cargar("clasificador", lambda: ClasificadorDificultad(modelo_spacy=os.getenv("SPACY_MODEL", "es_core_news_md")))
     analizador = _cargar("analizador", AnalizadorTrazos)
+    edad = _cargar("edad_adquisicion", EdadAdquisicion)
     yield
     logger.info("🛑 API finalizada")
 
@@ -204,6 +207,7 @@ def health():
             "adaptativo": adaptativo is not None,
             "clasificador": clasificador is not None,
             "analizador": analizador is not None,
+            "edad_adquisicion": edad is not None,
         },
     }
 
@@ -223,6 +227,7 @@ def evaluar_pronunciacion(
     audio: Optional[UploadFile] = File(None),
     file: Optional[UploadFile] = File(None),
     texto_esperado: Optional[str] = None,
+    idioma: Literal["es", "en"] = "es",
 ):
     upload = audio or file
     if upload is None:
@@ -235,7 +240,7 @@ def evaluar_pronunciacion(
     tmp_path = _guardar_audio_temporal(upload)
     try:
         with _lock_stt:
-            resultado = stt.analizar_pronunciacion(tmp_path, texto_esperado)
+            resultado = stt.analizar_pronunciacion(tmp_path, texto_esperado, idioma)
 
         return PronunciacionResponse(
             texto_esperado=resultado.texto_esperado,
@@ -277,6 +282,20 @@ def evaluar_fonema_endpoint(
     finally:
         if os.path.exists(tmp_path):
             os.unlink(tmp_path)
+
+@app.get("/predict/aoa-palabra")
+def edad_de_palabra(
+    palabra: str = Query(..., min_length=1, max_length=40),
+    idioma: Literal["es", "en"] = "es",
+    traduccion: Optional[str] = Query(None, max_length=40),
+):
+    """Edad a la que se suele aprender una palabra y su nivel en Pino."""
+    if not edad:
+        raise HTTPException(503, "Modelo de edad de adquisición no disponible")
+    try:
+        return edad.analizar(palabra, idioma, traduccion)
+    except ValueError as e:
+        raise HTTPException(422, str(e)) from e
 
 @app.post("/predict/siguiente-leccion")
 def obtener_siguiente_leccion(request: ProximaLeccionRequest):

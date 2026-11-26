@@ -4,7 +4,7 @@
 
 Evaluación Final Transversal · MLY1101 Machine Learning · Informe técnico
 
-> **Resultado en una línea:** un **Gradient Boosting** estima la edad de adquisición de cualquier palabra inglesa con un error medio de **1,50 años** (R² = 0,58) y la ubica en el nivel correcto de Pino, o a un nivel de distancia, en el **94 %** de los casos. Combinado con el conocimiento del inglés, en español alcanza una correlación de **ρ = 0,71** con las normas reales. El resultado es un dataset de **1.312 palabras en español** y **10.333 en inglés** niveladas por edad, con sílabas, fonemas e imágenes, listo para la app.
+> **Resultado en una línea:** un **Gradient Boosting** estima la edad de adquisición de cualquier palabra inglesa con un error medio de **1,50 años** (R² = 0,58) y la ubica en el nivel correcto de Pino, o a un nivel de distancia, en el **94 %** de los casos. Combinado con el conocimiento del inglés, en español alcanza una correlación de **ρ = 0,71** con las normas reales. El resultado es un dataset de **1.301 palabras en español** y **10.286 en inglés** niveladas por edad, con sílabas, fonemas e imágenes, listo para la app.
 
 ---
 
@@ -62,7 +62,7 @@ Hoy la nivelación la hacen a mano educadoras que revisan palabra por palabra. E
 | Negocio | Error grave (palabra de ≥ 10 años en nivel < 6 años) | ≤ 2 % | **0,05 %** | ✅ |
 | Transferencia (ES) | Spearman con normas españolas, mejor estrategia | ≥ 0,60 | **0,71** | ✅ |
 | Transferencia (ES) | Spearman *zero-shot* (modelo inglés sin datos españoles) | ≥ 0,60 | **0,53** | ❌ |
-| Producto | Palabras infantiles niveladas por idioma | ≥ 1.000 | **1.312** ES / **10.333** EN | ✅ |
+| Producto | Palabras infantiles niveladas por idioma | ≥ 1.000 | **1.301** ES / **10.286** EN | ✅ |
 
 La correlación de Spearman en inglés queda levemente bajo la meta. La transferencia directa al español, sin ningún dato español, no alcanza la meta; por eso se usa la estrategia combinada (§8.4). Los KPIs de negocio (nivel ±1 y error grave) se cumplen con holgura.
 
@@ -232,12 +232,12 @@ Validación cruzada de 5 folds sobre *train*, optimizando **MAE** (error en año
 
 | Modelo | MAE (media ± d.e.) | R² | Brecha train–val | Tiempo de ajuste (s) |
 |---|---|---|---|---|
-| Stacking | 1,481 ± 0,019 | 0,582 | 0,081 | 39,83 |
-| Gradient Boosting | 1,482 ± 0,018 | 0,581 | 0,062 | 1,66 |
-| Random Forest | 1,488 ± 0,020 | 0,578 | 0,157 | 5,68 |
-| Voting | 1,495 ± 0,018 | 0,577 | 0,073 | 7,52 |
-| Árbol de Decisión | 1,531 ± 0,021 | 0,552 | 0,078 | 0,08 |
-| Ridge | 1,582 ± 0,017 | 0,530 | 0,001 | 0,04 |
+| Stacking | 1,481 ± 0,019 | 0,582 | 0,081 | 47,87 |
+| Gradient Boosting | 1,482 ± 0,018 | 0,581 | 0,062 | 2,15 |
+| Random Forest | 1,488 ± 0,020 | 0,578 | 0,157 | 6,42 |
+| Voting | 1,495 ± 0,018 | 0,577 | 0,073 | 8,57 |
+| Árbol de Decisión | 1,531 ± 0,021 | 0,552 | 0,078 | 0,11 |
+| Ridge | 1,582 ± 0,017 | 0,530 | 0,001 | 0,06 |
 
 ![Generalización](images/07_generalizacion_cv_repetida.png)
 
@@ -249,7 +249,7 @@ El Stacking obtiene el menor MAE, pero solo **0,001 años** (≈ 9 horas) mejor 
 
 **Solución elegida: Gradient Boosting**, que tiene:
 * el mismo error que el Stacking en la práctica;
-* un entrenamiento **~24 veces más rápido** (1,7 s contra 39,8 s por ajuste), y en producción hay que re-entrenar con cada nueva norma o idioma;
+* un entrenamiento **~22 veces más rápido** (2,1 s contra 47,9 s por ajuste), y en producción hay que re-entrenar con cada nueva norma o idioma;
 * un archivo **87 veces más liviano** (1,2 MB contra 104 MB), relevante para una app sin conexión;
 * menos piezas que mantener (un modelo en vez de cuatro);
 * una brecha de solo 0,06 años.
@@ -373,7 +373,7 @@ La AoA media va de 6,1 a 8,5 años según la familia, aunque no se usó para agr
 * El error absoluto es mayor en **sustantivos** (1,56) y palabras de **2–3 sílabas** (1,54–1,60). Los **verbos** tienen menor error pero el mayor sesgo (se subestiman 0,21 años). El R² cae a 0,27 en palabras **sin concreción**. Son candidatas a revisión manual.
 * **Sesgo cultural medido:** ninguna de 10 palabras chilenas está en la norma española (7 de sus equivalentes de España sí) y el modelo les asigna **0,98 años más** al mismo concepto (*guagua* 5,3 y *bebé* 3,6). Es una muestra chica elegida a mano y parte de las palabras de España estuvo en el entrenamiento: la cifra es indicativa.
 * **Sesgos de los datos:** las normas vienen de **adultos de EE. UU. y España**, no de niños chilenos, y falta vocabulario regional (*palta*, *polera*, *guagua*). La frecuencia viene de **subtítulos de películas**, no de habla dirigida a niños. En español, la concreción se toma de la **traducción inglesa**.
-* **Contenido inapropiado:** la primera ejecución sugirió *beer*, *gun* y *murder* como palabras "fáciles", porque son frecuentes en películas. Se agregó un **filtro editorial** que excluye groserías, violencia, alcohol, drogas y sexualidad. Es una primera barrera; la revisión humana sigue siendo obligatoria.
+* **Contenido inapropiado:** la primera ejecución sugirió *beer*, *gun* y *murder* como palabras "fáciles", porque son frecuentes en películas. Se agregó un **filtro editorial** que excluye groserías, violencia, alcohol, drogas y sexualidad. Una auditoría posterior mostró que la primera lista era insuficiente (dejaba pasar insultos, armas, drogas y términos sexuales) y se amplió: hoy excluye 35 palabras en español y 95 en inglés. Una lista nunca es completa, así que **la revisión humana sigue siendo obligatoria** antes de mostrar contenido a niños.
 
 ### 8.7 Privacidad y consideraciones éticas
 
@@ -409,7 +409,7 @@ La AoA media va de 6,1 a 8,5 años según la familia, aunque no se usó para agr
 ### Recomendaciones para el negocio
 0. **Proponer niveles con cortes calibrados** y validarlos con educadoras antes de cambiarlos en la app (§8.3).
 1. **Adoptar el dataset de producto** (`data/processed/`) como **punto de partida** del catálogo. Las educadoras **validan en vez de nivelar desde cero**, lo que reduce el trabajo manual.
-2. **Exponer el modelo en el backend** (endpoint `/predict/aoa-palabra` en `pino-ml`) para nivelar automáticamente cada palabra nueva que se agregue.
+2. **Usar el endpoint ya implementado** (`GET /predict/aoa-palabra` en `pino-ml`, consultado desde la app) para nivelar cada palabra nueva que se agregue, con validación de una educadora.
 3. **Usar la AoA como dificultad inicial** del algoritmo de repetición espaciada SM-2 que ya tiene la app.
 4. **Completar el nivel 1 con Wordbank** (CDI de México): son datos de niños reales.
 5. **Conseguir la lista completa de Alonso (7.039 palabras)** y una lista de vocabulario chileno validada por educadoras, para multiplicar los datos del español.
@@ -424,9 +424,9 @@ eft-machine-learning/
 ├── data/
 │   ├── raw/                      ← fuentes originales (8 archivos, ~15 MB)
 │   └── processed/                ← datos de modelado + vocabulario infantil (producto)
-│       ├── vocabulario_infantil_es.csv   (1.312 palabras)
-│       ├── vocabulario_infantil_en.csv   (10.333 palabras)
-│       └── pares_imagen_es_en.csv        (473 imágenes)
+│       ├── vocabulario_infantil_es.csv   (1.301 palabras)
+│       ├── vocabulario_infantil_en.csv   (10.286 palabras)
+│       └── pares_imagen_es_en.csv        (465 imágenes)
 ├── notebooks/
 │   ├── pino_edad_adquisicion_palabras.ipynb   ← solución completa, ejecutada
 │   └── analisis_por_nivel.ipynb               ← línea base y cortes calibrados (se ejecuta después)
@@ -488,10 +488,10 @@ Reproduce cada palabra y compara con el micrófono lo que se dice (Whisper local
 
 | Nivel | Español | Inglés | Pares imagen (nivel ES) |
 |---|---|---|---|
-| 1 · Primeras palabras | 195 | 317 | 83 |
-| 2 · Preescolar | 624 | 1643 | 231 |
-| 3 · Lectura inicial | 378 | 3198 | 140 |
-| 4 · Lector en desarrollo | 115 | 5175 | 19 |
+| 1 · Primeras palabras | 193 | 316 | 83 |
+| 2 · Preescolar | 622 | 1641 | 230 |
+| 3 · Lectura inicial | 374 | 3182 | 135 |
+| 4 · Lector en desarrollo | 112 | 5147 | 17 |
 
 ---
 *Fuentes: Kuperman et al. (2012); Brysbaert et al. (2014); Alonso et al. (2015, 2016); Cuetos et al. (2011); Duñabeitia et al. (2022); Guasch et al. (2016); Coltheart et al. (1977); Nadeau y Bengio (2003); CMU Pronouncing Dictionary; List et al., NoRaRe/Concepticon.*
