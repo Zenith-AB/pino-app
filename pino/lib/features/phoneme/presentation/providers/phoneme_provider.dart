@@ -76,10 +76,17 @@ class PhonemeNotifier extends StateNotifier<PhonemeState> {
     if (todos.length < 3) return;
 
     todos.shuffle();
-    final correcto = todos.first;
+    // La pregunta es con qué letra empieza: solo sirven ejemplos que empiezan con su grafema
+    // (no "pera" para la r), y ningún distractor puede escribirse o sonar igual al comienzo.
+    final correcto = todos.firstWhere((f) => f.palabraEjemplo.startsWith(f.grafema));
 
     // Seleccionar 2 distractores
-    final distractores = todos.sublist(1, 3);
+    final distractores = todos
+        .where((f) =>
+            !correcto.palabraEjemplo.startsWith(f.grafema) &&
+            !_suenanIgual(f.grafema, correcto.grafema))
+        .take(2)
+        .toList();
     final opciones = [correcto, ...distractores]..shuffle();
 
     state = state.copyWith(
@@ -140,6 +147,19 @@ class PhonemeNotifier extends StateNotifier<PhonemeState> {
     }
   }
 }
+
+const _mismoSonido = [
+  {'b', 'v'},
+  {'c', 'k', 'qu'},
+  {'c', 's', 'z', 'x'},
+  {'g', 'gu'},
+  {'g', 'j'},
+  {'ll', 'y'},
+  {'r', 'rr'},
+];
+
+bool _suenanIgual(String a, String b) =>
+    _mismoSonido.any((grupo) => grupo.contains(a) && grupo.contains(b));
 
 /// Provider del estado de fonemas.
 final phonemeProvider =

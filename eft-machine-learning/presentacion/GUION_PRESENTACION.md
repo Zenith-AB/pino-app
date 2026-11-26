@@ -61,7 +61,7 @@ En cambio, **Voting y Stacking casi no suman**: Random Forest y Gradient Boostin
 
 ### 12 · Generalización y selección (0:35)
 "Para evaluar la generalización usamos **validación cruzada repetida 5×3**, o sea 15 estimaciones por modelo. La desviación entre folds es de solo 0,02 años: el resultado es estable, y todas las brechas train–validación están bajo 0,30.
-Para elegir: el Stacking gana por **0,001 años**, unas nueve horas. El t-test corregido de Nadeau-Bengio dice que es significativo, pero con 23.000 palabras cualquier diferencia lo es. Por eso fijamos una regla antes de mirar: si un modelo está a menos de 0,02 años del mejor, gana el más simple. **Elegimos Gradient Boosting**: mismo error, **24 veces más rápido**, **1,2 MB contra 104 MB** y una sola pieza que mantener."
+Para elegir: el Stacking gana por **0,001 años**, unas nueve horas. El t-test corregido de Nadeau-Bengio dice que es significativo, pero con 23.000 palabras cualquier diferencia lo es. Por eso fijamos una regla antes de mirar: si un modelo está a menos de 0,02 años del mejor, gana el más simple. **Elegimos Gradient Boosting**: mismo error, **22 veces más rápido**, **1,2 MB contra 104 MB** y una sola pieza que mantener."
 
 ### 13 · Test (0:25)
 "En el test, que el modelo nunca vio, el MAE es **1,50 años**, con intervalo de confianza 1,47 a 1,53, casi igual al 1,48 de la validación cruzada: **el modelo generaliza**.
@@ -77,7 +77,7 @@ El sesgo que tiene es regresión a la media: las palabras más tempranas salen u
 "Las métricas internas no señalan un k claro: las palabras son un continuo. Elegimos 4 porque es **estable** (ARI 0,91), útil para planificar y K-Means supera a Ward y a la mezcla gaussiana. El valor para el negocio es un **orden de lecciones**: rimas, bisílabas, grupos consonánticos y largas."
 
 ### 17 · Producto (0:20)
-"El resultado: **1.312 palabras en español y 10.333 en inglés** niveladas, con sílabas, fonemas, imágenes y filtro editorial. Nacho muestra el modelo en vivo."
+"El resultado: **1.301 palabras en español y 10.286 en inglés** niveladas, con sílabas, fonemas, imágenes y filtro editorial. Nacho muestra el modelo en vivo."
 
 ---
 
@@ -107,7 +107,7 @@ La decisión para el negocio: adoptar el modelo y el dataset como punto de parti
 | Pregunta | Respuesta corta |
 |---|---|
 | ¿Por qué MAE y no RMSE? | Está en años y se explica fácil a una educadora ("se equivoca 1,5 años en promedio"). Igual reportamos RMSE (1,90) y R². |
-| ¿Por qué no eligieron el Stacking si tiene menor error? | Gana por 0,001 años: no es relevante. La regla fijada antes dice que, a menos de 0,02 años, gana el más simple. GB entrena 24× más rápido, es 87× más liviano y tiene menor brecha (0,06 vs 0,08). |
+| ¿Por qué no eligieron el Stacking si tiene menor error? | Gana por 0,001 años: no es relevante. La regla fijada antes dice que, a menos de 0,02 años, gana el más simple. GB entrena 22× más rápido, es 87× más liviano y tiene menor brecha (0,06 vs 0,08). |
 | ¿Cómo saben que no hay sobreajuste? | Brecha train–validación de 0,06 años, CV repetida estable (d.e. 0,02) y test (1,50) casi igual a CV (1,48). La learning curve converge. |
 | ¿Cómo evitaron la fuga de información? | Imputación, escalado y one-hot dentro de un Pipeline que se ajusta en cada fold; el test se separó al inicio y solo se usó al final. |
 | ¿Por qué RandomizedSearch y no GridSearch en todo? | Con muchos hiperparámetros la grilla explota; la búsqueda aleatoria cubre mejor el espacio con el mismo presupuesto. En Ridge, con un solo parámetro, sí usamos grilla. |
@@ -128,3 +128,4 @@ La decisión para el negocio: adoptar el modelo y el dataset como punto de parti
 | ¿Cómo monitorearían el modelo? | % de niveles corregidos por educadoras (re-entrenar sobre 20 %) y error en palabras nuevas. |
 | ¿Cuánto mejora el modelo frente a no usarlo? | Nivel exacto 67,4 % contra 61,7 % y ±1 94,3 % contra 81,6 %. En palabras infantiles, de 0 % a 35 % de acierto exacto. |
 | ¿Qué es la calibración de cortes? | Elegir los umbrales para que la proporción por nivel sea la real, usando predicciones out-of-fold del train. Recupera el nivel 1 (38 %) a cambio de 2 puntos de nivel exacto. |
+| ¿Cómo evitan palabras inapropiadas? | Con una lista de exclusión (35 en español, 95 en inglés). Una auditoría mostró que la primera versión dejaba pasar insultos y armas, así que se amplió. Una lista nunca es completa: antes de usarlo con niños revisa una educadora. |

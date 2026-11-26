@@ -8,6 +8,7 @@ import '../../features/home/presentation/screens/home_screen.dart';
 import '../../features/phoneme/presentation/screens/phoneme_explorer_screen.dart';
 import '../../features/phoneme/presentation/screens/phoneme_matching_screen.dart';
 import '../../features/tracing/presentation/screens/tracing_screen.dart';
+import '../../features/pronunciation/presentation/screens/pino_beta_screen.dart';
 
 final appRouterProvider = Provider<GoRouter>((ref) {
   return GoRouter(
@@ -36,6 +37,12 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/phoneme/match',
         builder: (context, state) => const PhonemeMatchingScreen(),
+      ),
+      GoRoute(
+        path: '/beta',
+        builder: (context, state) => PinoBetaScreen(
+          nivelInicial: (int.tryParse(state.uri.queryParameters['nivel'] ?? '') ?? 1).clamp(1, 4),
+        ),
       ),
       GoRoute(
         path: '/trace/:letterId',
