@@ -477,6 +477,13 @@ streamlit run app/streamlit_app.py
 ```
 Se escribe una palabra en español o inglés, la app calcula sus variables y entrega la **edad de adquisición en años**, el **nivel de Pino**, el rango probable y si es adecuada para la edad del niño. Cada variable se puede mover para ver cómo cambia la predicción. Detalle en [`app/README.md`](app/README.md).
 
+**Pino Beta (escuchar y practicar):**
+```bash
+pip install -r app/requirements_pino_beta.txt
+streamlit run app/pino_beta.py
+```
+Reproduce cada palabra y compara con el micrófono lo que se dice (Whisper local). Es un prototipo experimental, no evaluado con niños, y no forma parte de las métricas de este informe. La voz es un dato personal: se procesa en el computador y no se guarda; usarla con niños requiere consentimiento de sus apoderados. Detalle en [`app/README.md`](app/README.md).
+
 ### Distribución del producto por nivel
 
 | Nivel | Español | Inglés | Pares imagen (nivel ES) |
