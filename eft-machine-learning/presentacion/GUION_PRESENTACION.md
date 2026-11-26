@@ -94,7 +94,7 @@ Y ahora un caso difícil: **palta**. *(clic en el botón «palta»)* El modelo d
 "Las normas son de adultos de Estados Unidos y España. Lo medimos: de 10 palabras chilenas **ninguna está en la norma** y el modelo les suma **casi un año**; es una muestra chica, indicativa. Hoy no hay datos personales; si la app los recoge, aplican las **leyes 19.628 y 21.719**, consentimiento de apoderados y seudónimos. **El modelo propone, la educadora valida**."
 
 ### 20 · Conclusiones (0:30)
-"Cuatro conclusiones. Uno: **se puede nivelar automáticamente**, 94 % en el nivel correcto ±1. Dos: **los ensambles sí aportan**, de 2,12 a 1,49 años, pero los heterogéneos no justifican su costo. Tres: elegimos **lo más simple que rinde**, Gradient Boosting. Cuatro: **el conocimiento cruza idiomas**, y esa es la vía para crecer.
+"Cuatro conclusiones. Uno: **se puede apoyar la nivelación**: 94 % en el nivel correcto ±1, contra 82 % sin modelo. Dos: **los ensambles sí aportan**, de 2,12 a 1,49 años, pero los heterogéneos no justifican su costo. Tres: elegimos **lo más simple que rinde**, Gradient Boosting. Cuatro: **el conocimiento cruza idiomas**, y esa es la vía para crecer.
 La decisión para el negocio: adoptar el modelo y el dataset como punto de partida; las educadoras **validan en vez de nivelar desde cero**."
 
 ### 21 · Recomendaciones y cierre (0:20)
