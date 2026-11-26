@@ -35,7 +35,7 @@
       "R² media": 0.5817,
       "MAE train": 1.4002,
       "brecha": 0.0809,
-      "t. ajuste (s)": 39.8286
+      "t. ajuste (s)": 47.8701
     },
     "Gradient Boosting": {
       "MAE media": 1.4825,
@@ -43,7 +43,7 @@
       "R² media": 0.5812,
       "MAE train": 1.4201,
       "brecha": 0.0624,
-      "t. ajuste (s)": 1.6633
+      "t. ajuste (s)": 2.1494
     },
     "Random Forest": {
       "MAE media": 1.4882,
@@ -51,7 +51,7 @@
       "R² media": 0.5783,
       "MAE train": 1.3316,
       "brecha": 0.1566,
-      "t. ajuste (s)": 5.6803
+      "t. ajuste (s)": 6.4175
     },
     "Voting": {
       "MAE media": 1.4946,
@@ -59,7 +59,7 @@
       "R² media": 0.5766,
       "MAE train": 1.4219,
       "brecha": 0.0728,
-      "t. ajuste (s)": 7.5166
+      "t. ajuste (s)": 8.572
     },
     "Árbol de Decisión": {
       "MAE media": 1.5312,
@@ -67,7 +67,7 @@
       "R² media": 0.5523,
       "MAE train": 1.4532,
       "brecha": 0.078,
-      "t. ajuste (s)": 0.0793
+      "t. ajuste (s)": 0.1075
     },
     "Ridge": {
       "MAE media": 1.582,
@@ -75,7 +75,7 @@
       "R² media": 0.5298,
       "MAE train": 1.5808,
       "brecha": 0.0012,
-      "t. ajuste (s)": 0.0442
+      "t. ajuste (s)": 0.0569
     }
   },
   "test_en": {
@@ -285,9 +285,9 @@
     "Bisílabas frecuentes": 4150
   },
   "producto": {
-    "palabras_es": 1312,
-    "palabras_en": 10333,
-    "pares_imagen": 473
+    "palabras_es": 1301,
+    "palabras_en": 10286,
+    "pares_imagen": 465
   },
   "kpis": [
     {
@@ -341,13 +341,13 @@
     {
       "KPI": "Palabras niveladas ES",
       "meta": "≥ 1000",
-      "resultado": 1312.0,
+      "resultado": 1301.0,
       "cumple": "sí"
     },
     {
       "KPI": "Palabras niveladas EN",
       "meta": "≥ 1000",
-      "resultado": 10333.0,
+      "resultado": 10286.0,
       "cumple": "sí"
     }
   ],

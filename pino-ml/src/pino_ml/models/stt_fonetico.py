@@ -146,18 +146,20 @@ class STTFonetico:
         self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
         self.modelo = whisper.load_model(modelo_size, device=self.device)
 
-    def transcribir(self, ruta_audio: str) -> dict:
+    def transcribir(self, ruta_audio: str, idioma: str = "es") -> dict:
         return self.modelo.transcribe(
             ruta_audio,
-            language="es",
+            language=idioma,
             word_timestamps=True,
             task="transcribe",
             fp16=self.device == "cuda",
             condition_on_previous_text=False,
         )
 
-    def analizar_pronunciacion(self, ruta_audio: str, texto_esperado: str) -> ResultadoPronunciacion:
-        return evaluar_transcripcion(texto_esperado, self.transcribir(ruta_audio))
+    def analizar_pronunciacion(
+        self, ruta_audio: str, texto_esperado: str, idioma: str = "es"
+    ) -> ResultadoPronunciacion:
+        return evaluar_transcripcion(texto_esperado, self.transcribir(ruta_audio, idioma))
 
     def evaluar_fonema_aislado(self, ruta_audio: str, fonema_esperado: str) -> tuple[bool, float]:
         return evaluar_fonema(fonema_esperado, self.transcribir(ruta_audio))
