@@ -2,7 +2,7 @@
 
 **Modelo de dificultad léxica para nivelar el vocabulario infantil en español e inglés**
 
-Evaluación Parcial N°3 · MLY1101 Machine Learning · Informe técnico
+Evaluación Final Transversal · MLY1101 Machine Learning · Informe técnico
 
 > **Resultado en una línea:** un **Gradient Boosting** estima la edad de adquisición de cualquier palabra inglesa con un error medio de **1,50 años** (R² = 0,58) y la ubica en el nivel correcto de Pino, o a un nivel de distancia, en el **94 %** de los casos. Combinado con el conocimiento del inglés, en español alcanza una correlación de **ρ = 0,71** con las normas reales. El resultado es un dataset de **1.312 palabras en español** y **10.333 en inglés** niveladas por edad, con sílabas, fonemas e imágenes, listo para la app.
 
@@ -40,7 +40,7 @@ Hoy la nivelación la hacen a mano educadoras que revisan palabra por palabra. E
 | 3 · Lectura inicial | 6 – 7,9 | Decodificación de palabras completas |
 | 4 · Lector en desarrollo | 8 – 9,9 | Palabras largas y menos frecuentes |
 
-> **Nota sobre el cambio de enfoque.** En una versión anterior el proyecto buscaba predecir el abandono de aprendices con telemetría **simulada**, porque la app todavía no tiene usuarios. Se reemplazó por este problema porque usa **datos reales**, ataca el **núcleo del producto** (el contenido), escala al inglés y **no involucra datos personales de menores**. El detalle está en `presentacion/Pino_cambio_de_enfoque.pptx`.
+> **Nota sobre el cambio de enfoque.** En una versión anterior el proyecto buscaba predecir el abandono de aprendices con telemetría **simulada**, porque la app todavía no tiene usuarios. Se reemplazó por este problema porque usa **datos reales**, ataca el **núcleo del producto** (el contenido), escala al inglés y **no involucra datos personales de menores**. El detalle está en `presentacion/Pino_EFT.pptx`.
 
 ## 2. Objetivos del proyecto
 
@@ -82,21 +82,39 @@ Todas las fuentes son **reales, públicas y citables**. Las crudas están en `da
 
 El catálogo completo de datasets útiles para la app (Wordbank, CHILDES, EsPal, LEXIN, Dolch/Fry, etc.) y su relación con los **métodos de enseñanza** (silábico, fonético, *synthetic phonics*, *word families*, *sight words*) está en [`docs/DATASETS_Y_METODOS_ENSENANZA.md`](docs/DATASETS_Y_METODOS_ENSENANZA.md).
 
+### 4.1 Herramientas colaborativas y de desarrollo
+
+| Herramienta | Para qué se usó | Por qué sirve a este problema |
+|---|---|---|
+| **Git + GitHub** (`Zenith-AB/pino-app`) | Versiones, ramas y revisión de cambios del equipo | Historial de quién cambió qué; se revisa antes de integrar y se puede volver a una versión anterior del modelo |
+| **Jupyter** | Análisis reproducible con código, gráficos y explicación | Cada etapa se ejecuta y verifica en orden |
+| **Python** (pandas, NumPy, SciPy, scikit-learn, matplotlib) | Preparación, modelado, pruebas estadísticas y gráficos | `Pipeline` evita fuga de información y el mismo objeto se usa en la app |
+| **`venv` + versiones fijas** | Mismo entorno en todos los equipos | Los modelos `.joblib` dependen de la versión de scikit-learn |
+| **joblib + `metricas.json`** | Compartir modelos y resultados entre notebook y app | La app muestra las cifras de la última ejecución |
+| **Streamlit** | Demo para educadoras | Permite recoger retroalimentación sin programar |
+
 ## 5. Metodología CRISP-DM
 
 | Fase | Qué se hizo | Dónde |
 |---|---|---|
 | 1. Comprensión del negocio | Problema de nivelación, objetivos, KPIs, niveles de la app | §1–3, notebook §1 |
-| 2. Comprensión de los datos | Fuentes, calidad, EDA bivariado y bilingüe | §4, §6, notebook §2 |
+| 2. Comprensión de los datos | Fuentes, calidad, anomalías, EDA bivariado y bilingüe | §4, §6, notebook §2 |
 | 3. Preparación | Variables psicolingüísticas iguales para ambos idiomas, filtro de calidad, split estratificado, `Pipeline` sin fuga de información | §6, `src/lexico.py`, notebook §3 |
 | 4. Modelado | 2 modelos base (Ridge, Árbol) + 5 ensambles (Bagging, RF, Gradient Boosting, Voting, Stacking), con optimización de hiperparámetros | §7, notebook §4 |
 | 5. Evaluación | CV repetida, *t*-test corregido, *learning curve*, test con IC bootstrap, métricas de negocio, transferencia al español | §8, notebook §5–6 |
-| 6. Despliegue | K-Means de familias de lecciones, dataset de vocabulario, modelos serializados | §9, notebook §7 y §9 |
+| 6. Despliegue | K-Means de familias de lecciones, dataset de vocabulario, modelos serializados, app Streamlit y plan de monitoreo | §9, notebook §7 y §9 |
+
+CRISP-DM es **iterativo** y así se aplicó:
+* **Comprensión del negocio → datos:** el enfoque inicial (abandono de aprendices con telemetría simulada) se descartó al revisar los datos disponibles.
+* **Despliegue → preparación:** la primera ejecución sugirió *beer* o *gun* como palabras fáciles; se agregó el filtro editorial.
+* **Monitoreo propuesto:** medir qué porcentaje de niveles corrigen las educadoras (re-entrenar si supera 20 %) y el error en palabras nuevas.
 
 ## 6. Preparación y análisis exploratorio (EDA)
 
 ### 6.1 Variables
-Calculadas en `src/lexico.py` **con la misma definición para inglés y español**. En español, sílabas y fonemas se obtienen con `pino_ml.utils.texto_es`, el módulo del backend de la app.
+Calculadas en `src/lexico.py` **con la misma definición para inglés y español**. En español, sílabas y fonemas se obtienen con `src/texto_es.py`, copia del módulo `pino_ml.utils.texto_es` del backend, incluida para que la carpeta se ejecute sola.
+
+**Estructuras de datos en Python** (notebook §2): diccionario para las pronunciaciones (búsqueda O(1)), conjuntos para vocales y vocabulario, `Counter` de patrones `c*sa` para contar vecinos sin comparar todas las palabras entre sí, y `DataFrame` con operaciones vectorizadas. Un **contrato de datos** (`validar`) detiene la ejecución si una fuente llega con columnas faltantes, valores fuera de rango o duplicados.
 
 | Variable | Definición | Por qué importa |
 |---|---|---|
@@ -106,13 +124,28 @@ Calculadas en `src/lexico.py` **con la misma definición para inglés y español
 | `grupo_cons_max` | Máxima secuencia de consonantes (*str*) | Dificultad articulatoria |
 | `vecinos_ort` | Vecindario de Coltheart (palabras a una letra) | Base del método de *word families* |
 | `concrecion` | 1 abstracta – 5 concreta | Lo que se puede dibujar se aprende antes |
-| `categoria` | sustantivo / verbo / adjetivo / otra | Los sustantivos se adquieren primero |
+| `categoria` | sustantivo / verbo / adjetivo / otra | A igual frecuencia, los adjetivos se adquieren algo más tarde |
 | `complejidad_silabica` (ES) | Media de la complejidad de las sílabas (CV = 1 … CCVC = 3) | Método silábico |
 
 ### 6.2 Calidad de datos
 * Concreción nula en ~23 % (EN) y `grupo_cons_max` nulo en ~25 % (EN), porque son formas flexionadas que no aparecen en Brysbaert ni en CMU → **imputación con mediana + indicador de ausencia**.
 * Se excluyen 2.278 palabras que menos del 50 % de los evaluadores conocía (AoA poco confiable). Quedan **28.825 palabras** en inglés.
 * Sin duplicados. En español, las categorías de NoRaRe tienen errores puntuales (*vino* = verbo).
+
+**Anomalías y valores atípicos** (regla 1,5 × IQR y revisiones lógicas):
+
+| Anomalía | Magnitud | Decisión |
+|---|---|---|
+| Atípicos en vecinos ortográficos y sílabas | 14,8 % y 8,1 % | Se mantienen: son colas reales (palabras muy largas o con muchos vecinos) |
+| Atípicos en AoA, letras, fonemas, concreción, opacidad | ≤ 2,2 % | Se mantienen |
+| Palabra con 0 sílabas (*frays*) | 1 | Error de la fuente; sin efecto práctico |
+| AoA < 3 años | 43 palabras | Válidas y escasas; explican el error en el nivel 1 |
+| Poco conocidas (< 50 %) | 2.278 | **Se excluyen** |
+| Categoría dudosa en español (*vino* = verbo) | casos aislados | Se documenta |
+
+**Prueba de sensibilidad:** quitar los atípicos del entrenamiento (23,8 % de las filas) **empeora** el MAE de validación (Ridge 1,582 → 1,604; Gradient Boosting 1,486 → 1,513). Por eso no se eliminan.
+
+![Atípicos](images/16_atipicos.png)
 
 ### 6.3 Hallazgos principales
 
@@ -123,7 +156,8 @@ Calculadas en `src/lexico.py` **con la misma definición para inglés y español
 3. **Longitud y sílabas** aumentan la AoA y son **colineales** entre sí (ρ ≈ 0,9).
 4. Las palabras con **muchos vecinos** (*cat, hat, bat*) se aprenden antes.
 5. **El concepto se transfiere entre idiomas:** la AoA española y la de la traducción inglesa correlacionan ρ ≈ 0,68.
-6. El objetivo es continuo (media ≈ 11 años). Solo ~17 % de las palabras tiene AoA < 8 años, y en ese tramo se concentra el interés del negocio.
+6. A igual frecuencia, los **adjetivos** se aprenden algo más tarde que sustantivos y verbos.
+7. El objetivo es continuo (media ≈ 11 años). Solo ~17 % de las palabras tiene AoA < 8 años, y en ese tramo se concentra el interés del negocio.
 
 ![Bilingüe](images/03_categoria_silabas_bilingue.png)
 
@@ -144,6 +178,18 @@ Calculadas en `src/lexico.py` **con la misma definición para inglés y español
 | Ensamble (boosting) | **Gradient Boosting** (`HistGradientBoostingRegressor`) | Reduce sesgo de forma secuencial |
 | Ensamble heterogéneo | **Voting** y **Stacking** (Ridge + RF + GB, meta-modelo Ridge) | Combina familias distintas |
 | No supervisado | **K-Means** (+ PCA para visualizar) | Familias de lecciones |
+
+**Por qué estos algoritmos**
+
+| Algoritmo | Motivo de selección | Qué se configura |
+|---|---|---|
+| Ridge | Referencia interpretable; L2 estabiliza variables colineales | `alpha` |
+| Árbol de Decisión | No linealidades e interacciones; base para medir el aporte de ensamblar | profundidad, hoja mínima, criterio |
+| Bagging / Random Forest | Bajan la varianza promediando árboles distintos | árboles, `max_features`, `max_samples`, profundidad |
+| Gradient Boosting (histogramas) | Baja el sesgo, rápido con ~23.000 filas, *early stopping* | `learning_rate`, iteraciones, hojas, L2 |
+| Voting / Stacking | Combinan familias distintas | modelos base y meta-modelo |
+
+Se descartaron SVR (costo cuadrático con 23.000 filas), k-NN (sensible a variables redundantes y lento al predecir) y redes neuronales (pocas variables tabulares).
 
 ### 7.2 Optimización de hiperparámetros
 Validación cruzada de 5 folds sobre *train*, optimizando **MAE** (error en años, fácil de explicar a las educadoras).
@@ -167,6 +213,15 @@ Validación cruzada de 5 folds sobre *train*, optimizando **MAE** (error en año
 
 ![Comparación](images/06_comparacion_modelos.png)
 
+| Comparación (MAE en CV, años) | Referencia | Ensamble | Mejora |
+|---|---|---|---|
+| Bagging vs. un árbol | 2,123 | 1,562 | **0,562 (26 %)** |
+| Random Forest vs. árbol optimizado | 1,529 | 1,488 | 0,041 (2,7 %) |
+| Gradient Boosting vs. árbol optimizado | 1,529 | 1,482 | 0,046 (3,0 %) |
+| Gradient Boosting vs. Ridge | 1,582 | 1,482 | **0,100 (6,3 %)** |
+| Voting vs. Gradient Boosting | 1,482 | 1,495 | −0,012 |
+| Stacking vs. Gradient Boosting | 1,482 | 1,481 | +0,001 |
+
 * **Bagging:** promediar 100 árboles sin podar baja el MAE de 2,12 (un árbol) a 1,56. Es la demostración directa de que el ensamble **reduce la varianza**.
 * **Random Forest / Gradient Boosting optimizados** superan a Ridge por ~0,10 años y a la línea base por ~0,87 años.
 * **Voting y Stacking aportan poco** porque los errores de RF y Gradient Boosting correlacionan ≈ 0,99: se equivocan en las mismas palabras. El error restante viene del **ruido de la norma** (juicios subjetivos) y del significado de la palabra, no del algoritmo.
@@ -177,12 +232,12 @@ Validación cruzada de 5 folds sobre *train*, optimizando **MAE** (error en año
 
 | Modelo | MAE (media ± d.e.) | R² | Brecha train–val | Tiempo de ajuste (s) |
 |---|---|---|---|---|
-| Stacking | 1,481 ± 0,019 | 0,582 | 0,081 | 63,63 |
-| Gradient Boosting | 1,482 ± 0,018 | 0,581 | 0,062 | 1,93 |
-| Random Forest | 1,488 ± 0,020 | 0,578 | 0,157 | 6,26 |
-| Voting | 1,495 ± 0,018 | 0,577 | 0,073 | 8,48 |
-| Árbol de Decisión | 1,531 ± 0,021 | 0,552 | 0,078 | 0,10 |
-| Ridge | 1,582 ± 0,017 | 0,530 | 0,001 | 0,05 |
+| Stacking | 1,481 ± 0,019 | 0,582 | 0,081 | 39,83 |
+| Gradient Boosting | 1,482 ± 0,018 | 0,581 | 0,062 | 1,66 |
+| Random Forest | 1,488 ± 0,020 | 0,578 | 0,157 | 5,68 |
+| Voting | 1,495 ± 0,018 | 0,577 | 0,073 | 7,52 |
+| Árbol de Decisión | 1,531 ± 0,021 | 0,552 | 0,078 | 0,08 |
+| Ridge | 1,582 ± 0,017 | 0,530 | 0,001 | 0,04 |
 
 ![Generalización](images/07_generalizacion_cv_repetida.png)
 
@@ -194,9 +249,20 @@ El Stacking obtiene el menor MAE, pero solo **0,001 años** (≈ 9 horas) mejor 
 
 **Solución elegida: Gradient Boosting**, que tiene:
 * el mismo error que el Stacking en la práctica;
-* un entrenamiento **~33 veces más rápido** (1,9 s contra 63,6 s por ajuste), y en producción hay que re-entrenar con cada nueva norma o idioma;
+* un entrenamiento **~24 veces más rápido** (1,7 s contra 39,8 s por ajuste), y en producción hay que re-entrenar con cada nueva norma o idioma;
+* un archivo **87 veces más liviano** (1,2 MB contra 104 MB), relevante para una app sin conexión;
 * menos piezas que mantener (un modelo en vez de cuatro);
 * una brecha de solo 0,06 años.
+
+**Aporte a los objetivos del negocio**
+
+| Criterio | Ridge | Random Forest | **Gradient Boosting** | Stacking |
+|---|---|---|---|---|
+| MAE test ≤ 1,6 | 1,609 ❌ | 1,510 | **1,501** | 1,501 |
+| Nivel ±1 ≥ 90 % | 94,4 % | 94,5 % | **94,3 %** | 94,5 % |
+| Error grave ≤ 2 % | 0,02 % | 0,02 % | **0,05 %** | 0,05 % |
+| Tamaño | < 0,1 MB | 50,7 MB | **1,2 MB** | 103,9 MB |
+| Interpretabilidad | alta | media | **media** | baja |
 
 ### 8.3 Test (palabras nunca vistas)
 
@@ -215,24 +281,55 @@ El MAE de test (1,50 años, IC 95 % bootstrap [1,47; 1,53]) es casi igual al de 
 
 **Importancia de variables** (permutación en test): la frecuencia domina, seguida de la concreción, la longitud y la categoría (`images/10_importancia.png`).
 
-### 8.4 Español: tres estrategias (CV repetida 5 × 5, 1.239 palabras)
+**Lectura de negocio por nivel** ([notebook complementario](notebooks/analisis_por_nivel.ipynb))
 
-| Estrategia | MAE (escala 1–11) | R² | Spearman |
+El 62 % de las palabras es "fuera de foco", así que las métricas de nivel hay que compararlas con **no usar modelo**:
+
+| Métrica (test) | Sin modelo | Gradient Boosting | Con cortes calibrados |
 |---|---|---|---|
-| Línea base (media) | 1,404 | 0,000 | — |
-| B · Ridge | 1,149 | 0,296 | 0,551 |
-| B · Random Forest | 1,177 | 0,267 | 0,518 |
-| B · Gradient Boosting | 1,217 | 0,208 | 0,500 |
-| C · Ridge + transferencia | 0,964 | 0,468 | 0,703 |
-| C · RF + transferencia | 0,966 | 0,477 | 0,704 |
-| C · HGB + transferencia | 1,003 | 0,430 | 0,679 |
-| C · Stacking + transferencia | 0,953 | 0,487 | 0,710 |
-| A · Transferencia directa (zero-shot) | — | — | 0,532 |
+| Nivel exacto | 61,7 % | **67,4 %** | 65,2 % |
+| Nivel ±1 | 81,6 % | **94,3 %** | 94,2 % |
+| Error grave | 0 % | 0,05 % | 0,14 % |
+| Palabras infantiles: exacto | 0 % | 35,3 % | 37,0 % |
+| Palabras infantiles: ±1 | 52,0 % | 87,4 % | 89,95 % |
+| Recall del nivel 1 | 0 % | 1,6 % (1 de 64) | **37,5 %** |
+
+* El aporte sobre no usar modelo es de **+5,8 puntos** en nivel exacto y **+12,8** en ±1. El 94 % por sí solo sobreestima el logro.
+* Medido solo en palabras infantiles, el ±1 (87 %) **no llega** a la meta de 90 %.
+* **Mejora probada:** cortar la predicción en 4,84 / 6,94 / 8,82 / 10,33 años (calibrado con predicciones *out-of-fold* del train) recupera el nivel 1 sin reentrenar. La idea surgió al revisar el test, así que conviene confirmarla con palabras nuevas. La app y el dataset siguen con los cortes fijos.
+
+### 8.4 Español: tres estrategias (CV anidada 5 × 5, 1.239 palabras)
+
+Los hiperparámetros se eligen en un CV **interno** de 3 folds (`GridSearchCV` en Ridge, `RandomizedSearchCV` en RF y Gradient Boosting) y el error se mide en el CV **externo**, así la optimización no infla el resultado.
+
+| Estrategia | MAE (escala 1–11) | R² | Spearman | Brecha |
+|---|---|---|---|---|
+| Línea base (media) | 1,404 | 0,000 | — | — |
+| B · Ridge | 1,149 | 0,296 | 0,550 | 0,018 |
+| B · Random Forest | 1,172 | 0,275 | 0,525 | 0,229 |
+| B · Gradient Boosting | 1,159 | 0,287 | 0,542 | 0,132 |
+| C · Ridge + transferencia | 0,964 | 0,469 | 0,703 | 0,017 |
+| C · RF + transferencia | 0,967 | 0,475 | 0,704 | 0,222 |
+| C · HGB + transferencia | 0,971 | 0,472 | 0,699 | 0,147 |
+| **C · Stacking + transferencia** | **0,953** | **0,486** | **0,709** | 0,114 |
+| A · Transferencia directa (zero-shot) | — | — | 0,532 | — |
+
+**Efecto de optimizar en español** (MAE por defecto → optimizado):
+
+| Modelo | Solo español | Con transferencia |
+|---|---|---|
+| Ridge | 1,149 → 1,149 (sin cambio) | 0,964 → 0,964 (sin cambio) |
+| Random Forest | 1,207 → 1,172 (p < 0,01) | 0,978 → 0,967 (no significativo) |
+| Gradient Boosting | 1,263 → 1,159 (p < 0,001) | 1,023 → 0,971 (p < 0,001) |
+
+La brecha train–validación de RF y Gradient Boosting cae de 0,59–0,76 a 0,13–0,23: optimizar **controla el sobreajuste**.
+
+Hiperparámetros del modelo español final (Stacking): Ridge `alpha=0.01`; Random Forest `max_depth=6`, `max_features=0.7`, `min_samples_leaf=1`, `max_samples=None`; Gradient Boosting `learning_rate=0.026`, `max_iter=200`, `max_leaf_nodes=7`, `min_samples_leaf=20`, `l2_regularization=1`.
 
 ![Español](images/11_transferencia_es.png)
 
 * **A · Zero-shot:** el modelo inglés aplicado al español conserva parte del orden (ρ = 0,53). Funciona, pero no alcanza la meta.
-* **B · Modelo propio:** con solo 1.239 palabras, Ridge rinde igual o mejor que los ensambles, que sobreajustan (brecha 0,3–0,4). Con pocos datos, el modelo simple gana.
+* **B · Modelo propio:** con solo 1.239 palabras, Ridge rinde igual o mejor que los ensambles incluso optimizados. Con pocos datos, el modelo simple gana.
 * **C · Propio + transferencia:** agregar la AoA de la traducción inglesa y la predicción del modelo inglés reduce el MAE ~0,2 puntos (p < 0,001) y lleva la correlación a **ρ = 0,71**. Es un **stacking entre idiomas**: el conocimiento de 28.000 palabras inglesas compensa la escasez de datos españoles.
 * La escala española 1–11 se convierte a años con **enlace equipercentil** sobre los conceptos con norma en ambos idiomas (`images/12_enlace_equipercentil.png`).
 
@@ -249,14 +346,45 @@ K-Means sobre 11.565 palabras infantiles de ambos idiomas, con variables de form
 
 ![Familias](images/14_familias_lecciones.png)
 
-La silueta es baja (0,20–0,26 para todo *k*): las palabras forman un **continuo**, no grupos separados. Se eligió k = 4 por **interpretabilidad pedagógica**, con métricas internas comparables a las de otros valores de *k*. Las familias tienen una AoA media distinta (6,1 a 8,5 años) aunque la AoA no se usó para agruparlas, lo que confirma que tienen sentido.
+**Elección de k y del algoritmo**
+
+| k | Silueta | Davies-Bouldin | Estabilidad ARI (media / mín.) |
+|---|---|---|---|
+| 2 | 0,262 | 1,424 | 0,97 / 0,94 |
+| 3 | 0,210 | 1,552 | 0,95 / 0,89 |
+| **4** | 0,203 | 1,515 | **0,91 / 0,76** |
+| 5 | 0,207 | 1,461 | 0,84 / 0,54 |
+| 6 | 0,214 | 1,348 | 0,90 / 0,61 |
+| 8 | 0,220 | 1,323 | 0,78 / 0,54 |
+
+| Algoritmo (k = 4) | Silueta | Davies-Bouldin | Calinski-Harabasz |
+|---|---|---|---|
+| **K-Means** | **0,203** | **1,50** | **1.586** |
+| Jerárquico (Ward) | 0,162 | 1,74 | 1.237 |
+| Mezcla gaussiana | 0,035 | 3,56 | 754 |
+
+La silueta es baja para todo *k*: las palabras forman un **continuo**, y las métricas internas **no señalan k = 4** por sí solas (la silueta prefiere 2, Davies-Bouldin 8). Se elige k = 4 porque es estable ante remuestreos (ARI medio 0,91), entrega suficientes familias para planificar lecciones (2 o 3 son más estables pero poco útiles) y K-Means supera a los otros algoritmos. Debe leerse como una **organización pedagógica**, no como grupos naturales.
+
+![Perfil de familias](images/17_perfil_familias.png)
+
+La AoA media va de 6,1 a 8,5 años según la familia, aunque no se usó para agrupar. **Valor para el negocio:** sugiere un orden de lecciones (rimas → bisílabas frecuentes → grupos consonánticos → largas y abstractas) y permite armar cada lección con palabras de dificultad de lectura parecida, algo que la AoA sola no entrega.
 
 ### 8.6 Sesgos y desempeño por grupo
-* El error es mayor en **sustantivos de 2–3 sílabas** y menor en verbos. El R² cae en palabras **sin concreción** (imputada), que son candidatas a revisión manual.
+* El error absoluto es mayor en **sustantivos** (1,56) y palabras de **2–3 sílabas** (1,54–1,60). Los **verbos** tienen menor error pero el mayor sesgo (se subestiman 0,21 años). El R² cae a 0,27 en palabras **sin concreción**. Son candidatas a revisión manual.
+* **Sesgo cultural medido:** ninguna de 10 palabras chilenas está en la norma española (7 de sus equivalentes de España sí) y el modelo les asigna **0,98 años más** al mismo concepto (*guagua* 5,3 y *bebé* 3,6). Es una muestra chica elegida a mano y parte de las palabras de España estuvo en el entrenamiento: la cifra es indicativa.
 * **Sesgos de los datos:** las normas vienen de **adultos de EE. UU. y España**, no de niños chilenos, y falta vocabulario regional (*palta*, *polera*, *guagua*). La frecuencia viene de **subtítulos de películas**, no de habla dirigida a niños. En español, la concreción se toma de la **traducción inglesa**.
 * **Contenido inapropiado:** la primera ejecución sugirió *beer*, *gun* y *murder* como palabras "fáciles", porque son frecuentes en películas. Se agregó un **filtro editorial** que excluye groserías, violencia, alcohol, drogas y sexualidad. Es una primera barrera; la revisión humana sigue siendo obligatoria.
 
-### 8.7 Consideraciones éticas
+### 8.7 Privacidad y consideraciones éticas
+
+| Aspecto | Hoy | Si la app recoge datos de uso |
+|---|---|---|
+| Datos personales | Ninguno: normas agregadas por palabra | Aplican la **Ley 19.628** y su reforma, la **Ley 21.719** (vigencia desde el 1 de diciembre de 2026), con protección especial para niños, niñas y adolescentes |
+| Consentimiento | No requerido | De madre, padre o tutor (referencias: GDPR art. 8, COPPA) |
+| Minimización | Solo variables léxicas | Aciertos por palabra con identificador seudónimo; sin audio ni nombre salvo necesidad justificada |
+| Derechos | No aplica | Acceso, rectificación, supresión, portabilidad y plazo de retención |
+| Decisiones automatizadas | El modelo propone, una persona valida | No bloquear contenido a un niño solo por una predicción |
+
 * El dataset es **a nivel de palabra**: **no contiene datos personales** de niños.
 * El modelo **propone** y una educadora **valida** antes de publicar contenido. El notebook lista los mayores errores para priorizar esa revisión.
 * **Licencias:** normas académicas de libre uso para investigación y docencia, MultiPic CC-BY. El uso comercial exige revisar cada licencia y citar a los autores.
@@ -264,19 +392,22 @@ La silueta es baja (0,20–0,26 para todo *k*): las palabras forman un **continu
 ## 9. Conclusiones, limitaciones y recomendaciones
 
 ### Conclusiones
-1. **Es posible nivelar vocabulario automáticamente** con propiedades simples de la palabra: el Gradient Boosting ubica la palabra en el nivel correcto ±1 en el 94 % de los casos y casi nunca comete errores graves (0,05 %).
+1. **Es posible apoyar la nivelación** con propiedades simples de la palabra: el Gradient Boosting acierta el nivel ±1 en el 94 % de los casos (81,6 % sin modelo) con 0,05 % de errores graves. En palabras infantiles es más débil (87 % a ±1), por lo que **propone** y no reemplaza a la educadora.
 2. **Los ensambles sí aportan**, sobre todo frente a un árbol solo (de 2,12 a ~1,49 años de MAE) y frente al modelo lineal (~0,10 años). Pero los ensambles **heterogéneos** (Voting/Stacking) no justifican su costo porque sus miembros cometen los mismos errores.
 3. **La optimización importa más en los modelos de alta varianza** (árbol y RF) que en los que ya están bien regularizados (Gradient Boosting, Ridge).
 4. **El conocimiento se transfiere entre idiomas:** combinar el modelo inglés con datos españoles mejora el español de forma significativa. Es la vía para escalar Pino a nuevos idiomas con pocos datos.
 5. El error restante no es del algoritmo, sino de la **información disponible** (ruido de la norma, significado y contexto).
 
 ### Limitaciones
-* Normas de adultos y de otras culturas; frecuencia de subtítulos.
-* Regresión hacia la media: el nivel 1 queda sub-poblado.
+* Normas de adultos y de otras culturas; frecuencia de subtítulos; **penaliza el vocabulario chileno**.
+* Dos KPIs no se cumplen: Spearman en test inglés (0,737 < 0,75) y transferencia *zero-shot* (0,53 < 0,60).
+* Las familias de K-Means no tienen fronteras naturales (silueta ≈ 0,20).
+* Regresión hacia la media: con cortes fijos el modelo acierta solo 1 de 64 palabras del nivel 1 (§8.3).
 * El español tiene solo 1.239 palabras, sin verbos en la misma escala.
 * El modelo mide cuándo se **conoce** una palabra, no cuán difícil es **leerla**. El dataset de producto incluye sílabas y fonemas para cubrir eso.
 
 ### Recomendaciones para el negocio
+0. **Proponer niveles con cortes calibrados** y validarlos con educadoras antes de cambiarlos en la app (§8.3).
 1. **Adoptar el dataset de producto** (`data/processed/`) como **punto de partida** del catálogo. Las educadoras **validan en vez de nivelar desde cero**, lo que reduce el trabajo manual.
 2. **Exponer el modelo en el backend** (endpoint `/predict/aoa-palabra` en `pino-ml`) para nivelar automáticamente cada palabra nueva que se agregue.
 3. **Usar la AoA como dificultad inicial** del algoritmo de repetición espaciada SM-2 que ya tiene la app.
@@ -287,7 +418,7 @@ La silueta es baja (0,20–0,26 para todo *k*): las palabras forman un **continu
 ## 10. Reproducibilidad y estructura del proyecto
 
 ```
-ep3-machine-learning/
+eft-machine-learning/
 ├── README.md                     ← este informe
 ├── requirements.txt
 ├── data/
@@ -297,30 +428,37 @@ ep3-machine-learning/
 │       ├── vocabulario_infantil_en.csv   (10.333 palabras)
 │       └── pares_imagen_es_en.csv        (473 imágenes)
 ├── notebooks/
-│   └── pino_edad_adquisicion_palabras.ipynb   ← solución completa, ejecutada
+│   ├── pino_edad_adquisicion_palabras.ipynb   ← solución completa, ejecutada
+│   └── analisis_por_nivel.ipynb               ← línea base y cortes calibrados (se ejecuta después)
 ├── src/
-│   └── lexico.py                 ← construcción de variables (EN/ES)
+│   ├── lexico.py                 ← construcción de variables (EN/ES)
+│   └── texto_es.py               ← sílabas y fonemas del español
+├── app/                          ← demo Streamlit (app/README.md)
 ├── models/
 │   ├── modelo_aoa_en.joblib      ← Gradient Boosting
 │   ├── modelo_aoa_es.joblib      ← modelo español + función de enlace a años
 │   ├── kmeans_familias.joblib
 │   └── metricas.json             ← todas las métricas e hiperparámetros
-├── images/                       ← 14 gráficos generados por el notebook
+├── images/                       ← 16 gráficos del notebook y una captura de la app
 ├── docs/
 │   └── DATASETS_Y_METODOS_ENSENANZA.md
 └── presentacion/
-    └── Pino_cambio_de_enfoque.pptx
+    ├── Pino_EFT.pptx             ← presentación de la defensa
+    ├── GUION_PRESENTACION.md     ← guion y preguntas probables
+    └── anteriores/               ← presentaciones de entregas previas
 ```
 
 **Ejecutar:**
 ```bash
-cd ep3-machine-learning
-python -m venv .venv && source .venv/bin/activate
+git clone https://github.com/Zenith-AB/pino-app.git
+cd pino-app/eft-machine-learning
+python -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 jupyter nbconvert --to notebook --execute --inplace notebooks/pino_edad_adquisicion_palabras.ipynb
+jupyter nbconvert --to notebook --execute --inplace notebooks/analisis_por_nivel.ipynb
 ```
-* Usa el módulo `pino_ml.utils.texto_es` del repositorio (`../pino-ml/src`), así que hay que ejecutarlo dentro del repo `pino-app`.
-* Semilla fija `SEED = 2026`. Tiempo: ~30 min en 4 núcleos, sobre todo por la CV repetida del Stacking.
+* Requiere **Python 3.12 o superior** (probado con 3.14). La carpeta es **autocontenida**: todas las rutas son relativas y no necesita descargar datos.
+* Semilla fija `SEED = 2026`. Tiempo: 30 a 60 minutos en 4 núcleos, sobre todo por la CV repetida y anidada.
 
 **Usar el modelo:**
 ```python
@@ -344,8 +482,8 @@ Se escribe una palabra en español o inglés, la app calcula sus variables y ent
 | Nivel | Español | Inglés | Pares imagen (nivel ES) |
 |---|---|---|---|
 | 1 · Primeras palabras | 195 | 317 | 83 |
-| 2 · Preescolar | 626 | 1643 | 233 |
-| 3 · Lectura inicial | 376 | 3198 | 138 |
+| 2 · Preescolar | 624 | 1643 | 231 |
+| 3 · Lectura inicial | 378 | 3198 | 140 |
 | 4 · Lector en desarrollo | 115 | 5175 | 19 |
 
 ---

@@ -7,7 +7,7 @@ Interfaz interactiva para probar los modelos entrenados en el notebook:
   * Español: modelo propio + transferencia desde el inglés (Alonso et al., 2015), llevado a años
     con enlace equipercentil.
 
-Ejecutar desde la carpeta ep3-machine-learning:
+Ejecutar desde la carpeta eft-machine-learning:
     streamlit run app/streamlit_app.py
 """
 
@@ -190,7 +190,7 @@ with st.sidebar:
     c2.metric("Nivel ±1", f"{t['nivel ±1']:.0%}")
     st.markdown("**Modelo español:** propio + transferencia del inglés")
     c1, c2 = st.columns(2)
-    c1.metric("Spearman ρ", f"{MET['espanol']['tabla']['C · Stacking + transferencia']['Spearman']:.2f}")
+    c1.metric("Spearman ρ", f"{MET['espanol']['tabla'][MET['espanol']['mejor_estrategia']]['Spearman']:.2f}")
     c2.metric("Zero-shot ρ", f"{MET['espanol']['spearman_zero_shot']:.2f}")
     st.caption("Niveles: N1 < 4 años · N2 4–6 · N3 6–8 · N4 8–10. "
                "El modelo **propone** y una educadora **valida**.")
@@ -198,7 +198,7 @@ with st.sidebar:
 L = idioma
 
 st.title("¿A qué edad aprende un niño esta palabra?")
-st.caption("Probador interactivo del modelo de edad de adquisición (AoA) de Pino · EP3 MLY1101 Machine Learning")
+st.caption("Probador interactivo del modelo de edad de adquisición (AoA) de Pino · EFT MLY1101 Machine Learning")
 
 tab1, tab2, tab3, tab4 = st.tabs(["🔮 Predecir una palabra", "🌎 Español vs. inglés", "📋 Nivelar una lección", "📊 Sobre el modelo"])
 

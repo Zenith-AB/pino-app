@@ -1,0 +1,414 @@
+{
+  "modelo_en_elegido": "Gradient Boosting",
+  "regla_seleccion": "menor MAE en CV repetida 5x3; entre los modelos a menos de 0,02 años del mejor y con brecha ≤ 0,30 años se elige el más simple",
+  "hiperparametros": {
+    "Ridge": {
+      "alpha": 0.001
+    },
+    "Árbol de Decisión": {
+      "min_samples_leaf": 40,
+      "max_depth": 10,
+      "criterion": "squared_error"
+    },
+    "Random Forest": {
+      "n_estimators": 400,
+      "min_samples_leaf": 5,
+      "max_samples": 0.7,
+      "max_features": 0.5,
+      "max_depth": 12
+    },
+    "Gradient Boosting": {
+      "l2_regularization": 0,
+      "learning_rate": 0.017825874708243334,
+      "loss": "squared_error",
+      "max_depth": null,
+      "max_features": 0.5,
+      "max_iter": 1200,
+      "max_leaf_nodes": 31,
+      "min_samples_leaf": 20
+    }
+  },
+  "cv_repetida_en": {
+    "Stacking": {
+      "MAE media": 1.4812,
+      "MAE d.e.": 0.0188,
+      "R² media": 0.5817,
+      "MAE train": 1.4002,
+      "brecha": 0.0809,
+      "t. ajuste (s)": 39.8286
+    },
+    "Gradient Boosting": {
+      "MAE media": 1.4825,
+      "MAE d.e.": 0.0185,
+      "R² media": 0.5812,
+      "MAE train": 1.4201,
+      "brecha": 0.0624,
+      "t. ajuste (s)": 1.6633
+    },
+    "Random Forest": {
+      "MAE media": 1.4882,
+      "MAE d.e.": 0.02,
+      "R² media": 0.5783,
+      "MAE train": 1.3316,
+      "brecha": 0.1566,
+      "t. ajuste (s)": 5.6803
+    },
+    "Voting": {
+      "MAE media": 1.4946,
+      "MAE d.e.": 0.0184,
+      "R² media": 0.5766,
+      "MAE train": 1.4219,
+      "brecha": 0.0728,
+      "t. ajuste (s)": 7.5166
+    },
+    "Árbol de Decisión": {
+      "MAE media": 1.5312,
+      "MAE d.e.": 0.0209,
+      "R² media": 0.5523,
+      "MAE train": 1.4532,
+      "brecha": 0.078,
+      "t. ajuste (s)": 0.0793
+    },
+    "Ridge": {
+      "MAE media": 1.582,
+      "MAE d.e.": 0.0168,
+      "R² media": 0.5298,
+      "MAE train": 1.5808,
+      "brecha": 0.0012,
+      "t. ajuste (s)": 0.0442
+    }
+  },
+  "test_en": {
+    "Ridge": {
+      "MAE test": 1.6089,
+      "RMSE": 2.0147,
+      "R²": 0.526,
+      "Spearman": 0.7055,
+      "nivel exacto": 0.646,
+      "nivel ±1": 0.9443,
+      "error grave": 0.0002,
+      "MAE CV": 1.582
+    },
+    "Random Forest": {
+      "MAE test": 1.5105,
+      "RMSE": 1.903,
+      "R²": 0.5771,
+      "Spearman": 0.735,
+      "nivel exacto": 0.6739,
+      "nivel ±1": 0.9447,
+      "error grave": 0.0002,
+      "MAE CV": 1.4882
+    },
+    "Gradient Boosting": {
+      "MAE test": 1.5014,
+      "RMSE": 1.8954,
+      "R²": 0.5805,
+      "Spearman": 0.7371,
+      "nivel exacto": 0.6742,
+      "nivel ±1": 0.9435,
+      "error grave": 0.0005,
+      "MAE CV": 1.4825
+    },
+    "Stacking": {
+      "MAE test": 1.5014,
+      "RMSE": 1.895,
+      "R²": 0.5807,
+      "Spearman": 0.7371,
+      "nivel exacto": 0.6732,
+      "nivel ±1": 0.9447,
+      "error grave": 0.0005,
+      "MAE CV": 1.4812
+    }
+  },
+  "espanol": {
+    "spearman_zero_shot": 0.5317,
+    "mejor_estrategia": "C · Stacking + transferencia",
+    "hiperparametros": {
+      "ridge": {
+        "alpha": 0.01
+      },
+      "rf": {
+        "min_samples_leaf": 1,
+        "max_samples": null,
+        "max_features": 0.7,
+        "max_depth": 6
+      },
+      "hgb": {
+        "l2_regularization": 1,
+        "learning_rate": 0.0257,
+        "max_iter": 200,
+        "max_leaf_nodes": 7,
+        "min_samples_leaf": 20
+      }
+    },
+    "optimizacion": [
+      {
+        "variables": "B (solo español)",
+        "modelo": "Ridge",
+        "MAE default": 1.149,
+        "MAE optimizado": 1.1491,
+        "mejora": -0.0001,
+        "p-valor": 0.7279,
+        "brecha default": 0.0175,
+        "brecha optimizado": 0.0176
+      },
+      {
+        "variables": "B (solo español)",
+        "modelo": "Random Forest",
+        "MAE default": 1.2066,
+        "MAE optimizado": 1.1721,
+        "mejora": 0.0344,
+        "p-valor": 0.0083,
+        "brecha default": 0.7588,
+        "brecha optimizado": 0.2292
+      },
+      {
+        "variables": "B (solo español)",
+        "modelo": "Gradient Boosting",
+        "MAE default": 1.2631,
+        "MAE optimizado": 1.1586,
+        "mejora": 0.1045,
+        "p-valor": 0.0,
+        "brecha default": 0.6276,
+        "brecha optimizado": 0.1323
+      },
+      {
+        "variables": "C (con transferencia)",
+        "modelo": "Ridge",
+        "MAE default": 0.9638,
+        "MAE optimizado": 0.964,
+        "mejora": -0.0002,
+        "p-valor": 0.7289,
+        "brecha default": 0.0174,
+        "brecha optimizado": 0.0172
+      },
+      {
+        "variables": "C (con transferencia)",
+        "modelo": "Random Forest",
+        "MAE default": 0.9779,
+        "MAE optimizado": 0.9673,
+        "mejora": 0.0106,
+        "p-valor": 0.3126,
+        "brecha default": 0.6158,
+        "brecha optimizado": 0.2222
+      },
+      {
+        "variables": "C (con transferencia)",
+        "modelo": "Gradient Boosting",
+        "MAE default": 1.0227,
+        "MAE optimizado": 0.9707,
+        "mejora": 0.0521,
+        "p-valor": 0.0002,
+        "brecha default": 0.5908,
+        "brecha optimizado": 0.1469
+      }
+    ],
+    "tabla": {
+      "Línea base (media)": {
+        "MAE": 1.4043,
+        "MAE d.e.": 0.0646,
+        "R²": 0.0,
+        "Spearman": NaN,
+        "RMSE": NaN,
+        "brecha MAE": NaN
+      },
+      "B · Ridge": {
+        "MAE": 1.1491,
+        "MAE d.e.": 0.0593,
+        "R²": 0.296,
+        "Spearman": 0.5505,
+        "RMSE": 1.4293,
+        "brecha MAE": 0.0176
+      },
+      "B · Random Forest": {
+        "MAE": 1.1721,
+        "MAE d.e.": 0.0601,
+        "R²": 0.2748,
+        "Spearman": 0.5249,
+        "RMSE": 1.4528,
+        "brecha MAE": 0.2292
+      },
+      "B · Gradient Boosting": {
+        "MAE": 1.1586,
+        "MAE d.e.": 0.0581,
+        "R²": 0.2871,
+        "Spearman": 0.5417,
+        "RMSE": 1.4362,
+        "brecha MAE": 0.1323
+      },
+      "C · Ridge + transferencia": {
+        "MAE": 0.964,
+        "MAE d.e.": 0.0539,
+        "R²": 0.4686,
+        "Spearman": 0.7034,
+        "RMSE": 1.2378,
+        "brecha MAE": 0.0172
+      },
+      "C · RF + transferencia": {
+        "MAE": 0.9673,
+        "MAE d.e.": 0.0513,
+        "R²": 0.4746,
+        "Spearman": 0.7038,
+        "RMSE": 1.2268,
+        "brecha MAE": 0.2222
+      },
+      "C · HGB + transferencia": {
+        "MAE": 0.9707,
+        "MAE d.e.": 0.0551,
+        "R²": 0.4717,
+        "Spearman": 0.6993,
+        "RMSE": 1.232,
+        "brecha MAE": 0.1469
+      },
+      "C · Stacking + transferencia": {
+        "MAE": 0.9532,
+        "MAE d.e.": 0.0543,
+        "R²": 0.4855,
+        "Spearman": 0.7089,
+        "RMSE": 1.2161,
+        "brecha MAE": 0.1135
+      },
+      "A · Transferencia directa (zero-shot)": {
+        "MAE": NaN,
+        "MAE d.e.": NaN,
+        "R²": NaN,
+        "Spearman": 0.5317,
+        "RMSE": NaN,
+        "brecha MAE": NaN
+      }
+    }
+  },
+  "familias_lecciones": {
+    "Cortas con familia (rimas)": 1523,
+    "Largas y abstractas": 2358,
+    "Con grupos consonánticos (tr, pl, str)": 3534,
+    "Bisílabas frecuentes": 4150
+  },
+  "producto": {
+    "palabras_es": 1312,
+    "palabras_en": 10333,
+    "pares_imagen": 473
+  },
+  "kpis": [
+    {
+      "KPI": "MAE test EN (años)",
+      "meta": "≤ 1.6",
+      "resultado": 1.5014,
+      "cumple": "sí"
+    },
+    {
+      "KPI": "R² test EN",
+      "meta": "≥ 0.55",
+      "resultado": 0.5805,
+      "cumple": "sí"
+    },
+    {
+      "KPI": "Spearman test EN",
+      "meta": "≥ 0.75",
+      "resultado": 0.7371,
+      "cumple": "NO"
+    },
+    {
+      "KPI": "Brecha MAE train–validación (años)",
+      "meta": "≤ 0.3",
+      "resultado": 0.0624,
+      "cumple": "sí"
+    },
+    {
+      "KPI": "Nivel correcto ± 1",
+      "meta": "≥ 0.9",
+      "resultado": 0.9435,
+      "cumple": "sí"
+    },
+    {
+      "KPI": "Error grave",
+      "meta": "≤ 0.02",
+      "resultado": 0.0005,
+      "cumple": "sí"
+    },
+    {
+      "KPI": "Spearman ES, mejor estrategia",
+      "meta": "≥ 0.6",
+      "resultado": 0.7089,
+      "cumple": "sí"
+    },
+    {
+      "KPI": "Spearman ES, zero-shot",
+      "meta": "≥ 0.6",
+      "resultado": 0.5317,
+      "cumple": "NO"
+    },
+    {
+      "KPI": "Palabras niveladas ES",
+      "meta": "≥ 1000",
+      "resultado": 1312.0,
+      "cumple": "sí"
+    },
+    {
+      "KPI": "Palabras niveladas EN",
+      "meta": "≥ 1000",
+      "resultado": 10333.0,
+      "cumple": "sí"
+    }
+  ],
+  "estabilidad_kmeans": {
+    "2": {
+      "silueta": 0.2624,
+      "Davies-Bouldin": 1.4244,
+      "Calinski-Harabasz": 4996.8475,
+      "ARI bootstrap (media)": 0.9745,
+      "ARI bootstrap (mín.)": 0.9366,
+      "familia más chica": 4679
+    },
+    "3": {
+      "silueta": 0.2101,
+      "Davies-Bouldin": 1.5523,
+      "Calinski-Harabasz": 3987.2132,
+      "ARI bootstrap (media)": 0.9478,
+      "ARI bootstrap (mín.)": 0.8891,
+      "familia más chica": 1682
+    },
+    "4": {
+      "silueta": 0.2028,
+      "Davies-Bouldin": 1.515,
+      "Calinski-Harabasz": 3637.0326,
+      "ARI bootstrap (media)": 0.9099,
+      "ARI bootstrap (mín.)": 0.7553,
+      "familia más chica": 1523
+    },
+    "5": {
+      "silueta": 0.2075,
+      "Davies-Bouldin": 1.4613,
+      "Calinski-Harabasz": 3407.5282,
+      "ARI bootstrap (media)": 0.8384,
+      "ARI bootstrap (mín.)": 0.5348,
+      "familia más chica": 1402
+    },
+    "6": {
+      "silueta": 0.2142,
+      "Davies-Bouldin": 1.3484,
+      "Calinski-Harabasz": 3178.7719,
+      "ARI bootstrap (media)": 0.9007,
+      "ARI bootstrap (mín.)": 0.6063,
+      "familia más chica": 1312
+    },
+    "7": {
+      "silueta": 0.2176,
+      "Davies-Bouldin": 1.3309,
+      "Calinski-Harabasz": 2985.7441,
+      "ARI bootstrap (media)": 0.8076,
+      "ARI bootstrap (mín.)": 0.6203,
+      "familia más chica": 921
+    },
+    "8": {
+      "silueta": 0.2201,
+      "Davies-Bouldin": 1.3228,
+      "Calinski-Harabasz": 2847.6226,
+      "ARI bootstrap (media)": 0.7824,
+      "ARI bootstrap (mín.)": 0.544,
+      "familia más chica": 768
+    }
+  },
+  "version_sklearn": "1.9.1",
+  "seed": 2026
+}

@@ -10,7 +10,7 @@ Proyecto de un equipo de 4 integrantes organizado en sprints de 2 semanas
 ## 🧠 Novedad (noviembre 2026): nivelación de vocabulario infantil en español e inglés
 
 Pino se amplía para enseñar **español e inglés a niños pequeños**. La carpeta
-[`ep3-machine-learning/`](ep3-machine-learning/) contiene un modelo que estima **a qué
+[`eft-machine-learning/`](eft-machine-learning/) contiene un modelo que estima **a qué
 edad aprende un niño cada palabra** (edad de adquisición, AoA). Con esa estimación el
 vocabulario se ordena en los niveles de la app de forma automática y no palabra por
 palabra a mano.
@@ -26,17 +26,18 @@ palabra a mano.
 - **Datos reales y públicos:** normas de AoA de Kuperman (≈ 30.000 palabras en inglés) y de Alonso (1.239 en español), frecuencias SUBTLEX, concreción de Brysbaert, diccionario de pronunciación CMU e imágenes MultiPic.
 - **Modelo elegido: Gradient Boosting.** Error medio de **1,50 años** en palabras nunca vistas (R² = 0,58). Ubica la palabra en el nivel correcto ±1 en el **94 %** de los casos, y una palabra adulta cae en un nivel infantil solo en el **0,05 %**.
 - **Español:** combinado con lo aprendido del inglés, la correlación con las normas reales llega a **ρ = 0,71**.
-- **Producto para la app**, en [`ep3-machine-learning/data/processed/`](ep3-machine-learning/data/processed/):
+- **Producto para la app**, en [`eft-machine-learning/data/processed/`](eft-machine-learning/data/processed/):
   - `vocabulario_infantil_es.csv`: **1.312** palabras con nivel, sílabas (*ca-sa*), fonemas y traducción.
   - `vocabulario_infantil_en.csv`: **10.333** palabras con nivel y fonemas.
   - `pares_imagen_es_en.csv`: **473** pares imagen–palabra en ambos idiomas.
   - Un filtro editorial excluye groserías, violencia, alcohol y sexualidad, pero la validación de una educadora sigue siendo necesaria.
 
 **Documentos**
-- 📘 [Informe técnico](ep3-machine-learning/README.md): problema, KPIs, CRISP-DM, EDA, modelos, optimización, ensambles, evaluación, sesgos y recomendaciones.
-- 📓 [Notebook ejecutado](ep3-machine-learning/notebooks/pino_edad_adquisicion_palabras.ipynb), reproducible con semilla fija.
-- 📚 [Datasets y métodos de enseñanza](ep3-machine-learning/docs/DATASETS_Y_METODOS_ENSENANZA.md): Wordbank, CHILDES, EsPal, Dolch/Fry; método silábico, fonético, *synthetic phonics*, *word families*.
-- 🎞️ [Presentación del cambio de enfoque](ep3-machine-learning/presentacion/Pino_cambio_de_enfoque.pptx).
+- 📘 [Informe técnico](eft-machine-learning/README.md): problema, KPIs, CRISP-DM, EDA, modelos, optimización, ensambles, evaluación, sesgos y recomendaciones.
+- 📓 [Notebook ejecutado](eft-machine-learning/notebooks/pino_edad_adquisicion_palabras.ipynb), reproducible con semilla fija.
+- 📚 [Datasets y métodos de enseñanza](eft-machine-learning/docs/DATASETS_Y_METODOS_ENSENANZA.md): Wordbank, CHILDES, EsPal, Dolch/Fry; método silábico, fonético, *synthetic phonics*, *word families*.
+- 🎞️ [Presentación de la Evaluación Final Transversal](eft-machine-learning/presentacion/Pino_EFT.pptx) y [guion](eft-machine-learning/presentacion/GUION_PRESENTACION.md).
+- 🔮 [App Streamlit para probar el modelo](eft-machine-learning/app/README.md).
 
 **Próximos pasos:** exponer el modelo en `pino-ml` (`/predict/aoa-palabra`), usar la AoA como
 dificultad inicial del repaso espaciado SM-2, completar el nivel 1 con Wordbank (datos de
@@ -84,7 +85,7 @@ Este nuevo sprint incorpora la investigación psicométrica internacional de las
 |---------|--------|
 | `pino/` | App móvil: Flutter + Riverpod (estado) + Isar (base de datos local) + Firebase (Auth y Firestore) |
 | `pino-ml/` | Backend de ML en Python: API FastAPI con 4 modelos y pipeline de entrenamiento Kedro + MLflow, orquestado con Airflow |
-| `ep3-machine-learning/` | Modelo de edad de adquisición de palabras (ES/EN) y vocabulario infantil nivelado para la app |
+| `eft-machine-learning/` | Modelo de edad de adquisición de palabras (ES/EN) y vocabulario infantil nivelado para la app |
 | `plan-sprints-pino.md` | **Plan vigente** de sprints y tareas por integrante |
 | `backlog-pino.md` | Detalle de las historias de usuario (tareas, puntos, dependencias) |
 | `pino-ml-architecture.md` | Arquitectura de ML y estado de cada modelo |
