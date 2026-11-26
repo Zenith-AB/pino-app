@@ -281,6 +281,23 @@ El MAE de test (1,50 años, IC 95 % bootstrap [1,47; 1,53]) es casi igual al de 
 
 **Importancia de variables** (permutación en test): la frecuencia domina, seguida de la concreción, la longitud y la categoría (`images/10_importancia.png`).
 
+**Lectura de negocio por nivel** ([notebook complementario](notebooks/analisis_por_nivel.ipynb))
+
+El 62 % de las palabras es "fuera de foco", así que las métricas de nivel hay que compararlas con **no usar modelo**:
+
+| Métrica (test) | Sin modelo | Gradient Boosting | Con cortes calibrados |
+|---|---|---|---|
+| Nivel exacto | 61,7 % | **67,4 %** | 65,2 % |
+| Nivel ±1 | 81,6 % | **94,3 %** | 94,2 % |
+| Error grave | 0 % | 0,05 % | 0,14 % |
+| Palabras infantiles: exacto | 0 % | 35,3 % | 37,0 % |
+| Palabras infantiles: ±1 | 52,0 % | 87,4 % | 89,95 % |
+| Recall del nivel 1 | 0 % | 1,6 % (1 de 64) | **37,5 %** |
+
+* El aporte sobre no usar modelo es de **+5,8 puntos** en nivel exacto y **+12,8** en ±1. El 94 % por sí solo sobreestima el logro.
+* Medido solo en palabras infantiles, el ±1 (87 %) **no llega** a la meta de 90 %.
+* **Mejora probada:** cortar la predicción en 4,84 / 6,94 / 8,82 / 10,33 años (calibrado con predicciones *out-of-fold* del train) recupera el nivel 1 sin reentrenar. La idea surgió al revisar el test, así que conviene confirmarla con palabras nuevas. La app y el dataset siguen con los cortes fijos.
+
 ### 8.4 Español: tres estrategias (CV anidada 5 × 5, 1.239 palabras)
 
 Los hiperparámetros se eligen en un CV **interno** de 3 folds (`GridSearchCV` en Ridge, `RandomizedSearchCV` en RF y Gradient Boosting) y el error se mide en el CV **externo**, así la optimización no infla el resultado.
@@ -375,7 +392,7 @@ La AoA media va de 6,1 a 8,5 años según la familia, aunque no se usó para agr
 ## 9. Conclusiones, limitaciones y recomendaciones
 
 ### Conclusiones
-1. **Es posible nivelar vocabulario automáticamente** con propiedades simples de la palabra: el Gradient Boosting ubica la palabra en el nivel correcto ±1 en el 94 % de los casos y casi nunca comete errores graves (0,05 %).
+1. **Es posible apoyar la nivelación** con propiedades simples de la palabra: el Gradient Boosting acierta el nivel ±1 en el 94 % de los casos (81,6 % sin modelo) con 0,05 % de errores graves. En palabras infantiles es más débil (87 % a ±1), por lo que **propone** y no reemplaza a la educadora.
 2. **Los ensambles sí aportan**, sobre todo frente a un árbol solo (de 2,12 a ~1,49 años de MAE) y frente al modelo lineal (~0,10 años). Pero los ensambles **heterogéneos** (Voting/Stacking) no justifican su costo porque sus miembros cometen los mismos errores.
 3. **La optimización importa más en los modelos de alta varianza** (árbol y RF) que en los que ya están bien regularizados (Gradient Boosting, Ridge).
 4. **El conocimiento se transfiere entre idiomas:** combinar el modelo inglés con datos españoles mejora el español de forma significativa. Es la vía para escalar Pino a nuevos idiomas con pocos datos.
@@ -385,11 +402,12 @@ La AoA media va de 6,1 a 8,5 años según la familia, aunque no se usó para agr
 * Normas de adultos y de otras culturas; frecuencia de subtítulos; **penaliza el vocabulario chileno**.
 * Dos KPIs no se cumplen: Spearman en test inglés (0,737 < 0,75) y transferencia *zero-shot* (0,53 < 0,60).
 * Las familias de K-Means no tienen fronteras naturales (silueta ≈ 0,20).
-* Regresión hacia la media: el nivel 1 queda sub-poblado.
+* Regresión hacia la media: con cortes fijos el modelo acierta solo 1 de 64 palabras del nivel 1 (§8.3).
 * El español tiene solo 1.239 palabras, sin verbos en la misma escala.
 * El modelo mide cuándo se **conoce** una palabra, no cuán difícil es **leerla**. El dataset de producto incluye sílabas y fonemas para cubrir eso.
 
 ### Recomendaciones para el negocio
+0. **Proponer niveles con cortes calibrados** y validarlos con educadoras antes de cambiarlos en la app (§8.3).
 1. **Adoptar el dataset de producto** (`data/processed/`) como **punto de partida** del catálogo. Las educadoras **validan en vez de nivelar desde cero**, lo que reduce el trabajo manual.
 2. **Exponer el modelo en el backend** (endpoint `/predict/aoa-palabra` en `pino-ml`) para nivelar automáticamente cada palabra nueva que se agregue.
 3. **Usar la AoA como dificultad inicial** del algoritmo de repetición espaciada SM-2 que ya tiene la app.
@@ -410,7 +428,8 @@ eft-machine-learning/
 │       ├── vocabulario_infantil_en.csv   (10.333 palabras)
 │       └── pares_imagen_es_en.csv        (473 imágenes)
 ├── notebooks/
-│   └── pino_edad_adquisicion_palabras.ipynb   ← solución completa, ejecutada
+│   ├── pino_edad_adquisicion_palabras.ipynb   ← solución completa, ejecutada
+│   └── analisis_por_nivel.ipynb               ← línea base y cortes calibrados (se ejecuta después)
 ├── src/
 │   ├── lexico.py                 ← construcción de variables (EN/ES)
 │   └── texto_es.py               ← sílabas y fonemas del español
@@ -436,6 +455,7 @@ cd pino-app/eft-machine-learning
 python -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 jupyter nbconvert --to notebook --execute --inplace notebooks/pino_edad_adquisicion_palabras.ipynb
+jupyter nbconvert --to notebook --execute --inplace notebooks/analisis_por_nivel.ipynb
 ```
 * Requiere **Python 3.12 o superior** (probado con 3.14). La carpeta es **autocontenida**: todas las rutas son relativas y no necesita descargar datos.
 * Semilla fija `SEED = 2026`. Tiempo: 30 a 60 minutos en 4 núcleos, sobre todo por la CV repetida y anidada.

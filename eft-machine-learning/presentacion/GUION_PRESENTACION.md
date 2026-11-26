@@ -65,7 +65,7 @@ Para elegir: el Stacking gana por **0,001 años**, unas nueve horas. El t-test c
 
 ### 13 · Test (0:25)
 "En el test, que el modelo nunca vio, el MAE es **1,50 años**, con intervalo de confianza 1,47 a 1,53, casi igual al 1,48 de la validación cruzada: **el modelo generaliza**.
-El sesgo que tiene es regresión a la media: las palabras más tempranas salen uno a tres años más tarde. Pero es un sesgo seguro: casi nunca una palabra de adulto cae en un nivel infantil, solo el 0,05 %."
+El sesgo que tiene es regresión a la media: las palabras más tempranas salen uno a tres años más tarde. Pero es un sesgo seguro: casi nunca una palabra de adulto cae en un nivel infantil, solo el 0,05 %. Y somos honestos: **sin modelo ya se logra 82 % a ±1**, y con cortes fijos casi no asignamos el nivel 1. Calibrando los cortes, el nivel 1 sube de 2 % a 38 %."
 
 ### 14 · Español (0:30)
 "En español hay solo 1.239 palabras. El modelo inglés tal cual llega a ρ = 0,53; uno propio, a 0,55; y el propio **más el conocimiento del inglés**, a **ρ = 0,71**. Es un stacking entre idiomas."
@@ -126,3 +126,5 @@ La decisión para el negocio: adoptar el modelo y el dataset como punto de parti
 | ¿Qué estructuras de datos de Python usaron? | Diccionario de pronunciaciones, conjuntos para vocales, Counter para vecinos ortográficos en tiempo lineal y DataFrames vectorizados. |
 | ¿Cómo aplicaron CRISP-DM? | Las seis fases, con retorno: cambio de enfoque al revisar datos y filtro editorial al revisar el despliegue. |
 | ¿Cómo monitorearían el modelo? | % de niveles corregidos por educadoras (re-entrenar sobre 20 %) y error en palabras nuevas. |
+| ¿Cuánto mejora el modelo frente a no usarlo? | Nivel exacto 67,4 % contra 61,7 % y ±1 94,3 % contra 81,6 %. En palabras infantiles, de 0 % a 35 % de acierto exacto. |
+| ¿Qué es la calibración de cortes? | Elegir los umbrales para que la proporción por nivel sea la real, usando predicciones out-of-fold del train. Recupera el nivel 1 (38 %) a cambio de 2 puntos de nivel exacto. |
