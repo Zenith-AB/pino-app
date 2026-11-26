@@ -162,6 +162,7 @@ gallina,hen,1 · Primeras palabras,3.89,3.34,norma Alonso et al. 2015,ga-lli-na,
 más,more,1 · Primeras palabras,3.89,3.34,norma Alonso et al. 2015,más,1,/m/ /a/ /s/,1.6,3,6.553,2.37,otra,Cortas con familia (rimas),False
 piedra,stone,1 · Primeras palabras,3.89,3.34,norma Alonso et al. 2015,pie-dra,2,/p/ /i/ /e/ /d/ /ɾ/ /a/,1.7,6,4.586,4.72,sustantivo,Bisílabas frecuentes,False
 profesor,teacher,1 · Primeras palabras,3.89,3.34,norma Alonso et al. 2015,pro-fe-sor,3,/p/ /ɾ/ /o/ /f/ /e/ /s/ /o/ /ɾ/,1.667,8,4.88,4.52,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
+pez,fish,1 · Primeras palabras,3.899,3.358,predicha (modelo ES),pez,1,/p/ /e/ /s/,1.6,3,4.43,5.0,sustantivo,Bisílabas frecuentes,True
 barba,beard,1 · Primeras palabras,3.901,3.36,norma Alonso et al. 2015,bar-ba,2,/b/ /a/ /ɾ/ /b/ /a/,1.3,5,4.128,4.96,sustantivo,Bisílabas frecuentes,True
 botón,button,1 · Primeras palabras,3.901,3.36,norma Alonso et al. 2015,bo-tón,2,/b/ /o/ /t/ /o/ /n/,1.3,5,4.347,4.96,sustantivo,Bisílabas frecuentes,True
 elefante,elephant,1 · Primeras palabras,3.901,3.36,norma Alonso et al. 2015,e-le-fan-te,4,/e/ /l/ /e/ /f/ /a/ /n/ /t/ /e/,1.175,8,4.007,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
@@ -171,7 +172,6 @@ oso,bear,1 · Primeras palabras,3.901,3.36,norma Alonso et al. 2015,o-so,2,/o/ /
 caracol,snail,1 · Primeras palabras,3.911,3.38,norma Alonso et al. 2015,ca-ra-col,3,/k/ /a/ /ɾ/ /a/ /k/ /o/ /l/,1.2,7,3.377,4.93,sustantivo,Bisílabas frecuentes,True
 mariposa,butterfly,1 · Primeras palabras,3.911,3.38,norma Alonso et al. 2015,ma-ri-po-sa,4,/m/ /a/ /ɾ/ /i/ /p/ /o/ /s/ /a/,1.0,8,3.827,4.93,sustantivo,Bisílabas frecuentes,True
 número,number,1 · Primeras palabras,3.911,3.38,norma Alonso et al. 2015,nú-me-ro,3,/n/ /u/ /m/ /e/ /ɾ/ /o/,1.0,6,5.367,3.3,sustantivo,Bisílabas frecuentes,False
-pez,fish,1 · Primeras palabras,3.917,3.39,predicha (modelo ES),pez,1,/p/ /e/ /s/,1.6,3,4.43,5.0,sustantivo,Bisílabas frecuentes,True
 canción,song,1 · Primeras palabras,3.922,3.4,norma Alonso et al. 2015,can-ción,2,/k/ /a/ /n/ /s/ /i/ /o/ /n/,1.6,7,4.936,4.46,sustantivo,Bisílabas frecuentes,False
 hoy,today,1 · Primeras palabras,3.922,3.4,norma Alonso et al. 2015,hoy,1,/o/ /i/,1.6,3,5.763,2.57,otra,Cortas con familia (rimas),False
 jirafa,giraffe,1 · Primeras palabras,3.922,3.4,norma Alonso et al. 2015,ji-ra-fa,3,/x/ /i/ /ɾ/ /a/ /f/ /a/,1.0,6,3.295,4.73,sustantivo,Bisílabas frecuentes,True
@@ -252,6 +252,7 @@ domingo,sunday,2 · Preescolar,4.24,3.68,norma Alonso et al. 2015,do-min-go,3,/d
 fuego,fire,2 · Preescolar,4.24,3.68,norma Alonso et al. 2015,fue-go,2,/f/ /u/ /e/ /g/ /o/,1.0,5,5.123,4.68,sustantivo,Bisílabas frecuentes,True
 gusano,worm,2 · Preescolar,4.24,3.68,norma Alonso et al. 2015,gu-sa-no,3,/g/ /u/ /s/ /a/ /n/ /o/,1.0,6,4.004,4.9,sustantivo,Bisílabas frecuentes,False
 payaso,clown,2 · Preescolar,4.24,3.68,norma Alonso et al. 2015,pa-ya-so,3,/p/ /a/ /ʝ/ /a/ /s/ /o/,1.0,6,4.303,4.9,sustantivo,Bisílabas frecuentes,True
+pavo,turkey,2 · Preescolar,4.253,3.693,predicha (modelo ES),pa-vo,2,/p/ /a/ /b/ /o/,1.0,4,4.255,4.89,sustantivo,Cortas con familia (rimas),True
 flotador,float,2 · Preescolar,4.26,3.7,norma Alonso et al. 2015,flo-ta-dor,3,/f/ /l/ /o/ /t/ /a/ /d/ /o/ /ɾ/,1.667,8,2.925,4.07,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 lobo,wolf,2 · Preescolar,4.26,3.7,norma Alonso et al. 2015,lo-bo,2,/l/ /o/ /b/ /o/,1.0,4,4.378,4.79,sustantivo,Cortas con familia (rimas),True
 mañana,tomorrow,2 · Preescolar,4.26,3.7,norma Alonso et al. 2015,ma-ña-na,3,/m/ /a/ /ɲ/ /a/ /n/ /a/,1.0,6,5.805,2.04,sustantivo,Bisílabas frecuentes,False
@@ -265,7 +266,6 @@ montaña,mountain,2 · Preescolar,4.267,3.72,norma Alonso et al. 2015,mon-ta-ña
 nueve,nine,2 · Preescolar,4.267,3.72,norma Alonso et al. 2015,nue-ve,2,/n/ /u/ /e/ /b/ /e/,1.0,5,4.814,4.04,otra,Bisílabas frecuentes,False
 oler,smell,2 · Preescolar,4.267,3.72,norma Alonso et al. 2015,o-ler,2,/o/ /l/ /e/ /ɾ/,1.35,4,4.11,3.7,verbo,Bisílabas frecuentes,False
 taza,cup,2 · Preescolar,4.275,3.74,norma Alonso et al. 2015,ta-za,2,/t/ /a/ /s/ /a/,1.0,4,4.44,5.0,sustantivo,Cortas con familia (rimas),False
-bolsa,bag,2 · Preescolar,4.281,3.758,predicha (modelo ES),bol-sa,2,/b/ /o/ /l/ /s/ /a/,1.3,5,4.869,4.9,sustantivo,Bisílabas frecuentes,True
 azúcar,sugar,2 · Preescolar,4.282,3.76,norma Alonso et al. 2015,a-zú-car,3,/a/ /s/ /u/ /k/ /a/ /ɾ/,1.233,6,4.453,4.87,sustantivo,Bisílabas frecuentes,False
 bicicleta,bicycle,2 · Preescolar,4.282,3.76,norma Alonso et al. 2015,bi-ci-cle-ta,4,/b/ /i/ /s/ /i/ /k/ /l/ /e/ /t/ /a/,1.35,9,4.389,4.89,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 bruja,witch,2 · Preescolar,4.282,3.76,norma Alonso et al. 2015,bru-ja,2,/b/ /ɾ/ /u/ /x/ /a/,1.7,5,4.36,4.17,sustantivo,Bisílabas frecuentes,True
@@ -282,11 +282,10 @@ hombro,shoulder,2 · Preescolar,4.311,3.78,norma Alonso et al. 2015,hom-bro,2,/o
 lámpara,lamp,2 · Preescolar,4.311,3.78,norma Alonso et al. 2015,lám-pa-ra,3,/l/ /a/ /m/ /p/ /a/ /ɾ/ /a/,1.2,7,4.01,4.97,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 melón,melon,2 · Preescolar,4.311,3.78,norma Alonso et al. 2015,me-lón,2,/m/ /e/ /l/ /o/ /n/,1.3,5,3.491,4.78,sustantivo,Bisílabas frecuentes,False
 película,movie,2 · Preescolar,4.311,3.78,norma Alonso et al. 2015,pe-lí-cu-la,4,/p/ /e/ /l/ /i/ /k/ /u/ /l/ /a/,1.0,8,5.186,4.59,sustantivo,Bisílabas frecuentes,False
-camiseta,shirt,2 · Preescolar,4.326,3.791,predicha (modelo ES),ca-mi-se-ta,4,/k/ /a/ /m/ /i/ /s/ /e/ /t/ /a/,1.0,8,4.315,4.94,sustantivo,Bisílabas frecuentes,True
+camiseta,shirt,2 · Preescolar,4.328,3.792,predicha (modelo ES),ca-mi-se-ta,4,/k/ /a/ /m/ /i/ /s/ /e/ /t/ /a/,1.0,8,4.315,4.94,sustantivo,Bisílabas frecuentes,True
 luna,moon,2 · Preescolar,4.339,3.8,norma Alonso et al. 2015,lu-na,2,/l/ /u/ /n/ /a/,1.0,4,4.82,4.9,sustantivo,Cortas con familia (rimas),True
 olor,smell,2 · Preescolar,4.339,3.8,norma Alonso et al. 2015,o-lor,2,/o/ /l/ /o/ /ɾ/,1.35,4,4.571,3.7,sustantivo,Bisílabas frecuentes,False
 uña,fingernail,2 · Preescolar,4.339,3.8,norma Alonso et al. 2015,u-ña,2,/u/ /ɲ/ /a/,1.05,3,3.568,4.93,sustantivo,Bisílabas frecuentes,True
-pavo,turkey,2 · Preescolar,4.349,3.808,predicha (modelo ES),pa-vo,2,/p/ /a/ /b/ /o/,1.0,4,4.255,4.89,sustantivo,Cortas con familia (rimas),True
 música,music,2 · Preescolar,4.365,3.82,norma Alonso et al. 2015,mú-si-ca,3,/m/ /u/ /s/ /i/ /k/ /a/,1.0,6,5.147,4.31,sustantivo,Bisílabas frecuentes,False
 radio,radio,2 · Preescolar,4.365,3.82,norma Alonso et al. 2015,ra-dio,2,/r/ /a/ /d/ /i/ /o/,1.0,5,4.872,4.74,sustantivo,Bisílabas frecuentes,True
 rata,rat,2 · Preescolar,4.365,3.82,norma Alonso et al. 2015,ra-ta,2,/r/ /a/ /t/ /a/,1.0,4,4.359,4.85,sustantivo,Cortas con familia (rimas),True
@@ -308,18 +307,18 @@ miércoles,wednesday,2 · Preescolar,4.402,3.86,norma Alonso et al. 2015,miér-c
 tirar,pull,2 · Preescolar,4.402,3.86,norma Alonso et al. 2015,ti-rar,2,/t/ /i/ /ɾ/ /a/ /ɾ/,1.3,5,4.42,3.97,verbo,Bisílabas frecuentes,False
 hoja,leaf,2 · Preescolar,4.411,3.88,norma Alonso et al. 2015,ho-ja,2,/o/ /x/ /a/,1.0,4,4.121,5.0,sustantivo,Cortas con familia (rimas),True
 viento,wind,2 · Preescolar,4.411,3.88,norma Alonso et al. 2015,vien-to,2,/b/ /i/ /e/ /n/ /t/ /o/,1.3,6,4.584,3.93,sustantivo,Bisílabas frecuentes,False
+bolsa,bag,2 · Preescolar,4.411,3.881,predicha (modelo ES),bol-sa,2,/b/ /o/ /l/ /s/ /a/,1.3,5,4.869,4.9,sustantivo,Bisílabas frecuentes,True
+pizza,pizza,2 · Preescolar,4.415,3.89,predicha (modelo ES),piz-za,2,/p/ /i/ /s/ /s/ /a/,1.3,5,4.572,5.0,sustantivo,Bisílabas frecuentes,True
 escribir,write,2 · Preescolar,4.42,3.9,norma Alonso et al. 2015,es-cri-bir,3,/e/ /s/ /k/ /ɾ/ /i/ /b/ /i/ /ɾ/,1.667,8,4.824,4.22,verbo,"Con grupos consonánticos (tr, pl, str)",False
 espalda,back,2 · Preescolar,4.42,3.9,norma Alonso et al. 2015,es-pal-da,3,/e/ /s/ /p/ /a/ /l/ /d/ /a/,1.2,7,4.833,4.33,sustantivo,Bisílabas frecuentes,True
 loro,parrot,2 · Preescolar,4.42,3.9,norma Alonso et al. 2015,lo-ro,2,/l/ /o/ /ɾ/ /o/,1.0,4,3.609,5.0,sustantivo,Cortas con familia (rimas),True
 sueño,dream,2 · Preescolar,4.42,3.9,norma Alonso et al. 2015,sue-ño,2,/s/ /u/ /e/ /ɲ/ /o/,1.0,5,5.102,2.6,sustantivo,Bisílabas frecuentes,False
-pañal,diaper,2 · Preescolar,4.439,3.915,predicha (modelo ES),pa-ñal,2,/p/ /a/ /ɲ/ /a/ /l/,1.3,5,3.593,4.82,sustantivo,Bisílabas frecuentes,True
 ardilla,squirrel,2 · Preescolar,4.445,3.92,norma Alonso et al. 2015,ar-di-lla,3,/a/ /ɾ/ /d/ /i/ /ʝ/ /a/,1.2,7,3.883,4.89,adjetivo,"Con grupos consonánticos (tr, pl, str)",True
 cena,dinner,2 · Preescolar,4.445,3.92,norma Alonso et al. 2015,ce-na,2,/s/ /e/ /n/ /a/,1.0,4,5.083,4.5,sustantivo,Cortas con familia (rimas),False
 en,in,2 · Preescolar,4.445,3.92,norma Alonso et al. 2015,en,1,/e/ /n/,1.0,2,7.193,3.0,otra,Cortas con familia (rimas),False
 frente,forehead,2 · Preescolar,4.445,3.92,norma Alonso et al. 2015,fren-te,2,/f/ /ɾ/ /e/ /n/ /t/ /e/,2.0,6,5.155,4.9,otra,Bisílabas frecuentes,False
 soplar,blow,2 · Preescolar,4.445,3.92,norma Alonso et al. 2015,so-plar,2,/s/ /o/ /p/ /l/ /a/ /ɾ/,2.0,6,3.315,3.74,verbo,"Con grupos consonánticos (tr, pl, str)",False
 tambor,drum,2 · Preescolar,4.445,3.92,norma Alonso et al. 2015,tam-bor,2,/t/ /a/ /m/ /b/ /o/ /ɾ/,1.6,6,3.669,4.96,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
-pantalón,pants,2 · Preescolar,4.458,3.931,predicha (modelo ES),pan-ta-lón,3,/p/ /a/ /n/ /t/ /a/ /l/ /o/ /n/,1.4,8,3.881,4.86,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 almuerzo,lunch,2 · Preescolar,4.47,3.94,norma Alonso et al. 2015,al-muer-zo,3,/a/ /l/ /m/ /u/ /e/ /ɾ/ /s/ /o/,1.2,8,4.708,4.31,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 ayer,yesterday,2 · Preescolar,4.47,3.94,norma Alonso et al. 2015,a-yer,2,/a/ /ʝ/ /e/ /ɾ/,1.35,4,5.098,3.0,otra,Bisílabas frecuentes,False
 bolso,bag,2 · Preescolar,4.47,3.94,norma Alonso et al. 2015,bol-so,2,/b/ /o/ /l/ /s/ /o/,1.3,5,4.568,4.9,sustantivo,Bisílabas frecuentes,True
@@ -329,8 +328,6 @@ todos,all,2 · Preescolar,4.47,3.94,norma Alonso et al. 2015,to-dos,2,/t/ /o/ /d
 acostarse,lie down,2 · Preescolar,4.485,3.96,norma Alonso et al. 2015,a-cos-tar-se,4,/a/ /k/ /o/ /s/ /t/ /a/ /ɾ/ /s/ /e/,1.325,9,4.084,,verbo,Largas y abstractas,False
 entrar,enter,2 · Preescolar,4.485,3.96,norma Alonso et al. 2015,en-trar,2,/e/ /n/ /t/ /ɾ/ /a/ /ɾ/,2.0,6,5.379,3.12,verbo,Bisílabas frecuentes,False
 viejo,old,2 · Preescolar,4.485,3.96,norma Alonso et al. 2015,vie-jo,2,/b/ /i/ /e/ /x/ /o/,1.0,5,5.535,2.72,adjetivo,Bisílabas frecuentes,False
-pizza,pizza,2 · Preescolar,4.494,3.973,predicha (modelo ES),piz-za,2,/p/ /i/ /s/ /s/ /a/,1.3,5,4.572,5.0,sustantivo,Bisílabas frecuentes,True
-parque,park,2 · Preescolar,4.495,3.973,predicha (modelo ES),par-que,2,/p/ /a/ /ɾ/ /k/ /e/,1.3,6,4.682,4.74,sustantivo,Bisílabas frecuentes,True
 abrigo,coat,2 · Preescolar,4.5,3.98,norma Alonso et al. 2015,a-bri-go,3,/a/ /b/ /ɾ/ /i/ /g/ /o/,1.5,6,4.404,4.97,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 bota,boot,2 · Preescolar,4.5,3.98,norma Alonso et al. 2015,bo-ta,2,/b/ /o/ /t/ /a/,1.0,4,3.709,4.96,sustantivo,Cortas con familia (rimas),False
 cuchillo,knife,2 · Preescolar,4.5,3.98,norma Alonso et al. 2015,cu-chi-llo,3,/k/ /u/ /tʃ/ /i/ /ʝ/ /o/,1.4,8,4.618,4.9,sustantivo,Bisílabas frecuentes,True
@@ -343,9 +340,11 @@ pierna,leg,2 · Preescolar,4.5,3.98,norma Alonso et al. 2015,pier-na,2,/p/ /i/ /
 pizarra,blackboard,2 · Preescolar,4.5,3.98,norma Alonso et al. 2015,pi-za-rra,3,/p/ /i/ /s/ /a/ /r/ /a/,1.2,7,3.662,4.72,sustantivo,Bisílabas frecuentes,False
 príncipe,prince,2 · Preescolar,4.5,3.98,norma Alonso et al. 2015,prín-ci-pe,3,/p/ /ɾ/ /i/ /n/ /s/ /i/ /p/ /e/,1.667,8,4.543,4.44,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 querer,love,2 · Preescolar,4.5,3.98,norma Alonso et al. 2015,que-rer,2,/k/ /e/ /ɾ/ /e/ /ɾ/,1.3,6,4.704,2.07,verbo,Bisílabas frecuentes,False
-timbre,bell,2 · Preescolar,4.505,3.985,predicha (modelo ES),tim-bre,2,/t/ /i/ /m/ /b/ /ɾ/ /e/,2.0,6,4.023,4.96,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 palmera,palm tree,2 · Preescolar,4.522,4.0,norma Alonso et al. 2015,pal-me-ra,3,/p/ /a/ /l/ /m/ /e/ /ɾ/ /a/,1.2,7,3.08,,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 pintura,paint,2 · Preescolar,4.522,4.0,norma Alonso et al. 2015,pin-tu-ra,3,/p/ /i/ /n/ /t/ /u/ /ɾ/ /a/,1.2,7,4.537,4.79,sustantivo,Bisílabas frecuentes,False
+pantalón,pants,2 · Preescolar,4.525,4.003,predicha (modelo ES),pan-ta-lón,3,/p/ /a/ /n/ /t/ /a/ /l/ /o/ /n/,1.4,8,3.881,4.86,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+timbre,bell,2 · Preescolar,4.534,4.011,predicha (modelo ES),tim-bre,2,/t/ /i/ /m/ /b/ /ɾ/ /e/,2.0,6,4.023,4.96,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+pañal,diaper,2 · Preescolar,4.539,4.016,predicha (modelo ES),pa-ñal,2,/p/ /a/ /ɲ/ /a/ /l/,1.3,5,3.593,4.82,sustantivo,Bisílabas frecuentes,True
 alfombra,rug,2 · Preescolar,4.544,4.02,norma Alonso et al. 2015,al-fom-bra,3,/a/ /l/ /f/ /o/ /m/ /b/ /ɾ/ /a/,1.667,8,4.181,4.79,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 anillo,ring,2 · Preescolar,4.544,4.02,norma Alonso et al. 2015,a-ni-llo,3,/a/ /n/ /i/ /ʝ/ /o/,1.233,6,4.776,4.81,sustantivo,Bisílabas frecuentes,False
 grande,big,2 · Preescolar,4.544,4.02,norma Alonso et al. 2015,gran-de,2,/g/ /ɾ/ /a/ /n/ /d/ /e/,2.0,6,5.401,3.66,adjetivo,Bisílabas frecuentes,False
@@ -353,7 +352,6 @@ gritar,shout,2 · Preescolar,4.544,4.02,norma Alonso et al. 2015,gri-tar,2,/g/ /
 hormiga,ant,2 · Preescolar,4.544,4.02,norma Alonso et al. 2015,hor-mi-ga,3,/o/ /ɾ/ /m/ /i/ /g/ /a/,1.2,7,3.422,4.86,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 oscuro,dark,2 · Preescolar,4.544,4.02,norma Alonso et al. 2015,os-cu-ro,3,/o/ /s/ /k/ /u/ /ɾ/ /o/,1.0,6,4.591,4.29,adjetivo,Bisílabas frecuentes,False
 quién,who,2 · Preescolar,4.544,4.02,norma Alonso et al. 2015,quién,1,/k/ /i/ /e/ /n/,1.6,5,6.161,1.74,otra,Bisílabas frecuentes,False
-ala,wing,2 · Preescolar,4.551,4.027,predicha (modelo ES),a-la,2,/a/ /l/ /a/,1.05,3,4.176,4.86,sustantivo,Cortas con familia (rimas),True
 pocos,few,2 · Preescolar,4.555,4.03,norma Alonso et al. 2015,po-cos,2,/p/ /o/ /k/ /o/ /s/,1.3,5,4.575,2.48,otra,Cortas con familia (rimas),False
 calle,street,2 · Preescolar,4.566,4.04,norma Alonso et al. 2015,ca-lle,2,/k/ /a/ /ʝ/ /e/,1.3,5,5.191,4.75,sustantivo,Cortas con familia (rimas),False
 cortar,cut,2 · Preescolar,4.566,4.04,norma Alonso et al. 2015,cor-tar,2,/k/ /o/ /ɾ/ /t/ /a/ /ɾ/,1.6,6,4.525,4.55,verbo,Bisílabas frecuentes,False
@@ -366,25 +364,26 @@ lata,can,2 · Preescolar,4.588,4.06,norma Alonso et al. 2015,la-ta,2,/l/ /a/ /t/
 muchos,many,2 · Preescolar,4.588,4.06,norma Alonso et al. 2015,mu-chos,2,/m/ /u/ /tʃ/ /o/ /s/,1.3,6,5.333,2.37,otra,Bisílabas frecuentes,False
 romper,break,2 · Preescolar,4.588,4.06,norma Alonso et al. 2015,rom-per,2,/r/ /o/ /m/ /p/ /e/ /ɾ/,1.6,6,4.553,3.71,verbo,Bisílabas frecuentes,False
 techo,roof,2 · Preescolar,4.588,4.06,norma Alonso et al. 2015,te-cho,2,/t/ /e/ /tʃ/ /o/,1.3,5,4.617,4.79,sustantivo,Bisílabas frecuentes,False
-navaja,knife,2 · Preescolar,4.59,4.062,predicha (modelo ES),na-va-ja,3,/n/ /a/ /b/ /a/ /x/ /a/,1.0,6,3.882,4.9,sustantivo,Bisílabas frecuentes,True
 cola,tail,2 · Preescolar,4.61,4.08,norma Alonso et al. 2015,co-la,2,/k/ /o/ /l/ /a/,1.0,4,4.486,4.96,sustantivo,Cortas con familia (rimas),False
 foca,seal,2 · Preescolar,4.61,4.08,norma Alonso et al. 2015,fo-ca,2,/f/ /o/ /k/ /a/,1.0,4,3.398,4.63,sustantivo,Cortas con familia (rimas),True
 parar,stop doing,2 · Preescolar,4.61,4.08,norma Alonso et al. 2015,pa-rar,2,/p/ /a/ /ɾ/ /a/ /ɾ/,1.3,5,4.789,,verbo,Cortas con familia (rimas),False
 sapo,toad,2 · Preescolar,4.61,4.08,norma Alonso et al. 2015,sa-po,2,/s/ /a/ /p/ /o/,1.0,4,3.616,5.0,sustantivo,Cortas con familia (rimas),True
-cordón,shoelace,2 · Preescolar,4.613,4.09,predicha (modelo ES),cor-dón,2,/k/ /o/ /ɾ/ /d/ /o/ /n/,1.6,6,3.653,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+navaja,knife,2 · Preescolar,4.611,4.082,predicha (modelo ES),na-va-ja,3,/n/ /a/ /b/ /a/ /x/ /a/,1.0,6,3.882,4.9,sustantivo,Bisílabas frecuentes,True
+parque,park,2 · Preescolar,4.611,4.083,predicha (modelo ES),par-que,2,/p/ /a/ /ɾ/ /k/ /e/,1.3,6,4.682,4.74,sustantivo,Bisílabas frecuentes,True
 cerrado,closed,2 · Preescolar,4.615,4.1,norma Alonso et al. 2015,ce-rra-do,3,/s/ /e/ /r/ /a/ /d/ /o/,1.2,7,4.585,3.37,adjetivo,Bisílabas frecuentes,False
 dulce,sweet,2 · Preescolar,4.615,4.1,norma Alonso et al. 2015,dul-ce,2,/d/ /u/ /l/ /s/ /e/,1.3,5,5.007,4.0,adjetivo,Bisílabas frecuentes,False
 leer,read,2 · Preescolar,4.615,4.1,norma Alonso et al. 2015,le-er,2,/l/ /e/ /e/ /ɾ/,1.0,4,4.869,3.56,verbo,Bisílabas frecuentes,False
 pata,paw,2 · Preescolar,4.615,4.1,norma Alonso et al. 2015,pa-ta,2,/p/ /a/ /t/ /a/,1.0,4,4.46,4.3,sustantivo,Cortas con familia (rimas),False
+ala,wing,2 · Preescolar,4.618,4.11,predicha (modelo ES),a-la,2,/a/ /l/ /a/,1.05,3,4.176,4.86,sustantivo,Cortas con familia (rimas),True
+cordón,shoelace,2 · Preescolar,4.619,4.115,predicha (modelo ES),cor-dón,2,/k/ /o/ /ɾ/ /d/ /o/ /n/,1.6,6,3.653,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 cocodrilo,crocodile,2 · Preescolar,4.621,4.12,norma Alonso et al. 2015,co-co-dri-lo,4,/k/ /o/ /k/ /o/ /d/ /ɾ/ /i/ /l/ /o/,1.35,9,3.521,4.83,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 debajo,below or under,2 · Preescolar,4.621,4.12,norma Alonso et al. 2015,de-ba-jo,3,/d/ /e/ /b/ /a/ /x/ /o/,1.0,6,4.847,,otra,Bisílabas frecuentes,False
 hacer,do,2 · Preescolar,4.621,4.12,norma Alonso et al. 2015,ha-cer,2,/a/ /s/ /e/ /ɾ/,1.3,5,6.262,2.46,verbo,Bisílabas frecuentes,False
+cometa,kite,2 · Preescolar,4.625,4.136,predicha (modelo ES),co-me-ta,3,/k/ /o/ /m/ /e/ /t/ /a/,1.0,6,3.912,5.0,sustantivo,Bisílabas frecuentes,True
 dinero,money,2 · Preescolar,4.626,4.14,norma Alonso et al. 2015,di-ne-ro,3,/d/ /i/ /n/ /e/ /ɾ/ /o/,1.0,6,5.858,4.54,sustantivo,Bisílabas frecuentes,False
 palabra,word,2 · Preescolar,4.626,4.14,norma Alonso et al. 2015,pa-la-bra,3,/p/ /a/ /l/ /a/ /b/ /ɾ/ /a/,1.467,7,5.239,3.56,sustantivo,Bisílabas frecuentes,False
 sandía,watermelon,2 · Preescolar,4.626,4.14,norma Alonso et al. 2015,san-dí-a,3,/s/ /a/ /n/ /d/ /i/ /a/,1.233,6,3.359,4.89,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 verano,summer,2 · Preescolar,4.626,4.14,norma Alonso et al. 2015,ve-ra-no,3,/b/ /e/ /ɾ/ /a/ /n/ /o/,1.0,6,4.85,3.64,sustantivo,Bisílabas frecuentes,False
-pulgar,thumb,2 · Preescolar,4.627,4.143,predicha (modelo ES),pul-gar,2,/p/ /u/ /l/ /g/ /a/ /ɾ/,1.6,6,3.879,4.96,sustantivo,Bisílabas frecuentes,True
-cometa,kite,2 · Preescolar,4.628,4.147,predicha (modelo ES),co-me-ta,3,/k/ /o/ /m/ /e/ /t/ /a/,1.0,6,3.912,5.0,sustantivo,Bisílabas frecuentes,True
 agacharse,crouch,2 · Preescolar,4.638,4.16,norma Alonso et al. 2015,a-ga-char-se,4,/a/ /g/ /a/ /tʃ/ /a/ /ɾ/ /s/ /e/,1.175,9,2.812,4.27,verbo,Largas y abstractas,False
 carne,meat,2 · Preescolar,4.638,4.16,norma Alonso et al. 2015,car-ne,2,/k/ /a/ /ɾ/ /n/ /e/,1.3,5,4.918,4.9,sustantivo,Bisílabas frecuentes,True
 cuadrado,square,2 · Preescolar,4.638,4.16,norma Alonso et al. 2015,cua-dra-do,3,/k/ /u/ /a/ /d/ /ɾ/ /a/ /d/ /o/,1.467,8,3.745,4.33,adjetivo,"Con grupos consonánticos (tr, pl, str)",True
@@ -419,12 +418,13 @@ como,how,2 · Preescolar,4.728,4.24,norma Alonso et al. 2015,co-mo,2,/k/ /o/ /m/
 dragón,dragon,2 · Preescolar,4.728,4.24,norma Alonso et al. 2015,dra-gón,2,/d/ /ɾ/ /a/ /g/ /o/ /n/,2.0,6,4.192,4.39,sustantivo,Bisílabas frecuentes,True
 moneda,coin,2 · Preescolar,4.728,4.24,norma Alonso et al. 2015,mo-ne-da,3,/m/ /o/ /n/ /e/ /d/ /a/,1.0,6,4.256,4.89,sustantivo,Bisílabas frecuentes,True
 sábado,saturday,2 · Preescolar,4.728,4.24,norma Alonso et al. 2015,sá-ba-do,3,/s/ /a/ /b/ /a/ /d/ /o/,1.0,6,4.692,3.07,sustantivo,Bisílabas frecuentes,False
+pulgar,thumb,2 · Preescolar,4.73,4.243,predicha (modelo ES),pul-gar,2,/p/ /u/ /l/ /g/ /a/ /ɾ/,1.6,6,3.879,4.96,sustantivo,Bisílabas frecuentes,True
+ola,wave,2 · Preescolar,4.735,4.255,predicha (modelo ES),o-la,2,/o/ /l/ /a/,1.05,3,4.175,4.55,sustantivo,Cortas con familia (rimas),True
 agarrar,seize,2 · Preescolar,4.737,4.26,norma Alonso et al. 2015,a-ga-rrar,3,/a/ /g/ /a/ /r/ /a/ /ɾ/,1.233,7,4.213,3.97,verbo,Bisílabas frecuentes,False
 cebra,zebra,2 · Preescolar,4.737,4.26,norma Alonso et al. 2015,ce-bra,2,/s/ /e/ /b/ /ɾ/ /a/,1.7,5,3.256,4.86,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 ceja,eyebrow,2 · Preescolar,4.737,4.26,norma Alonso et al. 2015,ce-ja,2,/s/ /e/ /x/ /a/,1.0,4,3.187,4.85,sustantivo,Cortas con familia (rimas),True
 labio,lip,2 · Preescolar,4.737,4.26,norma Alonso et al. 2015,la-bio,2,/l/ /a/ /b/ /i/ /o/,1.0,5,3.675,4.96,sustantivo,Bisílabas frecuentes,False
 peligro,danger,2 · Preescolar,4.737,4.26,norma Alonso et al. 2015,pe-li-gro,3,/p/ /e/ /l/ /i/ /g/ /ɾ/ /o/,1.467,7,4.923,2.68,sustantivo,Bisílabas frecuentes,False
-ola,wave,2 · Preescolar,4.737,4.261,predicha (modelo ES),o-la,2,/o/ /l/ /a/,1.05,3,4.175,4.55,sustantivo,Cortas con familia (rimas),True
 campana,bell,2 · Preescolar,4.749,4.28,norma Alonso et al. 2015,cam-pa-na,3,/k/ /a/ /m/ /p/ /a/ /n/ /a/,1.2,7,3.969,4.96,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 delfín,dolphin,2 · Preescolar,4.749,4.28,norma Alonso et al. 2015,del-fín,2,/d/ /e/ /l/ /f/ /i/ /n/,1.6,6,3.518,4.96,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 hilo,thread,2 · Preescolar,4.749,4.28,norma Alonso et al. 2015,hi-lo,2,/i/ /l/ /o/,1.0,4,3.969,4.83,sustantivo,Cortas con familia (rimas),False
@@ -451,7 +451,6 @@ guante,glove,2 · Preescolar,4.816,4.34,norma Alonso et al. 2015,guan-te,2,/g/ /
 jueves,thursday,2 · Preescolar,4.816,4.34,norma Alonso et al. 2015,jue-ves,2,/x/ /u/ /e/ /b/ /e/ /s/,1.3,6,4.479,3.03,sustantivo,Bisílabas frecuentes,False
 melocotón,peach,2 · Preescolar,4.816,4.34,norma Alonso et al. 2015,me-lo-co-tón,4,/m/ /e/ /l/ /o/ /k/ /o/ /t/ /o/ /n/,1.15,9,3.381,4.9,sustantivo,Largas y abstractas,True
 primero,first,2 · Preescolar,4.816,4.34,norma Alonso et al. 2015,pri-me-ro,3,/p/ /ɾ/ /i/ /m/ /e/ /ɾ/ /o/,1.467,7,5.491,2.76,adjetivo,Bisílabas frecuentes,False
-caramelo,candy,2 · Preescolar,4.824,4.344,predicha (modelo ES),ca-ra-me-lo,4,/k/ /a/ /ɾ/ /a/ /m/ /e/ /l/ /o/,1.0,8,3.881,4.83,sustantivo,Bisílabas frecuentes,True
 cabra,goat,2 · Preescolar,4.85,4.36,norma Alonso et al. 2015,ca-bra,2,/k/ /a/ /b/ /ɾ/ /a/,1.7,5,4.001,5.0,sustantivo,Bisílabas frecuentes,True
 cuerda,rope,2 · Preescolar,4.85,4.36,norma Alonso et al. 2015,cuer-da,2,/k/ /u/ /e/ /ɾ/ /d/ /a/,1.3,6,4.371,4.93,adjetivo,Bisílabas frecuentes,True
 entre,between,2 · Preescolar,4.85,4.36,norma Alonso et al. 2015,en-tre,2,/e/ /n/ /t/ /ɾ/ /e/,1.7,5,5.597,2.72,otra,Bisílabas frecuentes,False
@@ -467,6 +466,7 @@ lado,side,2 · Preescolar,4.881,4.38,norma Alonso et al. 2015,la-do,2,/l/ /a/ /d
 redondo,round,2 · Preescolar,4.881,4.38,norma Alonso et al. 2015,re-don-do,3,/r/ /e/ /d/ /o/ /n/ /d/ /o/,1.2,7,3.377,3.9,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 reloj,clock,2 · Preescolar,4.881,4.38,norma Alonso et al. 2015,re-loj,2,/r/ /e/ /l/ /o/ /x/,1.3,5,4.712,5.0,sustantivo,Bisílabas frecuentes,True
 decir,say,2 · Preescolar,4.884,4.39,norma Alonso et al. 2015,de-cir,2,/d/ /e/ /s/ /i/ /ɾ/,1.3,5,6.021,2.58,verbo,Bisílabas frecuentes,False
+caramelo,candy,2 · Preescolar,4.884,4.393,predicha (modelo ES),ca-ra-me-lo,4,/k/ /a/ /ɾ/ /a/ /m/ /e/ /l/ /o/,1.0,8,3.881,4.83,sustantivo,Bisílabas frecuentes,True
 bosque,forest,2 · Preescolar,4.886,4.4,norma Alonso et al. 2015,bos-que,2,/b/ /o/ /s/ /k/ /e/,1.3,6,4.734,4.76,sustantivo,Bisílabas frecuentes,True
 enfado,anger,2 · Preescolar,4.886,4.4,norma Alonso et al. 2015,en-fa-do,3,/e/ /n/ /f/ /a/ /d/ /o/,1.0,6,3.105,2.41,sustantivo,Largas y abstractas,False
 levantar,lift,2 · Preescolar,4.886,4.4,norma Alonso et al. 2015,le-van-tar,3,/l/ /e/ /b/ /a/ /n/ /t/ /a/ /ɾ/,1.4,8,4.309,3.89,verbo,"Con grupos consonánticos (tr, pl, str)",False
@@ -499,19 +499,20 @@ ambulancia,ambulance,2 · Preescolar,5.0,4.48,norma Alonso et al. 2015,am-bu-lan
 campo,field,2 · Preescolar,5.0,4.48,norma Alonso et al. 2015,cam-po,2,/k/ /a/ /m/ /p/ /o/,1.3,5,5.044,4.26,sustantivo,Bisílabas frecuentes,False
 hielo,ice,2 · Preescolar,5.0,4.48,norma Alonso et al. 2015,hie-lo,2,/i/ /e/ /l/ /o/,1.0,5,4.755,4.89,sustantivo,Bisílabas frecuentes,False
 torre,tower,2 · Preescolar,5.0,4.48,norma Alonso et al. 2015,to-rre,2,/t/ /o/ /r/ /e/,1.3,5,4.338,4.76,sustantivo,Bisílabas frecuentes,True
+mesa,desk,2 · Preescolar,5.011,4.49,predicha (modelo ES),me-sa,2,/m/ /e/ /s/ /a/,1.0,4,5.04,4.87,sustantivo,Cortas con familia (rimas),True
+dado,die,2 · Preescolar,5.019,4.498,predicha (modelo ES),da-do,2,/d/ /a/ /d/ /o/,1.0,4,5.054,3.07,sustantivo,Cortas con familia (rimas),True
 camino,path,2 · Preescolar,5.021,4.5,norma Alonso et al. 2015,ca-mi-no,3,/k/ /a/ /m/ /i/ /n/ /o/,1.0,6,5.482,4.41,sustantivo,Bisílabas frecuentes,False
 guitarra,guitar,2 · Preescolar,5.021,4.5,norma Alonso et al. 2015,gui-ta-rra,3,/g/ /i/ /t/ /a/ /r/ /a/,1.2,8,4.245,4.9,sustantivo,Bisílabas frecuentes,True
 mes,month,2 · Preescolar,5.021,4.5,norma Alonso et al. 2015,mes,1,/m/ /e/ /s/,1.6,3,5.018,4.2,sustantivo,Cortas con familia (rimas),False
 orilla,shore,2 · Preescolar,5.021,4.5,norma Alonso et al. 2015,o-ri-lla,3,/o/ /ɾ/ /i/ /ʝ/ /a/,1.233,6,3.839,4.79,sustantivo,Bisílabas frecuentes,False
 rey,king,2 · Preescolar,5.021,4.5,norma Alonso et al. 2015,rey,1,/r/ /e/ /i/,1.6,3,5.058,4.1,sustantivo,Cortas con familia (rimas),True
 sartén,pan,2 · Preescolar,5.021,4.5,norma Alonso et al. 2015,sar-tén,2,/s/ /a/ /ɾ/ /t/ /e/ /n/,1.6,6,3.514,4.86,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
-dado,die,2 · Preescolar,5.034,4.512,predicha (modelo ES),da-do,2,/d/ /a/ /d/ /o/,1.0,4,5.054,3.07,sustantivo,Cortas con familia (rimas),True
 echar,throw,2 · Preescolar,5.042,4.52,norma Alonso et al. 2015,e-char,2,/e/ /tʃ/ /a/ /ɾ/,1.35,5,4.514,4.04,verbo,Bisílabas frecuentes,False
 lleno,full,2 · Preescolar,5.042,4.52,norma Alonso et al. 2015,lle-no,2,/ʝ/ /e/ /n/ /o/,1.3,5,4.824,3.59,adjetivo,Bisílabas frecuentes,False
 muro,wall,2 · Preescolar,5.042,4.52,norma Alonso et al. 2015,mu-ro,2,/m/ /u/ /ɾ/ /o/,1.0,4,4.104,4.86,sustantivo,Cortas con familia (rimas),True
 palo,stick,2 · Preescolar,5.042,4.52,norma Alonso et al. 2015,pa-lo,2,/p/ /a/ /l/ /o/,1.0,4,4.309,4.59,sustantivo,Cortas con familia (rimas),False
 picar,sting,2 · Preescolar,5.042,4.52,norma Alonso et al. 2015,pi-car,2,/p/ /i/ /k/ /a/ /ɾ/,1.3,5,3.438,4.41,verbo,Bisílabas frecuentes,False
-rayo,lightning,2 · Preescolar,5.052,4.529,predicha (modelo ES),ra-yo,2,/r/ /a/ /ʝ/ /o/,1.0,4,4.225,4.59,sustantivo,Cortas con familia (rimas),True
+rayo,lightning,2 · Preescolar,5.051,4.528,predicha (modelo ES),ra-yo,2,/r/ /a/ /ʝ/ /o/,1.0,4,4.225,4.59,sustantivo,Cortas con familia (rimas),True
 palma,palm of hand,2 · Preescolar,5.054,4.531,norma Alonso et al. 2015,pal-ma,2,/p/ /a/ /l/ /m/ /a/,1.3,5,3.709,,sustantivo,Bisílabas frecuentes,False
 aprender,learn,2 · Preescolar,5.064,4.54,norma Alonso et al. 2015,a-pren-der,3,/a/ /p/ /ɾ/ /e/ /n/ /d/ /e/ /ɾ/,1.9,8,4.814,2.2,verbo,Largas y abstractas,False
 ayudar,help,2 · Preescolar,5.064,4.54,norma Alonso et al. 2015,a-yu-dar,3,/a/ /ʝ/ /u/ /d/ /a/ /ɾ/,1.233,6,5.222,2.56,verbo,Bisílabas frecuentes,False
@@ -522,8 +523,8 @@ mujer,woman,2 · Preescolar,5.064,4.54,norma Alonso et al. 2015,mu-jer,2,/m/ /u/
 pedir,ask,2 · Preescolar,5.064,4.54,norma Alonso et al. 2015,pe-dir,2,/p/ /e/ /d/ /i/ /ɾ/,1.3,5,4.857,2.52,verbo,Bisílabas frecuentes,False
 preguntar,ask,2 · Preescolar,5.064,4.54,norma Alonso et al. 2015,pre-gun-tar,3,/p/ /ɾ/ /e/ /g/ /u/ /n/ /t/ /a/ /ɾ/,1.867,9,4.721,2.52,verbo,Largas y abstractas,False
 quemar,burn,2 · Preescolar,5.064,4.54,norma Alonso et al. 2015,que-mar,2,/k/ /e/ /m/ /a/ /ɾ/,1.3,6,4.074,4.11,verbo,Bisílabas frecuentes,False
-goma,eraser,2 · Preescolar,5.075,4.55,predicha (modelo ES),go-ma,2,/g/ /o/ /m/ /a/,1.0,4,4.126,4.74,sustantivo,Cortas con familia (rimas),True
 ciervo,deer,2 · Preescolar,5.087,4.56,norma Alonso et al. 2015,cier-vo,2,/s/ /i/ /e/ /ɾ/ /b/ /o/,1.3,6,3.834,4.86,sustantivo,Bisílabas frecuentes,True
+galleta,cracker,2 · Preescolar,5.106,4.577,predicha (modelo ES),ga-lle-ta,3,/g/ /a/ /ʝ/ /e/ /t/ /a/,1.2,7,4.052,4.96,sustantivo,Bisílabas frecuentes,True
 apretar,squeeze,2 · Preescolar,5.11,4.6,norma Alonso et al. 2015,a-pre-tar,3,/a/ /p/ /ɾ/ /e/ /t/ /a/ /ɾ/,1.7,7,3.859,3.75,verbo,"Con grupos consonánticos (tr, pl, str)",False
 canguro,kangaroo,2 · Preescolar,5.11,4.6,norma Alonso et al. 2015,can-gu-ro,3,/k/ /a/ /n/ /g/ /u/ /ɾ/ /o/,1.2,7,3.434,4.86,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 contar,count,2 · Preescolar,5.11,4.62,norma Alonso et al. 2015,con-tar,2,/k/ /o/ /n/ /t/ /a/ /ɾ/,1.6,6,4.8,3.0,verbo,Bisílabas frecuentes,False
@@ -532,11 +533,10 @@ cuidar,care for,2 · Preescolar,5.11,4.6,norma Alonso et al. 2015,cui-dar,2,/k/ 
 doblar,fold,2 · Preescolar,5.11,4.6,norma Alonso et al. 2015,do-blar,2,/d/ /o/ /b/ /l/ /a/ /ɾ/,2.0,6,3.765,4.13,verbo,Bisílabas frecuentes,False
 encontrar,find,2 · Preescolar,5.11,4.62,norma Alonso et al. 2015,en-con-trar,3,/e/ /n/ /k/ /o/ /n/ /t/ /ɾ/ /a/ /ɾ/,1.867,9,5.354,2.63,verbo,Largas y abstractas,False
 espuma,foam,2 · Preescolar,5.11,4.62,norma Alonso et al. 2015,es-pu-ma,3,/e/ /s/ /p/ /u/ /m/ /a/,1.0,6,3.784,4.85,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
-galleta,cracker,2 · Preescolar,5.11,4.605,predicha (modelo ES),ga-lle-ta,3,/g/ /a/ /ʝ/ /e/ /t/ /a/,1.2,7,4.052,4.96,sustantivo,Bisílabas frecuentes,True
+goma,eraser,2 · Preescolar,5.11,4.58,predicha (modelo ES),go-ma,2,/g/ /o/ /m/ /a/,1.0,4,4.126,4.74,sustantivo,Cortas con familia (rimas),True
 granja,farm,2 · Preescolar,5.11,4.62,norma Alonso et al. 2015,gran-ja,2,/g/ /ɾ/ /a/ /n/ /x/ /a/,2.0,6,4.467,4.59,sustantivo,Bisílabas frecuentes,True
 helicóptero,helicopter,2 · Preescolar,5.11,4.6,norma Alonso et al. 2015,he-li-cóp-te-ro,5,/e/ /l/ /i/ /k/ /o/ /p/ /t/ /e/ /ɾ/ /o/,1.12,11,4.486,4.62,sustantivo,Largas y abstractas,True
 iglesia,temple,2 · Preescolar,5.11,4.62,norma Alonso et al. 2015,i-gle-sia,3,/i/ /g/ /l/ /e/ /s/ /i/ /a/,1.5,7,4.919,4.53,sustantivo,Bisílabas frecuentes,True
-mesa,desk,2 · Preescolar,5.11,4.588,predicha (modelo ES),me-sa,2,/m/ /e/ /s/ /a/,1.0,4,5.04,4.87,sustantivo,Cortas con familia (rimas),True
 ombligo,navel,2 · Preescolar,5.11,4.62,norma Alonso et al. 2015,om-bli-go,3,/o/ /m/ /b/ /l/ /i/ /g/ /o/,1.467,7,3.495,4.71,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 perdonar,forgive,2 · Preescolar,5.11,4.62,norma Alonso et al. 2015,per-do-nar,3,/p/ /e/ /ɾ/ /d/ /o/ /n/ /a/ /ɾ/,1.4,8,3.973,1.92,verbo,Largas y abstractas,False
 piojo,louse,2 · Preescolar,5.11,4.58,norma Alonso et al. 2015,pio-jo,2,/p/ /i/ /o/ /x/ /o/,1.0,5,2.636,,sustantivo,Bisílabas frecuentes,False
@@ -552,7 +552,6 @@ serpiente,snake,2 · Preescolar,5.146,4.64,norma Alonso et al. 2015,ser-pien-te,
 suave,soft,2 · Preescolar,5.146,4.64,norma Alonso et al. 2015,sua-ve,2,/s/ /u/ /a/ /b/ /e/,1.0,5,4.412,3.88,adjetivo,Bisílabas frecuentes,False
 termómetro,thermometer,2 · Preescolar,5.164,4.65,norma Alonso et al. 2015,ter-mó-me-tro,4,/t/ /e/ /ɾ/ /m/ /o/ /m/ /e/ /t/ /ɾ/ /o/,1.5,10,3.187,4.96,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 planta,plant,2 · Preescolar,5.169,4.653,norma Alonso et al. 2015,plan-ta,2,/p/ /l/ /a/ /n/ /t/ /a/,2.0,6,4.426,4.76,sustantivo,Bisílabas frecuentes,True
-barca,boat,2 · Preescolar,5.17,4.654,predicha (modelo ES),bar-ca,2,/b/ /a/ /ɾ/ /k/ /a/,1.3,5,3.187,4.93,sustantivo,Bisílabas frecuentes,True
 chaqueta,jacket,2 · Preescolar,5.182,4.66,norma Alonso et al. 2015,cha-que-ta,3,/tʃ/ /a/ /k/ /e/ /t/ /a/,1.2,8,4.575,4.86,sustantivo,Bisílabas frecuentes,False
 colgar,hang up,2 · Preescolar,5.182,4.66,norma Alonso et al. 2015,col-gar,2,/k/ /o/ /l/ /g/ /a/ /ɾ/,1.6,6,4.274,,verbo,Bisílabas frecuentes,False
 comprar,buy,2 · Preescolar,5.182,4.66,norma Alonso et al. 2015,com-prar,2,/k/ /o/ /m/ /p/ /ɾ/ /a/ /ɾ/,2.3,7,5.052,3.35,verbo,"Con grupos consonánticos (tr, pl, str)",False
@@ -562,7 +561,6 @@ loco,mad,2 · Preescolar,5.182,4.66,norma Alonso et al. 2015,lo-co,2,/l/ /o/ /k/
 otro,other,2 · Preescolar,5.182,4.66,norma Alonso et al. 2015,o-tro,2,/o/ /t/ /ɾ/ /o/,1.75,4,5.844,2.04,otra,Bisílabas frecuentes,False
 primavera,springtime,2 · Preescolar,5.182,4.66,norma Alonso et al. 2015,pri-ma-ve-ra,4,/p/ /ɾ/ /i/ /m/ /a/ /b/ /e/ /ɾ/ /a/,1.35,9,4.404,3.09,sustantivo,Largas y abstractas,False
 verdad,truth,2 · Preescolar,5.182,4.66,norma Alonso et al. 2015,ver-dad,2,/b/ /e/ /ɾ/ /d/ /a/ /d/,1.6,6,6.115,1.96,sustantivo,Bisílabas frecuentes,False
-barbilla,chin,2 · Preescolar,5.202,4.671,predicha (modelo ES),bar-bi-lla,3,/b/ /a/ /ɾ/ /b/ /i/ /ʝ/ /a/,1.4,8,3.577,4.89,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 aguja,needle,2 · Preescolar,5.22,4.68,norma Alonso et al. 2015,a-gu-ja,3,/a/ /g/ /u/ /x/ /a/,1.033,5,4.05,4.93,sustantivo,Bisílabas frecuentes,True
 autobús,bus,2 · Preescolar,5.22,4.68,norma Alonso et al. 2015,au-to-bús,3,/a/ /u/ /t/ /o/ /b/ /u/ /s/,1.2,7,4.835,4.9,sustantivo,Bisílabas frecuentes,True
 charco,puddle,2 · Preescolar,5.22,4.68,norma Alonso et al. 2015,char-co,2,/tʃ/ /a/ /ɾ/ /k/ /o/,1.3,6,3.505,4.67,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
@@ -572,18 +570,21 @@ poner,put,2 · Preescolar,5.22,4.68,norma Alonso et al. 2015,po-ner,2,/p/ /o/ /n
 saliva,saliva,2 · Preescolar,5.22,4.68,norma Alonso et al. 2015,sa-li-va,3,/s/ /a/ /l/ /i/ /b/ /a/,1.0,6,3.775,4.89,sustantivo,Bisílabas frecuentes,False
 vida,life,2 · Preescolar,5.22,4.68,norma Alonso et al. 2015,vi-da,2,/b/ /i/ /d/ /a/,1.0,4,6.043,2.69,sustantivo,Cortas con familia (rimas),False
 zorro,fox,2 · Preescolar,5.22,4.68,norma Alonso et al. 2015,zo-rro,2,/s/ /o/ /r/ /o/,1.3,5,3.919,4.97,sustantivo,Bisílabas frecuentes,True
+esponja,sponge,2 · Preescolar,5.22,4.68,predicha (modelo ES),es-pon-ja,3,/e/ /s/ /p/ /o/ /n/ /x/ /a/,1.2,7,3.848,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 sacar,take out,2 · Preescolar,5.23,4.69,norma Alonso et al. 2015,sa-car,2,/s/ /a/ /k/ /a/ /ɾ/,1.3,5,4.916,,verbo,Bisílabas frecuentes,False
-vaquero,cowboy,2 · Preescolar,5.234,4.694,predicha (modelo ES),va-que-ro,3,/b/ /a/ /k/ /e/ /ɾ/ /o/,1.0,7,4.129,4.72,sustantivo,Bisílabas frecuentes,True
 almohada,pillow,2 · Preescolar,5.24,4.7,norma Alonso et al. 2015,al-mo-ha-da,4,/a/ /l/ /m/ /o/ /a/ /d/ /a/,1.0,8,4.073,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 catarro,common cold,2 · Preescolar,5.24,4.7,norma Alonso et al. 2015,ca-ta-rro,3,/k/ /a/ /t/ /a/ /r/ /o/,1.2,7,2.886,,sustantivo,Bisílabas frecuentes,False
 enchufe,safe,2 · Preescolar,5.24,4.7,norma Alonso et al. 2015,en-chu-fe,3,/e/ /n/ /tʃ/ /u/ /f/ /e/,1.2,7,3.18,3.41,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 lechuga,lettuce,2 · Preescolar,5.24,4.7,norma Alonso et al. 2015,le-chu-ga,3,/l/ /e/ /tʃ/ /u/ /g/ /a/,1.2,7,3.582,4.97,adjetivo,Bisílabas frecuentes,True
 seguir,follow,2 · Preescolar,5.24,4.7,norma Alonso et al. 2015,se-guir,2,/s/ /e/ /g/ /i/ /ɾ/,1.3,6,5.255,3.26,verbo,Bisílabas frecuentes,False
-monstruo,monster,2 · Preescolar,5.244,4.704,predicha (modelo ES),mons-truo,2,/m/ /o/ /n/ /s/ /t/ /ɾ/ /u/ /o/,2.0,8,4.692,3.72,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+barca,boat,2 · Preescolar,5.242,4.702,predicha (modelo ES),bar-ca,2,/b/ /a/ /ɾ/ /k/ /a/,1.3,5,3.187,4.93,sustantivo,Bisílabas frecuentes,True
+biblia,bible,2 · Preescolar,5.254,4.714,predicha (modelo ES),bi-blia,2,/b/ /i/ /b/ /l/ /i/ /a/,1.7,6,4.346,4.61,sustantivo,Bisílabas frecuentes,True
+vaquero,cowboy,2 · Preescolar,5.26,4.72,predicha (modelo ES),va-que-ro,3,/b/ /a/ /k/ /e/ /ɾ/ /o/,1.0,7,4.129,4.72,sustantivo,Bisílabas frecuentes,True
 cueva,cave,2 · Preescolar,5.26,4.72,norma Alonso et al. 2015,cue-va,2,/k/ /u/ /e/ /b/ /a/,1.0,5,4.128,4.96,sustantivo,Bisílabas frecuentes,False
 fácil,easy,2 · Preescolar,5.26,4.72,norma Alonso et al. 2015,fá-cil,2,/f/ /a/ /s/ /i/ /l/,1.3,5,5.329,2.07,adjetivo,Bisílabas frecuentes,False
 muslo,upper leg,2 · Preescolar,5.26,4.72,norma Alonso et al. 2015,mus-lo,2,/m/ /u/ /s/ /l/ /o/,1.3,5,3.566,,sustantivo,Bisílabas frecuentes,False
 otoño,autumn,2 · Preescolar,5.26,4.72,norma Alonso et al. 2015,o-to-ño,3,/o/ /t/ /o/ /ɲ/ /o/,1.033,5,4.082,3.27,sustantivo,Bisílabas frecuentes,False
+barbilla,chin,2 · Preescolar,5.275,4.739,predicha (modelo ES),bar-bi-lla,3,/b/ /a/ /ɾ/ /b/ /i/ /ʝ/ /a/,1.4,8,3.577,4.89,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 fin,end,2 · Preescolar,5.275,4.74,norma Alonso et al. 2015,fin,1,/f/ /i/ /n/,1.6,3,5.412,3.14,sustantivo,Cortas con familia (rimas),False
 hambriento,be hungry,2 · Preescolar,5.275,4.74,norma Alonso et al. 2015,ham-brien-to,3,/a/ /m/ /b/ /ɾ/ /i/ /e/ /n/ /t/ /o/,1.867,10,3.96,,adjetivo,"Con grupos consonánticos (tr, pl, str)",False
 hueso,bone,2 · Preescolar,5.275,4.74,norma Alonso et al. 2015,hue-so,2,/u/ /e/ /s/ /o/,1.0,5,4.232,4.9,sustantivo,Bisílabas frecuentes,True
@@ -598,7 +599,7 @@ fuente,spring,2 · Preescolar,5.305,4.78,norma Alonso et al. 2015,fuen-te,2,/f/ 
 liso,smooth,2 · Preescolar,5.305,4.78,norma Alonso et al. 2015,li-so,2,/l/ /i/ /s/ /o/,1.0,4,3.053,3.81,adjetivo,Bisílabas frecuentes,False
 pulsera,bracelet,2 · Preescolar,5.305,4.78,norma Alonso et al. 2015,pul-se-ra,3,/p/ /u/ /l/ /s/ /e/ /ɾ/ /a/,1.2,7,3.59,4.96,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 telaraña,spider web,2 · Preescolar,5.305,4.78,norma Alonso et al. 2015,te-la-ra-ña,4,/t/ /e/ /l/ /a/ /ɾ/ /a/ /ɲ/ /a/,1.0,8,3.129,,sustantivo,Largas y abstractas,False
-esponja,sponge,2 · Preescolar,5.312,4.791,predicha (modelo ES),es-pon-ja,3,/e/ /s/ /p/ /o/ /n/ /x/ /a/,1.2,7,3.848,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+altar,church,2 · Preescolar,5.308,4.784,predicha (modelo ES),al-tar,2,/a/ /l/ /t/ /a/ /ɾ/,1.3,5,3.909,4.9,sustantivo,Bisílabas frecuentes,True
 arrugado,wrinkled,2 · Preescolar,5.318,4.8,norma Alonso et al. 2015,a-rru-ga-do,4,/a/ /r/ /u/ /g/ /a/ /d/ /o/,1.175,8,3.053,4.29,adjetivo,Largas y abstractas,False
 bufanda,scarf or turban,2 · Preescolar,5.318,4.8,norma Alonso et al. 2015,bu-fan-da,3,/b/ /u/ /f/ /a/ /n/ /d/ /a/,1.2,7,3.606,,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 cesta,basket,2 · Preescolar,5.318,4.8,norma Alonso et al. 2015,ces-ta,2,/s/ /e/ /s/ /t/ /a/,1.3,5,3.568,5.0,sustantivo,Bisílabas frecuentes,True
@@ -608,6 +609,7 @@ izquierda,left,2 · Preescolar,5.318,4.8,norma Alonso et al. 2015,iz-quier-da,3,
 jaula,cage,2 · Preescolar,5.318,4.8,norma Alonso et al. 2015,jau-la,2,/x/ /a/ /u/ /l/ /a/,1.0,5,4.148,5.0,sustantivo,Bisílabas frecuentes,True
 listo,ready,2 · Preescolar,5.318,4.8,norma Alonso et al. 2015,lis-to,2,/l/ /i/ /s/ /t/ /o/,1.3,5,5.411,2.07,adjetivo,Bisílabas frecuentes,False
 mundo,world,2 · Preescolar,5.318,4.8,norma Alonso et al. 2015,mun-do,2,/m/ /u/ /n/ /d/ /o/,1.3,5,5.76,4.36,sustantivo,Bisílabas frecuentes,False
+piscina,pool,2 · Preescolar,5.329,4.818,predicha (modelo ES),pis-ci-na,3,/p/ /i/ /s/ /s/ /i/ /n/ /a/,1.2,7,4.541,4.77,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 aburrido,boring,2 · Preescolar,5.33,4.82,norma Alonso et al. 2015,a-bu-rri-do,4,/a/ /b/ /u/ /r/ /i/ /d/ /o/,1.175,8,4.535,2.07,adjetivo,Largas y abstractas,False
 ajo,garlic,2 · Preescolar,5.33,4.82,norma Alonso et al. 2015,a-jo,2,/a/ /x/ /o/,1.05,3,3.811,4.89,sustantivo,Cortas con familia (rimas),False
 descansar,rest,2 · Preescolar,5.33,4.82,norma Alonso et al. 2015,des-can-sar,3,/d/ /e/ /s/ /k/ /a/ /n/ /s/ /a/ /ɾ/,1.6,9,4.557,3.03,verbo,Largas y abstractas,False
@@ -617,9 +619,8 @@ tocar,touch,2 · Preescolar,5.33,4.82,norma Alonso et al. 2015,to-car,2,/t/ /o/ 
 delgado,thin,2 · Preescolar,5.35,4.84,norma Alonso et al. 2015,del-ga-do,3,/d/ /e/ /l/ /g/ /a/ /d/ /o/,1.2,7,3.97,3.83,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 sombra,shade,2 · Preescolar,5.35,4.84,norma Alonso et al. 2015,som-bra,2,/s/ /o/ /m/ /b/ /ɾ/ /a/,2.0,6,4.295,3.38,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 trueno,thunder,2 · Preescolar,5.35,4.84,norma Alonso et al. 2015,true-no,2,/t/ /ɾ/ /u/ /e/ /n/ /o/,1.7,6,3.611,4.34,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
-piscina,pool,2 · Preescolar,5.352,4.842,predicha (modelo ES),pis-ci-na,3,/p/ /i/ /s/ /s/ /i/ /n/ /a/,1.2,7,4.541,4.77,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
-biblia,bible,2 · Preescolar,5.357,4.847,predicha (modelo ES),bi-blia,2,/b/ /i/ /b/ /l/ /i/ /a/,1.7,6,4.346,4.61,sustantivo,Bisílabas frecuentes,True
 esperar,wait,2 · Preescolar,5.36,4.85,norma Alonso et al. 2015,es-pe-rar,3,/e/ /s/ /p/ /e/ /ɾ/ /a/ /ɾ/,1.2,7,5.239,2.68,verbo,Bisílabas frecuentes,False
+cajón,drawer,2 · Preescolar,5.362,4.852,predicha (modelo ES),ca-jón,2,/k/ /a/ /x/ /o/ /n/,1.3,5,4.173,4.67,sustantivo,Bisílabas frecuentes,True
 ballena,whale,2 · Preescolar,5.37,4.86,norma Alonso et al. 2015,ba-lle-na,3,/b/ /a/ /ʝ/ /e/ /n/ /a/,1.2,7,3.809,4.96,sustantivo,Bisílabas frecuentes,True
 castigo,punishment,2 · Preescolar,5.37,4.86,norma Alonso et al. 2015,cas-ti-go,3,/k/ /a/ /s/ /t/ /i/ /g/ /o/,1.2,7,4.377,2.46,sustantivo,Largas y abstractas,False
 indio,indigenous peoples of the americas,2 · Preescolar,5.37,4.86,norma Alonso et al. 2015,in-dio,2,/i/ /n/ /d/ /i/ /o/,1.0,5,4.068,,sustantivo,Bisílabas frecuentes,False
@@ -627,7 +628,8 @@ máquina,machine,2 · Preescolar,5.37,4.86,norma Alonso et al. 2015,má-qui-na,3
 novio,groom,2 · Preescolar,5.37,4.86,norma Alonso et al. 2015,no-vio,2,/n/ /o/ /b/ /i/ /o/,1.0,5,5.123,4.54,sustantivo,Bisílabas frecuentes,False
 pronto,soon,2 · Preescolar,5.37,4.86,norma Alonso et al. 2015,pron-to,2,/p/ /ɾ/ /o/ /n/ /t/ /o/,2.0,6,5.438,1.79,otra,Bisílabas frecuentes,False
 salsa,sauce,2 · Preescolar,5.37,4.86,norma Alonso et al. 2015,sal-sa,2,/s/ /a/ /l/ /s/ /a/,1.3,5,4.477,4.75,sustantivo,Bisílabas frecuentes,False
-altar,church,2 · Preescolar,5.374,4.866,predicha (modelo ES),al-tar,2,/a/ /l/ /t/ /a/ /ɾ/,1.3,5,3.909,4.9,sustantivo,Bisílabas frecuentes,True
+murciélago,bat,2 · Preescolar,5.378,4.873,predicha (modelo ES),mur-cié-la-go,4,/m/ /u/ /ɾ/ /s/ /i/ /e/ /l/ /a/ /g/ /o/,1.15,10,3.675,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+monstruo,monster,2 · Preescolar,5.379,4.875,predicha (modelo ES),mons-truo,2,/m/ /o/ /n/ /s/ /t/ /ɾ/ /u/ /o/,2.0,8,4.692,3.72,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 buscar,look for,2 · Preescolar,5.382,4.88,norma Alonso et al. 2015,bus-car,2,/b/ /u/ /s/ /k/ /a/ /ɾ/,1.6,6,5.229,,verbo,Bisílabas frecuentes,False
 enfermedad,disease,2 · Preescolar,5.382,4.88,norma Alonso et al. 2015,en-fer-me-dad,4,/e/ /n/ /f/ /e/ /ɾ/ /m/ /e/ /d/ /a/ /d/,1.3,10,4.754,3.45,sustantivo,Largas y abstractas,False
 río,river,2 · Preescolar,5.382,4.88,norma Alonso et al. 2015,rí-o,2,/r/ /i/ /o/,1.05,3,4.789,4.89,sustantivo,Cortas con familia (rimas),True
@@ -636,15 +638,13 @@ carro,carriage,2 · Preescolar,5.394,4.9,norma Alonso et al. 2015,ca-rro,2,/k/ /
 encender,light,2 · Preescolar,5.394,4.9,norma Alonso et al. 2015,en-cen-der,3,/e/ /n/ /s/ /e/ /n/ /d/ /e/ /ɾ/,1.4,8,4.088,4.21,verbo,"Con grupos consonánticos (tr, pl, str)",False
 lavar,wash,2 · Preescolar,5.394,4.9,norma Alonso et al. 2015,la-var,2,/l/ /a/ /b/ /a/ /ɾ/,1.3,5,4.206,4.35,verbo,Bisílabas frecuentes,False
 pandereta,tambourine,2 · Preescolar,5.394,4.9,norma Alonso et al. 2015,pan-de-re-ta,4,/p/ /a/ /n/ /d/ /e/ /ɾ/ /e/ /t/ /a/,1.15,9,2.527,4.86,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
-tarro,jar,2 · Preescolar,5.398,4.906,predicha (modelo ES),ta-rro,2,/t/ /a/ /r/ /o/,1.3,5,3.481,5.0,sustantivo,Bisílabas frecuentes,True
-faro,lighthouse,2 · Preescolar,5.403,4.915,predicha (modelo ES),fa-ro,2,/f/ /a/ /ɾ/ /o/,1.0,4,3.614,4.96,sustantivo,Cortas con familia (rimas),True
-ensalada,salad,2 · Preescolar,5.404,4.916,predicha (modelo ES),en-sa-la-da,4,/e/ /n/ /s/ /a/ /l/ /a/ /d/ /a/,1.0,8,4.362,4.97,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
-bata,robe,2 · Preescolar,5.405,4.917,predicha (modelo ES),ba-ta,2,/b/ /a/ /t/ /a/,1.0,4,4.021,5.0,sustantivo,Cortas con familia (rimas),True
 esposa,wife,2 · Preescolar,5.407,4.92,norma Alonso et al. 2015,es-po-sa,3,/e/ /s/ /p/ /o/ /s/ /a/,1.0,6,5.508,4.13,sustantivo,Bisílabas frecuentes,False
 lagartija,lizard,2 · Preescolar,5.407,4.92,norma Alonso et al. 2015,la-gar-ti-ja,4,/l/ /a/ /g/ /a/ /ɾ/ /t/ /i/ /x/ /a/,1.15,9,3.226,4.68,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 tabla,board,2 · Preescolar,5.407,4.92,norma Alonso et al. 2015,ta-bla,2,/t/ /a/ /b/ /l/ /a/,1.7,5,4.121,4.57,sustantivo,Bisílabas frecuentes,False
+tarro,jar,2 · Preescolar,5.407,4.921,predicha (modelo ES),ta-rro,2,/t/ /a/ /r/ /o/,1.3,5,3.481,5.0,sustantivo,Bisílabas frecuentes,True
 línea,line,2 · Preescolar,5.413,4.93,norma Alonso et al. 2015,lí-ne-a,3,/l/ /i/ /n/ /e/ /a/,1.033,5,5.09,4.5,sustantivo,Bisílabas frecuentes,False
 hora,hour,2 · Preescolar,5.416,4.94,norma Alonso et al. 2015,ho-ra,2,/o/ /ɾ/ /a/,1.0,4,5.683,3.1,sustantivo,Bisílabas frecuentes,False
+braga,underwear,2 · Preescolar,5.416,4.943,predicha (modelo ES),bra-ga,2,/b/ /ɾ/ /a/ /g/ /a/,1.7,5,2.495,4.96,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 difícil,difficult,2 · Preescolar,5.417,4.96,norma Alonso et al. 2015,di-fí-cil,3,/d/ /i/ /f/ /i/ /s/ /i/ /l/,1.2,7,5.426,2.21,adjetivo,Bisílabas frecuentes,False
 mitad,half,2 · Preescolar,5.417,4.96,norma Alonso et al. 2015,mi-tad,2,/m/ /i/ /t/ /a/ /d/,1.3,5,5.07,3.27,sustantivo,Bisílabas frecuentes,False
 bebida,beverage,2 · Preescolar,5.419,4.98,norma Alonso et al. 2015,be-bi-da,3,/b/ /e/ /b/ /i/ /d/ /a/,1.0,6,4.449,4.6,sustantivo,Bisílabas frecuentes,False
@@ -652,34 +652,41 @@ ciudad,city,2 · Preescolar,5.419,4.98,norma Alonso et al. 2015,ciu-dad,2,/s/ /i
 girasol,sunflower,2 · Preescolar,5.419,4.98,norma Alonso et al. 2015,gi-ra-sol,3,/x/ /i/ /ɾ/ /a/ /s/ /o/ /l/,1.2,7,2.949,4.8,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 martillo,hammer,2 · Preescolar,5.419,4.98,norma Alonso et al. 2015,mar-ti-llo,3,/m/ /a/ /ɾ/ /t/ /i/ /ʝ/ /o/,1.4,8,4.077,4.77,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 suciedad,dirt,2 · Preescolar,5.419,4.98,norma Alonso et al. 2015,su-cie-dad,3,/s/ /u/ /s/ /i/ /e/ /d/ /a/ /d/,1.2,8,3.614,4.86,sustantivo,Bisílabas frecuentes,False
-braga,underwear,2 · Preescolar,5.419,4.98,predicha (modelo ES),bra-ga,2,/b/ /ɾ/ /a/ /g/ /a/,1.7,5,2.495,4.96,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
-murciélago,bat,2 · Preescolar,5.419,4.981,predicha (modelo ES),mur-cié-la-go,4,/m/ /u/ /ɾ/ /s/ /i/ /e/ /l/ /a/ /g/ /o/,1.15,10,3.675,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
-cajón,drawer,2 · Preescolar,5.419,4.991,predicha (modelo ES),ca-jón,2,/k/ /a/ /x/ /o/ /n/,1.3,5,4.173,4.67,sustantivo,Bisílabas frecuentes,True
+tejado,roof,2 · Preescolar,5.419,4.989,predicha (modelo ES),te-ja-do,3,/t/ /e/ /x/ /a/ /d/ /o/,1.0,6,3.803,4.79,sustantivo,Bisílabas frecuentes,True
 partido,festival,2 · Preescolar,5.42,5.0,norma Alonso et al. 2015,par-ti-do,3,/p/ /a/ /ɾ/ /t/ /i/ /d/ /o/,1.2,7,4.95,4.33,sustantivo,Bisílabas frecuentes,False
 pueblo,village,2 · Preescolar,5.42,5.0,norma Alonso et al. 2015,pue-blo,2,/p/ /u/ /e/ /b/ /l/ /o/,1.7,6,5.164,4.89,sustantivo,Bisílabas frecuentes,False
 vergüenza,shame,2 · Preescolar,5.42,5.0,norma Alonso et al. 2015,ver-güen-za,3,/b/ /e/ /ɾ/ /g/ /w/ /e/ /n/ /s/ /a/,1.4,9,4.625,2.24,sustantivo,Largas y abstractas,False
-tractor,tractor,2 · Preescolar,5.42,5.002,predicha (modelo ES),trac-tor,2,/t/ /ɾ/ /a/ /k/ /t/ /o/ /ɾ/,2.3,7,3.557,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+ensalada,salad,2 · Preescolar,5.422,5.004,predicha (modelo ES),en-sa-la-da,4,/e/ /n/ /s/ /a/ /l/ /a/ /d/ /a/,1.0,8,4.362,4.97,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+hamburguesa,burger,2 · Preescolar,5.423,5.006,predicha (modelo ES),ham-bur-gue-sa,4,/a/ /m/ /b/ /u/ /ɾ/ /g/ /e/ /s/ /a/,1.3,11,4.203,4.93,sustantivo,Largas y abstractas,True
+tractor,tractor,2 · Preescolar,5.423,5.006,predicha (modelo ES),trac-tor,2,/t/ /ɾ/ /a/ /k/ /t/ /o/ /ɾ/,2.3,7,3.557,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+patata,potato,2 · Preescolar,5.432,5.018,predicha (modelo ES),pa-ta-ta,3,/p/ /a/ /t/ /a/ /t/ /a/,1.0,6,3.434,4.85,sustantivo,Bisílabas frecuentes,True
 bandeja,tray,2 · Preescolar,5.434,5.02,norma Alonso et al. 2015,ban-de-ja,3,/b/ /a/ /n/ /d/ /e/ /x/ /a/,1.2,7,3.864,4.74,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 corto,short,2 · Preescolar,5.434,5.02,norma Alonso et al. 2015,cor-to,2,/k/ /o/ /ɾ/ /t/ /o/,1.3,5,4.494,3.61,adjetivo,Cortas con familia (rimas),False
 pinza,peg,2 · Preescolar,5.434,5.02,norma Alonso et al. 2015,pin-za,2,/p/ /i/ /n/ /s/ /a/,1.3,5,3.18,4.93,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
-tejado,roof,2 · Preescolar,5.44,5.028,predicha (modelo ES),te-ja-do,3,/t/ /e/ /x/ /a/ /d/ /o/,1.0,6,3.803,4.79,sustantivo,Bisílabas frecuentes,True
+faro,lighthouse,2 · Preescolar,5.435,5.021,predicha (modelo ES),fa-ro,2,/f/ /a/ /ɾ/ /o/,1.0,4,3.614,4.96,sustantivo,Cortas con familia (rimas),True
+manguera,hose,2 · Preescolar,5.446,5.036,predicha (modelo ES),man-gue-ra,3,/m/ /a/ /n/ /g/ /e/ /ɾ/ /a/,1.2,8,3.741,4.87,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 bombilla,lightbulb,2 · Preescolar,5.448,5.04,norma Alonso et al. 2015,bom-bi-lla,3,/b/ /o/ /m/ /b/ /i/ /ʝ/ /a/,1.4,8,3.284,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 nublado,cloudy,2 · Preescolar,5.448,5.04,norma Alonso et al. 2015,nu-bla-do,3,/n/ /u/ /b/ /l/ /a/ /d/ /o/,1.467,7,3.34,4.0,adjetivo,"Con grupos consonánticos (tr, pl, str)",False
 pastor,farmer,2 · Preescolar,5.448,5.04,norma Alonso et al. 2015,pas-tor,2,/p/ /a/ /s/ /t/ /o/ /ɾ/,1.6,6,4.119,4.54,sustantivo,Bisílabas frecuentes,True
 tiempo,time,2 · Preescolar,5.448,5.04,norma Alonso et al. 2015,tiem-po,2,/t/ /i/ /e/ /m/ /p/ /o/,1.3,6,6.113,3.07,sustantivo,Bisílabas frecuentes,False
 viajar,travel,2 · Preescolar,5.448,5.04,norma Alonso et al. 2015,via-jar,2,/b/ /i/ /a/ /x/ /a/ /ɾ/,1.3,6,4.436,3.67,verbo,Bisílabas frecuentes,False
-hamburguesa,burger,2 · Preescolar,5.453,5.046,predicha (modelo ES),ham-bur-gue-sa,4,/a/ /m/ /b/ /u/ /ɾ/ /g/ /e/ /s/ /a/,1.3,11,4.203,4.93,sustantivo,Largas y abstractas,True
-peluca,wig,2 · Preescolar,5.455,5.049,predicha (modelo ES),pe-lu-ca,3,/p/ /e/ /l/ /u/ /k/ /a/,1.0,6,3.947,4.72,sustantivo,Bisílabas frecuentes,True
+túnel,tunnel,2 · Preescolar,5.451,5.044,predicha (modelo ES),tú-nel,2,/t/ /u/ /n/ /e/ /l/,1.3,5,4.331,4.82,sustantivo,Bisílabas frecuentes,True
+ascensor,elevator,2 · Preescolar,5.459,5.054,predicha (modelo ES),as-cen-sor,3,/a/ /s/ /s/ /e/ /n/ /s/ /o/ /ɾ/,1.4,8,4.304,4.79,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+bombero,firefighter,2 · Preescolar,5.459,5.055,predicha (modelo ES),bom-be-ro,3,/b/ /o/ /m/ /b/ /e/ /ɾ/ /o/,1.2,7,3.806,4.87,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+chupete,pacifier,2 · Preescolar,5.462,5.058,predicha (modelo ES),chu-pe-te,3,/tʃ/ /u/ /p/ /e/ /t/ /e/,1.2,7,2.949,4.61,sustantivo,Bisílabas frecuentes,True
 espada,sword,2 · Preescolar,5.463,5.06,norma Alonso et al. 2015,es-pa-da,3,/e/ /s/ /p/ /a/ /d/ /a/,1.0,6,4.482,4.93,sustantivo,Bisílabas frecuentes,True
 mercado,market,2 · Preescolar,5.463,5.06,norma Alonso et al. 2015,mer-ca-do,3,/m/ /e/ /ɾ/ /k/ /a/ /d/ /o/,1.2,7,4.616,4.7,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 religión,religion,2 · Preescolar,5.463,5.06,norma Alonso et al. 2015,re-li-gión,3,/r/ /e/ /l/ /i/ /x/ /i/ /o/ /n/,1.2,8,4.336,1.71,sustantivo,Largas y abstractas,False
 sordo,deaf,2 · Preescolar,5.463,5.06,norma Alonso et al. 2015,sor-do,2,/s/ /o/ /ɾ/ /d/ /o/,1.3,5,4.015,3.27,adjetivo,Bisílabas frecuentes,False
-trofeo,trophy,2 · Preescolar,5.475,5.073,predicha (modelo ES),tro-fe-o,3,/t/ /ɾ/ /o/ /f/ /e/ /o/,1.5,6,3.882,4.89,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+trofeo,trophy,2 · Preescolar,5.468,5.065,predicha (modelo ES),tro-fe-o,3,/t/ /ɾ/ /o/ /f/ /e/ /o/,1.5,6,3.882,4.89,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+cantante,singer,2 · Preescolar,5.481,5.079,predicha (modelo ES),can-tan-te,3,/k/ /a/ /n/ /t/ /a/ /n/ /t/ /e/,1.4,8,4.176,4.62,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 cartero,postman,2 · Preescolar,5.482,5.08,norma Alonso et al. 2015,car-te-ro,3,/k/ /a/ /ɾ/ /t/ /e/ /ɾ/ /o/,1.2,7,3.699,4.74,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 despacio,slow,2 · Preescolar,5.482,5.08,norma Alonso et al. 2015,des-pa-cio,3,/d/ /e/ /s/ /p/ /a/ /s/ /i/ /o/,1.2,8,4.667,3.28,otra,Bisílabas frecuentes,False
 fondo,bottom,2 · Preescolar,5.482,5.08,norma Alonso et al. 2015,fon-do,2,/f/ /o/ /n/ /d/ /o/,1.3,5,4.823,4.25,sustantivo,Bisílabas frecuentes,False
 gorila,gorilla,2 · Preescolar,5.482,5.08,norma Alonso et al. 2015,go-ri-la,3,/g/ /o/ /ɾ/ /i/ /l/ /a/,1.0,6,3.657,4.97,sustantivo,Bisílabas frecuentes,True
 nudo,knot,2 · Preescolar,5.482,5.08,norma Alonso et al. 2015,nu-do,2,/n/ /u/ /d/ /o/,1.0,4,3.765,4.87,sustantivo,Cortas con familia (rimas),True
+bata,robe,2 · Preescolar,5.486,5.085,predicha (modelo ES),ba-ta,2,/b/ /a/ /t/ /a/,1.0,4,4.021,5.0,sustantivo,Cortas con familia (rimas),True
+dinosaurio,dinosaur,2 · Preescolar,5.493,5.093,predicha (modelo ES),di-no-sau-rio,4,/d/ /i/ /n/ /o/ /s/ /a/ /u/ /ɾ/ /i/ /o/,1.0,10,3.56,4.87,sustantivo,Largas y abstractas,True
 alimentar,feed,2 · Preescolar,5.5,5.1,norma Alonso et al. 2015,a-li-men-tar,4,/a/ /l/ /i/ /m/ /e/ /n/ /t/ /a/ /ɾ/,1.325,9,4.068,4.17,verbo,Largas y abstractas,False
 aquel,that,2 · Preescolar,5.5,5.1,norma Alonso et al. 2015,a-quel,2,/a/ /k/ /e/ /l/,1.35,5,4.704,1.54,otra,Bisílabas frecuentes,False
 barranco,ravine,2 · Preescolar,5.5,5.1,norma Alonso et al. 2015,ba-rran-co,3,/b/ /a/ /r/ /a/ /n/ /k/ /o/,1.2,8,3.372,4.61,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
@@ -691,8 +698,7 @@ raqueta,racket,2 · Preescolar,5.5,5.1,norma Alonso et al. 2015,ra-que-ta,3,/r/ 
 temprano,early,2 · Preescolar,5.5,5.1,norma Alonso et al. 2015,tem-pra-no,3,/t/ /e/ /m/ /p/ /ɾ/ /a/ /n/ /o/,1.667,8,4.967,2.25,otra,Largas y abstractas,False
 tobillo,ankle,2 · Preescolar,5.5,5.1,norma Alonso et al. 2015,to-bi-llo,3,/t/ /o/ /b/ /i/ /ʝ/ /o/,1.2,7,3.965,4.81,sustantivo,Bisílabas frecuentes,True
 ustedes,you,2 · Preescolar,5.5,5.1,norma Alonso et al. 2015,us-te-des,3,/u/ /s/ /t/ /e/ /d/ /e/ /s/,1.2,7,5.69,4.11,otra,Bisílabas frecuentes,False
-patata,potato,2 · Preescolar,5.51,5.107,predicha (modelo ES),pa-ta-ta,3,/p/ /a/ /t/ /a/ /t/ /a/,1.0,6,3.434,4.85,sustantivo,Bisílabas frecuentes,True
-chupete,pacifier,2 · Preescolar,5.525,5.117,predicha (modelo ES),chu-pe-te,3,/tʃ/ /u/ /p/ /e/ /t/ /e/,1.2,7,2.949,4.61,sustantivo,Bisílabas frecuentes,True
+morsa,walrus,2 · Preescolar,5.515,5.11,predicha (modelo ES),mor-sa,2,/m/ /o/ /ɾ/ /s/ /a/,1.3,5,3.144,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 cinturón,belt,2 · Preescolar,5.53,5.12,norma Alonso et al. 2015,cin-tu-rón,3,/s/ /i/ /n/ /t/ /u/ /ɾ/ /o/ /n/,1.4,8,4.359,4.9,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 esquina,corner,2 · Preescolar,5.53,5.12,norma Alonso et al. 2015,es-qui-na,3,/e/ /s/ /k/ /i/ /n/ /a/,1.0,7,4.571,4.61,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 harina,flour,2 · Preescolar,5.53,5.12,norma Alonso et al. 2015,ha-ri-na,3,/a/ /ɾ/ /i/ /n/ /a/,1.0,6,3.609,4.97,sustantivo,Bisílabas frecuentes,False
@@ -701,10 +707,6 @@ perder,miss,2 · Preescolar,5.53,5.12,norma Alonso et al. 2015,per-der,2,/p/ /e/
 pesado,heavy,2 · Preescolar,5.53,5.12,norma Alonso et al. 2015,pe-sa-do,3,/p/ /e/ /s/ /a/ /d/ /o/,1.0,6,4.292,3.37,adjetivo,Bisílabas frecuentes,False
 regla,ruler,2 · Preescolar,5.53,5.12,norma Alonso et al. 2015,re-gla,2,/r/ /e/ /g/ /l/ /a/,1.7,5,4.542,4.66,sustantivo,Bisílabas frecuentes,True
 yegua,mare,2 · Preescolar,5.53,5.12,norma Alonso et al. 2015,ye-gua,2,/ʝ/ /e/ /g/ /u/ /a/,1.0,5,3.481,4.75,sustantivo,Bisílabas frecuentes,False
-cantante,singer,2 · Preescolar,5.534,5.125,predicha (modelo ES),can-tan-te,3,/k/ /a/ /n/ /t/ /a/ /n/ /t/ /e/,1.4,8,4.176,4.62,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
-bombero,firefighter,2 · Preescolar,5.534,5.125,predicha (modelo ES),bom-be-ro,3,/b/ /o/ /m/ /b/ /e/ /ɾ/ /o/,1.2,7,3.806,4.87,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
-manguera,hose,2 · Preescolar,5.535,5.126,predicha (modelo ES),man-gue-ra,3,/m/ /a/ /n/ /g/ /e/ /ɾ/ /a/,1.2,8,3.741,4.87,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
-túnel,tunnel,2 · Preescolar,5.544,5.137,predicha (modelo ES),tú-nel,2,/t/ /u/ /n/ /e/ /l/,1.3,5,4.331,4.82,sustantivo,Bisílabas frecuentes,True
 algodón,cotton,2 · Preescolar,5.547,5.14,norma Alonso et al. 2015,al-go-dón,3,/a/ /l/ /g/ /o/ /d/ /o/ /n/,1.2,7,3.942,4.97,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 cable,wire,2 · Preescolar,5.547,5.14,norma Alonso et al. 2015,ca-ble,2,/k/ /a/ /b/ /l/ /e/,1.7,5,4.48,4.72,sustantivo,Bisílabas frecuentes,False
 cruz,cross,2 · Preescolar,5.547,5.14,norma Alonso et al. 2015,cruz,1,/k/ /ɾ/ /u/ /s/,3.0,4,4.333,4.44,sustantivo,Bisílabas frecuentes,False
@@ -712,10 +714,10 @@ flauta,flute,2 · Preescolar,5.547,5.14,norma Alonso et al. 2015,flau-ta,2,/f/ /
 pico,beak,2 · Preescolar,5.547,5.14,norma Alonso et al. 2015,pi-co,2,/p/ /i/ /k/ /o/,1.0,4,4.141,4.96,sustantivo,Cortas con familia (rimas),True
 pintalabios,lipstick,2 · Preescolar,5.547,5.14,norma Alonso et al. 2015,pin-ta-la-bios,4,/p/ /i/ /n/ /t/ /a/ /l/ /a/ /b/ /i/ /o/ /s/,1.3,11,2.723,4.9,sustantivo,Largas y abstractas,False
 seco,dry,2 · Preescolar,5.547,5.14,norma Alonso et al. 2015,se-co,2,/s/ /e/ /k/ /o/,1.0,4,4.179,3.77,adjetivo,Bisílabas frecuentes,False
+peluca,wig,2 · Preescolar,5.555,5.15,predicha (modelo ES),pe-lu-ca,3,/p/ /e/ /l/ /u/ /k/ /a/,1.0,6,3.947,4.72,sustantivo,Bisílabas frecuentes,True
+cohete,rocket,2 · Preescolar,5.562,5.158,predicha (modelo ES),co-he-te,3,/k/ /o/ /e/ /t/ /e/,1.0,6,4.032,4.73,sustantivo,Bisílabas frecuentes,True
 importante,important,2 · Preescolar,5.563,5.16,norma Alonso et al. 2015,im-por-tan-te,4,/i/ /m/ /p/ /o/ /ɾ/ /t/ /a/ /n/ /t/ /e/,1.3,10,5.475,2.14,adjetivo,Largas y abstractas,False
 mascota,pet,2 · Preescolar,5.563,5.16,norma Alonso et al. 2015,mas-co-ta,3,/m/ /a/ /s/ /k/ /o/ /t/ /a/,1.2,7,4.04,4.71,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
-ascensor,elevator,2 · Preescolar,5.567,5.165,predicha (modelo ES),as-cen-sor,3,/a/ /s/ /s/ /e/ /n/ /s/ /o/ /ɾ/,1.4,8,4.304,4.79,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
-cohete,rocket,2 · Preescolar,5.579,5.179,predicha (modelo ES),co-he-te,3,/k/ /o/ /e/ /t/ /e/,1.0,6,4.032,4.73,sustantivo,Bisílabas frecuentes,True
 brillante,brilliant,2 · Preescolar,5.58,5.18,norma Alonso et al. 2015,bri-llan-te,3,/b/ /ɾ/ /i/ /ʝ/ /a/ /n/ /t/ /e/,1.667,9,4.759,2.07,adjetivo,Largas y abstractas,False
 carbón,charcoal,2 · Preescolar,5.58,5.18,norma Alonso et al. 2015,car-bón,2,/k/ /a/ /ɾ/ /b/ /o/ /n/,1.6,6,3.859,4.85,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 girar,spin,2 · Preescolar,5.58,5.18,norma Alonso et al. 2015,gi-rar,2,/x/ /i/ /ɾ/ /a/ /ɾ/,1.3,5,4.047,3.9,verbo,Bisílabas frecuentes,False
@@ -723,24 +725,22 @@ joya,jewel,2 · Preescolar,5.58,5.18,norma Alonso et al. 2015,jo-ya,2,/x/ /o/ /�
 olvidar,forget,2 · Preescolar,5.58,5.18,norma Alonso et al. 2015,ol-vi-dar,3,/o/ /l/ /b/ /i/ /d/ /a/ /ɾ/,1.2,7,4.55,2.04,verbo,Largas y abstractas,False
 pila,battery,2 · Preescolar,5.58,5.18,norma Alonso et al. 2015,pi-la,2,/p/ /i/ /l/ /a/,1.0,4,4.061,4.67,sustantivo,Cortas con familia (rimas),True
 siempre,always,2 · Preescolar,5.58,5.18,norma Alonso et al. 2015,siem-pre,2,/s/ /i/ /e/ /m/ /p/ /ɾ/ /e/,2.0,7,5.983,1.71,otra,Bisílabas frecuentes,False
-morsa,walrus,2 · Preescolar,5.593,5.197,predicha (modelo ES),mor-sa,2,/m/ /o/ /ɾ/ /s/ /a/,1.3,5,3.144,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 café,coffee,2 · Preescolar,5.596,5.2,norma Alonso et al. 2015,ca-fé,2,/k/ /a/ /f/ /e/,1.0,4,5.193,4.81,sustantivo,Bisílabas frecuentes,True
 cereza,cherry,2 · Preescolar,5.596,5.2,norma Alonso et al. 2015,ce-re-za,3,/s/ /e/ /ɾ/ /e/ /s/ /a/,1.0,6,3.684,4.62,sustantivo,Bisílabas frecuentes,True
 conducir,drive,2 · Preescolar,5.596,5.2,norma Alonso et al. 2015,con-du-cir,3,/k/ /o/ /n/ /d/ /u/ /s/ /i/ /ɾ/,1.4,8,4.649,3.86,verbo,Bisílabas frecuentes,False
 fuerza,strength,2 · Preescolar,5.596,5.2,norma Alonso et al. 2015,fuer-za,2,/f/ /u/ /e/ /ɾ/ /s/ /a/,1.3,6,5.047,2.96,sustantivo,Bisílabas frecuentes,False
 mejilla,cheek,2 · Preescolar,5.596,5.2,norma Alonso et al. 2015,me-ji-lla,3,/m/ /e/ /x/ /i/ /ʝ/ /a/,1.2,7,3.777,4.83,sustantivo,Bisílabas frecuentes,False
-dinosaurio,dinosaur,2 · Preescolar,5.599,5.204,predicha (modelo ES),di-no-sau-rio,4,/d/ /i/ /n/ /o/ /s/ /a/ /u/ /ɾ/ /i/ /o/,1.0,10,3.56,4.87,sustantivo,Largas y abstractas,True
 ciego,blind person,2 · Preescolar,5.612,5.22,norma Alonso et al. 2015,cie-go,2,/s/ /i/ /e/ /g/ /o/,1.0,5,4.39,,adjetivo,Bisílabas frecuentes,False
 espinas,fishbone,2 · Preescolar,5.612,5.22,norma Alonso et al. 2015,es-pi-nas,3,/e/ /s/ /p/ /i/ /n/ /a/ /s/,1.2,7,3.213,4.57,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 kiwi,kiwifruit,2 · Preescolar,5.612,5.22,norma Alonso et al. 2015,ki-wi,2,/k/ /i/ /w/ /i/,1.0,4,3.097,,sustantivo,Bisílabas frecuentes,True
 mediodía,midday,2 · Preescolar,5.612,5.22,norma Alonso et al. 2015,me-dio-dí-a,4,/m/ /e/ /d/ /i/ /o/ /d/ /i/ /a/,1.025,8,4.23,3.72,sustantivo,Largas y abstractas,False
 secreto,secret,2 · Preescolar,5.612,5.22,norma Alonso et al. 2015,se-cre-to,3,/s/ /e/ /k/ /ɾ/ /e/ /t/ /o/,1.467,7,5.116,2.19,sustantivo,Bisílabas frecuentes,False
 águila,eagle,2 · Preescolar,5.612,5.22,norma Alonso et al. 2015,á-gui-la,3,/a/ /g/ /i/ /l/ /a/,1.033,6,3.65,5.0,sustantivo,Bisílabas frecuentes,False
+pescador,fishing,2 · Preescolar,5.623,5.23,predicha (modelo ES),pes-ca-dor,3,/p/ /e/ /s/ /k/ /a/ /d/ /o/ /ɾ/,1.4,8,3.664,4.3,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 juntar,join,2 · Preescolar,5.635,5.24,norma Alonso et al. 2015,jun-tar,2,/x/ /u/ /n/ /t/ /a/ /ɾ/,1.6,6,3.942,2.86,verbo,Bisílabas frecuentes,False
 molino,mill,2 · Preescolar,5.635,5.24,norma Alonso et al. 2015,mo-li-no,3,/m/ /o/ /l/ /i/ /n/ /o/,1.0,6,3.501,4.72,sustantivo,Bisílabas frecuentes,True
 nacer,be born,2 · Preescolar,5.635,5.24,norma Alonso et al. 2015,na-cer,2,/n/ /a/ /s/ /e/ /ɾ/,1.3,5,3.995,,verbo,Bisílabas frecuentes,False
 precio,price,2 · Preescolar,5.635,5.24,norma Alonso et al. 2015,pre-cio,2,/p/ /ɾ/ /e/ /s/ /i/ /o/,1.7,6,4.785,3.63,sustantivo,Bisílabas frecuentes,False
-pescador,fishing,2 · Preescolar,5.644,5.248,predicha (modelo ES),pes-ca-dor,3,/p/ /e/ /s/ /k/ /a/ /d/ /o/ /ɾ/,1.4,8,3.664,4.3,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 cámara,camera,2 · Preescolar,5.657,5.26,norma Alonso et al. 2015,cá-ma-ra,3,/k/ /a/ /m/ /a/ /ɾ/ /a/,1.0,6,5.005,5.0,sustantivo,Bisílabas frecuentes,False
 insecto,insect,2 · Preescolar,5.657,5.26,norma Alonso et al. 2015,in-sec-to,3,/i/ /n/ /s/ /e/ /k/ /t/ /o/,1.2,7,3.798,4.89,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 largo,long,2 · Preescolar,5.657,5.26,norma Alonso et al. 2015,lar-go,2,/l/ /a/ /ɾ/ /g/ /o/,1.3,5,5.04,3.18,adjetivo,Bisílabas frecuentes,False
@@ -751,7 +751,6 @@ cisne,swan,2 · Preescolar,5.68,5.28,norma Alonso et al. 2015,cis-ne,2,/s/ /i/ /
 marido,husband,2 · Preescolar,5.68,5.28,norma Alonso et al. 2015,ma-ri-do,3,/m/ /a/ /ɾ/ /i/ /d/ /o/,1.0,6,5.024,4.11,sustantivo,Bisílabas frecuentes,False
 máscara,mask,2 · Preescolar,5.68,5.28,norma Alonso et al. 2015,más-ca-ra,3,/m/ /a/ /s/ /k/ /a/ /ɾ/ /a/,1.2,7,4.301,4.96,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 pedazo,part,2 · Preescolar,5.68,5.28,norma Alonso et al. 2015,pe-da-zo,3,/p/ /e/ /d/ /a/ /s/ /o/,1.0,6,4.573,3.29,sustantivo,Bisílabas frecuentes,False
-triángulo,triangle,2 · Preescolar,5.714,5.292,predicha (modelo ES),trián-gu-lo,3,/t/ /ɾ/ /i/ /a/ /n/ /g/ /u/ /l/ /o/,1.667,9,3.765,4.52,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 cartas,card,2 · Preescolar,5.738,5.3,norma Alonso et al. 2015,car-tas,2,/k/ /a/ /ɾ/ /t/ /a/ /s/,1.6,6,4.772,4.9,sustantivo,Bisílabas frecuentes,False
 chorizo,sausage,2 · Preescolar,5.738,5.3,norma Alonso et al. 2015,cho-ri-zo,3,/tʃ/ /o/ /ɾ/ /i/ /s/ /o/,1.2,7,3.097,4.88,sustantivo,Bisílabas frecuentes,True
 fotografía,picture,2 · Preescolar,5.738,5.3,norma Alonso et al. 2015,fo-to-gra-fí-a,5,/f/ /o/ /t/ /o/ /g/ /ɾ/ /a/ /f/ /i/ /a/,1.3,10,4.353,4.52,sustantivo,Largas y abstractas,False
@@ -762,54 +761,53 @@ tercero,third,2 · Preescolar,5.738,5.3,norma Alonso et al. 2015,ter-ce-ro,3,/t/
 imán,magnet,2 · Preescolar,5.755,5.317,predicha (modelo ES),i-mán,2,/i/ /m/ /a/ /n/,1.35,4,3.624,4.7,sustantivo,Bisílabas frecuentes,True
 cambiar,change,2 · Preescolar,5.757,5.32,norma Alonso et al. 2015,cam-biar,2,/k/ /a/ /m/ /b/ /i/ /a/ /ɾ/,1.6,7,5.116,2.89,verbo,Bisílabas frecuentes,False
 linterna,torch,2 · Preescolar,5.757,5.32,norma Alonso et al. 2015,lin-ter-na,3,/l/ /i/ /n/ /t/ /e/ /ɾ/ /n/ /a/,1.4,8,4.01,4.76,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
-piloto,pilot,2 · Preescolar,5.766,5.331,predicha (modelo ES),pi-lo-to,3,/p/ /i/ /l/ /o/ /t/ /o/,1.0,6,4.527,4.67,sustantivo,Bisílabas frecuentes,True
-marioneta,puppet,2 · Preescolar,5.768,5.333,predicha (modelo ES),ma-rio-ne-ta,4,/m/ /a/ /ɾ/ /i/ /o/ /n/ /e/ /t/ /a/,1.0,9,3.488,4.64,sustantivo,Largas y abstractas,True
+frigorífico,fridge,2 · Preescolar,5.768,5.333,predicha (modelo ES),fri-go-rí-fi-co,5,/f/ /ɾ/ /i/ /g/ /o/ /ɾ/ /i/ /f/ /i/ /k/ /o/,1.28,11,3.2,4.92,sustantivo,Largas y abstractas,True
+cremallera,zipper,2 · Preescolar,5.769,5.334,predicha (modelo ES),cre-ma-lle-ra,4,/k/ /ɾ/ /e/ /m/ /a/ /ʝ/ /e/ /ɾ/ /a/,1.5,10,3.2,4.83,sustantivo,Largas y abstractas,True
+triángulo,triangle,2 · Preescolar,5.77,5.336,predicha (modelo ES),trián-gu-lo,3,/t/ /ɾ/ /i/ /a/ /n/ /g/ /u/ /l/ /o/,1.667,9,3.765,4.52,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 bandera,flag,2 · Preescolar,5.773,5.34,norma Alonso et al. 2015,ban-de-ra,3,/b/ /a/ /n/ /d/ /e/ /ɾ/ /a/,1.2,7,4.183,4.79,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 cangrejo,crab,2 · Preescolar,5.773,5.34,norma Alonso et al. 2015,can-gre-jo,3,/k/ /a/ /n/ /g/ /ɾ/ /e/ /x/ /o/,1.667,8,3.985,4.9,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 odiar,hate,2 · Preescolar,5.773,5.34,norma Alonso et al. 2015,o-diar,2,/o/ /d/ /i/ /a/ /ɾ/,1.35,5,3.765,1.97,verbo,Bisílabas frecuentes,False
 tela,cloth,2 · Preescolar,5.773,5.34,norma Alonso et al. 2015,te-la,2,/t/ /e/ /l/ /a/,1.0,4,3.948,4.9,sustantivo,Bisílabas frecuentes,False
 volar,fly,2 · Preescolar,5.773,5.34,norma Alonso et al. 2015,vo-lar,2,/b/ /o/ /l/ /a/ /ɾ/,1.3,5,4.769,4.64,verbo,Bisílabas frecuentes,False
-búho,owl,2 · Preescolar,5.779,5.347,predicha (modelo ES),bú-ho,2,/b/ /u/ /o/,1.0,4,3.315,4.93,sustantivo,Bisílabas frecuentes,True
+nadador,swimmer,2 · Preescolar,5.788,5.357,predicha (modelo ES),na-da-dor,3,/n/ /a/ /d/ /a/ /d/ /o/ /ɾ/,1.2,7,3.46,4.77,sustantivo,Bisílabas frecuentes,True
 bote,boat,2 · Preescolar,5.79,5.36,norma Alonso et al. 2015,bo-te,2,/b/ /o/ /t/ /e/,1.0,4,4.61,4.93,sustantivo,Cortas con familia (rimas),False
 casco,helmet,2 · Preescolar,5.79,5.36,norma Alonso et al. 2015,cas-co,2,/k/ /a/ /s/ /k/ /o/,1.3,5,4.225,4.92,sustantivo,Bisílabas frecuentes,True
 cicatriz,scar,2 · Preescolar,5.79,5.36,norma Alonso et al. 2015,ci-ca-triz,3,/s/ /i/ /k/ /a/ /t/ /ɾ/ /i/ /s/,1.667,8,4.034,4.74,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 pecho,chest,2 · Preescolar,5.79,5.36,norma Alonso et al. 2015,pe-cho,2,/p/ /e/ /tʃ/ /o/,1.3,5,4.59,4.93,sustantivo,Bisílabas frecuentes,False
 tamaño,size,2 · Preescolar,5.79,5.36,norma Alonso et al. 2015,ta-ma-ño,3,/t/ /a/ /m/ /a/ /ɲ/ /o/,1.0,6,4.596,3.13,sustantivo,Bisílabas frecuentes,False
-frigorífico,fridge,2 · Preescolar,5.795,5.364,predicha (modelo ES),fri-go-rí-fi-co,5,/f/ /ɾ/ /i/ /g/ /o/ /ɾ/ /i/ /f/ /i/ /k/ /o/,1.28,11,3.2,4.92,sustantivo,Largas y abstractas,True
-cremallera,zipper,2 · Preescolar,5.8,5.368,predicha (modelo ES),cre-ma-lle-ra,4,/k/ /ɾ/ /e/ /m/ /a/ /ʝ/ /e/ /ɾ/ /a/,1.5,10,3.2,4.83,sustantivo,Largas y abstractas,True
 cafetera,kettle,2 · Preescolar,5.815,5.38,norma Alonso et al. 2015,ca-fe-te-ra,4,/k/ /a/ /f/ /e/ /t/ /e/ /ɾ/ /a/,1.0,8,3.491,4.75,sustantivo,Largas y abstractas,False
 cintura,waist,2 · Preescolar,5.815,5.38,norma Alonso et al. 2015,cin-tu-ra,3,/s/ /i/ /n/ /t/ /u/ /ɾ/ /a/,1.2,7,3.798,4.72,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 diferente,different,2 · Preescolar,5.815,5.38,norma Alonso et al. 2015,di-fe-ren-te,4,/d/ /i/ /f/ /e/ /ɾ/ /e/ /n/ /t/ /e/,1.15,9,5.061,1.97,adjetivo,Largas y abstractas,False
 maíz,maize,2 · Preescolar,5.815,5.38,norma Alonso et al. 2015,ma-íz,2,/m/ /a/ /i/ /s/,1.0,4,4.173,4.58,sustantivo,Bisílabas frecuentes,True
 pagar,pay,2 · Preescolar,5.815,5.38,norma Alonso et al. 2015,pa-gar,2,/p/ /a/ /g/ /a/ /ɾ/,1.3,5,5.039,3.54,verbo,Cortas con familia (rimas),False
 polvo,dust,2 · Preescolar,5.815,5.38,norma Alonso et al. 2015,pol-vo,2,/p/ /o/ /l/ /b/ /o/,1.3,5,4.566,4.4,sustantivo,Bisílabas frecuentes,False
+bailarina,ballerina,2 · Preescolar,5.828,5.391,predicha (modelo ES),bai-la-ri-na,4,/b/ /a/ /i/ /l/ /a/ /ɾ/ /i/ /n/ /a/,1.0,9,4.057,4.61,sustantivo,Largas y abstractas,True
 morir,die,2 · Preescolar,5.84,5.4,norma Alonso et al. 2015,mo-rir,2,/m/ /o/ /ɾ/ /i/ /ɾ/,1.3,5,5.322,3.07,verbo,Bisílabas frecuentes,False
 precioso,precious,2 · Preescolar,5.84,5.4,norma Alonso et al. 2015,pre-cio-so,3,/p/ /ɾ/ /e/ /s/ /i/ /o/ /s/ /o/,1.467,8,4.387,2.0,adjetivo,Largas y abstractas,False
 rama,branch,2 · Preescolar,5.84,5.4,norma Alonso et al. 2015,ra-ma,2,/r/ /a/ /m/ /a/,1.0,4,3.784,4.9,sustantivo,Cortas con familia (rimas),True
 recto,straight,2 · Preescolar,5.84,5.4,norma Alonso et al. 2015,rec-to,2,/r/ /e/ /k/ /t/ /o/,1.3,5,3.798,2.76,adjetivo,Bisílabas frecuentes,False
 toro,bull,2 · Preescolar,5.84,5.4,norma Alonso et al. 2015,to-ro,2,/t/ /o/ /ɾ/ /o/,1.0,4,4.071,4.85,sustantivo,Cortas con familia (rimas),True
-nadador,swimmer,2 · Preescolar,5.848,5.41,predicha (modelo ES),na-da-dor,3,/n/ /a/ /d/ /a/ /d/ /o/ /ɾ/,1.2,7,3.46,4.77,sustantivo,Bisílabas frecuentes,True
-coco,coconut,2 · Preescolar,5.849,5.411,predicha (modelo ES),co-co,2,/k/ /o/ /k/ /o/,1.0,4,3.998,4.79,sustantivo,Cortas con familia (rimas),True
+salero,salt,2 · Preescolar,5.842,5.402,predicha (modelo ES),sa-le-ro,3,/s/ /a/ /l/ /e/ /ɾ/ /o/,1.0,6,2.886,4.89,sustantivo,Bisílabas frecuentes,True
 coser,sew,2 · Preescolar,5.857,5.42,norma Alonso et al. 2015,co-ser,2,/k/ /o/ /s/ /e/ /ɾ/,1.3,5,3.481,3.93,verbo,Bisílabas frecuentes,False
 golpear,strike,2 · Preescolar,5.857,5.42,norma Alonso et al. 2015,gol-pe-ar,3,/g/ /o/ /l/ /p/ /e/ /a/ /ɾ/,1.2,7,4.316,4.07,verbo,Bisílabas frecuentes,False
 luchar,fight,2 · Preescolar,5.857,5.42,norma Alonso et al. 2015,lu-char,2,/l/ /u/ /tʃ/ /a/ /ɾ/,1.3,6,4.535,4.2,verbo,Bisílabas frecuentes,False
 oro,gold,2 · Preescolar,5.857,5.42,norma Alonso et al. 2015,o-ro,2,/o/ /ɾ/ /o/,1.05,3,4.854,4.81,sustantivo,Cortas con familia (rimas),False
 pieza,piece,2 · Preescolar,5.857,5.42,norma Alonso et al. 2015,pie-za,2,/p/ /i/ /e/ /s/ /a/,1.0,5,4.39,4.14,sustantivo,Bisílabas frecuentes,False
+pepino,cucumber,2 · Preescolar,5.872,5.438,predicha (modelo ES),pe-pi-no,3,/p/ /e/ /p/ /i/ /n/ /o/,1.0,6,3.402,4.83,sustantivo,Bisílabas frecuentes,True
+búho,owl,2 · Preescolar,5.872,5.438,predicha (modelo ES),bú-ho,2,/b/ /u/ /o/,1.0,4,3.315,4.93,sustantivo,Bisílabas frecuentes,True
 avispa,wasp,2 · Preescolar,5.873,5.44,norma Alonso et al. 2015,a-vis-pa,3,/a/ /b/ /i/ /s/ /p/ /a/,1.233,6,3.088,4.96,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 pescar,fishing,2 · Preescolar,5.873,5.44,norma Alonso et al. 2015,pes-car,2,/p/ /e/ /s/ /k/ /a/ /ɾ/,1.6,6,4.15,4.3,verbo,Bisílabas frecuentes,False
-tetera,teapot,2 · Preescolar,5.882,5.45,predicha (modelo ES),te-te-ra,3,/t/ /e/ /t/ /e/ /ɾ/ /a/,1.0,6,3.359,4.96,sustantivo,Bisílabas frecuentes,True
+marioneta,puppet,2 · Preescolar,5.881,5.449,predicha (modelo ES),ma-rio-ne-ta,4,/m/ /a/ /ɾ/ /i/ /o/ /n/ /e/ /t/ /a/,1.0,9,3.488,4.64,sustantivo,Largas y abstractas,True
 freír,fry,2 · Preescolar,5.89,5.46,norma Alonso et al. 2015,fre-ír,2,/f/ /ɾ/ /e/ /i/ /ɾ/,1.7,5,3.25,4.37,verbo,"Con grupos consonánticos (tr, pl, str)",False
 nuez,nut,2 · Preescolar,5.89,5.46,norma Alonso et al. 2015,nuez,1,/n/ /u/ /e/ /s/,1.6,4,3.703,4.52,sustantivo,Bisílabas frecuentes,False
 repartir,share,2 · Preescolar,5.89,5.46,norma Alonso et al. 2015,re-par-tir,3,/r/ /e/ /p/ /a/ /ɾ/ /t/ /i/ /ɾ/,1.4,8,3.65,2.96,verbo,Largas y abstractas,False
 tronco,tree stump,2 · Preescolar,5.89,5.46,norma Alonso et al. 2015,tron-co,2,/t/ /ɾ/ /o/ /n/ /k/ /o/,2.0,6,3.735,,sustantivo,Bisílabas frecuentes,False
-salero,salt,2 · Preescolar,5.893,5.461,predicha (modelo ES),sa-le-ro,3,/s/ /a/ /l/ /e/ /ɾ/ /o/,1.0,6,2.886,4.89,sustantivo,Bisílabas frecuentes,True
-pintor,painter,2 · Preescolar,5.918,5.471,predicha (modelo ES),pin-tor,2,/p/ /i/ /n/ /t/ /o/ /ɾ/,1.6,6,3.89,4.52,sustantivo,Bisílabas frecuentes,True
-labios,lips,2 · Preescolar,5.943,5.48,predicha (modelo ES),la-bios,2,/l/ /a/ /b/ /i/ /o/ /s/,1.3,6,4.505,,sustantivo,Bisílabas frecuentes,True
+piloto,pilot,2 · Preescolar,5.918,5.47,predicha (modelo ES),pi-lo-to,3,/p/ /i/ /l/ /o/ /t/ /o/,1.0,6,4.527,4.67,sustantivo,Bisílabas frecuentes,True
 bestia,wild animal,2 · Preescolar,5.944,5.48,norma Alonso et al. 2015,bes-tia,2,/b/ /e/ /s/ /t/ /i/ /a/,1.3,6,4.288,,sustantivo,Bisílabas frecuentes,False
 enfermos,sick,2 · Preescolar,5.944,5.48,norma Alonso et al. 2015,en-fer-mos,3,/e/ /n/ /f/ /e/ /ɾ/ /m/ /o/ /s/,1.4,8,4.111,2.97,sustantivo,Largas y abstractas,False
 espina,thorn,2 · Preescolar,5.944,5.48,norma Alonso et al. 2015,es-pi-na,3,/e/ /s/ /p/ /i/ /n/ /a/,1.0,6,3.653,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 pluma,feather,2 · Preescolar,5.944,5.48,norma Alonso et al. 2015,plu-ma,2,/p/ /l/ /u/ /m/ /a/,1.7,5,4.04,4.9,sustantivo,Bisílabas frecuentes,True
-pepino,cucumber,2 · Preescolar,5.988,5.496,predicha (modelo ES),pe-pi-no,3,/p/ /e/ /p/ /i/ /n/ /o/,1.0,6,3.402,4.83,sustantivo,Bisílabas frecuentes,True
+tetera,teapot,2 · Preescolar,5.993,5.498,predicha (modelo ES),te-te-ra,3,/t/ /e/ /t/ /e/ /ɾ/ /a/,1.0,6,3.359,4.96,sustantivo,Bisílabas frecuentes,True
 aceite,oil,2 · Preescolar,5.998,5.5,norma Alonso et al. 2015,a-cei-te,3,/a/ /s/ /e/ /i/ /t/ /e/,1.033,6,4.262,4.93,sustantivo,Bisílabas frecuentes,True
 atrapar,trap,2 · Preescolar,5.998,5.5,norma Alonso et al. 2015,a-tra-par,3,/a/ /t/ /ɾ/ /a/ /p/ /a/ /ɾ/,1.7,7,4.434,4.3,verbo,Bisílabas frecuentes,False
 dejar,cause to,2 · Preescolar,5.998,5.5,norma Alonso et al. 2015,de-jar,2,/d/ /e/ /x/ /a/ /ɾ/,1.3,5,5.442,,verbo,Bisílabas frecuentes,False
@@ -831,29 +829,31 @@ mechero,lighter,3 · Lectura inicial,6.045,5.54,norma Alonso et al. 2015,me-che-
 paz,peace,3 · Lectura inicial,6.045,5.54,norma Alonso et al. 2015,paz,1,/p/ /a/ /s/,1.6,3,5.194,1.62,sustantivo,Cortas con familia (rimas),False
 puerto,port,3 · Lectura inicial,6.045,5.54,norma Alonso et al. 2015,puer-to,2,/p/ /u/ /e/ /ɾ/ /t/ /o/,1.3,6,4.283,4.41,sustantivo,Bisílabas frecuentes,False
 verdadero,true,3 · Lectura inicial,6.045,5.54,norma Alonso et al. 2015,ver-da-de-ro,4,/b/ /e/ /ɾ/ /d/ /a/ /d/ /e/ /ɾ/ /o/,1.15,9,,1.7,adjetivo,Largas y abstractas,False
-medalla,medal,3 · Lectura inicial,6.047,5.544,predicha (modelo ES),me-da-lla,3,/m/ /e/ /d/ /a/ /ʝ/ /a/,1.2,7,4.017,4.89,sustantivo,Bisílabas frecuentes,True
-bailarina,ballerina,3 · Lectura inicial,6.048,5.548,predicha (modelo ES),bai-la-ri-na,4,/b/ /a/ /i/ /l/ /a/ /ɾ/ /i/ /n/ /a/,1.0,9,4.057,4.61,sustantivo,Largas y abstractas,True
+coco,coconut,3 · Lectura inicial,6.051,5.559,predicha (modelo ES),co-co,2,/k/ /o/ /k/ /o/,1.0,4,3.998,4.79,sustantivo,Cortas con familia (rimas),True
 alguno,some,3 · Lectura inicial,6.051,5.56,norma Alonso et al. 2015,al-gu-no,3,/a/ /l/ /g/ /u/ /n/ /o/,1.0,6,4.717,2.48,otra,Bisílabas frecuentes,False
 silbato,whistle,3 · Lectura inicial,6.051,5.56,norma Alonso et al. 2015,sil-ba-to,3,/s/ /i/ /l/ /b/ /a/ /t/ /o/,1.2,7,3.678,4.42,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 sobre,envelope,3 · Lectura inicial,6.051,5.56,norma Alonso et al. 2015,so-bre,2,/s/ /o/ /b/ /ɾ/ /e/,1.7,5,6.052,4.93,otra,Bisílabas frecuentes,True
 vender,sell,3 · Lectura inicial,6.051,5.56,norma Alonso et al. 2015,ven-der,2,/b/ /e/ /n/ /d/ /e/ /ɾ/,1.6,6,4.704,3.35,verbo,Bisílabas frecuentes,False
+bellota,acorn,3 · Lectura inicial,6.057,5.579,predicha (modelo ES),be-llo-ta,3,/b/ /e/ /ʝ/ /o/ /t/ /a/,1.2,7,2.703,4.96,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 cascabel,rattlesnake,3 · Lectura inicial,6.057,5.58,norma Alonso et al. 2015,cas-ca-bel,3,/k/ /a/ /s/ /k/ /a/ /b/ /e/ /l/,1.4,8,3.471,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 estómago,stomach,3 · Lectura inicial,6.057,5.58,norma Alonso et al. 2015,es-tó-ma-go,4,/e/ /s/ /t/ /o/ /m/ /a/ /g/ /o/,1.0,8,4.514,4.89,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 micrófono,microphone,3 · Lectura inicial,6.057,5.58,norma Alonso et al. 2015,mi-cró-fo-no,4,/m/ /i/ /k/ /ɾ/ /o/ /f/ /o/ /n/ /o/,1.35,9,4.203,4.88,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+pintor,painter,3 · Lectura inicial,6.058,5.581,predicha (modelo ES),pin-tor,2,/p/ /i/ /n/ /t/ /o/ /ɾ/,1.6,6,3.89,4.52,sustantivo,Bisílabas frecuentes,True
 periódico,newspaper,3 · Lectura inicial,6.06,5.59,norma Alonso et al. 2015,pe-rió-di-co,4,/p/ /e/ /ɾ/ /i/ /o/ /d/ /i/ /k/ /o/,1.0,9,4.573,4.82,sustantivo,Largas y abstractas,True
-bellota,acorn,3 · Lectura inicial,6.061,5.594,predicha (modelo ES),be-llo-ta,3,/b/ /e/ /ʝ/ /o/ /t/ /a/,1.2,7,2.703,4.96,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 colchón,mattress,3 · Lectura inicial,6.063,5.6,norma Alonso et al. 2015,col-chón,2,/k/ /o/ /l/ /tʃ/ /o/ /n/,1.6,7,3.84,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 mandar,command,3 · Lectura inicial,6.063,5.6,norma Alonso et al. 2015,man-dar,2,/m/ /a/ /n/ /d/ /a/ /ɾ/,1.6,6,4.206,2.48,verbo,Bisílabas frecuentes,False
 mula,mule,3 · Lectura inicial,6.063,5.6,norma Alonso et al. 2015,mu-la,2,/m/ /u/ /l/ /a/,1.0,4,3.657,5.0,sustantivo,Cortas con familia (rimas),False
 erizo,hedgehog,3 · Lectura inicial,6.07,5.612,norma Alonso et al. 2015,e-ri-zo,3,/e/ /ɾ/ /i/ /s/ /o/,1.033,5,2.937,4.93,sustantivo,Bisílabas frecuentes,True
-pectoral,chest,3 · Lectura inicial,6.082,5.625,predicha (modelo ES),pec-to-ral,3,/p/ /e/ /k/ /t/ /o/ /ɾ/ /a/ /l/,1.4,8,2.422,4.93,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+medalla,medal,3 · Lectura inicial,6.074,5.616,predicha (modelo ES),me-da-lla,3,/m/ /e/ /d/ /a/ /ʝ/ /a/,1.2,7,4.017,4.89,sustantivo,Bisílabas frecuentes,True
+labios,lips,3 · Lectura inicial,6.074,5.617,predicha (modelo ES),la-bios,2,/l/ /a/ /b/ /i/ /o/ /s/,1.3,6,4.505,,sustantivo,Bisílabas frecuentes,True
+sirena,mermaid,3 · Lectura inicial,6.077,5.619,predicha (modelo ES),si-re-na,3,/s/ /i/ /ɾ/ /e/ /n/ /a/,1.0,6,3.849,4.5,sustantivo,Bisílabas frecuentes,True
+pectoral,chest,3 · Lectura inicial,6.091,5.635,predicha (modelo ES),pec-to-ral,3,/p/ /e/ /k/ /t/ /o/ /ɾ/ /a/ /l/,1.4,8,2.422,4.93,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 concha,shell,3 · Lectura inicial,6.095,5.64,norma Alonso et al. 2015,con-cha,2,/k/ /o/ /n/ /tʃ/ /a/,1.6,6,3.693,4.8,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 gaviota,seagull,3 · Lectura inicial,6.095,5.64,norma Alonso et al. 2015,ga-vio-ta,3,/g/ /a/ /b/ /i/ /o/ /t/ /a/,1.0,7,3.014,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 pendiente,earring,3 · Lectura inicial,6.095,5.64,norma Alonso et al. 2015,pen-dien-te,3,/p/ /e/ /n/ /d/ /i/ /e/ /n/ /t/ /e/,1.4,9,4.016,4.96,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 párpado,eyelid,3 · Lectura inicial,6.095,5.64,norma Alonso et al. 2015,pár-pa-do,3,/p/ /a/ /ɾ/ /p/ /a/ /d/ /o/,1.2,7,2.557,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 recordar,remember,3 · Lectura inicial,6.095,5.64,norma Alonso et al. 2015,re-cor-dar,3,/r/ /e/ /k/ /o/ /ɾ/ /d/ /a/ /ɾ/,1.4,8,4.762,2.41,verbo,Largas y abstractas,False
 torcido,crooked,3 · Lectura inicial,6.095,5.64,norma Alonso et al. 2015,tor-ci-do,3,/t/ /o/ /ɾ/ /s/ /i/ /d/ /o/,1.2,7,3.488,3.79,adjetivo,"Con grupos consonánticos (tr, pl, str)",False
-fábrica,factory,3 · Lectura inicial,6.103,5.65,predicha (modelo ES),fá-bri-ca,3,/f/ /a/ /b/ /ɾ/ /i/ /k/ /a/,1.467,7,4.423,4.76,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 carpintero,carpenter,3 · Lectura inicial,6.112,5.66,norma Alonso et al. 2015,car-pin-te-ro,4,/k/ /a/ /ɾ/ /p/ /i/ /n/ /t/ /e/ /ɾ/ /o/,1.3,10,3.548,4.41,sustantivo,Largas y abstractas,False
 cocinar,cook,3 · Lectura inicial,6.112,5.66,norma Alonso et al. 2015,co-ci-nar,3,/k/ /o/ /s/ /i/ /n/ /a/ /ɾ/,1.2,7,4.325,4.32,verbo,Bisílabas frecuentes,False
 hipopótamo,hippopotamus,3 · Lectura inicial,6.112,5.66,norma Alonso et al. 2015,hi-po-pó-ta-mo,5,/i/ /p/ /o/ /p/ /o/ /t/ /a/ /m/ /o/,1.0,10,2.949,4.93,sustantivo,Largas y abstractas,True
@@ -861,14 +861,12 @@ montar,ride,3 · Lectura inicial,6.112,5.66,norma Alonso et al. 2015,mon-tar,2,/
 sardina,sardine,3 · Lectura inicial,6.112,5.66,norma Alonso et al. 2015,sar-di-na,3,/s/ /a/ /ɾ/ /d/ /i/ /n/ /a/,1.2,7,2.636,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 sembrar,sow seeds,3 · Lectura inicial,6.112,5.66,norma Alonso et al. 2015,sem-brar,2,/s/ /e/ /m/ /b/ /ɾ/ /a/ /ɾ/,2.3,7,3.024,,verbo,"Con grupos consonánticos (tr, pl, str)",False
 vinagre,vinegar,3 · Lectura inicial,6.112,5.66,norma Alonso et al. 2015,vi-na-gre,3,/b/ /i/ /n/ /a/ /g/ /ɾ/ /e/,1.467,7,3.394,4.89,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
-rectángulo,rectangle,3 · Lectura inicial,6.122,5.669,predicha (modelo ES),rec-tán-gu-lo,4,/r/ /e/ /k/ /t/ /a/ /n/ /g/ /u/ /l/ /o/,1.3,10,2.557,4.76,sustantivo,Largas y abstractas,True
-coro,choir,3 · Lectura inicial,6.133,5.679,predicha (modelo ES),co-ro,2,/k/ /o/ /ɾ/ /o/,1.0,4,4.026,4.34,sustantivo,Cortas con familia (rimas),True
 carta,letter,3 · Lectura inicial,6.134,5.68,norma Alonso et al. 2015,car-ta,2,/k/ /a/ /ɾ/ /t/ /a/,1.3,5,4.958,4.7,sustantivo,Cortas con familia (rimas),False
 clavar,nail,3 · Lectura inicial,6.134,5.68,norma Alonso et al. 2015,cla-var,2,/k/ /l/ /a/ /b/ /a/ /ɾ/,2.0,6,3.368,4.93,verbo,"Con grupos consonánticos (tr, pl, str)",False
 correcto,correct,3 · Lectura inicial,6.134,5.68,norma Alonso et al. 2015,co-rrec-to,3,/k/ /o/ /r/ /e/ /k/ /t/ /o/,1.2,8,5.23,2.59,adjetivo,Largas y abstractas,False
 creer,believe,3 · Lectura inicial,6.134,5.68,norma Alonso et al. 2015,cre-er,2,/k/ /ɾ/ /e/ /e/ /ɾ/,1.7,5,5.405,1.55,verbo,Bisílabas frecuentes,False
 oruga,caterpillar,3 · Lectura inicial,6.134,5.68,norma Alonso et al. 2015,o-ru-ga,3,/o/ /ɾ/ /u/ /g/ /a/,1.033,5,3.2,4.87,sustantivo,Bisílabas frecuentes,True
-sirena,mermaid,3 · Lectura inicial,6.135,5.681,predicha (modelo ES),si-re-na,3,/s/ /i/ /ɾ/ /e/ /n/ /a/,1.0,6,3.849,4.5,sustantivo,Bisílabas frecuentes,True
+abanico,fan,3 · Lectura inicial,6.147,5.691,predicha (modelo ES),a-ba-ni-co,4,/a/ /b/ /a/ /n/ /i/ /k/ /o/,1.025,7,3.014,4.71,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 entender,understand,3 · Lectura inicial,6.156,5.7,norma Alonso et al. 2015,en-ten-der,3,/e/ /n/ /t/ /e/ /n/ /d/ /e/ /ɾ/,1.4,8,4.904,2.28,verbo,Largas y abstractas,False
 clavo,nail,3 · Lectura inicial,6.179,5.72,norma Alonso et al. 2015,cla-vo,2,/k/ /l/ /a/ /b/ /o/,1.7,5,3.799,4.93,sustantivo,Bisílabas frecuentes,False
 felicidad,happiness,3 · Lectura inicial,6.179,5.72,norma Alonso et al. 2015,fe-li-ci-dad,4,/f/ /e/ /l/ /i/ /s/ /i/ /d/ /a/ /d/,1.15,9,4.452,2.6,sustantivo,Largas y abstractas,False
@@ -879,15 +877,18 @@ corbata,tie,3 · Lectura inicial,6.206,5.76,norma Alonso et al. 2015,cor-ba-ta,3
 duro,hard,3 · Lectura inicial,6.206,5.76,norma Alonso et al. 2015,du-ro,2,/d/ /u/ /ɾ/ /o/,1.0,4,5.118,3.76,adjetivo,Cortas con familia (rimas),False
 escapar,run away,3 · Lectura inicial,6.206,5.76,norma Alonso et al. 2015,es-ca-par,3,/e/ /s/ /k/ /a/ /p/ /a/ /ɾ/,1.2,7,4.7,,verbo,Bisílabas frecuentes,False
 pradera,grassland,3 · Lectura inicial,6.206,5.76,norma Alonso et al. 2015,pra-de-ra,3,/p/ /ɾ/ /a/ /d/ /e/ /ɾ/ /a/,1.467,7,3.39,4.6,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
+caravana,trailer,3 · Lectura inicial,6.215,5.778,predicha (modelo ES),ca-ra-va-na,4,/k/ /a/ /ɾ/ /a/ /b/ /a/ /n/ /a/,1.0,8,3.811,4.79,sustantivo,Largas y abstractas,True
 calvo,bald,3 · Lectura inicial,6.216,5.78,norma Alonso et al. 2015,cal-vo,2,/k/ /a/ /l/ /b/ /o/,1.3,5,3.972,4.69,sustantivo,Bisílabas frecuentes,False
 hospital,hospital,3 · Lectura inicial,6.216,5.78,norma Alonso et al. 2015,hos-pi-tal,3,/o/ /s/ /p/ /i/ /t/ /a/ /l/,1.4,8,5.22,4.64,sustantivo,Bisílabas frecuentes,False
 nieto,grandson,3 · Lectura inicial,6.216,5.78,norma Alonso et al. 2015,nie-to,2,/n/ /i/ /e/ /t/ /o/,1.0,5,4.188,4.3,sustantivo,Bisílabas frecuentes,False
 pipa,pipe,3 · Lectura inicial,6.216,5.78,norma Alonso et al. 2015,pi-pa,2,/p/ /i/ /p/ /a/,1.0,4,3.75,4.88,sustantivo,Cortas con familia (rimas),True
 vivir,be alive,3 · Lectura inicial,6.216,5.78,norma Alonso et al. 2015,vi-vir,2,/b/ /i/ /b/ /i/ /ɾ/,1.3,5,5.309,,verbo,Bisílabas frecuentes,False
 volcán,volcano,3 · Lectura inicial,6.216,5.78,norma Alonso et al. 2015,vol-cán,2,/b/ /o/ /l/ /k/ /a/ /n/,1.6,6,3.588,4.75,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
-militar,soldier,3 · Lectura inicial,6.217,5.783,predicha (modelo ES),mi-li-tar,3,/m/ /i/ /l/ /i/ /t/ /a/ /ɾ/,1.2,7,4.584,4.72,sustantivo,Bisílabas frecuentes,True
-caravana,trailer,3 · Lectura inicial,6.219,5.787,predicha (modelo ES),ca-ra-va-na,4,/k/ /a/ /ɾ/ /a/ /b/ /a/ /n/ /a/,1.0,8,3.811,4.79,sustantivo,Largas y abstractas,True
+koala,koala,3 · Lectura inicial,6.218,5.784,predicha (modelo ES),ko-a-la,3,/k/ /o/ /a/ /l/ /a/,1.033,5,3.004,4.77,sustantivo,Bisílabas frecuentes,True
+medusa,jellyfish,3 · Lectura inicial,6.219,5.786,predicha (modelo ES),me-du-sa,3,/m/ /e/ /d/ /u/ /s/ /a/,1.0,6,3.273,4.93,sustantivo,Bisílabas frecuentes,True
+fábrica,factory,3 · Lectura inicial,6.221,5.789,predicha (modelo ES),fá-bri-ca,3,/f/ /a/ /b/ /ɾ/ /i/ /k/ /a/,1.467,7,4.423,4.76,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 ancho,wide,3 · Lectura inicial,6.221,5.79,norma Alonso et al. 2015,an-cho,2,/a/ /n/ /tʃ/ /o/,1.3,5,3.729,3.06,adjetivo,Bisílabas frecuentes,False
+rectángulo,rectangle,3 · Lectura inicial,6.224,5.796,predicha (modelo ES),rec-tán-gu-lo,4,/r/ /e/ /k/ /t/ /a/ /n/ /g/ /u/ /l/ /o/,1.3,10,2.557,4.76,sustantivo,Largas y abstractas,True
 costa,coast,3 · Lectura inicial,6.226,5.8,norma Alonso et al. 2015,cos-ta,2,/k/ /o/ /s/ /t/ /a/,1.3,5,4.583,4.21,sustantivo,Bisílabas frecuentes,False
 estudiar,study,3 · Lectura inicial,6.226,5.8,norma Alonso et al. 2015,es-tu-diar,3,/e/ /s/ /t/ /u/ /d/ /i/ /a/ /ɾ/,1.2,8,4.556,3.7,verbo,Bisílabas frecuentes,False
 fantasma,ghost,3 · Lectura inicial,6.226,5.8,norma Alonso et al. 2015,fan-tas-ma,3,/f/ /a/ /n/ /t/ /a/ /s/ /m/ /a/,1.4,8,4.595,3.19,sustantivo,Largas y abstractas,True
@@ -897,47 +898,46 @@ podrido,rotten,3 · Lectura inicial,6.226,5.8,norma Alonso et al. 2015,po-dri-do
 salvar,rescue,3 · Lectura inicial,6.226,5.8,norma Alonso et al. 2015,sal-var,2,/s/ /a/ /l/ /b/ /a/ /ɾ/,1.6,6,4.889,3.17,verbo,Bisílabas frecuentes,False
 dueño,owner,3 · Lectura inicial,6.245,5.82,norma Alonso et al. 2015,due-ño,2,/d/ /u/ /e/ /ɲ/ /o/,1.0,5,4.629,3.78,sustantivo,Bisílabas frecuentes,False
 robar,steal,3 · Lectura inicial,6.245,5.82,norma Alonso et al. 2015,ro-bar,2,/r/ /o/ /b/ /a/ /ɾ/,1.3,5,4.653,3.84,verbo,Bisílabas frecuentes,False
-ventilador,fan,3 · Lectura inicial,6.264,5.839,predicha (modelo ES),ven-ti-la-dor,4,/b/ /e/ /n/ /t/ /i/ /l/ /a/ /d/ /o/ /ɾ/,1.3,10,3.521,4.71,sustantivo,Largas y abstractas,True
 claro,clear,3 · Lectura inicial,6.265,5.84,norma Alonso et al. 2015,cla-ro,2,/k/ /l/ /a/ /ɾ/ /o/,1.7,5,5.887,3.55,otra,Bisílabas frecuentes,False
 dentista,dentist,3 · Lectura inicial,6.265,5.84,norma Alonso et al. 2015,den-tis-ta,3,/d/ /e/ /n/ /t/ /i/ /s/ /t/ /a/,1.4,8,4.193,4.93,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 pozo,well,3 · Lectura inicial,6.265,5.84,norma Alonso et al. 2015,po-zo,2,/p/ /o/ /s/ /o/,1.0,4,4.215,3.33,sustantivo,Cortas con familia (rimas),True
-abanico,fan,3 · Lectura inicial,6.266,5.841,predicha (modelo ES),a-ba-ni-co,4,/a/ /b/ /a/ /n/ /i/ /k/ /o/,1.025,7,3.014,4.71,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+aeropuerto,airport,3 · Lectura inicial,6.27,5.845,predicha (modelo ES),a-e-ro-puer-to,5,/a/ /e/ /ɾ/ /o/ /p/ /u/ /e/ /ɾ/ /t/ /o/,1.16,10,4.678,4.87,sustantivo,Largas y abstractas,True
+tirantes,suspenders,3 · Lectura inicial,6.271,5.846,predicha (modelo ES),ti-ran-tes,3,/t/ /i/ /ɾ/ /a/ /n/ /t/ /e/ /s/,1.4,8,3.034,4.68,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+telescopio,telescope,3 · Lectura inicial,6.281,5.856,predicha (modelo ES),te-les-co-pio,4,/t/ /e/ /l/ /e/ /s/ /k/ /o/ /p/ /i/ /o/,1.15,10,3.639,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+militar,soldier,3 · Lectura inicial,6.282,5.858,predicha (modelo ES),mi-li-tar,3,/m/ /i/ /l/ /i/ /t/ /a/ /ɾ/,1.2,7,4.584,4.72,sustantivo,Bisílabas frecuentes,True
 calabaza,pumpkin,3 · Lectura inicial,6.283,5.86,norma Alonso et al. 2015,ca-la-ba-za,4,/k/ /a/ /l/ /a/ /b/ /a/ /s/ /a/,1.0,8,3.865,4.9,sustantivo,Bisílabas frecuentes,True
 pulga,flea,3 · Lectura inicial,6.283,5.86,norma Alonso et al. 2015,pul-ga,2,/p/ /u/ /l/ /g/ /a/,1.3,5,2.961,4.89,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 soldado,soldier,3 · Lectura inicial,6.283,5.86,norma Alonso et al. 2015,sol-da-do,3,/s/ /o/ /l/ /d/ /a/ /d/ /o/,1.2,7,4.735,4.72,sustantivo,Bisílabas frecuentes,False
 trabajar,work,3 · Lectura inicial,6.283,5.86,norma Alonso et al. 2015,tra-ba-jar,3,/t/ /ɾ/ /a/ /b/ /a/ /x/ /a/ /ɾ/,1.667,8,5.375,3.48,verbo,Bisílabas frecuentes,False
-medusa,jellyfish,3 · Lectura inicial,6.29,5.872,predicha (modelo ES),me-du-sa,3,/m/ /e/ /d/ /u/ /s/ /a/,1.0,6,3.273,4.93,sustantivo,Bisílabas frecuentes,True
+coro,choir,3 · Lectura inicial,6.285,5.864,predicha (modelo ES),co-ro,2,/k/ /o/ /ɾ/ /o/,1.0,4,4.026,4.34,sustantivo,Cortas con familia (rimas),True
+ventilador,fan,3 · Lectura inicial,6.291,5.873,predicha (modelo ES),ven-ti-la-dor,4,/b/ /e/ /n/ /t/ /i/ /l/ /a/ /d/ /o/ /ɾ/,1.3,10,3.521,4.71,sustantivo,Largas y abstractas,True
 defender,defend,3 · Lectura inicial,6.295,5.88,norma Alonso et al. 2015,de-fen-der,3,/d/ /e/ /f/ /e/ /n/ /d/ /e/ /ɾ/,1.4,8,4.137,2.31,verbo,Largas y abstractas,False
 escritorio,table,3 · Lectura inicial,6.295,5.88,norma Alonso et al. 2015,es-cri-to-rio,4,/e/ /s/ /k/ /ɾ/ /i/ /t/ /o/ /ɾ/ /i/ /o/,1.35,10,4.506,4.9,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 valiente,brave,3 · Lectura inicial,6.295,5.88,norma Alonso et al. 2015,va-lien-te,3,/b/ /a/ /l/ /i/ /e/ /n/ /t/ /e/,1.2,8,4.54,2.26,adjetivo,Largas y abstractas,False
-koala,koala,3 · Lectura inicial,6.299,5.888,predicha (modelo ES),ko-a-la,3,/k/ /o/ /a/ /l/ /a/,1.033,5,3.004,4.77,sustantivo,Bisílabas frecuentes,True
 hacha,axe,3 · Lectura inicial,6.306,5.9,norma Alonso et al. 2015,ha-cha,2,/a/ /tʃ/ /a/,1.3,5,3.911,5.0,sustantivo,Bisílabas frecuentes,True
-aeropuerto,airport,3 · Lectura inicial,6.31,5.907,predicha (modelo ES),a-e-ro-puer-to,5,/a/ /e/ /ɾ/ /o/ /p/ /u/ /e/ /ɾ/ /t/ /o/,1.16,10,4.678,4.87,sustantivo,Largas y abstractas,True
-cactus,cactus,3 · Lectura inicial,6.311,5.909,predicha (modelo ES),cac-tus,2,/k/ /a/ /k/ /t/ /u/ /s/,1.6,6,3.295,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 cuarta,handspan,3 · Lectura inicial,6.317,5.917,norma Alonso et al. 2015,cuar-ta,2,/k/ /u/ /a/ /ɾ/ /t/ /a/,1.3,6,4.086,,adjetivo,Bisílabas frecuentes,False
 trigo,wheat,3 · Lectura inicial,6.318,5.92,norma Alonso et al. 2015,tri-go,2,/t/ /ɾ/ /i/ /g/ /o/,1.7,5,3.703,4.89,sustantivo,Bisílabas frecuentes,False
-telescopio,telescope,3 · Lectura inicial,6.319,5.921,predicha (modelo ES),te-les-co-pio,4,/t/ /e/ /l/ /e/ /s/ /k/ /o/ /p/ /i/ /o/,1.15,10,3.639,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
-tirantes,suspenders,3 · Lectura inicial,6.322,5.927,predicha (modelo ES),ti-ran-tes,3,/t/ /i/ /ɾ/ /a/ /n/ /t/ /e/ /s/,1.4,8,3.034,4.68,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 horno,oven,3 · Lectura inicial,6.33,5.94,norma Alonso et al. 2015,hor-no,2,/o/ /ɾ/ /n/ /o/,1.3,5,4.145,4.97,sustantivo,Bisílabas frecuentes,False
 novia,bride,3 · Lectura inicial,6.33,5.94,norma Alonso et al. 2015,no-via,2,/n/ /o/ /b/ /i/ /a/,1.0,5,5.195,4.63,sustantivo,Bisílabas frecuentes,False
-puzle,puzzle,3 · Lectura inicial,6.331,5.941,predicha (modelo ES),puz-le,2,/p/ /u/ /s/ /l/ /e/,1.3,5,,4.75,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
-cubo,cube,3 · Lectura inicial,6.333,5.943,predicha (modelo ES),cu-bo,2,/k/ /u/ /b/ /o/,1.0,4,3.909,4.62,sustantivo,Cortas con familia (rimas),True
 músculo,muscle,3 · Lectura inicial,6.352,5.96,norma Alonso et al. 2015,mús-cu-lo,3,/m/ /u/ /s/ /k/ /u/ /l/ /o/,1.2,7,3.799,4.5,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 armadura,armour,3 · Lectura inicial,6.375,5.98,norma Alonso et al. 2015,ar-ma-du-ra,4,/a/ /ɾ/ /m/ /a/ /d/ /u/ /ɾ/ /a/,1.0,8,3.793,,sustantivo,Largas y abstractas,False
 casarse,marry,3 · Lectura inicial,6.375,5.98,norma Alonso et al. 2015,ca-sar-se,3,/k/ /a/ /s/ /a/ /ɾ/ /s/ /e/,1.2,7,4.409,3.03,verbo,Bisílabas frecuentes,False
-astronauta,astronaut,3 · Lectura inicial,6.386,5.99,predicha (modelo ES),as-tro-nau-ta,4,/a/ /s/ /t/ /ɾ/ /o/ /n/ /a/ /u/ /t/ /a/,1.35,10,3.798,4.75,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+espantapájaros,scarecrow,3 · Lectura inicial,6.386,5.99,predicha (modelo ES),es-pan-ta-pá-ja-ros,6,/e/ /s/ /p/ /a/ /n/ /t/ /a/ /p/ /a/ /x/ /a/ /ɾ/ /o/ /s/,1.2,14,3.244,4.68,sustantivo,Largas y abstractas,True
+cactus,cactus,3 · Lectura inicial,6.392,5.996,predicha (modelo ES),cac-tus,2,/k/ /a/ /k/ /t/ /u/ /s/,1.6,6,3.295,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 enfermera,nurse,3 · Lectura inicial,6.397,6.0,norma Alonso et al. 2015,en-fer-me-ra,4,/e/ /n/ /f/ /e/ /ɾ/ /m/ /e/ /ɾ/ /a/,1.15,9,4.555,4.39,sustantivo,Largas y abstractas,False
 rinoceronte,rhinoceros,3 · Lectura inicial,6.397,6.0,norma Alonso et al. 2015,ri-no-ce-ron-te,5,/r/ /i/ /n/ /o/ /s/ /e/ /ɾ/ /o/ /n/ /t/ /e/,1.12,11,3.173,4.75,sustantivo,Largas y abstractas,True
 suerte,good luck,3 · Lectura inicial,6.397,6.0,norma Alonso et al. 2015,suer-te,2,/s/ /u/ /e/ /ɾ/ /t/ /e/,1.3,6,5.494,,sustantivo,Bisílabas frecuentes,False
-espantapájaros,scarecrow,3 · Lectura inicial,6.402,6.004,predicha (modelo ES),es-pan-ta-pá-ja-ros,6,/e/ /s/ /p/ /a/ /n/ /t/ /a/ /p/ /a/ /x/ /a/ /ɾ/ /o/ /s/,1.2,14,3.244,4.68,sustantivo,Largas y abstractas,True
+puzle,puzzle,3 · Lectura inicial,6.417,6.018,predicha (modelo ES),puz-le,2,/p/ /u/ /s/ /l/ /e/,1.3,5,,4.75,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 cementerio,graveyard,3 · Lectura inicial,6.419,6.02,norma Alonso et al. 2015,ce-men-te-rio,4,/s/ /e/ /m/ /e/ /n/ /t/ /e/ /ɾ/ /i/ /o/,1.15,10,4.264,4.83,sustantivo,Largas y abstractas,True
 generoso,generous,3 · Lectura inicial,6.419,6.02,norma Alonso et al. 2015,ge-ne-ro-so,4,/x/ /e/ /n/ /e/ /ɾ/ /o/ /s/ /o/,1.0,8,4.13,2.25,adjetivo,Largas y abstractas,False
 huella,footprint,3 · Lectura inicial,6.419,6.02,norma Alonso et al. 2015,hue-lla,2,/u/ /e/ /ʝ/ /a/,1.3,6,4.15,4.37,sustantivo,Bisílabas frecuentes,True
 madera,wood,3 · Lectura inicial,6.419,6.02,norma Alonso et al. 2015,ma-de-ra,3,/m/ /a/ /d/ /e/ /ɾ/ /a/,1.0,6,4.436,4.85,sustantivo,Bisílabas frecuentes,False
 usted,thou,3 · Lectura inicial,6.419,6.02,norma Alonso et al. 2015,us-ted,2,/u/ /s/ /t/ /e/ /d/,1.3,5,5.945,2.19,otra,Bisílabas frecuentes,False
 zapatero,shoemaker,3 · Lectura inicial,6.419,6.02,norma Alonso et al. 2015,za-pa-te-ro,4,/s/ /a/ /p/ /a/ /t/ /e/ /ɾ/ /o/,1.0,8,3.166,4.54,sustantivo,Largas y abstractas,False
+cubo,cube,3 · Lectura inicial,6.432,6.031,predicha (modelo ES),cu-bo,2,/k/ /u/ /b/ /o/,1.0,4,3.909,4.62,sustantivo,Cortas con familia (rimas),True
 leopardo,leopard,3 · Lectura inicial,6.442,6.04,norma Alonso et al. 2015,le-o-par-do,4,/l/ /e/ /o/ /p/ /a/ /ɾ/ /d/ /o/,1.175,8,3.442,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 punta,tip,3 · Lectura inicial,6.442,6.04,norma Alonso et al. 2015,pun-ta,2,/p/ /u/ /n/ /t/ /a/,1.3,5,4.348,4.5,sustantivo,Bisílabas frecuentes,False
+pincel,paintbrush,3 · Lectura inicial,6.448,6.045,predicha (modelo ES),pin-cel,2,/p/ /i/ /n/ /s/ /e/ /l/,1.6,6,3.137,4.79,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 buey,ox,3 · Lectura inicial,6.465,6.06,norma Alonso et al. 2015,buey,1,/b/ /u/ /e/ /i/,1.6,4,3.284,4.86,sustantivo,Bisílabas frecuentes,False
 coliflor,cauliflower,3 · Lectura inicial,6.465,6.06,norma Alonso et al. 2015,co-li-flor,3,/k/ /o/ /l/ /i/ /f/ /l/ /o/ /ɾ/,1.667,8,2.912,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 destruir,destroy,3 · Lectura inicial,6.465,6.06,norma Alonso et al. 2015,des-truir,2,/d/ /e/ /s/ /t/ /ɾ/ /u/ /i/ /ɾ/,2.3,8,4.531,3.08,verbo,"Con grupos consonánticos (tr, pl, str)",False
@@ -948,13 +948,12 @@ ancla,anchor,3 · Lectura inicial,6.488,6.08,norma Alonso et al. 2015,an-cla,2,/
 desatar,untie,3 · Lectura inicial,6.488,6.08,norma Alonso et al. 2015,de-sa-tar,3,/d/ /e/ /s/ /a/ /t/ /a/ /ɾ/,1.2,7,3.173,3.89,verbo,Bisílabas frecuentes,False
 granizo,hail,3 · Lectura inicial,6.488,6.08,norma Alonso et al. 2015,gra-ni-zo,3,/g/ /ɾ/ /a/ /n/ /i/ /s/ /o/,1.467,7,2.949,4.32,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 lana,wool,3 · Lectura inicial,6.488,6.08,norma Alonso et al. 2015,la-na,2,/l/ /a/ /n/ /a/,1.0,4,3.879,4.86,sustantivo,Cortas con familia (rimas),False
+astronauta,astronaut,3 · Lectura inicial,6.495,6.085,predicha (modelo ES),as-tro-nau-ta,4,/a/ /s/ /t/ /ɾ/ /o/ /n/ /a/ /u/ /t/ /a/,1.35,10,3.798,4.75,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 lago,lake,3 · Lectura inicial,6.516,6.1,norma Alonso et al. 2015,la-go,2,/l/ /a/ /g/ /o/,1.0,4,4.56,4.88,sustantivo,Cortas con familia (rimas),True
 planchar,iron,3 · Lectura inicial,6.516,6.1,norma Alonso et al. 2015,plan-char,2,/p/ /l/ /a/ /n/ /tʃ/ /a/ /ɾ/,2.3,8,3.256,4.59,verbo,"Con grupos consonánticos (tr, pl, str)",False
 robot,robot,3 · Lectura inicial,6.516,6.1,norma Alonso et al. 2015,ro-bot,2,/r/ /o/ /b/ /o/ /t/,1.3,5,4.207,4.65,sustantivo,Bisílabas frecuentes,True
 sobrino,nephew,3 · Lectura inicial,6.516,6.1,norma Alonso et al. 2015,so-bri-no,3,/s/ /o/ /b/ /ɾ/ /i/ /n/ /o/,1.467,7,4.33,4.48,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 talón,heel,3 · Lectura inicial,6.516,6.1,norma Alonso et al. 2015,ta-lón,2,/t/ /a/ /l/ /o/ /n/,1.3,5,3.611,4.86,sustantivo,Cortas con familia (rimas),False
-pincel,paintbrush,3 · Lectura inicial,6.519,6.102,predicha (modelo ES),pin-cel,2,/p/ /i/ /n/ /s/ /e/ /l/,1.6,6,3.137,4.79,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
-colonia,perfume,3 · Lectura inicial,6.534,6.114,predicha (modelo ES),co-lo-nia,3,/k/ /o/ /l/ /o/ /n/ /i/ /a/,1.0,7,4.06,4.66,sustantivo,Bisílabas frecuentes,True
 arder,burning,3 · Lectura inicial,6.543,6.12,norma Alonso et al. 2015,ar-der,2,/a/ /ɾ/ /d/ /e/ /ɾ/,1.3,5,3.426,3.85,verbo,Bisílabas frecuentes,False
 garra,claw,3 · Lectura inicial,6.543,6.12,norma Alonso et al. 2015,ga-rra,2,/g/ /a/ /r/ /a/,1.3,5,3.406,4.83,sustantivo,Bisílabas frecuentes,False
 guerrero,warrior,3 · Lectura inicial,6.543,6.12,norma Alonso et al. 2015,gue-rre-ro,3,/g/ /e/ /r/ /e/ /ɾ/ /o/,1.2,8,4.227,4.17,sustantivo,Bisílabas frecuentes,False
@@ -966,47 +965,48 @@ raíz,root,3 · Lectura inicial,6.57,6.14,norma Alonso et al. 2015,ra-íz,2,/r/ 
 sur,south,3 · Lectura inicial,6.57,6.14,norma Alonso et al. 2015,sur,1,/s/ /u/ /ɾ/,1.6,3,4.814,3.84,sustantivo,Cortas con familia (rimas),False
 tormenta,storm,3 · Lectura inicial,6.57,6.14,norma Alonso et al. 2015,tor-men-ta,3,/t/ /o/ /ɾ/ /m/ /e/ /n/ /t/ /a/,1.4,8,4.541,4.7,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 pesar,weigh,3 · Lectura inicial,6.574,6.143,norma Alonso et al. 2015,pe-sar,2,/p/ /e/ /s/ /a/ /ɾ/,1.3,5,4.662,3.79,otra,Cortas con familia (rimas),False
-laboratorio,lab,3 · Lectura inicial,6.589,6.156,predicha (modelo ES),la-bo-ra-to-rio,5,/l/ /a/ /b/ /o/ /ɾ/ /a/ /t/ /o/ /ɾ/ /i/ /o/,1.0,11,4.783,4.69,sustantivo,Largas y abstractas,True
+langosta,lobster,3 · Lectura inicial,6.587,6.155,predicha (modelo ES),lan-gos-ta,3,/l/ /a/ /n/ /g/ /o/ /s/ /t/ /a/,1.4,8,3.917,4.86,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 hierro,iron,3 · Lectura inicial,6.593,6.16,norma Alonso et al. 2015,hie-rro,2,/i/ /e/ /r/ /o/,1.3,6,4.119,4.59,sustantivo,Bisílabas frecuentes,False
 llano,plain,3 · Lectura inicial,6.593,6.16,norma Alonso et al. 2015,lla-no,2,/ʝ/ /a/ /n/ /o/,1.3,5,2.723,2.26,adjetivo,Bisílabas frecuentes,False
 olla,cooking pot,3 · Lectura inicial,6.593,6.16,norma Alonso et al. 2015,o-lla,2,/o/ /ʝ/ /a/,1.35,4,3.65,,sustantivo,Bisílabas frecuentes,False
 relámpago,lightning,3 · Lectura inicial,6.593,6.16,norma Alonso et al. 2015,re-lám-pa-go,4,/r/ /e/ /l/ /a/ /m/ /p/ /a/ /g/ /o/,1.15,9,3.533,4.59,sustantivo,Largas y abstractas,False
 sabroso,tasty,3 · Lectura inicial,6.593,6.16,norma Alonso et al. 2015,sa-bro-so,3,/s/ /a/ /b/ /ɾ/ /o/ /s/ /o/,1.467,7,3.611,2.86,adjetivo,Largas y abstractas,False
 varón,male person,3 · Lectura inicial,6.593,6.16,norma Alonso et al. 2015,va-rón,2,/b/ /a/ /ɾ/ /o/ /n/,1.3,5,3.911,,sustantivo,Bisílabas frecuentes,False
-tostadora,toaster,3 · Lectura inicial,6.595,6.162,predicha (modelo ES),tos-ta-do-ra,4,/t/ /o/ /s/ /t/ /a/ /d/ /o/ /ɾ/ /a/,1.15,9,3.41,4.9,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 vehículo,vehicle,3 · Lectura inicial,6.596,6.163,norma Alonso et al. 2015,ve-hí-cu-lo,4,/b/ /e/ /i/ /k/ /u/ /l/ /o/,1.0,8,4.514,4.64,sustantivo,Bisílabas frecuentes,False
-delantal,apron,3 · Lectura inicial,6.6,6.167,predicha (modelo ES),de-lan-tal,3,/d/ /e/ /l/ /a/ /n/ /t/ /a/ /l/,1.4,8,3.345,4.87,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+laboratorio,lab,3 · Lectura inicial,6.608,6.174,predicha (modelo ES),la-bo-ra-to-rio,5,/l/ /a/ /b/ /o/ /ɾ/ /a/ /t/ /o/ /ɾ/ /i/ /o/,1.0,11,4.783,4.69,sustantivo,Largas y abstractas,True
 ganado,cattle,3 · Lectura inicial,6.615,6.18,norma Alonso et al. 2015,ga-na-do,3,/g/ /a/ /n/ /a/ /d/ /o/,1.0,6,4.581,4.64,sustantivo,Bisílabas frecuentes,False
 mostrar,show,3 · Lectura inicial,6.615,6.18,norma Alonso et al. 2015,mos-trar,2,/m/ /o/ /s/ /t/ /ɾ/ /a/ /ɾ/,2.3,7,4.376,3.97,verbo,"Con grupos consonánticos (tr, pl, str)",False
+tostadora,toaster,3 · Lectura inicial,6.625,6.189,predicha (modelo ES),tos-ta-do-ra,4,/t/ /o/ /s/ /t/ /a/ /d/ /o/ /ɾ/ /a/,1.15,9,3.41,4.9,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+colonia,perfume,3 · Lectura inicial,6.631,6.195,predicha (modelo ES),co-lo-nia,3,/k/ /o/ /l/ /o/ /n/ /i/ /a/,1.0,7,4.06,4.66,sustantivo,Bisílabas frecuentes,True
 cadena,chain,3 · Lectura inicial,6.635,6.2,norma Alonso et al. 2015,ca-de-na,3,/k/ /a/ /d/ /e/ /n/ /a/,1.0,6,4.513,4.55,sustantivo,Bisílabas frecuentes,True
 estatua,statue,3 · Lectura inicial,6.635,6.2,norma Alonso et al. 2015,es-ta-tua,3,/e/ /s/ /t/ /a/ /t/ /u/ /a/,1.0,7,4.046,4.93,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 grueso,thick,3 · Lectura inicial,6.635,6.2,norma Alonso et al. 2015,grue-so,2,/g/ /ɾ/ /u/ /e/ /s/ /o/,1.7,6,3.533,4.0,adjetivo,Bisílabas frecuentes,False
 pimienta,pepper,3 · Lectura inicial,6.635,6.2,norma Alonso et al. 2015,pi-mien-ta,3,/p/ /i/ /m/ /i/ /e/ /n/ /t/ /a/,1.2,8,3.787,4.59,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
-grifo,faucet,3 · Lectura inicial,6.642,6.208,predicha (modelo ES),gri-fo,2,/g/ /ɾ/ /i/ /f/ /o/,1.7,5,3.34,4.48,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+grifo,faucet,3 · Lectura inicial,6.648,6.216,predicha (modelo ES),gri-fo,2,/g/ /ɾ/ /i/ /f/ /o/,1.7,5,3.34,4.48,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+peluquero,barber,3 · Lectura inicial,6.651,6.22,predicha (modelo ES),pe-lu-que-ro,4,/p/ /e/ /l/ /u/ /k/ /e/ /ɾ/ /o/,1.0,9,3.377,4.59,sustantivo,Largas y abstractas,True
 escoger,choose,3 · Lectura inicial,6.651,6.22,norma Alonso et al. 2015,es-co-ger,3,/e/ /s/ /k/ /o/ /x/ /e/ /ɾ/,1.2,7,4.122,2.62,verbo,Largas y abstractas,False
 leña,firewood,3 · Lectura inicial,6.651,6.22,norma Alonso et al. 2015,le-ña,2,/l/ /e/ /ɲ/ /a/,1.0,4,3.673,4.93,sustantivo,Bisílabas frecuentes,False
 negar,deny,3 · Lectura inicial,6.651,6.22,norma Alonso et al. 2015,ne-gar,2,/n/ /e/ /g/ /a/ /ɾ/,1.3,5,3.917,2.2,verbo,Bisílabas frecuentes,False
 norte,north,3 · Lectura inicial,6.651,6.22,norma Alonso et al. 2015,nor-te,2,/n/ /o/ /ɾ/ /t/ /e/,1.3,5,4.881,4.14,sustantivo,Bisílabas frecuentes,False
-langosta,lobster,3 · Lectura inicial,6.664,6.235,predicha (modelo ES),lan-gos-ta,3,/l/ /a/ /n/ /g/ /o/ /s/ /t/ /a/,1.4,8,3.917,4.86,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 avestruz,ostrich,3 · Lectura inicial,6.667,6.24,norma Alonso et al. 2015,a-ves-truz,3,/a/ /b/ /e/ /s/ /t/ /ɾ/ /u/ /s/,1.9,8,2.925,4.71,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 topo,mole,3 · Lectura inicial,6.667,6.24,norma Alonso et al. 2015,to-po,2,/t/ /o/ /p/ /o/,1.0,4,3.631,4.41,sustantivo,Cortas con familia (rimas),False
-grapadora,stapler,3 · Lectura inicial,6.671,6.244,predicha (modelo ES),gra-pa-do-ra,4,/g/ /ɾ/ /a/ /p/ /a/ /d/ /o/ /ɾ/ /a/,1.35,9,2.682,4.62,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
-tatuaje,tattoo,3 · Lectura inicial,6.677,6.251,predicha (modelo ES),ta-tua-je,3,/t/ /a/ /t/ /u/ /a/ /x/ /e/,1.0,7,4.222,4.71,sustantivo,Bisílabas frecuentes,True
 cacahuete,groundnut,3 · Lectura inicial,6.684,6.26,norma Alonso et al. 2015,ca-ca-hue-te,4,/k/ /a/ /k/ /a/ /u/ /e/ /t/ /e/,1.0,9,3.105,,sustantivo,Largas y abstractas,False
 calamar,ink,3 · Lectura inicial,6.684,6.26,norma Alonso et al. 2015,ca-la-mar,3,/k/ /a/ /l/ /a/ /m/ /a/ /ɾ/,1.2,7,3.442,4.56,sustantivo,Bisílabas frecuentes,False
 trineo,sled,3 · Lectura inicial,6.684,6.26,norma Alonso et al. 2015,tri-ne-o,3,/t/ /ɾ/ /i/ /n/ /e/ /o/,1.5,6,3.631,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+grapadora,stapler,3 · Lectura inicial,6.684,6.26,predicha (modelo ES),gra-pa-do-ra,4,/g/ /ɾ/ /a/ /p/ /a/ /d/ /o/ /ɾ/ /a/,1.35,9,2.682,4.62,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 candado,lock,3 · Lectura inicial,6.704,6.28,norma Alonso et al. 2015,can-da-do,3,/k/ /a/ /n/ /d/ /a/ /d/ /o/,1.2,7,3.481,4.65,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 océano,ocean,3 · Lectura inicial,6.704,6.28,norma Alonso et al. 2015,o-cé-a-no,4,/o/ /s/ /e/ /a/ /n/ /o/,1.05,6,4.407,4.86,sustantivo,Bisílabas frecuentes,False
 parado,stand,3 · Lectura inicial,6.704,6.28,norma Alonso et al. 2015,pa-ra-do,3,/p/ /a/ /ɾ/ /a/ /d/ /o/,1.0,6,4.511,4.16,verbo,Bisílabas frecuentes,False
 país,country,3 · Lectura inicial,6.704,6.28,norma Alonso et al. 2015,pa-ís,2,/p/ /a/ /i/ /s/,1.0,4,5.221,4.17,sustantivo,Bisílabas frecuentes,False
 rabia,rabies,3 · Lectura inicial,6.704,6.28,norma Alonso et al. 2015,ra-bia,2,/r/ /a/ /b/ /i/ /a/,1.0,5,4.028,3.83,sustantivo,Bisílabas frecuentes,False
-paracaídas,parachute,3 · Lectura inicial,6.704,6.281,predicha (modelo ES),pa-ra-ca-í-das,5,/p/ /a/ /ɾ/ /a/ /k/ /a/ /i/ /d/ /a/ /s/,1.14,10,3.84,4.78,sustantivo,Largas y abstractas,True
-peluquero,barber,3 · Lectura inicial,6.721,6.298,predicha (modelo ES),pe-lu-que-ro,4,/p/ /e/ /l/ /u/ /k/ /e/ /ɾ/ /o/,1.0,9,3.377,4.59,sustantivo,Largas y abstractas,True
+delantal,apron,3 · Lectura inicial,6.713,6.289,predicha (modelo ES),de-lan-tal,3,/d/ /e/ /l/ /a/ /n/ /t/ /a/ /l/,1.4,8,3.345,4.87,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+tatuaje,tattoo,3 · Lectura inicial,6.726,6.302,predicha (modelo ES),ta-tua-je,3,/t/ /a/ /t/ /u/ /a/ /x/ /e/,1.0,7,4.222,4.71,sustantivo,Bisílabas frecuentes,True
+trono,throne,3 · Lectura inicial,6.728,6.304,predicha (modelo ES),tro-no,2,/t/ /ɾ/ /o/ /n/ /o/,1.7,5,3.919,4.64,sustantivo,Bisílabas frecuentes,True
 trampa,trap,3 · Lectura inicial,6.73,6.306,norma Alonso et al. 2015,tram-pa,2,/t/ /ɾ/ /a/ /m/ /p/ /a/,2.0,6,4.778,4.3,sustantivo,Bisílabas frecuentes,False
 cuervo,crow,3 · Lectura inicial,6.744,6.32,norma Alonso et al. 2015,cuer-vo,2,/k/ /u/ /e/ /ɾ/ /b/ /o/,1.3,6,3.601,4.93,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 punzón,awl,3 · Lectura inicial,6.744,6.32,norma Alonso et al. 2015,pun-zón,2,/p/ /u/ /n/ /s/ /o/ /n/,1.6,6,2.66,3.81,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 sacerdote,priest,3 · Lectura inicial,6.744,6.32,norma Alonso et al. 2015,sa-cer-do-te,4,/s/ /a/ /s/ /e/ /ɾ/ /d/ /o/ /t/ /e/,1.15,9,4.219,4.77,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
-trono,throne,3 · Lectura inicial,6.755,6.331,predicha (modelo ES),tro-no,2,/t/ /ɾ/ /o/ /n/ /o/,1.7,5,3.919,4.64,sustantivo,Bisílabas frecuentes,True
+paracaídas,parachute,3 · Lectura inicial,6.754,6.331,predicha (modelo ES),pa-ra-ca-í-das,5,/p/ /a/ /ɾ/ /a/ /k/ /a/ /i/ /d/ /a/ /s/,1.14,10,3.84,4.78,sustantivo,Largas y abstractas,True
 arco,bow,3 · Lectura inicial,6.764,6.34,norma Alonso et al. 2015,ar-co,2,/a/ /ɾ/ /k/ /o/,1.0,4,4.059,4.61,sustantivo,Bisílabas frecuentes,True
 cazador,hunter,3 · Lectura inicial,6.764,6.34,norma Alonso et al. 2015,ca-za-dor,3,/k/ /a/ /s/ /a/ /d/ /o/ /ɾ/,1.2,7,4.064,4.41,sustantivo,Bisílabas frecuentes,True
 enemigo,enemy,3 · Lectura inicial,6.764,6.34,norma Alonso et al. 2015,e-ne-mi-go,4,/e/ /n/ /e/ /m/ /i/ /g/ /o/,1.025,7,4.735,2.83,adjetivo,Largas y abstractas,False
@@ -1016,6 +1016,7 @@ mudo,mute,3 · Lectura inicial,6.764,6.34,norma Alonso et al. 2015,mu-do,2,/m/ /
 barato,cheap,3 · Lectura inicial,6.777,6.36,norma Alonso et al. 2015,ba-ra-to,3,/b/ /a/ /ɾ/ /a/ /t/ /o/,1.0,6,4.25,2.11,adjetivo,Bisílabas frecuentes,False
 culpa,fault,3 · Lectura inicial,6.777,6.36,norma Alonso et al. 2015,cul-pa,2,/k/ /u/ /l/ /p/ /a/,1.3,5,5.325,2.41,sustantivo,Bisílabas frecuentes,False
 mil,thousand,3 · Lectura inicial,6.777,6.36,norma Alonso et al. 2015,mil,1,/m/ /i/ /l/,1.6,3,5.121,3.08,sustantivo,Cortas con familia (rimas),False
+dinamita,dynamite,3 · Lectura inicial,6.778,6.361,predicha (modelo ES),di-na-mi-ta,4,/d/ /i/ /n/ /a/ /m/ /i/ /t/ /a/,1.0,8,3.774,4.68,sustantivo,Largas y abstractas,True
 cadera,hip,3 · Lectura inicial,6.79,6.38,norma Alonso et al. 2015,ca-de-ra,3,/k/ /a/ /d/ /e/ /ɾ/ /a/,1.0,6,3.799,4.21,sustantivo,Bisílabas frecuentes,False
 puro,pure,3 · Lectura inicial,6.79,6.38,norma Alonso et al. 2015,pu-ro,2,/p/ /u/ /ɾ/ /o/,1.0,4,4.287,1.87,adjetivo,Cortas con familia (rimas),False
 afilado,sharp,3 · Lectura inicial,6.803,6.4,norma Alonso et al. 2015,a-fi-la-do,4,/a/ /f/ /i/ /l/ /a/ /d/ /o/,1.025,7,3.363,3.86,adjetivo,Largas y abstractas,False
@@ -1023,40 +1024,42 @@ gemelos,twins,3 · Lectura inicial,6.803,6.4,norma Alonso et al. 2015,ge-me-los,
 halcón,hawk,3 · Lectura inicial,6.803,6.4,norma Alonso et al. 2015,hal-cón,2,/a/ /l/ /k/ /o/ /n/,1.6,6,3.789,4.93,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 parecido,similar,3 · Lectura inicial,6.803,6.4,norma Alonso et al. 2015,pa-re-ci-do,4,/p/ /a/ /ɾ/ /e/ /s/ /i/ /d/ /o/,1.0,8,4.523,2.46,adjetivo,Largas y abstractas,False
 seta,mushroom,3 · Lectura inicial,6.803,6.4,norma Alonso et al. 2015,se-ta,2,/s/ /e/ /t/ /a/,1.0,4,2.284,4.83,sustantivo,Cortas con familia (rimas),True
+iceberg,iceberg,3 · Lectura inicial,6.818,6.407,predicha (modelo ES),i-ce-berg,3,/i/ /s/ /e/ /b/ /e/ /ɾ/ /g/,1.233,7,3.398,4.96,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 ceniza,ash,3 · Lectura inicial,6.848,6.42,norma Alonso et al. 2015,ce-ni-za,3,/s/ /e/ /n/ /i/ /s/ /a/,1.0,6,3.25,4.96,adjetivo,Bisílabas frecuentes,False
 escorpión,scorpion,3 · Lectura inicial,6.848,6.42,norma Alonso et al. 2015,es-cor-pión,3,/e/ /s/ /k/ /o/ /ɾ/ /p/ /i/ /o/ /n/,1.4,9,3.464,4.84,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 escudo,shield,3 · Lectura inicial,6.848,6.42,norma Alonso et al. 2015,es-cu-do,3,/e/ /s/ /k/ /u/ /d/ /o/,1.0,6,4.013,4.66,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 lanza,spear,3 · Lectura inicial,6.848,6.42,norma Alonso et al. 2015,lan-za,2,/l/ /a/ /n/ /s/ /a/,1.3,5,4.161,5.0,verbo,Bisílabas frecuentes,True
 medio,center or middle,3 · Lectura inicial,6.848,6.42,norma Alonso et al. 2015,me-dio,2,/m/ /e/ /d/ /i/ /o/,1.0,5,5.298,,sustantivo,Bisílabas frecuentes,False
 ordeñar,draw milk,3 · Lectura inicial,6.848,6.42,norma Alonso et al. 2015,or-de-ñar,3,/o/ /ɾ/ /d/ /e/ /ɲ/ /a/ /ɾ/,1.2,7,2.912,,verbo,"Con grupos consonánticos (tr, pl, str)",False
-dinamita,dynamite,3 · Lectura inicial,6.849,6.42,predicha (modelo ES),di-na-mi-ta,4,/d/ /i/ /n/ /a/ /m/ /i/ /t/ /a/,1.0,8,3.774,4.68,sustantivo,Largas y abstractas,True
-escopeta,rifle,3 · Lectura inicial,6.884,6.436,predicha (modelo ES),es-co-pe-ta,4,/e/ /s/ /k/ /o/ /p/ /e/ /t/ /a/,1.0,8,3.882,4.85,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+tacón,heel,3 · Lectura inicial,6.886,6.437,predicha (modelo ES),ta-cón,2,/t/ /a/ /k/ /o/ /n/,1.3,5,3.22,4.86,sustantivo,Bisílabas frecuentes,True
 escalar,climb,3 · Lectura inicial,6.893,6.44,norma Alonso et al. 2015,es-ca-lar,3,/e/ /s/ /k/ /a/ /l/ /a/ /ɾ/,1.2,7,3.748,4.11,adjetivo,"Con grupos consonánticos (tr, pl, str)",False
 terremoto,earthquake,3 · Lectura inicial,6.893,6.44,norma Alonso et al. 2015,te-rre-mo-to,4,/t/ /e/ /r/ /e/ /m/ /o/ /t/ /o/,1.15,9,3.97,3.97,sustantivo,Largas y abstractas,False
 valla,fence,3 · Lectura inicial,6.893,6.44,norma Alonso et al. 2015,va-lla,2,/b/ /a/ /ʝ/ /a/,1.3,5,3.449,4.82,sustantivo,Cortas con familia (rimas),True
+escopeta,rifle,3 · Lectura inicial,6.929,6.456,predicha (modelo ES),es-co-pe-ta,4,/e/ /s/ /k/ /o/ /p/ /e/ /t/ /a/,1.0,8,3.882,4.85,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 albañil,mason,3 · Lectura inicial,6.938,6.46,norma Alonso et al. 2015,al-ba-ñil,3,/a/ /l/ /b/ /a/ /ɲ/ /i/ /l/,1.2,7,2.961,4.2,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 hermoso,beautiful,3 · Lectura inicial,6.938,6.46,norma Alonso et al. 2015,her-mo-so,3,/e/ /ɾ/ /m/ /o/ /s/ /o/,1.2,7,4.995,2.16,adjetivo,Bisílabas frecuentes,False
 tanque,tank,3 · Lectura inicial,6.938,6.46,norma Alonso et al. 2015,tan-que,2,/t/ /a/ /n/ /k/ /e/,1.3,6,4.332,4.8,sustantivo,Bisílabas frecuentes,True
-iceberg,iceberg,3 · Lectura inicial,6.955,6.472,predicha (modelo ES),i-ce-berg,3,/i/ /s/ /e/ /b/ /e/ /ɾ/ /g/,1.233,7,3.398,4.96,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+balcón,balcony,3 · Lectura inicial,6.963,6.478,predicha (modelo ES),bal-cón,2,/b/ /a/ /l/ /k/ /o/ /n/,1.6,6,3.852,4.68,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 cocido,cooked,3 · Lectura inicial,6.966,6.48,norma Alonso et al. 2015,co-ci-do,3,/k/ /o/ /s/ /i/ /d/ /o/,1.0,6,3.279,,sustantivo,Bisílabas frecuentes,False
 distancia,distance,3 · Lectura inicial,6.966,6.48,norma Alonso et al. 2015,dis-tan-cia,3,/d/ /i/ /s/ /t/ /a/ /n/ /s/ /i/ /a/,1.4,9,4.585,3.17,sustantivo,Largas y abstractas,False
 poder,be able,3 · Lectura inicial,6.966,6.48,norma Alonso et al. 2015,po-der,2,/p/ /o/ /d/ /e/ /ɾ/,1.3,5,5.456,,sustantivo,Bisílabas frecuentes,False
 red,fishnet,3 · Lectura inicial,6.966,6.48,norma Alonso et al. 2015,red,1,/r/ /e/ /d/,1.6,3,4.678,4.72,sustantivo,Cortas con familia (rimas),True
 violín,violin,3 · Lectura inicial,6.966,6.48,norma Alonso et al. 2015,vio-lín,2,/b/ /i/ /o/ /l/ /i/ /n/,1.3,6,3.655,4.96,sustantivo,Bisílabas frecuentes,True
-balcón,balcony,3 · Lectura inicial,6.976,6.487,predicha (modelo ES),bal-cón,2,/b/ /a/ /l/ /k/ /o/ /n/,1.6,6,3.852,4.68,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
-boxeador,boxer,3 · Lectura inicial,6.996,6.501,predicha (modelo ES),bo-xe-a-dor,4,/b/ /o/ /ks/ /e/ /a/ /d/ /o/ /ɾ/,1.175,8,3.629,4.63,sustantivo,Largas y abstractas,True
+muleta,crutch,3 · Lectura inicial,6.975,6.486,predicha (modelo ES),mu-le-ta,3,/m/ /u/ /l/ /e/ /t/ /a/,1.0,6,3.071,4.5,sustantivo,Bisílabas frecuentes,True
+plancha,iron,3 · Lectura inicial,6.998,6.503,predicha (modelo ES),plan-cha,2,/p/ /l/ /a/ /n/ /tʃ/ /a/,2.3,7,3.414,4.59,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+carretilla,wheelbarrow,3 · Lectura inicial,7.004,6.507,predicha (modelo ES),ca-rre-ti-lla,4,/k/ /a/ /r/ /e/ /t/ /i/ /ʝ/ /a/,1.3,10,3.256,4.79,sustantivo,Largas y abstractas,True
+cerradura,keyhole,3 · Lectura inicial,7.02,6.518,predicha (modelo ES),ce-rra-du-ra,4,/s/ /e/ /r/ /a/ /d/ /u/ /ɾ/ /a/,1.15,9,3.916,4.63,sustantivo,Largas y abstractas,True
 amanecer,sunrise,3 · Lectura inicial,7.022,6.52,norma Alonso et al. 2015,a-ma-ne-cer,4,/a/ /m/ /a/ /n/ /e/ /s/ /e/ /ɾ/,1.175,8,4.241,4.69,sustantivo,Bisílabas frecuentes,False
 cazar,hunt,3 · Lectura inicial,7.022,6.52,norma Alonso et al. 2015,ca-zar,2,/k/ /a/ /s/ /a/ /ɾ/,1.3,5,4.161,3.81,verbo,Bisílabas frecuentes,False
 florecer,bloom,3 · Lectura inicial,7.022,6.52,norma Alonso et al. 2015,flo-re-cer,3,/f/ /l/ /o/ /ɾ/ /e/ /s/ /e/ /ɾ/,1.667,8,3.105,4.0,verbo,"Con grupos consonánticos (tr, pl, str)",False
-tacón,heel,3 · Lectura inicial,7.025,6.522,predicha (modelo ES),ta-cón,2,/t/ /a/ /k/ /o/ /n/,1.3,5,3.22,4.86,sustantivo,Bisílabas frecuentes,True
-muleta,crutch,3 · Lectura inicial,7.032,6.527,predicha (modelo ES),mu-le-ta,3,/m/ /u/ /l/ /e/ /t/ /a/,1.0,6,3.071,4.5,sustantivo,Bisílabas frecuentes,True
-carretilla,wheelbarrow,3 · Lectura inicial,7.034,6.529,predicha (modelo ES),ca-rre-ti-lla,4,/k/ /a/ /r/ /e/ /t/ /i/ /ʝ/ /a/,1.3,10,3.256,4.79,sustantivo,Largas y abstractas,True
 adulto,adult,3 · Lectura inicial,7.05,6.54,norma Alonso et al. 2015,a-dul-to,3,/a/ /d/ /u/ /l/ /t/ /o/,1.233,6,4.292,4.4,adjetivo,Bisílabas frecuentes,False
 corriente,stream,3 · Lectura inicial,7.05,6.54,norma Alonso et al. 2015,co-rrien-te,3,/k/ /o/ /r/ /i/ /e/ /n/ /t/ /e/,1.2,9,4.488,4.5,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 explicar,explain,3 · Lectura inicial,7.05,6.54,norma Alonso et al. 2015,ex-pli-car,3,/e/ /ks/ /p/ /l/ /i/ /k/ /a/ /ɾ/,1.667,8,4.59,1.97,verbo,Largas y abstractas,False
 hervir,boil,3 · Lectura inicial,7.05,6.54,norma Alonso et al. 2015,her-vir,2,/e/ /ɾ/ /b/ /i/ /ɾ/,1.6,6,3.31,4.2,verbo,"Con grupos consonánticos (tr, pl, str)",False
 motocicleta,motorcycle,3 · Lectura inicial,7.05,6.54,norma Alonso et al. 2015,mo-to-ci-cle-ta,5,/m/ /o/ /t/ /o/ /s/ /i/ /k/ /l/ /e/ /t/ /a/,1.28,11,3.921,4.97,sustantivo,Largas y abstractas,False
 té,tea,3 · Lectura inicial,7.065,6.56,norma Alonso et al. 2015,té,1,/t/ /e/,1.0,2,4.779,4.69,sustantivo,Cortas con familia (rimas),False
+camarero,waiter,3 · Lectura inicial,7.066,6.562,predicha (modelo ES),ca-ma-re-ro,4,/k/ /a/ /m/ /a/ /ɾ/ /e/ /ɾ/ /o/,1.0,8,3.949,4.67,sustantivo,Bisílabas frecuentes,True
+boxeador,boxer,3 · Lectura inicial,7.07,6.566,predicha (modelo ES),bo-xe-a-dor,4,/b/ /o/ /ks/ /e/ /a/ /d/ /o/ /ɾ/,1.175,8,3.629,4.63,sustantivo,Largas y abstractas,True
 estufa,stove,3 · Lectura inicial,7.08,6.58,norma Alonso et al. 2015,es-tu-fa,3,/e/ /s/ /t/ /u/ /f/ /a/,1.0,6,3.524,4.96,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 obrero,worker,3 · Lectura inicial,7.08,6.58,norma Alonso et al. 2015,o-bre-ro,3,/o/ /b/ /ɾ/ /e/ /ɾ/ /o/,1.5,6,3.406,4.59,adjetivo,"Con grupos consonánticos (tr, pl, str)",False
 paciente,patient,3 · Lectura inicial,7.08,6.58,norma Alonso et al. 2015,pa-cien-te,3,/p/ /a/ /s/ /i/ /e/ /n/ /t/ /e/,1.2,8,4.843,2.5,sustantivo,Largas y abstractas,False
@@ -1065,25 +1068,22 @@ herramienta,tool,3 · Lectura inicial,7.095,6.6,norma Alonso et al. 2015,he-rra-
 jefe,chieftain,3 · Lectura inicial,7.095,6.6,norma Alonso et al. 2015,je-fe,2,/x/ /e/ /f/ /e/,1.0,4,5.34,3.44,sustantivo,Bisílabas frecuentes,False
 pus,pus,3 · Lectura inicial,7.095,6.6,norma Alonso et al. 2015,pus,1,/p/ /u/ /s/,1.6,3,3.2,4.52,sustantivo,Cortas con familia (rimas),False
 tabaco,tobacco,3 · Lectura inicial,7.095,6.6,norma Alonso et al. 2015,ta-ba-co,3,/t/ /a/ /b/ /a/ /k/ /o/,1.0,6,3.878,4.88,sustantivo,Bisílabas frecuentes,False
-pelícano,pelican,3 · Lectura inicial,7.099,6.605,predicha (modelo ES),pe-lí-ca-no,4,/p/ /e/ /l/ /i/ /k/ /a/ /n/ /o/,1.0,8,2.761,4.96,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
-plancha,iron,3 · Lectura inicial,7.104,6.612,predicha (modelo ES),plan-cha,2,/p/ /l/ /a/ /n/ /tʃ/ /a/,2.3,7,3.414,4.59,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 hamaca,hammock,3 · Lectura inicial,7.11,6.62,norma Alonso et al. 2015,ha-ma-ca,3,/a/ /m/ /a/ /k/ /a/,1.0,6,3.25,4.89,sustantivo,Bisílabas frecuentes,False
 pezón,nipple,3 · Lectura inicial,7.11,6.62,norma Alonso et al. 2015,pe-zón,2,/p/ /e/ /s/ /o/ /n/,1.3,5,3.481,4.83,sustantivo,Bisílabas frecuentes,True
 veneno,poison,3 · Lectura inicial,7.11,6.62,norma Alonso et al. 2015,ve-ne-no,3,/b/ /e/ /n/ /e/ /n/ /o/,1.0,6,4.298,4.27,sustantivo,Bisílabas frecuentes,False
-cerradura,keyhole,3 · Lectura inicial,7.113,6.623,predicha (modelo ES),ce-rra-du-ra,4,/s/ /e/ /r/ /a/ /d/ /u/ /ɾ/ /a/,1.15,9,3.916,4.63,sustantivo,Largas y abstractas,True
-ovni,ufo,3 · Lectura inicial,7.122,6.631,predicha (modelo ES),ov-ni,2,/o/ /b/ /n/ /i/,1.0,4,3.557,,sustantivo,Bisílabas frecuentes,True
+pelícano,pelican,3 · Lectura inicial,7.114,6.623,predicha (modelo ES),pe-lí-ca-no,4,/p/ /e/ /l/ /i/ /k/ /a/ /n/ /o/,1.0,8,2.761,4.96,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 estación,season,3 · Lectura inicial,7.131,6.64,norma Alonso et al. 2015,es-ta-ción,3,/e/ /s/ /t/ /a/ /s/ /i/ /o/ /n/,1.2,8,4.752,3.32,sustantivo,Bisílabas frecuentes,False
 idea,idea,3 · Lectura inicial,7.131,6.64,norma Alonso et al. 2015,i-de-a,3,/i/ /d/ /e/ /a/,1.067,4,5.689,1.61,sustantivo,Bisílabas frecuentes,False
 mendigo,beggar,3 · Lectura inicial,7.131,6.64,norma Alonso et al. 2015,men-di-go,3,/m/ /e/ /n/ /d/ /i/ /g/ /o/,1.2,7,3.315,4.59,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
-camarero,waiter,3 · Lectura inicial,7.135,6.644,predicha (modelo ES),ca-ma-re-ro,4,/k/ /a/ /m/ /a/ /ɾ/ /e/ /ɾ/ /o/,1.0,8,3.949,4.67,sustantivo,Bisílabas frecuentes,True
 engaño,deceit,3 · Lectura inicial,7.152,6.66,norma Alonso et al. 2015,en-ga-ño,3,/e/ /n/ /g/ /a/ /ɲ/ /o/,1.0,6,4.174,2.37,sustantivo,Bisílabas frecuentes,False
 incorrecto,wrong,3 · Lectura inicial,7.152,6.66,norma Alonso et al. 2015,in-co-rrec-to,4,/i/ /n/ /k/ /o/ /r/ /e/ /k/ /t/ /o/,1.15,10,3.898,1.83,adjetivo,Largas y abstractas,False
 valle,valley,3 · Lectura inicial,7.152,6.66,norma Alonso et al. 2015,va-lle,2,/b/ /a/ /ʝ/ /e/,1.3,5,4.194,4.72,sustantivo,Bisílabas frecuentes,False
+laberinto,maze,3 · Lectura inicial,7.17,6.678,predicha (modelo ES),la-be-rin-to,4,/l/ /a/ /b/ /e/ /ɾ/ /i/ /n/ /t/ /o/,1.15,9,3.639,4.45,sustantivo,Largas y abstractas,True
 ello,it,3 · Lectura inicial,7.173,6.68,norma Alonso et al. 2015,e-llo,2,/e/ /ʝ/ /o/,1.35,4,5.101,2.81,otra,Bisílabas frecuentes,False
 parecer,seem,3 · Lectura inicial,7.173,6.68,norma Alonso et al. 2015,pa-re-cer,3,/p/ /a/ /ɾ/ /e/ /s/ /e/ /ɾ/,1.2,7,4.799,1.75,sustantivo,Bisílabas frecuentes,False
 granero,granary,3 · Lectura inicial,7.194,6.7,norma Alonso et al. 2015,gra-ne-ro,3,/g/ /ɾ/ /a/ /n/ /e/ /ɾ/ /o/,1.467,7,3.851,,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 temer,fear,3 · Lectura inicial,7.194,6.7,norma Alonso et al. 2015,te-mer,2,/t/ /e/ /m/ /e/ /ɾ/,1.3,5,4.008,2.57,verbo,Bisílabas frecuentes,False
-laberinto,maze,3 · Lectura inicial,7.219,6.715,predicha (modelo ES),la-be-rin-to,4,/l/ /a/ /b/ /e/ /ɾ/ /i/ /n/ /t/ /o/,1.15,9,3.639,4.45,sustantivo,Largas y abstractas,True
+gatillo,trigger,3 · Lectura inicial,7.196,6.701,predicha (modelo ES),ga-ti-llo,3,/g/ /a/ /t/ /i/ /ʝ/ /o/,1.2,7,4.207,4.31,sustantivo,Bisílabas frecuentes,True
 buitre,vulture,3 · Lectura inicial,7.226,6.72,norma Alonso et al. 2015,bui-tre,2,/b/ /u/ /i/ /t/ /ɾ/ /e/,1.7,6,3.071,4.73,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 par,pair,3 · Lectura inicial,7.226,6.72,norma Alonso et al. 2015,par,1,/p/ /a/ /ɾ/,1.6,3,5.328,3.88,sustantivo,Cortas con familia (rimas),False
 afeitar,shave,3 · Lectura inicial,7.29,6.76,norma Alonso et al. 2015,a-fei-tar,3,/a/ /f/ /e/ /i/ /t/ /a/ /ɾ/,1.233,7,3.669,4.23,verbo,Bisílabas frecuentes,False
@@ -1092,87 +1092,87 @@ desierto,desert,3 · Lectura inicial,7.29,6.76,norma Alonso et al. 2015,de-sier-
 libélula,dragonfly,3 · Lectura inicial,7.29,6.76,norma Alonso et al. 2015,li-bé-lu-la,4,/l/ /i/ /b/ /e/ /l/ /u/ /l/ /a/,1.0,8,3.044,4.83,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 plata,silver,3 · Lectura inicial,7.29,6.76,norma Alonso et al. 2015,pla-ta,2,/p/ /l/ /a/ /t/ /a/,1.7,5,4.546,4.52,sustantivo,Bisílabas frecuentes,False
 preso,prisoner,3 · Lectura inicial,7.29,6.76,norma Alonso et al. 2015,pre-so,2,/p/ /ɾ/ /e/ /s/ /o/,1.7,5,4.253,4.11,adjetivo,Bisílabas frecuentes,False
+carnicero,butcher,3 · Lectura inicial,7.292,6.761,predicha (modelo ES),car-ni-ce-ro,4,/k/ /a/ /ɾ/ /n/ /i/ /s/ /e/ /ɾ/ /o/,1.15,9,3.843,4.65,sustantivo,Largas y abstractas,True
 acordeón,accordion,3 · Lectura inicial,7.322,6.78,norma Alonso et al. 2015,a-cor-de-ón,4,/a/ /k/ /o/ /ɾ/ /d/ /e/ /o/ /n/,1.175,8,3.024,4.86,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 bala,bullet,3 · Lectura inicial,7.322,6.78,norma Alonso et al. 2015,ba-la,2,/b/ /a/ /l/ /a/,1.0,4,4.686,4.83,sustantivo,Cortas con familia (rimas),True
 lechuza,owl,3 · Lectura inicial,7.322,6.78,norma Alonso et al. 2015,le-chu-za,3,/l/ /e/ /tʃ/ /u/ /s/ /a/,1.2,7,2.872,4.93,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 quizás,perhaps,3 · Lectura inicial,7.322,6.78,norma Alonso et al. 2015,qui-zás,2,/k/ /i/ /s/ /a/ /s/,1.3,6,5.526,1.19,otra,Bisílabas frecuentes,False
+ovni,ufo,3 · Lectura inicial,7.333,6.8,predicha (modelo ES),ov-ni,2,/o/ /b/ /n/ /i/,1.0,4,3.557,,sustantivo,Bisílabas frecuentes,True
 pirámide,pyramid,3 · Lectura inicial,7.334,6.8,norma Alonso et al. 2015,pi-rá-mi-de,4,/p/ /i/ /ɾ/ /a/ /m/ /i/ /d/ /e/,1.0,8,3.671,4.96,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+mimo,mime,3 · Lectura inicial,7.335,6.803,predicha (modelo ES),mi-mo,2,/m/ /i/ /m/ /o/,1.0,4,2.872,4.5,sustantivo,Cortas con familia (rimas),True
 arruga,wrinkle,3 · Lectura inicial,7.345,6.82,norma Alonso et al. 2015,a-rru-ga,3,/a/ /r/ /u/ /g/ /a/,1.233,6,2.983,4.3,sustantivo,Bisílabas frecuentes,True
 sello,postage stamp,3 · Lectura inicial,7.345,6.82,norma Alonso et al. 2015,se-llo,2,/s/ /e/ /ʝ/ /o/,1.3,5,4.039,,sustantivo,Bisílabas frecuentes,True
-sujetador,bra,3 · Lectura inicial,7.346,6.821,predicha (modelo ES),su-je-ta-dor,4,/s/ /u/ /x/ /e/ /t/ /a/ /d/ /o/ /ɾ/,1.15,9,3.159,4.54,sustantivo,Largas y abstractas,True
-teclado,keyboard,3 · Lectura inicial,7.35,6.827,predicha (modelo ES),te-cla-do,3,/t/ /e/ /k/ /l/ /a/ /d/ /o/,1.467,7,3.481,4.93,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
-mimo,mime,3 · Lectura inicial,7.356,6.837,predicha (modelo ES),mi-mo,2,/m/ /i/ /m/ /o/,1.0,4,2.872,4.5,sustantivo,Cortas con familia (rimas),True
-gatillo,trigger,3 · Lectura inicial,7.357,6.839,predicha (modelo ES),ga-ti-llo,3,/g/ /a/ /t/ /i/ /ʝ/ /o/,1.2,7,4.207,4.31,sustantivo,Bisílabas frecuentes,True
 cerebro,brain,3 · Lectura inicial,7.357,6.84,norma Alonso et al. 2015,ce-re-bro,3,/s/ /e/ /ɾ/ /e/ /b/ /ɾ/ /o/,1.467,7,4.967,4.69,sustantivo,Bisílabas frecuentes,True
 destornillador,screwdriver,3 · Lectura inicial,7.357,6.84,norma Alonso et al. 2015,des-tor-ni-lla-dor,5,/d/ /e/ /s/ /t/ /o/ /ɾ/ /n/ /i/ /ʝ/ /a/ /d/ /o/ /ɾ/,1.48,14,3.418,4.9,sustantivo,Largas y abstractas,True
 marca,sign,3 · Lectura inicial,7.357,6.84,norma Alonso et al. 2015,mar-ca,2,/m/ /a/ /ɾ/ /k/ /a/,1.3,5,4.612,4.62,sustantivo,Cortas con familia (rimas),False
 culpable,guilty,3 · Lectura inicial,7.369,6.86,norma Alonso et al. 2015,cul-pa-ble,3,/k/ /u/ /l/ /p/ /a/ /b/ /l/ /e/,1.667,8,4.789,2.36,adjetivo,Largas y abstractas,False
 jabalí,boar,3 · Lectura inicial,7.369,6.86,norma Alonso et al. 2015,ja-ba-lí,3,/x/ /a/ /b/ /a/ /l/ /i/,1.0,6,3.359,4.8,sustantivo,Bisílabas frecuentes,False
-carnicero,butcher,3 · Lectura inicial,7.369,6.86,predicha (modelo ES),car-ni-ce-ro,4,/k/ /a/ /ɾ/ /n/ /i/ /s/ /e/ /ɾ/ /o/,1.15,9,3.843,4.65,sustantivo,Largas y abstractas,True
-compás,compass,3 · Lectura inicial,7.378,6.874,predicha (modelo ES),com-pás,2,/k/ /o/ /m/ /p/ /a/ /s/,1.6,6,3.238,4.66,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
-saxofón,saxophone,3 · Lectura inicial,7.378,6.874,predicha (modelo ES),sa-xo-fón,3,/s/ /a/ /ks/ /o/ /f/ /o/ /n/,1.2,7,2.972,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+condón,condom,3 · Lectura inicial,7.378,6.874,predicha (modelo ES),con-dón,2,/k/ /o/ /n/ /d/ /o/ /n/,1.6,6,3.903,4.87,sustantivo,Bisílabas frecuentes,True
+sujetador,bra,3 · Lectura inicial,7.38,6.879,predicha (modelo ES),su-je-ta-dor,4,/s/ /u/ /x/ /e/ /t/ /a/ /d/ /o/ /ɾ/,1.15,9,3.159,4.54,sustantivo,Largas y abstractas,True
+pistacho,pistachio,3 · Lectura inicial,7.381,6.879,predicha (modelo ES),pis-ta-cho,3,/p/ /i/ /s/ /t/ /a/ /tʃ/ /o/,1.4,8,3.097,4.93,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 calendario,calendar,3 · Lectura inicial,7.381,6.88,norma Alonso et al. 2015,ca-len-da-rio,4,/k/ /a/ /l/ /e/ /n/ /d/ /a/ /ɾ/ /i/ /o/,1.15,10,3.948,4.62,sustantivo,Largas y abstractas,True
 dividir,divide,3 · Lectura inicial,7.381,6.88,norma Alonso et al. 2015,di-vi-dir,3,/d/ /i/ /b/ /i/ /d/ /i/ /ɾ/,1.2,7,3.614,2.86,verbo,Bisílabas frecuentes,False
 nuca,nape,3 · Lectura inicial,7.381,6.88,norma Alonso et al. 2015,nu-ca,2,/n/ /u/ /k/ /a/,1.0,4,3.82,4.44,sustantivo,Bisílabas frecuentes,False
-impresora,printer,3 · Lectura inicial,7.382,6.881,predicha (modelo ES),im-pre-so-ra,4,/i/ /m/ /p/ /ɾ/ /e/ /s/ /o/ /ɾ/ /a/,1.35,9,3.284,4.67,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
-pistacho,pistachio,3 · Lectura inicial,7.387,6.889,predicha (modelo ES),pis-ta-cho,3,/p/ /i/ /s/ /t/ /a/ /tʃ/ /o/,1.4,8,3.097,4.93,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+saxofón,saxophone,3 · Lectura inicial,7.387,6.89,predicha (modelo ES),sa-xo-fón,3,/s/ /a/ /ks/ /o/ /f/ /o/ /n/,1.2,7,2.972,5.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 barril,barrel,3 · Lectura inicial,7.399,6.9,norma Alonso et al. 2015,ba-rril,2,/b/ /a/ /r/ /i/ /l/,1.3,6,3.737,4.86,sustantivo,Bisílabas frecuentes,False
 estrecho,narrow,3 · Lectura inicial,7.399,6.9,norma Alonso et al. 2015,es-tre-cho,3,/e/ /s/ /t/ /ɾ/ /e/ /tʃ/ /o/,1.667,8,3.501,3.04,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 huérfano,orphan,3 · Lectura inicial,7.399,6.9,norma Alonso et al. 2015,huér-fa-no,3,/u/ /e/ /ɾ/ /f/ /a/ /n/ /o/,1.2,8,3.598,4.04,adjetivo,"Con grupos consonánticos (tr, pl, str)",False
 vena,vein,3 · Lectura inicial,7.399,6.9,norma Alonso et al. 2015,ve-na,2,/b/ /e/ /n/ /a/,1.0,4,3.574,4.63,sustantivo,Cortas con familia (rimas),False
-limusina,limo,3 · Lectura inicial,7.422,6.914,predicha (modelo ES),li-mu-si-na,4,/l/ /i/ /m/ /u/ /s/ /i/ /n/ /a/,1.0,8,4.013,4.7,sustantivo,Bisílabas frecuentes,True
+limusina,limo,3 · Lectura inicial,7.431,6.919,predicha (modelo ES),li-mu-si-na,4,/l/ /i/ /m/ /u/ /s/ /i/ /n/ /a/,1.0,8,4.013,4.7,sustantivo,Bisílabas frecuentes,True
+impresora,printer,3 · Lectura inicial,7.449,6.93,predicha (modelo ES),im-pre-so-ra,4,/i/ /m/ /p/ /ɾ/ /e/ /s/ /o/ /ɾ/ /a/,1.35,9,3.284,4.67,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 dama,lady,3 · Lectura inicial,7.464,6.939,norma Alonso et al. 2015,da-ma,2,/d/ /a/ /m/ /a/,1.0,4,4.577,4.33,sustantivo,Cortas con familia (rimas),False
+compás,compass,3 · Lectura inicial,7.464,6.939,predicha (modelo ES),com-pás,2,/k/ /o/ /m/ /p/ /a/ /s/,1.6,6,3.238,4.66,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 neblina,fog,3 · Lectura inicial,7.466,6.94,norma Alonso et al. 2015,ne-bli-na,3,/n/ /e/ /b/ /l/ /i/ /n/ /a/,1.467,7,3.226,4.66,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 nervioso,nervous,3 · Lectura inicial,7.466,6.94,norma Alonso et al. 2015,ner-vio-so,3,/n/ /e/ /ɾ/ /b/ /i/ /o/ /s/ /o/,1.2,8,4.731,1.85,adjetivo,Largas y abstractas,False
 roble,oak,3 · Lectura inicial,7.466,6.94,norma Alonso et al. 2015,ro-ble,2,/r/ /o/ /b/ /l/ /e/,1.7,5,3.577,4.82,sustantivo,Bisílabas frecuentes,False
 tenazas,tongs,3 · Lectura inicial,7.466,6.94,norma Alonso et al. 2015,te-na-zas,3,/t/ /e/ /n/ /a/ /s/ /a/ /s/,1.2,7,3.097,5.0,sustantivo,Bisílabas frecuentes,False
-calculadora,calculator,3 · Lectura inicial,7.474,6.945,predicha (modelo ES),cal-cu-la-do-ra,5,/k/ /a/ /l/ /k/ /u/ /l/ /a/ /d/ /o/ /ɾ/ /a/,1.12,11,3.173,4.86,sustantivo,Largas y abstractas,True
-condón,condom,3 · Lectura inicial,7.496,6.958,predicha (modelo ES),con-dón,2,/k/ /o/ /n/ /d/ /o/ /n/,1.6,6,3.903,4.87,sustantivo,Bisílabas frecuentes,True
+calculadora,calculator,3 · Lectura inicial,7.475,6.945,predicha (modelo ES),cal-cu-la-do-ra,5,/k/ /a/ /l/ /k/ /u/ /l/ /a/ /d/ /o/ /ɾ/ /a/,1.12,11,3.173,4.86,sustantivo,Largas y abstractas,True
 danza,dance,3 · Lectura inicial,7.5,6.96,norma Alonso et al. 2015,dan-za,2,/d/ /a/ /n/ /s/ /a/,1.3,5,3.98,4.32,sustantivo,Bisílabas frecuentes,False
 permitir,permit,3 · Lectura inicial,7.5,6.96,norma Alonso et al. 2015,per-mi-tir,3,/p/ /e/ /ɾ/ /m/ /i/ /t/ /i/ /ɾ/,1.4,8,4.439,3.43,verbo,Bisílabas frecuentes,False
 submarino,submarine,3 · Lectura inicial,7.5,6.96,norma Alonso et al. 2015,sub-ma-ri-no,4,/s/ /u/ /b/ /m/ /a/ /ɾ/ /i/ /n/ /o/,1.15,9,4.131,4.8,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 tímido,shy,3 · Lectura inicial,7.5,6.96,norma Alonso et al. 2015,tí-mi-do,3,/t/ /i/ /m/ /i/ /d/ /o/,1.0,6,4.005,2.52,adjetivo,Bisílabas frecuentes,False
 bendecir,bless,3 · Lectura inicial,7.509,6.97,norma Alonso et al. 2015,ben-de-cir,3,/b/ /e/ /n/ /d/ /e/ /s/ /i/ /ɾ/,1.4,8,3.267,2.68,verbo,Largas y abstractas,False
+teclado,keyboard,3 · Lectura inicial,7.51,6.971,predicha (modelo ES),te-cla-do,3,/t/ /e/ /k/ /l/ /a/ /d/ /o/,1.467,7,3.481,4.93,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 clima,weather,3 · Lectura inicial,7.518,6.98,norma Alonso et al. 2015,cli-ma,2,/k/ /l/ /i/ /m/ /a/,1.7,5,4.279,3.83,sustantivo,Bisílabas frecuentes,False
 esqueleto,skeleton,3 · Lectura inicial,7.518,6.98,norma Alonso et al. 2015,es-que-le-to,4,/e/ /s/ /k/ /e/ /l/ /e/ /t/ /o/,1.0,9,3.577,4.97,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 proteger,protect,3 · Lectura inicial,7.518,6.98,norma Alonso et al. 2015,pro-te-ger,3,/p/ /ɾ/ /o/ /t/ /e/ /x/ /e/ /ɾ/,1.667,8,4.602,2.86,verbo,Largas y abstractas,False
-gaita,bagpipe,3 · Lectura inicial,7.534,6.998,predicha (modelo ES),gai-ta,2,/g/ /a/ /i/ /t/ /a/,1.0,5,2.812,4.97,sustantivo,Bisílabas frecuentes,True
-farmacia,pharmacy,3 · Lectura inicial,7.539,7.004,predicha (modelo ES),far-ma-cia,3,/f/ /a/ /ɾ/ /m/ /a/ /s/ /i/ /a/,1.2,8,3.949,4.78,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+farmacia,pharmacy,3 · Lectura inicial,7.527,6.991,predicha (modelo ES),far-ma-cia,3,/f/ /a/ /ɾ/ /m/ /a/ /s/ /i/ /a/,1.2,8,3.949,4.78,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 canoa,canoe,3 · Lectura inicial,7.552,7.02,norma Alonso et al. 2015,ca-no-a,3,/k/ /a/ /n/ /o/ /a/,1.033,5,3.345,4.86,sustantivo,Bisílabas frecuentes,False
 detener,halt,3 · Lectura inicial,7.552,7.02,norma Alonso et al. 2015,de-te-ner,3,/d/ /e/ /t/ /e/ /n/ /e/ /ɾ/,1.2,7,4.6,3.38,verbo,Bisílabas frecuentes,False
 seguro,certain,3 · Lectura inicial,7.552,7.02,norma Alonso et al. 2015,se-gu-ro,3,/s/ /e/ /g/ /u/ /ɾ/ /o/,1.0,6,5.827,1.68,adjetivo,Bisílabas frecuentes,False
 tratar,try,3 · Lectura inicial,7.552,7.02,norma Alonso et al. 2015,tra-tar,2,/t/ /ɾ/ /a/ /t/ /a/ /ɾ/,2.0,6,4.836,2.22,verbo,Bisílabas frecuentes,False
+gaita,bagpipe,3 · Lectura inicial,7.553,7.021,predicha (modelo ES),gai-ta,2,/g/ /a/ /i/ /t/ /a/,1.0,5,2.812,4.97,sustantivo,Bisílabas frecuentes,True
+portería,goal,3 · Lectura inicial,7.563,7.032,predicha (modelo ES),por-te-rí-a,4,/p/ /o/ /ɾ/ /t/ /e/ /ɾ/ /i/ /a/,1.175,8,2.66,3.06,sustantivo,Largas y abstractas,True
 débil,weak,3 · Lectura inicial,7.57,7.04,norma Alonso et al. 2015,dé-bil,2,/d/ /e/ /b/ /i/ /l/,1.3,5,4.56,2.79,adjetivo,Bisílabas frecuentes,False
 grano,grain,3 · Lectura inicial,7.57,7.04,norma Alonso et al. 2015,gra-no,2,/g/ /ɾ/ /a/ /n/ /o/,1.7,5,4.256,4.8,sustantivo,Bisílabas frecuentes,True
 manera,manner,3 · Lectura inicial,7.57,7.04,norma Alonso et al. 2015,ma-ne-ra,3,/m/ /a/ /n/ /e/ /ɾ/ /a/,1.0,6,5.395,1.62,sustantivo,Bisílabas frecuentes,False
+aleta,flipper,3 · Lectura inicial,7.582,7.049,predicha (modelo ES),a-le-ta,3,/a/ /l/ /e/ /t/ /a/,1.033,5,3.071,4.26,sustantivo,Bisílabas frecuentes,True
 brocha,paintbrush,3 · Lectura inicial,7.596,7.06,norma Alonso et al. 2015,bro-cha,2,/b/ /ɾ/ /o/ /tʃ/ /a/,2.0,6,2.46,4.79,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 deber,owe,3 · Lectura inicial,7.596,7.06,norma Alonso et al. 2015,de-ber,2,/d/ /e/ /b/ /e/ /ɾ/,1.3,5,4.462,2.07,sustantivo,Bisílabas frecuentes,False
 increíble,amazing,3 · Lectura inicial,7.596,7.06,norma Alonso et al. 2015,in-cre-í-ble,4,/i/ /n/ /k/ /ɾ/ /e/ /i/ /b/ /l/ /e/,1.725,9,5.262,1.55,adjetivo,Largas y abstractas,False
-orquesta,orchestra,3 · Lectura inicial,7.602,7.064,predicha (modelo ES),or-ques-ta,3,/o/ /ɾ/ /k/ /e/ /s/ /t/ /a/,1.2,8,3.648,4.79,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
-embudo,funnel,3 · Lectura inicial,7.605,7.067,predicha (modelo ES),em-bu-do,3,/e/ /m/ /b/ /u/ /d/ /o/,1.0,6,2.912,4.52,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
-corcho,cork,3 · Lectura inicial,7.621,7.079,predicha (modelo ES),cor-cho,2,/k/ /o/ /ɾ/ /tʃ/ /o/,1.6,6,3.113,4.86,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+corcho,cork,3 · Lectura inicial,7.6,7.063,predicha (modelo ES),cor-cho,2,/k/ /o/ /ɾ/ /tʃ/ /o/,1.6,6,3.113,4.86,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 asa,handle,3 · Lectura inicial,7.622,7.08,norma Alonso et al. 2015,a-sa,2,/a/ /s/ /a/,1.05,3,3.144,4.57,sustantivo,Cortas con familia (rimas),False
 iguana,iguana,3 · Lectura inicial,7.622,7.08,norma Alonso et al. 2015,i-gua-na,3,/i/ /g/ /u/ /a/ /n/ /a/,1.033,6,2.761,4.83,sustantivo,Bisílabas frecuentes,False
 victoria,victory,3 · Lectura inicial,7.622,7.08,norma Alonso et al. 2015,vic-to-ria,3,/b/ /i/ /k/ /t/ /o/ /ɾ/ /i/ /a/,1.2,8,4.62,2.55,sustantivo,Largas y abstractas,False
+embudo,funnel,3 · Lectura inicial,7.623,7.081,predicha (modelo ES),em-bu-do,3,/e/ /m/ /b/ /u/ /d/ /o/,1.0,6,2.912,4.52,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 seda,silk,3 · Lectura inicial,7.648,7.1,norma Alonso et al. 2015,se-da,2,/s/ /e/ /d/ /a/,1.0,4,3.938,4.7,sustantivo,Cortas con familia (rimas),False
-portería,goal,3 · Lectura inicial,7.651,7.102,predicha (modelo ES),por-te-rí-a,4,/p/ /o/ /ɾ/ /t/ /e/ /ɾ/ /i/ /a/,1.175,8,2.66,3.06,sustantivo,Largas y abstractas,True
-malabarista,juggler,3 · Lectura inicial,7.657,7.106,predicha (modelo ES),ma-la-ba-ris-ta,5,/m/ /a/ /l/ /a/ /b/ /a/ /ɾ/ /i/ /s/ /t/ /a/,1.12,11,2.611,4.5,sustantivo,Largas y abstractas,True
+orquesta,orchestra,3 · Lectura inicial,7.649,7.1,predicha (modelo ES),or-ques-ta,3,/o/ /ɾ/ /k/ /e/ /s/ /t/ /a/,1.2,8,3.648,4.79,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 espíritu,spirit,3 · Lectura inicial,7.674,7.12,norma Alonso et al. 2015,es-pí-ri-tu,4,/e/ /s/ /p/ /i/ /ɾ/ /i/ /t/ /u/,1.0,8,4.755,1.6,sustantivo,Largas y abstractas,False
 infeliz,unhappy,3 · Lectura inicial,7.674,7.12,norma Alonso et al. 2015,in-fe-liz,3,/i/ /n/ /f/ /e/ /l/ /i/ /s/,1.2,7,4.208,2.04,adjetivo,Largas y abstractas,False
 motor,motor,3 · Lectura inicial,7.674,7.12,norma Alonso et al. 2015,mo-tor,2,/m/ /o/ /t/ /o/ /ɾ/,1.3,5,4.46,4.84,sustantivo,Bisílabas frecuentes,True
+malabarista,juggler,3 · Lectura inicial,7.676,7.122,predicha (modelo ES),ma-la-ba-ris-ta,5,/m/ /a/ /l/ /a/ /b/ /a/ /ɾ/ /i/ /s/ /t/ /a/,1.12,11,2.611,4.5,sustantivo,Largas y abstractas,True
 haya,beech,3 · Lectura inicial,7.696,7.14,norma Alonso et al. 2015,ha-ya,2,/a/ /ʝ/ /a/,1.0,4,5.436,3.96,verbo,Cortas con familia (rimas),False
 metal,metal,3 · Lectura inicial,7.696,7.14,norma Alonso et al. 2015,me-tal,2,/m/ /e/ /t/ /a/ /l/,1.3,5,4.301,4.87,sustantivo,Bisílabas frecuentes,False
 pantano,swamp,3 · Lectura inicial,7.696,7.14,norma Alonso et al. 2015,pan-ta-no,3,/p/ /a/ /n/ /t/ /a/ /n/ /o/,1.2,7,3.839,4.96,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 tocadiscos,record player,3 · Lectura inicial,7.696,7.14,norma Alonso et al. 2015,to-ca-dis-cos,4,/t/ /o/ /k/ /a/ /d/ /i/ /s/ /k/ /o/ /s/,1.3,10,2.912,,sustantivo,Largas y abstractas,False
-balanza,scale,3 · Lectura inicial,7.7,7.144,predicha (modelo ES),ba-lan-za,3,/b/ /a/ /l/ /a/ /n/ /s/ /a/,1.2,7,3.394,4.39,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
-aleta,flipper,3 · Lectura inicial,7.707,7.151,predicha (modelo ES),a-le-ta,3,/a/ /l/ /e/ /t/ /a/,1.033,5,3.071,4.26,sustantivo,Bisílabas frecuentes,True
-farola,lamppost,3 · Lectura inicial,7.71,7.153,predicha (modelo ES),fa-ro-la,3,/f/ /a/ /ɾ/ /o/ /l/ /a/,1.0,6,2.226,4.66,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 alma,soul,3 · Lectura inicial,7.717,7.16,norma Alonso et al. 2015,al-ma,2,/a/ /l/ /m/ /a/,1.0,4,4.91,1.86,sustantivo,Bisílabas frecuentes,False
 riqueza,wealth,3 · Lectura inicial,7.717,7.16,norma Alonso et al. 2015,ri-que-za,3,/r/ /i/ /k/ /e/ /s/ /a/,1.0,7,3.886,2.63,sustantivo,Bisílabas frecuentes,False
 servir,pour,3 · Lectura inicial,7.738,7.18,norma Alonso et al. 2015,ser-vir,2,/s/ /e/ /ɾ/ /b/ /i/ /ɾ/,1.6,6,4.413,4.14,verbo,Bisílabas frecuentes,False
 cerrojo,latch,3 · Lectura inicial,7.742,7.184,norma Alonso et al. 2015,ce-rro-jo,3,/s/ /e/ /r/ /o/ /x/ /o/,1.2,7,3.53,4.79,sustantivo,Bisílabas frecuentes,False
+farola,lamppost,3 · Lectura inicial,7.743,7.185,predicha (modelo ES),fa-ro-la,3,/f/ /a/ /ɾ/ /o/ /l/ /a/,1.0,6,2.226,4.66,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 cuñado,brother-in-law,3 · Lectura inicial,7.759,7.2,norma Alonso et al. 2015,cu-ña-do,3,/k/ /u/ /ɲ/ /a/ /d/ /o/,1.0,6,3.754,,sustantivo,Bisílabas frecuentes,False
 toldo,tent,3 · Lectura inicial,7.759,7.2,norma Alonso et al. 2015,tol-do,2,/t/ /o/ /l/ /d/ /o/,1.3,5,2.761,4.96,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
+aguacate,avocado,3 · Lectura inicial,7.767,7.207,predicha (modelo ES),a-gua-ca-te,4,/a/ /g/ /u/ /a/ /k/ /a/ /t/ /e/,1.025,8,2.912,4.89,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 avergonzado,ashamed,3 · Lectura inicial,7.78,7.22,norma Alonso et al. 2015,a-ver-gon-za-do,5,/a/ /b/ /e/ /ɾ/ /g/ /o/ /n/ /s/ /a/ /d/ /o/,1.26,11,3.995,1.74,verbo,Largas y abstractas,False
 electricidad,electricity,3 · Lectura inicial,7.78,7.22,norma Alonso et al. 2015,e-lec-tri-ci-dad,5,/e/ /l/ /e/ /k/ /t/ /ɾ/ /i/ /s/ /i/ /d/ /a/ /d/,1.54,12,4.281,3.9,sustantivo,Largas y abstractas,False
 huir,flee,3 · Lectura inicial,7.78,7.22,norma Alonso et al. 2015,huir,1,/u/ /i/ /ɾ/,1.6,4,4.439,3.67,verbo,Bisílabas frecuentes,False
@@ -1183,7 +1183,6 @@ mofeta,skunk,3 · Lectura inicial,7.817,7.24,norma Alonso et al. 2015,mo-fe-ta,3
 interrumpir,disturb,3 · Lectura inicial,7.853,7.26,norma Alonso et al. 2015,in-te-rrum-pir,4,/i/ /n/ /t/ /e/ /r/ /u/ /m/ /p/ /i/ /ɾ/,1.3,11,4.245,3.04,verbo,Largas y abstractas,False
 nivel,level,3 · Lectura inicial,7.853,7.26,norma Alonso et al. 2015,ni-vel,2,/n/ /i/ /b/ /e/ /l/,1.3,5,4.883,2.86,sustantivo,Bisílabas frecuentes,False
 oficina,office,3 · Lectura inicial,7.853,7.26,norma Alonso et al. 2015,o-fi-ci-na,4,/o/ /f/ /i/ /s/ /i/ /n/ /a/,1.025,7,5.314,4.93,sustantivo,Bisílabas frecuentes,False
-aguacate,avocado,3 · Lectura inicial,7.877,7.273,predicha (modelo ES),a-gua-ca-te,4,/a/ /g/ /u/ /a/ /k/ /a/ /t/ /e/,1.025,8,2.912,4.89,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 batalla,battle,3 · Lectura inicial,7.89,7.28,norma Alonso et al. 2015,ba-ta-lla,3,/b/ /a/ /t/ /a/ /ʝ/ /a/,1.2,7,4.699,4.0,sustantivo,Bisílabas frecuentes,False
 costumbre,custom,3 · Lectura inicial,7.89,7.28,norma Alonso et al. 2015,cos-tum-bre,3,/k/ /o/ /s/ /t/ /u/ /m/ /b/ /ɾ/ /e/,1.867,9,4.115,2.68,sustantivo,Largas y abstractas,False
 marco,frame,3 · Lectura inicial,7.89,7.28,norma Alonso et al. 2015,mar-co,2,/m/ /a/ /ɾ/ /k/ /o/,1.3,5,4.248,4.3,sustantivo,Bisílabas frecuentes,False
@@ -1192,7 +1191,8 @@ almacén,warehouse,3 · Lectura inicial,7.917,7.3,norma Alonso et al. 2015,al-ma
 colina,hill,3 · Lectura inicial,7.917,7.3,norma Alonso et al. 2015,co-li-na,3,/k/ /o/ /l/ /i/ /n/ /a/,1.0,6,4.178,4.93,sustantivo,Bisílabas frecuentes,False
 gancho,hook,3 · Lectura inicial,7.917,7.3,norma Alonso et al. 2015,gan-cho,2,/g/ /a/ /n/ /tʃ/ /o/,1.6,6,3.811,4.79,sustantivo,Bisílabas frecuentes,False
 medir,measure,3 · Lectura inicial,7.917,7.3,norma Alonso et al. 2015,me-dir,2,/m/ /e/ /d/ /i/ /ɾ/,1.3,5,3.662,3.59,verbo,Bisílabas frecuentes,False
-fontanero,plumber,3 · Lectura inicial,7.939,7.316,predicha (modelo ES),fon-ta-ne-ro,4,/f/ /o/ /n/ /t/ /a/ /n/ /e/ /ɾ/ /o/,1.15,9,3.3,4.63,sustantivo,Largas y abstractas,True
+balanza,scale,3 · Lectura inicial,7.919,7.301,predicha (modelo ES),ba-lan-za,3,/b/ /a/ /l/ /a/ /n/ /s/ /a/,1.2,7,3.394,4.39,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
+fontanero,plumber,3 · Lectura inicial,7.926,7.306,predicha (modelo ES),fon-ta-ne-ro,4,/f/ /o/ /n/ /t/ /a/ /n/ /e/ /ɾ/ /o/,1.15,9,3.3,4.63,sustantivo,Largas y abstractas,True
 fogón,fireplace,3 · Lectura inicial,7.945,7.32,norma Alonso et al. 2015,fo-gón,2,/f/ /o/ /g/ /o/ /n/,1.3,5,2.557,4.68,sustantivo,Bisílabas frecuentes,False
 cañón,cannon,3 · Lectura inicial,7.972,7.34,norma Alonso et al. 2015,ca-ñón,2,/k/ /a/ /ɲ/ /o/ /n/,1.3,5,4.138,4.79,sustantivo,Bisílabas frecuentes,True
 remedio,medicine,3 · Lectura inicial,7.972,7.34,norma Alonso et al. 2015,re-me-dio,3,/r/ /e/ /m/ /e/ /d/ /i/ /o/,1.0,7,4.147,4.79,sustantivo,Bisílabas frecuentes,False
@@ -1218,8 +1218,8 @@ grosero,rude,4 · Lector en desarrollo,8.166,7.48,norma Alonso et al. 2015,gro-s
 permanecer,remain,4 · Lector en desarrollo,8.178,7.49,norma Alonso et al. 2015,per-ma-ne-cer,4,/p/ /e/ /ɾ/ /m/ /a/ /n/ /e/ /s/ /e/ /ɾ/,1.3,10,4.309,1.96,verbo,Largas y abstractas,False
 hélice,fan,4 · Lector en desarrollo,8.213,7.52,norma Alonso et al. 2015,hé-li-ce,3,/e/ /l/ /i/ /s/ /e/,1.0,6,3.121,4.71,sustantivo,Bisílabas frecuentes,False
 perdiz,partridge,4 · Lector en desarrollo,8.236,7.54,norma Alonso et al. 2015,per-diz,2,/p/ /e/ /ɾ/ /d/ /i/ /s/,1.6,6,2.723,4.0,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
+camaleón,chameleon,4 · Lector en desarrollo,8.238,7.541,predicha (modelo ES),ca-ma-le-ón,4,/k/ /a/ /m/ /a/ /l/ /e/ /o/ /n/,1.0,8,2.743,4.68,sustantivo,Largas y abstractas,True
 corteza,bark,4 · Lector en desarrollo,8.26,7.56,norma Alonso et al. 2015,cor-te-za,3,/k/ /o/ /ɾ/ /t/ /e/ /s/ /a/,1.2,7,3.725,4.52,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
-camaleón,chameleon,4 · Lector en desarrollo,8.278,7.575,predicha (modelo ES),ca-ma-le-ón,4,/k/ /a/ /m/ /a/ /l/ /e/ /o/ /n/,1.0,8,2.743,4.68,sustantivo,Largas y abstractas,True
 derecho,right,4 · Lector en desarrollo,8.283,7.58,norma Alonso et al. 2015,de-re-cho,3,/d/ /e/ /ɾ/ /e/ /tʃ/ /o/,1.2,7,5.098,3.47,sustantivo,Bisílabas frecuentes,False
 cálido,warm,4 · Lector en desarrollo,8.307,7.6,norma Alonso et al. 2015,cá-li-do,3,/k/ /a/ /l/ /i/ /d/ /o/,1.0,6,3.752,3.56,adjetivo,Bisílabas frecuentes,False
 traicionar,betray,4 · Lector en desarrollo,8.307,7.6,norma Alonso et al. 2015,trai-cio-nar,3,/t/ /ɾ/ /a/ /i/ /s/ /i/ /o/ /n/ /a/ /ɾ/,1.667,10,3.653,2.17,verbo,Largas y abstractas,False
@@ -1230,6 +1230,7 @@ abeto,fir,4 · Lector en desarrollo,8.377,7.66,norma Alonso et al. 2015,a-be-to,
 granada,pomegranate,4 · Lector en desarrollo,8.401,7.68,norma Alonso et al. 2015,gra-na-da,3,/g/ /ɾ/ /a/ /n/ /a/ /d/ /a/,1.467,7,3.878,4.86,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 plomo,lead,4 · Lector en desarrollo,8.401,7.68,norma Alonso et al. 2015,plo-mo,2,/p/ /l/ /o/ /m/ /o/,1.7,5,3.82,4.1,sustantivo,Bisílabas frecuentes,False
 ágil,fast,4 · Lector en desarrollo,8.401,7.68,norma Alonso et al. 2015,á-gil,2,/a/ /x/ /i/ /l/,1.35,4,3.226,3.32,adjetivo,Bisílabas frecuentes,False
+escultor,sculptor,4 · Lector en desarrollo,8.412,7.689,predicha (modelo ES),es-cul-tor,3,/e/ /s/ /k/ /u/ /l/ /t/ /o/ /ɾ/,1.4,8,3.044,4.09,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 acuerdo,agreement,4 · Lector en desarrollo,8.425,7.7,norma Alonso et al. 2015,a-cuer-do,3,/a/ /k/ /u/ /e/ /ɾ/ /d/ /o/,1.233,7,6.022,2.22,sustantivo,Bisílabas frecuentes,False
 derrota,defeat,4 · Lector en desarrollo,8.425,7.7,norma Alonso et al. 2015,de-rro-ta,3,/d/ /e/ /r/ /o/ /t/ /a/,1.2,7,3.936,2.96,sustantivo,Bisílabas frecuentes,False
 mente,mind,4 · Lector en desarrollo,8.425,7.7,norma Alonso et al. 2015,men-te,2,/m/ /e/ /n/ /t/ /e/,1.3,5,5.066,2.5,sustantivo,Bisílabas frecuentes,False
@@ -1247,14 +1248,13 @@ masa,dough,4 · Lector en desarrollo,8.531,7.8,norma Alonso et al. 2015,ma-sa,2,
 ordenador,computer,4 · Lector en desarrollo,8.531,7.8,norma Alonso et al. 2015,or-de-na-dor,4,/o/ /ɾ/ /d/ /e/ /n/ /a/ /d/ /o/ /ɾ/,1.15,9,3.84,4.93,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 caspa,dandruff,4 · Lector en desarrollo,8.552,7.82,norma Alonso et al. 2015,cas-pa,2,/k/ /a/ /s/ /p/ /a/,1.3,5,2.828,4.79,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 mapache,raccoon,4 · Lector en desarrollo,8.552,7.82,norma Alonso et al. 2015,ma-pa-che,3,/m/ /a/ /p/ /a/ /tʃ/ /e/,1.2,7,3.406,4.67,sustantivo,Bisílabas frecuentes,False
-escultor,sculptor,4 · Lector en desarrollo,8.576,7.843,predicha (modelo ES),es-cul-tor,3,/e/ /s/ /k/ /u/ /l/ /t/ /o/ /ɾ/,1.4,8,3.044,4.09,sustantivo,"Con grupos consonánticos (tr, pl, str)",True
 acantilado,cliff,4 · Lector en desarrollo,8.593,7.86,norma Alonso et al. 2015,a-can-ti-la-do,5,/a/ /k/ /a/ /n/ /t/ /i/ /l/ /a/ /d/ /o/,1.14,10,3.577,4.71,sustantivo,Largas y abstractas,False
 cuchilla,razor,4 · Lector en desarrollo,8.593,7.86,norma Alonso et al. 2015,cu-chi-lla,3,/k/ /u/ /tʃ/ /i/ /ʝ/ /a/,1.4,8,3.406,4.9,sustantivo,Bisílabas frecuentes,True
 interés,interest,4 · Lector en desarrollo,8.593,7.86,norma Alonso et al. 2015,in-te-rés,3,/i/ /n/ /t/ /e/ /ɾ/ /e/ /s/,1.2,7,4.539,1.8,sustantivo,Largas y abstractas,False
 posterior,back of head,4 · Lector en desarrollo,8.593,7.86,norma Alonso et al. 2015,pos-te-rior,3,/p/ /o/ /s/ /t/ /e/ /ɾ/ /i/ /o/ /ɾ/,1.4,9,3.657,,adjetivo,"Con grupos consonánticos (tr, pl, str)",False
-búmeran,boomerang,4 · Lector en desarrollo,8.632,7.897,predicha (modelo ES),bú-me-ran,3,/b/ /u/ /m/ /e/ /ɾ/ /a/ /n/,1.2,7,,4.7,sustantivo,Bisílabas frecuentes,True
 divorcio,divorce,4 · Lector en desarrollo,8.635,7.9,norma Alonso et al. 2015,di-vor-cio,3,/d/ /i/ /b/ /o/ /ɾ/ /s/ /i/ /o/,1.2,8,4.497,3.25,sustantivo,Largas y abstractas,False
 presidente,president,4 · Lector en desarrollo,8.635,7.9,norma Alonso et al. 2015,pre-si-den-te,4,/p/ /ɾ/ /e/ /s/ /i/ /d/ /e/ /n/ /t/ /e/,1.5,10,5.322,4.4,sustantivo,Largas y abstractas,False
+búmeran,boomerang,4 · Lector en desarrollo,8.642,7.907,predicha (modelo ES),bú-me-ran,3,/b/ /u/ /m/ /e/ /ɾ/ /a/ /n/,1.2,7,,4.7,sustantivo,Bisílabas frecuentes,True
 acero,steel,4 · Lector en desarrollo,8.656,7.92,norma Alonso et al. 2015,a-ce-ro,3,/a/ /s/ /e/ /ɾ/ /o/,1.033,5,4.2,4.87,sustantivo,Bisílabas frecuentes,False
 flexible,flexible,4 · Lector en desarrollo,8.656,7.92,norma Alonso et al. 2015,fle-xi-ble,3,/f/ /l/ /e/ /ks/ /i/ /b/ /l/ /e/,1.933,8,3.59,2.64,adjetivo,Largas y abstractas,False
 intención,intention,4 · Lector en desarrollo,8.656,7.92,norma Alonso et al. 2015,in-ten-ción,3,/i/ /n/ /t/ /e/ /n/ /s/ /i/ /o/ /n/,1.4,9,4.647,1.7,sustantivo,Largas y abstractas,False
@@ -1279,6 +1279,7 @@ poeta,poet,4 · Lector en desarrollo,8.956,8.14,norma Alonso et al. 2015,po-e-ta
 alcachofa,artichoke,4 · Lector en desarrollo,8.992,8.16,norma Alonso et al. 2015,al-ca-cho-fa,4,/a/ /l/ /k/ /a/ /tʃ/ /o/ /f/ /a/,1.15,9,2.937,4.63,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 multitud,crowd,4 · Lector en desarrollo,8.992,8.16,norma Alonso et al. 2015,mul-ti-tud,3,/m/ /u/ /l/ /t/ /i/ /t/ /u/ /d/,1.4,8,4.08,4.52,sustantivo,"Con grupos consonánticos (tr, pl, str)",False
 cima,top,4 · Lector en desarrollo,9.035,8.184,norma Alonso et al. 2015,ci-ma,2,/s/ /i/ /m/ /a/,1.0,4,4.23,3.93,sustantivo,Bisílabas frecuentes,False
+jeringuilla,syringe,4 · Lector en desarrollo,9.045,8.189,predicha (modelo ES),je-rin-gui-lla,4,/x/ /e/ /ɾ/ /i/ /n/ /g/ /i/ /ʝ/ /a/,1.3,11,2.284,4.81,sustantivo,Largas y abstractas,True
 viuda,widow,4 · Lector en desarrollo,9.046,8.19,norma Alonso et al. 2015,viu-da,2,/b/ /i/ /u/ /d/ /a/,1.0,5,4.072,4.33,sustantivo,Bisílabas frecuentes,False
 alterar,change,4 · Lector en desarrollo,9.065,8.2,norma Alonso et al. 2015,al-te-rar,3,/a/ /l/ /t/ /e/ /ɾ/ /a/ /ɾ/,1.2,7,3.673,2.89,verbo,Largas y abstractas,False
 opuesto,opposite,4 · Lector en desarrollo,9.065,8.2,norma Alonso et al. 2015,o-pues-to,3,/o/ /p/ /u/ /e/ /s/ /t/ /o/,1.233,7,3.936,1.79,adjetivo,Largas y abstractas,False
@@ -1286,7 +1287,6 @@ brújula,compass,4 · Lector en desarrollo,9.101,8.22,norma Alonso et al. 2015,b
 continente,mainland,4 · Lector en desarrollo,9.101,8.22,norma Alonso et al. 2015,con-ti-nen-te,4,/k/ /o/ /n/ /t/ /i/ /n/ /e/ /n/ /t/ /e/,1.3,10,3.739,4.31,sustantivo,Largas y abstractas,False
 suegro,father-in-law,4 · Lector en desarrollo,9.109,8.224,norma Alonso et al. 2015,sue-gro,2,/s/ /u/ /e/ /g/ /ɾ/ /o/,1.7,6,3.548,,sustantivo,Bisílabas frecuentes,False
 multa,fine,4 · Lector en desarrollo,9.145,8.245,norma Alonso et al. 2015,mul-ta,2,/m/ /u/ /l/ /t/ /a/,1.3,5,3.971,2.61,sustantivo,Bisílabas frecuentes,False
-jeringuilla,syringe,4 · Lector en desarrollo,9.153,8.249,predicha (modelo ES),je-rin-gui-lla,4,/x/ /e/ /ɾ/ /i/ /n/ /g/ /i/ /ʝ/ /a/,1.3,11,2.284,4.81,sustantivo,Largas y abstractas,True
 fama,fame,4 · Lector en desarrollo,9.173,8.26,norma Alonso et al. 2015,fa-ma,2,/f/ /a/ /m/ /a/,1.0,4,4.145,1.96,sustantivo,Cortas con familia (rimas),False
 choza,hut,4 · Lector en desarrollo,9.273,8.3,norma Alonso et al. 2015,cho-za,2,/tʃ/ /o/ /s/ /a/,1.3,5,3.491,4.65,sustantivo,Bisílabas frecuentes,False
 creencia,belief,4 · Lector en desarrollo,9.325,8.32,norma Alonso et al. 2015,cre-en-cia,3,/k/ /ɾ/ /e/ /e/ /n/ /s/ /i/ /a/,1.467,8,3.767,1.19,sustantivo,Largas y abstractas,False

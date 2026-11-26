@@ -7,7 +7,7 @@ y estima si es adecuada para la **edad del niño** elegida.
 ## Ejecutar
 
 ```bash
-cd ep3-machine-learning
+cd eft-machine-learning
 pip install -r requirements.txt -r app/requirements.txt
 streamlit run app/streamlit_app.py
 ```
@@ -30,4 +30,4 @@ La primera carga tarda ~15 s (lee las normas de `data/raw/`); después todo es i
 * **Español:** `modelo_aoa_es.joblib` (modelo propio + transferencia: usa la AoA de la traducción inglesa y la
   predicción del modelo inglés como variables). La escala 1–11 de Alonso se convierte a años con el enlace equipercentil guardado (`q_es`, `q_en`).
 * **Variables desconocidas** (casilla "desconocida"): quedan como `NaN` y el `Pipeline` las imputa con la mediana, igual que en el entrenamiento.
-* **Probabilidad por edad:** `P(AoA ≤ edad)` suponiendo error normal con el RMSE del modelo (EN: 1,90 años en test; ES: ≈ 1,25 × MAE de CV en la escala 1–11). Es una guía, no una probabilidad calibrada.
+* **Probabilidad por edad:** `P(AoA ≤ edad)` suponiendo error normal con el RMSE del modelo (EN: RMSE en test; ES: RMSE fuera de muestra en la escala 1–11; ambos leídos de `models/metricas.json`). Es una guía, no una probabilidad calibrada.

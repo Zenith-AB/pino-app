@@ -26,7 +26,7 @@ import pandas as pd
 
 RAIZ = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(RAIZ / "src"))
-import lexico  # noqa: E402  (también deja disponible pino_ml.utils.texto_es)
+import lexico  # noqa: E402
 from lexico import texto_es  # noqa: E402
 
 MODELS = RAIZ / "models"
@@ -47,9 +47,11 @@ USO_NIVEL = [
 CATEGORIAS = ["sustantivo", "verbo", "adjetivo", "otra"]
 
 # Error del modelo, usado para el intervalo y la probabilidad por edad.
-# EN: RMSE en test (años). ES: MAE de CV de la mejor estrategia (escala 1–11) × 1,25 ≈ RMSE.
-RMSE_EN_ANIOS = 1.8954
-RMSE_ES_ESCALA = 0.9533 * 1.25
+# EN: RMSE en test (años). ES: RMSE fuera de muestra de la mejor estrategia (escala 1–11).
+# Se leen de models/metricas.json para que la app siempre coincida con el notebook.
+_MET = json.loads((MODELS / "metricas.json").read_text(encoding="utf-8").replace("NaN", "null"))
+RMSE_EN_ANIOS = _MET["test_en"][_MET["modelo_en_elegido"]]["RMSE"]
+RMSE_ES_ESCALA = _MET["espanol"]["tabla"][_MET["espanol"]["mejor_estrategia"]]["RMSE"]
 
 VOCALES_ARPA = lexico.VOCALES_ARPA
 VOCALES_ES = lexico.VOCALES_ES

@@ -17,7 +17,8 @@ forma automática para cualquier palabra nueva del catálogo de la app:
     categoria            sustantivo / verbo / adjetivo / otra
 
 Para el español la separación silábica y la transcripción fonológica se hacen con
-``pino_ml.utils.texto_es``, el mismo módulo que usa el backend de la app.
+``texto_es.py``, una copia del módulo ``pino_ml.utils.texto_es`` del backend de la app,
+incluida aquí para que esta carpeta se pueda ejecutar sola.
 """
 
 from __future__ import annotations
@@ -33,8 +34,8 @@ import pandas as pd
 
 RAIZ = Path(__file__).resolve().parents[1]
 RAW = RAIZ / "data" / "raw"
-sys.path.insert(0, str(RAIZ.parent / "pino-ml" / "src"))
-from pino_ml.utils import texto_es  # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import texto_es  # noqa: E402  (copia de pino-ml/src/pino_ml/utils/texto_es.py)
 
 VOCALES_ARPA = {"AA", "AE", "AH", "AO", "AW", "AY", "EH", "ER", "EY", "IH", "IY", "OW", "OY", "UH", "UW"}
 VOCALES_ES = {"/a/", "/e/", "/i/", "/o/", "/u/"}
